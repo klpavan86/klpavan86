@@ -1,0 +1,21 @@
+CHG0276111 -2024-08-28 06:30:00
+SS
+SARATH Serpangeri
+Work notes•
+2024-08-28 15:01:38
+since there was typo in cronjob, we observers below error, we corrected with CRC teams approval post that it worked well
+webadm@WUWVC9ASRTRA04:~ **** This is a PROD server Please be extra careful **** RESTON $ crontab -e
+crontab: installing new crontab
+"/tmp/crontab.RXmqvh":65: bad minute
+errors in crontab file, can't install.
+-----------------------------------------------------------------------------
+In this change we wanted to modify the crontab on 10.45.16.83 as:
+From: 0 * * * * /apps/rtra/batch/RuleHitsCount.sh 2>&1
+To: 0/30 * * * * /apps/rtra/batch/RuleHitsCount.sh 2>&1
+
+But it was giving syntax error due to 0/30 (even actually it is correct)
+
+So, as you all know, we modified as:
+0,30 * * * * /apps/rtra/batch/RuleHitsCount.sh 2>&1
+
+Means we replaced / with , in the expression and it worked well.

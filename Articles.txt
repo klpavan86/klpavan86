@@ -1,0 +1,80 @@
+
+KB0030609 - Not Requried
+
+KB0051306 - Not Available
+
+Trackpayments - KB0027858 - Traffic move and restart
+
+WUPOS - KB0027615 - Space
+
+        KB0017744 - QA Jetty restart
+
+        KB0030923 - Manual MBean setup
+
+ARC+ - KB0030854 - JVM restart
+
+DMS - KB0029469 - Reston JVM restart
+
+      KB0029470 - Chicago JVM restart
+
+      KB0029347 - Traffic movement
+
+BRM - KB0029455 - Restart
+
+RTRA - KB0030469 - Run Batch job
+
+       KB0027614 - Space
+
+       KB0031090 - NMService Restart
+
+       KB0028815 - entityclrtool Restart
+
+       KB0030860 - Idea restart
+
+       KB0031050 - httpd restart
+
+TMS - KB0028748 - Restart
+
+UCD - KB0029974 - Heap dump
+
+      KB0028812 - Traffic movement
+
+      KB0029080 - Server restart
+
+IWRA - KB0027612 - Space
+
+       KB0030791 - iwra instance restart
+
+Agent Portal - KB0029484 - Reston JVM restart
+
+               KB0029486 - Chicago JVM restart
+
+               KB0026590 - To check the user count
+
+Receipt - KB0029365 - Fetch property files
+
+Liferay - KB0029461 - Chicago JVM restart
+
+          KB0029460 - Reston JVM restart
+
+WuPay - KB0029217 - Disable in Chicago
+
+        KB0029213 - Enable in Reston
+
+Prepaid - KB0029694 - Chicago restart
+
+          KB0029693 - Reston restart
+
+          KB0028816 - Traffic movement
+
+WUDBView - KB0029464 - Reston restart
+
+           KB0029466 - Chicago restart
+
+Gateway - KB0027638 - Queue clearing
+
+          KB0029970 - Bar deploy
+
+          KB0030072 - Domain backup
+
+          KB0027102 - Traffic movement

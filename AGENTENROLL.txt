@@ -1,0 +1,12 @@
+Post Windows activity we need to start &  drop a mail to this team for sanity testing
+ 
+===========================================
+ 
+WAS Technology:
+ 
+ 
+Agent Enroll : https://10.44.34.248:9043/ibm/console/secure/securelogon.do -  wasadmin / adm!nw@s90 
+ 
+ 
+ 
+http://aew.wuintranet.net/WUWSLocMgmt/ServiceClientPage.jsp -- application URL..

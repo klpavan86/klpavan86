@@ -1,0 +1,42 @@
+
+jdbc:oracle:thin:@10.46.41.120:1529/ebs_EBU
+
+jdbc:oracle:thin:@10.45.25.24:1570:fwusilo1
+
+cells / WUWCH2ASAGP01Cell01 / clusters / ATAgentPortalCluster / resources.xml 	Updated 
+
+jdbc:oracle:thin:@10.45.25.24:1570:fwusilo1
+jdbc:oracle:thin:@10.45.25.24:1570:fwusilo1
+
+WUWCH2ASAGP01Cell01/clusters/ATAgentPortalCluster,
+
+WUPOS_Oracle
+jdbc/WUPOSOracle
+New JDBC Datasource
+
+${ORACLE_JDBC_DRIVER_PATH}/ojdbc6.jar
+
+oracle.jdbc.pool.OracleConnectionPoolDataSource
+
+ ORACLE_JDBC_DRIVER_PATH
+	
+/apps/UATAgentPortal/Lib/  
+  	
+Cell=WUWCH2ASAGP01Cell01   
+
+
+agent link
+jdbc:oracle:thin:@10.46.41.120:1529/ebs_EBU
+no authentcation or none
+
+[9/27/24 3:36:24:068 EDT] 00000001 ModuleManifes E   UTLS0002E: The shared library APLib contains a classpath entry which does not resolve to a valid
+ jar file, the library jar file is expected to be found at /apps/UATAgentPortal/Lib/util.jar.
+[9/27/24 3:36:24:086 EDT] 00000001 ModuleManifes E   UTLS0002E: The shared library APLib contains a classpath entry which does not resolve to a valid
+ jar file, the library jar file is expected to be found at /apps/UATAgentPortal/Lib/struts2-core-2.1.6.jar.
+[9/27/24 3:36:24:086 EDT] 00000001 ModuleManifes E   UTLS0002E: The shared library APLib contains a classpath entry which does not resolve to a valid
+ jar file, the library jar file is expected to be found at /apps/UATAgentPortal/Lib/xwork-2.1.2.jar.
+[9/27/24 3:36:24:087 EDT] 00000001 ModuleManifes E   UTLS0002E: The shared library APLib contains a classpath entry which does not resolve to a valid
+ jar file, the library jar file is expected to be found at /apps/UATAgentPortal/Lib/db2jcc.jar.
+[9/27/24 3:36:24:087 EDT] 00000001 ModuleManifes E   UTLS0002E: The shared library APLib contains a classpath entry which does not resolve to a valid
+ jar file, the library jar file is expected to be found at /apps/UATAgentPortal/Lib/db2jcc_license_cu.jar.
+[9/27/24 3:36:24:187 EDT] 00000001 StartUpServic I   STUP0008I: The Startup Beans service is disabled.

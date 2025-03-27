@@ -1,0 +1,13 @@
+S.No	App Name	STATUS	Normal Traffic Satus	Application POC	Team DL		Is the team onboard for 24-Aug-2024 Change?	Traffic Movement from Chicago to Reston	Pre-Validation Sanity Check	Traffic movement back to Chicago and Post Sanity Check	Notes	Mobilizing Team		Pre Traffic movement Validation		Traffic movement		Post Validation	
+												Start Time (HH:MM)	End Time (HH:MM)	Start Time (HH:MM)	End Time (HH:MM)	Start Time (HH:MM)	End Time (HH:MM)	Start Time (HH:MM)	End Time (HH:MM)
+1	WUPOS			moved to CHICAGO-DC from balanced	Active-Active	Dmitriy Borinshteyn (ON)/Kiran Duggireddy (ON)/J Philips John (ON)	WUPOS_AMS@westernunion.com		Kiran -- Onboard with the change on 24-Aug												
+5	DMS				already in chicago	Active-Passive	Panayapan Swaminathan (ON)	ComplianceDMS@westernunion.com		Sridhar Gottam -- Onboard with the change on 24-Aug	Not Required											
+6	Gateway 		moved to CHICAGO-DC from balanced	Active-Active	Subramanian Murali (ON)/Mansi Gupta (OFF)	GatewayAMS@westernunion.com, gw_eng@westernunion.com, GATEWAY.ENH@westernunion.com		Kiran -- Onboard with the change on 24-Aug												
+(Core & Digital & Kremlin & Non-MT Gateway)
+7	Receipt Service	moved to CHICAGO-DC from balanced	Active-Active	Dmitriy Borinshteyn (ON)/Kiran Duggireddy (ON)/J Philips John (ON)	wuposreceipts@wu.com		Kiran -- Onboard with the change on 24-Aug												
+9	Agent Portal	moved to CHICAGO-DC from balanced	Active-Active	Suresh Chereddy (ON)/Sarath Kumar Challa (ON)	ALSupportTeam@westernunion.com		Kiran -- Onboard with the change on 24-Aug												
+12	WUPAY			API URL moved to CHICAGO-DC from balaced, rest already in Chicago	Active-Passive	Manoj Kumar manchikanti (ON)	Digital-L2-WUPay@westernunion.com		Biman/Shrihari -- Onboard with the change on 24-Aug												
+21	STARS			moved to CHICAGO-DC from RESTON-DC	Active-Passive	Santosh Kumar Javvadi (ON)	CPSAMSMiscApps@westernunion.com		Santosh Javvadi -- Not Applicable												
+28	WU TAIOPOS		moved to CHICAGO-DC from balanced	Active-Active	Kiran Duggireddy (ON)	HypercomWUTAIOAMS@westernunion.com		Kiran -- Onboard with the change on 24-Aug												
+32	Agent Training Proxy	moved to CHICAGO-DC from balanced	Active-Active	ITIO Team (ON & OFF)	ITIO-Run-MW-WebHosting@westernunion.com		Webhosting Team to move traffic/Onboard												
+37	Core Proxy & Inbound Proxy	moved to CHICAGO-DC from balanced	Active-Active	ITIO Team (ON & OFF)	ITIO-Run-MW-WebHosting@westernunion.com		Webhosting Team Onboard to move traffic												

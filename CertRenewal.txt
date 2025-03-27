@@ -1,0 +1,29 @@
+To renew certificate, a new certificate request must be completed (renewal=new certificate request).
+
+ 
+
+Following is the process to request for new certificate:
+
+• Create a CSR, you can follow one of the guides below:
+
+https://www.digicert.com/csr-creation.htm
+
+https://support.sectigo.com/Com_KnowledgeDetailPageFaq?Id=kA01N000000rfS7
+
+https://support.comodo.com/index.php?/comodo/Knowledgebase/List/Index/19/csr-generation
+
+ 
+
+• Submit the CSR via the Comodo portal using the unique “Access Code” assigned to you / team:
+
+https://hard.cert-manager.com/customer/westernunion/ssl?action=enroll
+
+ 
+
+• Cyber Fusion team will check and approve / deny the cert based on the request details. 
+
+• Once approved, an auto mail with cert download links are sent to the email used while submitting the CSR.
+
+ 
+
+• Download the cert and install on your systems.

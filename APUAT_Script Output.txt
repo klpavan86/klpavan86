@@ -1,0 +1,166 @@
+1st Script output
+*******************************************************
+/apps/AgentPortalServices/UnixServices/EMailNotifyService/Listner/ListenerSrvInstall.sh
+********************************************************
+
+[webadm@WUWVC2ASGEN11 properties]$ sh -x /apps/AgentPortalServices/UnixServices/EMailNotifyService/Listner/ListenerSrvInstall.sh
++ ps -ef
++ awk '{print $2}'
++ xargs kill $'-9\r'
++ grep EMailNotifyService
+usage: kill [ -s signal | -p ] [ -a ] pid ...
+       kill -l [ signal ]
++ export $'PROPERTY_PATH=/apps/AgentPortalServices/UnixServices/EMailNotifyService/properties/\r'
++ PROPERTY_PATH=$'/apps/AgentPortalServices/UnixServices/EMailNotifyService/properties/\r'
++ export $'JAVA_HOME=/apps/java/jdk1.8.0_121\r'
++ JAVA_HOME=$'/apps/java/jdk1.8.0_121\r'
++ /apps/java/jdk1.8.0_121/bin/java -classpath './*:../lib/com.ibm.mq.jar:../lib/com.ibm.mqjms.jar:../lib/com.ibm.mq.jms.Nojndi.jar:../lib/com.ibm.mq.soap.jar:../lib/j2ee.jar:../lib/jmsserver.jar:../lib/jmxc.jar:../lib/jmxext.jar:../lib/jmxx.jar:../lib/apanjmsservice.jar:../lib/autonotificationschemas.jar:../lib/tibcrypt.jar:../lib/tibjms.jar:../lib/log4j-1.2.8.jar:../lib/sqljdbc42.jar:../classes' com.westernunion.agentlink.AS400batch.service.MailService start $'/apps/AgentPortalServices/UnixServices/EMailNotifyService/properties/\r\r'
+/apps/AgentPortalServices/UnixServices/EMailNotifyService/Listner/ListenerSrvInstall.sh: line 5: /apps/java/jdk1.8.0_121/bin/java: No such file or directory
+
+2nd script output
+********************************************************
+/apps/AgentPortalServices/UnixServices/PasswordExpiryNotifyService/listener/ListenerSrvInstall.s
+********************************************************
+[webadm@WUWVC2ASGEN11 properties]$ sh -x /apps/AgentPortalServices/UnixServices/PasswordExpiryNotifyService/listener/ListenerSrvInstall.sh
++ export $'PROPERTY_PATH=../properties/\r'
++ PROPERTY_PATH=$'../properties/\r'
++ export $'JAVA_HOME=/apps/IBM85/WebSphere85/AppServer/java_1.8_64\r'
++ JAVA_HOME=$'/apps/IBM85/WebSphere85/AppServer/java_1.8_64\r'
++ /apps/IBM85/WebSphere85/AppServer/java_1.8_64/bin/java -classpath './*:../lib/com.ibm.mq.jar:../lib/com.ibm.mq.jms.Nojndi.jar:../lib/com.ibm.mqjms.jar:../lib/j2ee.jar:../lib/jmsserver.jar:../lib/jmxc.jar:../lib/jmxext.jar:../lib/jmxx.jar:../lib/jtds-1.2.2.jar:../lib/log4j-1.2.8.jar:../lib/autonotificationschemas.jar:../lib/tibcrypt.jar:../lib/tibjms.jar:../lib/sqljdbc42.jar:../lib/com.ibm.mq.jmqi.jar:../classes' com.westernunion.asc.service.MailService start $'../properties/\r'
+CMD=start
+path: ../properties/
+Notify Mail Service Started Fri Apr 26 10:02:59 EDT 2024
+Inside loadPropertyFiles
+loaded loadPropertyFiles
+log4j: Parsing for [root] with value=[DEBUG, WUAppender].
+log4j: Level token is [DEBUG].
+log4j: Category root set to DEBUG
+log4j: Parsing appender named "WUAppender".
+log4j: Parsing layout options for "WUAppender".
+log4j: Setting property [conversionPattern] to [[%d{yyyy-MM-dd hh:mm},%6.6r]%-5p%x(%L) - %m%n].
+log4j: End of parsing for "WUAppender".
+log4j: Setting property [immediateFlush] to [true].
+log4j: Setting property [maxBackupIndex] to [20].
+log4j: Setting property [file] to [../logs/passwordnotify.logs].
+log4j: Setting property [append] to [true].
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [maxFileSize] to [100MB].
+log4j: setFile called: ../logs/passwordnotify.logs, true
+log4j: setFile ended
+log4j: Parsed "WUAppender" options.
+log4j: Finished configuring.
+log4j: Parsing for [root] with value=[DEBUG, WUAppender].
+log4j: Level token is [DEBUG].
+log4j: Category root set to DEBUG
+log4j: Parsing appender named "WUAppender".
+log4j: Parsing layout options for "WUAppender".
+log4j: Setting property [conversionPattern] to [[%d{yyyy-MM-dd hh:mm},%6.6r]%-5p%x(%L) - %m%n].
+log4j: End of parsing for "WUAppender".
+log4j: Setting property [immediateFlush] to [true].
+log4j: Setting property [maxBackupIndex] to [20].
+log4j: Setting property [file] to [../logs/passwordnotify.logs].
+log4j: Setting property [append] to [true].
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [maxFileSize] to [100MB].
+log4j: setFile called: ../logs/passwordnotify.logs, true
+log4j: setFile ended
+log4j: Parsed "WUAppender" options.
+log4j: Finished configuring.
+log4j: Parsing for [root] with value=[DEBUG, WUAppender].
+log4j: Level token is [DEBUG].
+log4j: Category root set to DEBUG
+log4j: Parsing appender named "WUAppender".
+log4j: Parsing layout options for "WUAppender".
+log4j: Setting property [conversionPattern] to [[%d{yyyy-MM-dd hh:mm},%6.6r]%-5p%x(%L) - %m%n].
+log4j: End of parsing for "WUAppender".
+log4j: Setting property [immediateFlush] to [true].
+log4j: Setting property [maxBackupIndex] to [20].
+log4j: Setting property [file] to [../logs/passwordnotify.logs].
+log4j: Setting property [append] to [true].
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [maxFileSize] to [100MB].
+log4j: setFile called: ../logs/passwordnotify.logs, true
+log4j: setFile ended
+log4j: Parsed "WUAppender" options.
+log4j: Finished configuring.
+log4j: Parsing for [root] with value=[DEBUG, WUAppender].
+log4j: Level token is [DEBUG].
+log4j: Category root set to DEBUG
+log4j: Parsing appender named "WUAppender".
+log4j: Parsing layout options for "WUAppender".
+log4j: Setting property [conversionPattern] to [[%d{yyyy-MM-dd hh:mm},%6.6r]%-5p%x(%L) - %m%n].
+log4j: End of parsing for "WUAppender".
+log4j: Setting property [immediateFlush] to [true].
+log4j: Setting property [maxBackupIndex] to [20].
+log4j: Setting property [file] to [../logs/passwordnotify.logs].
+log4j: Setting property [append] to [true].
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [maxFileSize] to [100MB].
+log4j: setFile called: ../logs/passwordnotify.logs, true
+log4j: setFile ended
+log4j: Parsed "WUAppender" options.
+log4j: Finished configuring.
+log4j: Parsing for [root] with value=[DEBUG, WUAppender].
+log4j: Level token is [DEBUG].
+log4j: Category root set to DEBUG
+log4j: Parsing appender named "WUAppender".
+log4j: Parsing layout options for "WUAppender".
+log4j: Setting property [conversionPattern] to [[%d{yyyy-MM-dd hh:mm},%6.6r]%-5p%x(%L) - %m%n].
+log4j: End of parsing for "WUAppender".
+log4j: Setting property [immediateFlush] to [true].
+log4j: Setting property [maxBackupIndex] to [20].
+log4j: Setting property [file] to [../logs/passwordnotify.logs].
+log4j: Setting property [append] to [true].
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [maxFileSize] to [100MB].
+log4j: setFile called: ../logs/passwordnotify.logs, true
+log4j: setFile ended
+log4j: Parsed "WUAppender" options.
+log4j: Finished configuring.
+log4j: Parsing for [root] with value=[DEBUG, WUAppender].
+log4j: Level token is [DEBUG].
+log4j: Category root set to DEBUG
+log4j: Parsing appender named "WUAppender".
+log4j: Parsing layout options for "WUAppender".
+log4j: Setting property [conversionPattern] to [[%d{yyyy-MM-dd hh:mm},%6.6r]%-5p%x(%L) - %m%n].
+log4j: End of parsing for "WUAppender".
+log4j: Setting property [immediateFlush] to [true].
+log4j: Setting property [maxBackupIndex] to [20].
+log4j: Setting property [file] to [../logs/passwordnotify.logs].
+log4j: Setting property [append] to [true].
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [maxFileSize] to [100MB].
+log4j: setFile called: ../logs/passwordnotify.logs, true
+log4j: setFile ended
+log4j: Parsed "WUAppender" options.
+log4j: Finished configuring.
+log4j: Parsing for [root] with value=[DEBUG, WUAppender].
+log4j: Level token is [DEBUG].
+log4j: Category root set to DEBUG
+log4j: Parsing appender named "WUAppender".
+log4j: Parsing layout options for "WUAppender".
+log4j: Setting property [conversionPattern] to [[%d{yyyy-MM-dd hh:mm},%6.6r]%-5p%x(%L) - %m%n].
+log4j: End of parsing for "WUAppender".
+log4j: Setting property [immediateFlush] to [true].
+log4j: Setting property [maxBackupIndex] to [20].
+log4j: Setting property [file] to [../logs/passwordnotify.logs].
+log4j: Setting property [append] to [true].
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [maxFileSize] to [100MB].
+log4j: setFile called: ../logs/passwordnotify.logs, true
+log4j: setFile ended
+log4j: Parsed "WUAppender" options.
+log4j: Finished configuring.
+Exception in thread "main" java.lang.NoClassDefFoundError: javax.jms.JMSContext
+        at com.westernunion.asc.email.ANQueueConnectionManager.getANQueueConnection(ANQueueConnectionManager.java:63)
+        at com.westernunion.asc.manager.MonitorRequestsManager.processPendingRequestsInBatch(MonitorRequestsManager.java:149)
+        at com.westernunion.asc.manager.MonitorRequestsManager.doProcess(MonitorRequestsManager.java:57)
+        at com.westernunion.asc.service.MailService.start(MailService.java:91)
+        at com.westernunion.asc.service.MailService.main(MailService.java:44)
+Caused by: java.lang.ClassNotFoundException: javax.jms.JMSContext
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:610)
+        at java.lang.ClassLoader.loadClassHelper(ClassLoader.java:944)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:889)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:872)
+        ... 5 more

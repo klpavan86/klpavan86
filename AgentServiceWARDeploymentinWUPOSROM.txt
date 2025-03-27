@@ -1,0 +1,82 @@
+PLAY [127.0.0.1] ***************************************************************
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+TASK [Cleanup Stage Directory] *************************************************
+changed: [127.0.0.1 -> localhost]
+TASK [Create Stage Directory] **************************************************
+changed: [127.0.0.1 -> localhost]
+TASK [Download WAR File from Archiva to Staging Directory] *********************
+changed: [127.0.0.1 -> localhost]
+msg: OK (135830825 bytes)
+PLAY [agentscrsitcert] *********************************************************
+skipping: no hosts matched
+PLAY [agentscrsitnoncert] ******************************************************
+skipping: no hosts matched
+PLAY [agentscrqa1cert] *********************************************************
+skipping: no hosts matched
+PLAY [agentscrqa1noncert] ******************************************************
+skipping: no hosts matched
+PLAY [agentscrqa2cert] *********************************************************
+skipping: no hosts matched
+PLAY [agentscrqa2noncert] ******************************************************
+skipping: no hosts matched
+PLAY [agentscruatcert] *********************************************************
+skipping: no hosts matched
+PLAY [agentscruatnoncert] ******************************************************
+skipping: no hosts matched
+PLAY [clperfuat] ***************************************************************
+skipping: no hosts matched
+PLAY [agentscrrom] *************************************************************
+TASK [Gathering Facts] *********************************************************
+ok: [10.45.16.70]
+TASK [Check backup directory exists for agentscrrom cert instance] *************
+ok: [10.45.16.70]
+TASK [Remove six months old files from backup for agentscrrom cert instance] ***
+changed: [10.45.16.70]
+cmd: find /apps/wupos/agentsvc-rom/spring-boot-2.4.5/backup/ -name '*.war' -type f -mtime +180 -exec rm -rf {} \;
+start: 2024-04-30 13:35:03.756650
+end: 2024-04-30 13:35:03.766364
+delta: 0:00:00.009714
+TASK [Stop agentscrrom cert instance] ******************************************
+changed: [10.45.16.70]
+cmd: /apps/wupos/agentsvc-rom/spring-boot-2.4.5/bin/springboot.sh stop
+start: 2024-04-30 13:35:05.265181
+end: 2024-04-30 13:35:05.281013
+delta: 0:00:00.015832
+stdout: stopping SpringBoot
+TASK [Backup Agent Service WAR file for agentscrrom cert instance] *************
+changed: [10.45.16.70]
+cmd: cp -rp /apps/wupos/agentsvc-rom/spring-boot-2.4.5/webapps/agent-service.war /apps/wupos/agentsvc-rom/spring-boot-2.4.5/backup/agent-service.war_bkp_$(date +%Y-%m-%d-%T)
+start: 2024-04-30 13:35:06.785317
+end: 2024-04-30 13:35:06.915152
+delta: 0:00:00.129835
+TASK [Remove Agent Service WAR file for agentscrrom cert instance] *************
+changed: [10.45.16.70]
+cmd: rm /apps/wupos/agentsvc-rom/spring-boot-2.4.5/webapps/agent-service.war
+start: 2024-04-30 13:35:08.432120
+end: 2024-04-30 13:35:08.465719
+delta: 0:00:00.033599
+TASK [Deploy Agent Service WAR file for agentscrrom cert instance] *************
+changed: [10.45.16.70]
+TASK [Start agentscrrom cert instance] *****************************************
+changed: [10.45.16.70]
+cmd: nohup /apps/wupos/agentsvc-rom/spring-boot-2.4.5/bin/springboot.sh start
+start: 2024-04-30 13:35:17.335645
+end: 2024-04-30 13:35:18.439168
+delta: 0:00:01.103523
+stdout: Starting micro service
+stderr: OpenJDK 64-Bit Server VM warning: Ignoring option MaxPermSize; support was removed in 8.0
+TASK [Status agentscrrom cert instance] ****************************************
+changed: [10.45.16.70]
+cmd: nohup /apps/wupos/agentsvc-rom/spring-boot-2.4.5/bin/springboot.sh status
+start: 2024-04-30 13:35:20.018943
+end: 2024-04-30 13:35:20.035275
+delta: 0:00:00.016332
+stdout: Micro service module is running with pid:5850
+PLAY [agentscrpi] **************************************************************
+skipping: no hosts matched
+PLAY [agentscrnoncert] *********************************************************
+skipping: no hosts matched
+PLAY RECAP *********************************************************************
+10.45.16.70                : ok=9    changed=7    unreachable=0    failed=0   
+127.0.0.1                  : ok=4    changed=3    unreachable=0    failed=0   

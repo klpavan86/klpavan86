@@ -1,0 +1,53 @@
+Go to Run Deck --> Search WUPOS --> Select WUPOS ROM --> Select COMMON --> Select Deploy --> Select tablet_deploy_checker_static_contents --> Paste the URL --> Run the job
+
+Validate in the log output of the specified path
+
+
+PLAY [apache] ******************************************************************
+TASK [cleanup apache stage] ****************************************************
+fatal: [10.45.2.18 -> localhost]: FAILED! => {"changed": false, "failed": true, "msg": "rmtree failed: [Errno 2] No such file or directory: '/apps/stage/wuposclrom/webui.zip'"}
+...ignoring
+msg: rmtree failed: [Errno 2] No such file or directory: '/apps/stage/wuposclrom/webui.zip'
+changed: [10.45.0.70 -> localhost]
+TASK [Create staging directory] ************************************************
+ok: [10.45.2.18 -> localhost]
+changed: [10.45.0.70 -> localhost]
+TASK [download checker zip to staging folder] **********************************
+changed: [10.45.2.18 -> localhost]
+msg: OK (2464729 bytes)
+ok: [10.45.0.70 -> localhost]
+msg: OK (2464729 bytes)
+TASK [create checker folder if it doesn't exist] *******************************
+ok: [10.45.0.70]
+ok: [10.45.2.18]
+TASK [create backup directory] *************************************************
+changed: [10.45.0.70]
+ok: [10.45.2.18]
+TASK [backup the old checker content] ******************************************
+changed: [10.45.0.70]
+cmd: cp -r /apps/apache2/htdocs/wuposcommonurlrom/checker /apps/apache2/htdocs/wuposcommonurlrom/backup/backup_checker/checker_bkp_$(date +%Y-%m-%d-%T)
+start: 2024-06-18 11:51:10.892701
+end: 2024-06-18 11:51:11.188617
+delta: 0:00:00.295916
+changed: [10.45.2.18]
+cmd: cp -r /apps/apache2/htdocs/wuposcommonurlrom/checker /apps/apache2/htdocs/wuposcommonurlrom/backup/backup_checker/checker_bkp_$(date +%Y-%m-%d-%T)
+start: 2024-06-18 11:51:11.020976
+end: 2024-06-18 11:51:11.332829
+delta: 0:00:00.311853
+TASK [deploy new checker content] **********************************************
+changed: [10.45.0.70]
+changed: [10.45.2.18]
+TASK [fix the static content permissions] **************************************
+changed: [10.45.2.18]
+cmd: chown -R webadm:webadm /apps/apache2/htdocs/wuposcommonurlrom; chmod -R 755 /apps/apache2/htdocs/wuposcommonurlrom/
+start: 2024-06-18 11:51:17.136644
+end: 2024-06-18 11:51:17.461103
+delta: 0:00:00.324459
+changed: [10.45.0.70]
+cmd: chown -R webadm:webadm /apps/apache2/htdocs/wuposcommonurlrom; chmod -R 755 /apps/apache2/htdocs/wuposcommonurlrom/
+start: 2024-06-18 11:51:17.112292
+end: 2024-06-18 11:51:18.273712
+delta: 0:00:01.161420
+PLAY RECAP *********************************************************************
+10.45.0.70                 : ok=8    changed=6    unreachable=0    failed=0   
+10.45.2.18                 : ok=8    changed=4    unreachable=0    failed=0   

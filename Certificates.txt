@@ -1,0 +1,108 @@
+tfs.wuintranet.net Certificate Expiring in 90 Days
+
+WUWVC9WSAPS07N.PROD.WUDIP.COM Certificate Expiring in 90 Days
+
+srvwures0599.hqintl1.com Certificate Expiring in 15 Days
+
+cpg-cat.csgweb.com/mpg_dish/services/CashPaymentService --> UAT DISH CERTIFICATE
+
+nvenergy.corerrevprxy.wuintranet.net Certificate Expiring in 30 Days
+
+srvwures0599.hqintl1.com
+
+nvenergy.corerrevprxy.wuintranet.net - expiring 28th June 2024
+
+wsvigoorlandimx00a.wu-gwa.com
+
+bimediafru13.wu-gwa.com -  Certificate set to expire on 7/4/2024
+
+pi wugateway1pi.westernunion.com 7/13/2024
+PROD wugateway2.westernunion.com 7/13/2024
+PROD wugateway2.westernunion.net 7/13/2024
+PROD wugateway2pisp.wuintranet.net 7/13/2024
+PROD wugateway2sp.westernunion.net 7/13/2024
+
+psd2.wuplus.com-Saltedge Portal certificate renewal due on 7/5/2024.
+
+CN=apn-vc.wu-gwa.com
+CN=apn-vc.wu-gwa.com
+CN=prepaidtibco-vc.wu-gwa.com
+
+dollargeneralposwgps7597.wu-gwa.com - Reminder Certificate set to expire on 7/21/2024
+
+rugateway-mo.wu-gwa.com 2024-07-31 23:59:59 GMT
+
+rugateway-uat.wu-gwa.com 2024-07-31 23:59:59 GMT
+
+rugateway-uat.wu-gwa.com 7/31/2024
+
+rugateway-mo.wu-gwa.com 7/31/2024
+
+golfpower.corerrevprxy.wuintranet.net 6-Aug-24
+
+rugateway-sp.wu-gwa.com 2024-08-30 23:59:59 GMT
+
+aui.wuintranet.net Certificate Expiring in 90 Days 19-09-2024
+
+tfs.wuintranet.net Certificate Expiring in 2024-08-23 23:59:59 GMT
+
+wuwvc9wsaps07n.prod.wudip.com 8/23/2024
+
+tfs.wuintranet.net 8/21/2024
+
+MT000009 8/3/2024
+
+rugateway-sp.wu-gwa.com Certificate Expiring on 31/08/2024
+ 
+WUWVC9WSAPS08N.PROD.WUDIP.COM Certificate Expiring in 60 Days
+WUWVC9WSAPS09N.PROD.WUDIP.COM Certificate Expiring in 60 Days
+
+rugateway-mo.wu-gwa.com Certificate Expiring in 15 Days
+rugateway-uat.wu-gwa.com Certificate Expiring in 15 Days
+
+origin-wupay.api.westernunion.com Expires on 9/27/2024
+
+aui.wuintranet.net Certificate Expiring in 30 Days Expires on 17/9/2024
+
+wugatewaydigital2.wuintranet.net - 2 Certificate Expiring in 60 Days
+
+raeworldae718.wu-gwa.com. **** WARNING: Expiration Notice. Expirnig on 29/8/2024
+
+iwatchreguk.wuintranet.net Certificate Expiring in 60 Days - 5/11/2024
+
+mvn.prod.wudip.com Certificate Expiring in 60 Days - 6/11/2024
+
+dongawuvnu58.wu-gwa.com
+
+wupay-vc.wu-gwa.com is expiring on 8th January 2025
+
+mremitwgbsbdl590p.wu-gwa.com set to expire on 2025-01-22
+
+wuoutbdq99.wu-gwa.com set to expire on 2025-01-22
+
+sce.corerrevuatprxy.wuintranet.net expiring on March 12th 12-03-2025
+
+nvenergy.corerrevuatprxy.wuintranet.net Certificate Expiring in 60 Days 26/03/2025
+
+toyota Certificate Expiring in 60 Days - 08/04/2025
+
+AT&T test certificate Certificate Expiring in 60 Days - 09/04/2025
+
+SRVWURES0599.HQINTL1.COM -1 Certificate Expiring in 60 Days - 12/04/2025
+
+WUWVC2ASIWA01.prod.wudip.com Certificate Expiring in 60 Days
+
+srvwures0724v.hqintl1.com Certificate Expiring in 60 Days
+
+***********************************************************************************
+Please provide the private key and .,cer file to create the .pfx file Or use below openssl command to create it. 
+openssl pkcs12 -export -in certificate.cer -inkey privatekey.key -out certificate.pfx
+
+
+ 
+===============================================================================================================================================
+avangrid.corerrevprxy.wuintranet.net - need to remove this cert from Venafi portal (No need to renew this certificate anymore)
+Hi @Cyber Fusion Center
+Partner has migrated from 2-way SSL to one way SSL and partner no longer requires 2- way SSL setup and we were requested to remove the certificate from our Core Proxy Servers which we already did on back of CHG0219987 - Remove the Avangrid 2-way ssl configuration in the core proxy prod servers . 
+Please find attached email approval from Karthik , I request you to Please deprecate the certificate x
+=================================================================================================================================================

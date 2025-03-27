@@ -1,0 +1,53 @@
+Hello,
+
+What kind of assistance needed?
+
+At Cyber Fusion center we are not issuing certificates, we can only approve certificates requests.
+
+Adding process of requesting certificate:
+
+********************************************************
+Following is the process to request for new certificate:
+********************************************************
+
+
+=======================================================
+• Create a CSR, you can follow one of the guides below:
+=======================================================
+https://www.digicert.com/csr-creation.htm
+
+https://support.sectigo.com/Com_KnowledgeDetailPageFaq?Id=kA01N000000rfS7
+
+https://support.comodo.com/index.php?/comodo/Knowledgebase/List/Index/19/csr-generation
+
+ 
+=============================================================================================
+• Submit the CSR via the Comodo portal using the unique “Access Code” assigned to you / team:
+=============================================================================================
+https://hard.cert-manager.com/customer/westernunion/ssl?action=enroll
+
+ 
+
+• Cyber Fusion team will check and approve / deny the cert based on the request details. 
+
+• Once approved, an auto mail with cert download links are sent to the email used while submitting the CSR.
+
+ 
+
+• Download the cert and install on your systems.
+
+ 
+
+ 
+
+Expected CSR parameter values:
+
+Organization: Western Union Holdings Inc.
+
+Organization unit: WUP - <Agent name>
+
+City: Englewood    (Englewood,  Denver,  Or No entry)
+
+State/Province: Colorado
+
+Country: US

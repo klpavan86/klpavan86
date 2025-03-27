@@ -1,0 +1,12 @@
+cyberark cert renewal
+ 
+1) Take backup of ldaptrustore.jks
+2) Take list of certificates in a notepad using following command
+keytool -v -list -keystore ldaptruststore.jks
+3) Then delete cyberark alias
+keytool -delete -trustcacerts -alias cyberarkcert  -keystore ldaptruststore.jks
+4) Import certificate with following command
+keytool -import -trustcacerts -alias cyberarkcert -file /tmp/cyberark-ccp.wuintranet.net.cer -keystore ldaptruststore.jks
+5) Once again take a list of certificates in a notepad using following command and compare with the notepad which we had took as part of step 2
+keytool -v -list -keystore ldaptruststore.jks
+6) restart csmart instances to take the changes effect

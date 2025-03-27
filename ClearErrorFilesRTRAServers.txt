@@ -1,0 +1,26 @@
+**********************************************
+STEPS TO CLEAR ERROR FILES in RTRA EAS SERVERS
+**********************************************
+Sample alert:
+BigPanda Incident: RTRA AppWebServers - EAS Number of err files on wuwvc9aseas01 : number: 8
+BigPanda Incident: RTRA AppWebServers - EAS Number of err files on wuwcc9asgen59 : number: 6
+
+KB0053919  -  Latest Version
+Server Details:
+RESTON
+10.44.32.136/137/138
+
+CHICAGO
+10.46.32.190/91/192
+---------------------
+EAS CLEAR ERROR FILES
+---------------------
+For clearing the Error files, we do the following steps.
+Login to EAS Nodes as easadmin
+
+Go to the location
+cd /opt/ibm/ISII/bin
+
+ls -lrth  *.err*
+ls -lrth *.SqlErr.log *
+Delete the .err and .SqlErr.log files and bad files

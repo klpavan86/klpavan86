@@ -1,0 +1,18 @@
+Traffic movement Steps:
+
+For Reston Activity:CHG0239445
+
+1.Move Tibco CSL traffic(cslservices.westernunion.net/cslservices.westernunion.com URL's) to Chicago DC (Disable Reston alone) - ITIO-Run-Tibco Team - Via Rundeck Job, If any issues with Rundeck it can be done via (F5 ILAN LTM & GTM )
+2.Restart all the services (once server is rebooted by linux team) -- ITIO-Run-Tibco Team
+3.Sanity for the application ---CSL AMS Team.
+4.If sanity looks goood, Balance the traffic---ITIO-Run-Tibco Team
+
+For Chicago Activity:CHG0239448
+1.Move Tibco CSL traffic(cslservices.westernunion.net/cslservices.westernunion.com URL's) to RestonDC (Disable Chicago alone) - ITIO-Run-Tibco Team - Via Rundeck Job, If any issues with Rundeck it can be done via (F5 ILAN LTM & GTM )
+2.Restart all the services (once server is rebooted by linux team) -- ITIO-Run-Tibco Team
+3.Sanity for the application ---CSL AMS Team.
+4.If sanity looks goood, Balance the traffic---ITIO-Run-Tibco Team
+
+
+
+

@@ -1,0 +1,40 @@
+Hi Team,
+
+we are unable to login RTRA UAT CSMART .It looks cyberark-ccp.wuintranet.net certificate issue that need to be renewed at app side.
+
+Server IP's: 10.45.16.95, 10.45.16.94
+
+
+URL:https://rtra5.westernunion.net/
+
+could you please renew the certificate with below steps.
+
+CSMART Certificate Renewal
+ 
+Note :- Put the cyberark-ccp.wuintranet.net.crt file at path /tmp/ -> download from browser
+ 
+Step 1 :-  This is for C-smart only
+==========
+ 
+Execute below command on path :-
+---------------------------------
+/apps/rtracsmart/jboss-eap-7.4/ssl
+ 
+list the certificates :-
+-----------------------
+keytool -v -list -keystore ldaptruststore.jks
+ 
+Delete the certificate :-
+----------------------
+keytool -delete -alias cyberarkcert -keystore ldaptruststore.jks
+ 
+add the certificate :-
+----------------------
+keytool -import -trustcacerts -alias cyberarkcert -file /tmp/cyberark-ccp.wuintranet.net.crt -keystore ldaptruststore.jks
+ 
+ 
+list the certificates :-
+-----------------------
+keytool -list -keystore ldaptruststore.jks -alias cyberarkcert
+ 
+===================================================================================================================

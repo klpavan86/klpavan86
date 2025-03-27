@@ -1,0 +1,37 @@
+Go to Run Deck --> Search WUPOS --> Select WUPOS ROM --> Select Tablet --> Select tablet_deploy_checker_static_contents --> Paste the URL --> Run the job
+
+Validate in the log output of the specified path
+
+
+
+Updating '.':
+svn: E175002: Unable to connect to a repository at URL 'https://cvsreston.wuintranet.net/svn/repo/fast2/trunk/ansible'
+svn: E175002: OPTIONS of 'https://cvsreston.wuintranet.net/svn/repo/fast2/trunk/ansible': could not connect to server (https://cvsreston.wuintranet.net)
+PLAY [apache] ******************************************************************
+TASK [cleanup apache stage] ****************************************************
+changed: [10.45.0.70 -> localhost]
+TASK [Create staging directory] ************************************************
+changed: [10.45.0.70 -> localhost]
+TASK [download checker zip to staging folder] **********************************
+changed: [10.45.0.70 -> localhost]
+msg: OK (2464729 bytes)
+TASK [create checker folder if it doesn't exist] *******************************
+ok: [10.45.0.70]
+TASK [create backup directory] *************************************************
+changed: [10.45.0.70]
+TASK [backup the old checker content] ******************************************
+changed: [10.45.0.70]
+cmd: cp -r /apps/apache2/htdocs/wupostabletrom/checker /apps/apache2/htdocs/wupostabletrom/backup/backup_checker/checker_bkp_$(date +%Y-%m-%d-%T)
+start: 2024-06-18 11:59:48.704705
+end: 2024-06-18 11:59:49.114694
+delta: 0:00:00.409989
+TASK [deploy new checker content] **********************************************
+changed: [10.45.0.70]
+TASK [fix the static content permissions] **************************************
+changed: [10.45.0.70]
+cmd: chown -R webadm:webadm /apps/apache2/htdocs/wupostabletrom; chmod -R 755 /apps/apache2/htdocs/wupostabletrom/
+start: 2024-06-18 11:59:55.225895
+end: 2024-06-18 11:59:56.843921
+delta: 0:00:01.618026
+PLAY RECAP *********************************************************************
+10.45.0.70                 : ok=8    changed=7    unreachable=0    failed=0   

@@ -1,0 +1,44 @@
+*************************
+APPLICATION CONSOLE URL'S
+*************************
+receipt server -- Prod Reston
+http://10.45.17.94:9990/console/App.html#home
+
+receipt server -- Prod Chicago
+http://10.47.17.94:9990/console/App.html#home
+
+receipt UAT
+http://10.45.16.177:9990/console/App.html#home
+
+Receipt Dev
+http://10.45.233.40:9990/console/index.html
+
+NGDRT Prod - Reston
+https://10.45.17.14:9043/ibm/console/logon.jsp
+
+NGDRT Prod - Chicago
+https://10.47.17.14:9043/ibm/console/logon.jsp
+
+NGDRT UAT
+https://10.45.16.207:9043/ibm/console/logon.jsp
+
+CSS Prod - Reston
+http://10.45.18.188:9990/console/index.html
+
+CSS Prod - Chicago
+http://10.47.18.188:9990/console/index.html
+
+WuPay Prod - Reston
+http://10.45.17.104:9990/console/index.html
+
+WuPay Prod - Reston
+http://10.47.17.104:9990/console/index.html
+
+WuPay UAT
+http://10.45.16.213:9990/console/index.html
+
+Redis case
+https://support.redislabs.com/hc/en-us/requests
+
+BigPanda
+https://a.bigpanda.io/v2/feed/5fd26fbd0630f90d783fc159?folder=active

@@ -1,0 +1,90 @@
+
+
+=============================
+ARC PLUS QUESTIONARE
+=============================
+Hi Kiran & Arc + Team,
+
+We are setting up this meeting to understand
+
+what are the future plans of cert server ?
+Are there any plans to migrate the jetty ?
+Are there any plans to migrate cert server to a linux machine ?
+Do we need to make any necessary configuration changes ?
+Do we need to change the startup / Stopping behavior ?
+
+=============================================================
+Surya, Could you please share the time line for each process:
+Phase-1:
+=============================================================
+A Decision is made to update Jetty configuration to startup as a service instead of command line
+A Decision is made to update Jetty configuration to write logs to external source such as storing log files in the Server instead of command Line
+Webhosting Team to work with Sindhu and Windows team to setup Step 3 & Step 4 starting with lower environment to Production
+Naga to provide heads up to ARC + ENH team to help us in acquiring downtimes for lower environments
+
+SERVERS ARE AVAILABLE ONLY IN RESTRON
+====================
+ARC PLUS APP SERVERS
+====================
+10.45.235.168  
+10.45.235.169
+======================================
+ARC PLUS CERTIFICATE SERVERS NON PROD
+======================================
+10.45.232.248 QA
+10.44.33.24 UAT 
+=================
+PROD ENVIRONMENT
+=================
+10.44.33.25 PROD RESTON
+10.46.33.25 PROD CHICAGO
+=====================================
+ARC PLUS SERVER START & STOP  DETAILS
+=====================================
+*******************************************************************************************
+Arc +
+Path: E:\jetty-distribution-9.2.17.v20160517
+               Cmd:  java -Djasypt.encryption.password=password -Denv=dev -jar E:\jetty-distribution-9.2.17.v20160517\start.jar etc\jetty.xml
+			   How to start/stop the jetty instance on the ARC certificate server (Production)
+1. Login to the server with wudiprd domain. 
+2. Open command prompt as administrator and run thebelow command to start the jetty service.
+Path: E:\jetty-distribution-9.2.17.v20160517
+Cmd:  java -Djasypt.encryption.password=password -Denv=dev -jar E:\jetty-distribution-9.2.17.v20160517\start.jar etc\jetty.xml
+3)To verify, you can access the URL http://localhost:8080/x509Server/ and you will see a blank page
+4)To get the process id of this jetty service, run the below cmd.netstat -aon | find "8080"
+5) To stop the process, run TASKKILL /f /pid ####   ( Here #### ,we need to mention the processid)
+6) Do not close the command prompt after starting the instance. If closed the jetty instance will go down aswell.
+ 
+*******************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*******************************************************************************************
+Arc +
+Path: E:\jetty-distribution-9.2.17.v20160517
+               Cmd:  java -Djasypt.encryption.password=password -Denv=dev -jar E:\jetty-distribution-9.2.17.v20160517\start.jar etc\jetty.xml
+			   How to start/stop the jetty instance on the ARC certificate server (Production)
+1. Login to the server with wudiprd domain. 
+2. Open command prompt as administrator and run thebelow command to start the jetty service.
+Path: E:\jetty-distribution-9.2.17.v20160517
+Cmd:  java -Djasypt.encryption.password=password -Denv=dev -jar E:\jetty-distribution-9.2.17.v20160517\start.jar etc\jetty.xml
+3)To verify, you can access the URL http://localhost:8080/x509Server/ and you will see a blank page
+4)To get the process id of this jetty service, run the below cmd.netstat -aon | find "8080"
+5) To stop the process, run TASKKILL /f /pid ####   ( Here #### ,we need to mention the processid)
+6) Do not close the command prompt after starting the instance. If closed the jetty instance will go down aswell.
+ 
+*******************************************************************************************
+has context menu
+Compose

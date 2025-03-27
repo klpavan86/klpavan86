@@ -1,0 +1,188 @@
+Agent Portal [ACTIVE-ACTIVE Application]
+
+Traffic Movement Steps:
+Initial state: Balanced – Serves traffic in both Reston & Chicago DCs in the normal state
+AGENT PORTAL GTM LEVEL TRAFFIC MOVEMENT
+
+URLs:
+sagentportal.westernunion.com
+wuagentportal.westernunion.com
+agentportal.westernunion.net
+
+----------------
+TRAFFIC MOVEMENT
+----------------
+Suspend the traffic on Chicago
+Application URL's
+agentportal.westernunion.com
+wuagentportal.westernunion.com
+agentportal.westernunion.net
+------------------
+BackUps in Chicago
+------------------
+Take EAR backup in Server below path
+/apps/IBM85/WebSphere85/AppServer/profiles/AppSrv01/installedApps/WUWPH9ASAGP01Cell01
+
+Take Properties folder backup in Server below path
+/apps/AgentPortal
+
+Please login to the Run Deck and perform below steps
+Properties Deployment
+1. Please click on the Job AP-Deploy-Properties
+2. update with the below Archiva URL
+URL - http://archiva.wuintranet.net/repository/agentportal/UAT/Properties/59.0.3/Properties-59.0.3.zip
+3. Start the Job
+
+EAR Deployment
+1. Please click on the Job AP-Deploy-EAR-With_Sanity_Steps
+2. update with the below Archiva URL
+ URL -   http://archiva.wuintranet.net/repository/agentportal/UAT/EAR/60.0.2/EAR-60.0.2.zip
+3. Start the Job
+
+4. please re-start JVM's, if they are not re-started/there are any issues in JVM coming up cleanly.
+Note: Please share the screen while performing these steps. 
+In case Rundeck Automation deployment fails, copy the Properties files manually & deploy EAR manually through WAS Console.
+EAR Sharepoint path: 
+Restart JVM's manually after EAR Deployment manually.
+Sharepoint: https://westernunion-my.sharepoint.com/personal/sarathkumar_challa_wu_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fsarathkumar%5Fchalla%5Fwu%5Fcom%2FDocuments%2FAgent%20Portal%2FProd%5FReleases%2FProd%5FRelease%5F09052024&FolderCTID=0x01200075B3F8B8BAB2E34096C2EB80D5D740B3&view=0"
+
+**********************************************************
+After the deployment completion on Chicago, proceed with below steps (completion of implementaion tab on Chicago DC)
+**********************************************************
+
+----------------
+TRAFFIC MOVEMENT
+----------------
+Suspend the traffic on Reston
+Application URL's
+agentportal.westernunion.com
+wuagentportal.westernunion.com
+agentportal.westernunion.net
+-----------------
+BackUps in Reston
+-----------------
+Take EAR backup in Server below path
+/apps/IBM85/WebSphere85/AppServer/profiles/AppSrv01/installedApps/WUWASDMGR01ACell01
+
+Take Properties folder backup in Server below path
+/apps/AgentPortal
+
+Enable the traffic in Chicago and suspend the traffic in Reston.
+
+Please login to the Run Deck and perform below steps
+Properties Deployment
+1. Please click on the Job AP-Deploy-Properties
+2. update with the below Archiva URL
+URL -  http://archiva.wuintranet.net/repository/agentportal/UAT/Properties/59.0.3/Properties-59.0.3.zip
+3. Start the Job
+
+EAR Deployment
+1. Please click on the Job AP-Deploy-EAR-With_Sanity_Steps
+2. update with the below Archiva URL
+URL -   http://archiva.wuintranet.net/repository/agentportal/UAT/EAR/60.0.2/EAR-60.0.2.zip
+3. Start the Job
+4. please re-start JVM's, if they are not re-started/there are any issues in JVM coming up cleanly.
+
+In case Rundeck Automation deployment fails, copy the Properties files manually & deploy EAR manually through WAS Console.
+EAR Sharepoint path: 
+Restart JVM's manually after EAR Deployment manually.
+Sharepoint: https://westernunion-my.sharepoint.com/personal/sarathkumar_challa_wu_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fsarathkumar%5Fchalla%5Fwu%5Fcom%2FDocuments%2FAgent%20Portal%2FProd%5FReleases%2FProd%5FRelease%5F09052024&FolderCTID=0x01200075B3F8B8BAB2E34096C2EB80D5D740B3&view=0"
+
+Enable the traffic on both DC's
+-----------
+WEB SERVERS
+-----------
+WUWCC9WSAGP01	10.46.17.171	Chicago
+WUWCC9WSAGP02	10.46.17.172	Chicago
+WUWCC9WSAGP03	10.46.17.173	Chicago
+WUWCC9WSAGP04	10.46.17.174	Chicago
+-----------
+APP SERVERS
+-----------
+WUWCC9ASAGP01	10.46.33.171	Chicago
+WUWCC9ASAGP02	10.46.33.172	Chicago
+-----------
+WEB SERVERS
+-----------
+OLD SERVERS - DECOMISSIONED
+WUWVC9WSAGP01	10.44.17.171	Reston
+WUWVC9WSAGP02	10.44.17.172	Reston
+WUWVC9WSAGP03	10.44.17.173	Reston
+WUWVC9WSAGP04	10.44.17.174	Reston
+NEW SERVERS - LIVE
+WUWVC9ASAGP07	10.44.17.182	Reston
+WUWVC9ASAGP08	10.44.17.181	Reston
+WUWVC9ASAGP09	10.44.17.180	Reston
+WUWVC9ASAGP10	10.44.17.179	Reston
+-----------
+APP SERVERS
+-----------
+OLD SERVERS - DECOMISSIONED
+WUWVC9ASAGP01	10.44.33.171	Reston
+WUWVC9ASAGP02	10.44.33.172	Reston
+NEW SERVERS - LIVE
+WUWVC9ASAGP05	10.44.33.170	Reston
+WUWVC9ASAGP06	10.44.33.164	Reston
+
+com.ibm.SOAP.loginUserid=admin
+com.ibm.SOAP.loginPassword=adm!nw@s90
+----------------------------------------------------------
+COMMANDS TO START / STOP HTTPD SERVICES ON IHS WEB SERVERS
+----------------------------------------------------------
+Run the below Commands with webadm
+ /apps/IHS85/bin/apachectl stop
+ /apps/IHS85/bin/apachectl start
+----------------------------------------
+WAS CONSOLE CREDENTIALS FOR AGENT PORTAL
+----------------------------------------
+OLD SERVERS - DECOMISSIONED
+USERNAME: was8admin
+PASSWORD: adm!nw@s80
+NEW SERVERS - LIVE
+https://10.44.33.170:9043/ibm/console/logon.jsp
+USERNAME: admin
+PASSWORD: adm!nw@s90
+Steps:
+1, Traffic movement for Agent Portal is done only in the GTM layer.
+2, LTM URLs are always balanced and not touched while diverting traffic
+3, Based on the DC in which the activity is planned or issue is observed, traffic has to be moved to the alternate DC for the above 3 URLs in the GTM layer.
+Link to the automated job in rundeck to divert the traffic for the application is given below,
+http://wuinfradeployment.wuintranet.net/project/AGENT-PORTAL/job/show/f0886d8c-8de3-4589-ae2e-31345424dc95
+4, Post completion of the activity, traffic can be enabled back using the same job mentioned in Step 3.
+
+*******************
+Windows Application
+*******************
+WUWCC9WSAPS15	10.46.32.64	Chicago
+WUWVC9WSAPS15	10.44.32.64	Reston
+*********************************************************************
+Environment  	|	Description	  |	Server Name 	|	 Native IP
+*********************************************************************
+DEV 			Application Server 	WUWVC0ASAGP01		10.45.233.240
+DEV				Web Server			WUWVC0WSAGP01		10.45.217.32
+---------------------------------------------------------------------
+QA1				Application Server	WUWVC1ASAGP01		10.45.234.32
+QA2				Application Server	WUWVC1ASAGP02		10.45.234.33
+QA				Web Server			WUWVC1WSAGP01		10.45.217.36
+---------------------------------------------------------------------
+UAT				Application Server	WUWVC2ASGEN11		10.44.33.70
+UAT				Application Server	WUWVC2ASGEN12		10.44.33.71
+UAT				Web Server			WUWVC2WSGEN01		10.44.16.70
+UAT				Web Server			WUWVC2WSGEN02		10.44.16.71
+UAT				Web Server			WUWVC2WSGEN03		10.44.16.72
+UAT				Web Server			WUWVC2WSGEN04 		10.44.16.73
+---------------------------------------------------------------------
+Prod-Reston		Application Server 	WUWVC9ASAGP01 		10.44.33.171
+Prod-Reston		Application Server	WUWVC9ASAGP02		10.44.33.172
+Prod-Reston		Web Server			WUWVC9WSAGP01		10.44.17.171
+Prod-Reston		Web Server			WUWVC9WSAGP02		10.44.17.172
+Prod-Reston		Web Server			WUWVC9WSAGP03		10.44.17.173
+Prod-Reston		Web Server			WUWVC9WSAGP04		10.44.17.174
+---------------------------------------------------------------------
+Prod-Chicago	Application Server	WUWCC9ASAGP01 		10.46.33.171
+Prod-Chicago	Application Server	WUWCC9ASAGP02 		10.46.33.172
+Prod-Chicago 	Web Server 			WUWCC9WSAGP01 		10.46.17.171
+Prod-Chicago 	Web Server 			WUWCC9WSAGP02 		10.46.17.172
+Prod-Chicago    Web Server  		WUWCC9WSAGP03 		10.46.17.173
+Prod-Chicago 	Web Server 			WUWCC9WSAGP04 		10.46.17.174
+---------------------------------------------------------------------

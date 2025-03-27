@@ -1,0 +1,41 @@
+****************************************
+AGENT PORTAL UAT WAS CONSOLE CREDENTIALS
+****************************************
+com.ibm.SOAP.loginUserid=was85admin
+com.ibm.SOAP.loginPassword=adm!nw@s85
+
+UAT Servers:
+============
+10.44.33.70
+10.44.33.71
+
+Login to the server 10.44.33.70 
+
+Go to the path 
+/apps/IBM85/WebSphere85/AppServer/profiles/AppSrv01/installedApps/WUWCH2ASAGP01Cell01
+
+Take the backup of the existing AP.ear file in the below path
+Backup Path /apps/backup
+
+Login into the Rundeck URl as mentioned below
+http://wuinfradeployment.wuintranet.net/user/login
+
+Select the application Agent Portal
+
+Select UAT
+
+Select Ap-Deploy.EAR
+
+Paste the Archiva path of the EAR file (Archival URL changes)
+http://archiva.wuintranet.net/repository/agentportal/UAT/EAR/48.0.1/EAR-48.0.1.zip
+
+Click Run Job now
+The Run deck job deploys the EAR file from the above path to the server and also restarts the jvms UATAgentPortalClusterServer in both the nodes 70 & 71.
+
+If static content is missing, please execute this file to copy the static content back
+./ Post-Deployment.sh
+
+Verify the UATAgentPortalClusterServer jvm is restarted in both 70 & 71 nodes.
+
+Restart both nodes UAT JVM's if not restarted by the Run deck job
+Note: In case of Rundeck EAR Job failure, please do not rerun the job. Please reach to the application team.

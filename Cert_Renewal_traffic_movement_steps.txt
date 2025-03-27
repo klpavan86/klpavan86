@@ -1,0 +1,51 @@
+Trafiic Movement:
+
+
+
+PROXY  URLS
+CORE:
+Ø corefwprxy.prod.wudip.com
+
+Ø corefwprxy.wuintranet.net
+
+Ø coreyrevprxy.prod.wudip.com
+
+Ø corerrevprxy.wuintranet.net
+
+ 
+
+AGENT TRAINING (For Tablet SSO issue):
+
+ 
+
+Ø agenttrainingprxy.prod.wudip.com
+
+Ø agenttrainingprxy.wuintranet.net
+
+ 
+
+INBOUND PROXY:
+
+ 
+
+Ø corerrevprxy.westernunion.com (main Proxy URL)
+
+Reston:
+
+1)Move traffic to Chicago at GTM
+
+2)Apply Backup /cert renewal activity in Reston using Implementation_plan_Toyota_Prod_2waySSL_2024.docx on Reston Nodes
+3)Balance the traffic , wait for 15 minutes , cross verify logs to see incase of any abnormalities
+4)Incase of issues backout the change using the backup which wwe took prior
+
+Chicago:
+1) Move traffic to Reston at GTM
+2)Apply cert renewal activity in Chicago using Implementation_plan_Toyota_Prod_2waySSL_2024.docx on Chicago Nodes
+3)Balance the traffic , wait for 15 minutes , cross verify logs to see incase of any abnormalities
+4)Incase of issues backout the change using the backup which wwe took prior
+
+Sanity:
+
+Ask Sukeshini/ Team (WU-1P-CORE-BillPay@westernunion.com) to perform Sanity .
+
+Sanity would be common for both DC's as we cannot point postman / sanity to a specific DC

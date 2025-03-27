@@ -1,0 +1,38 @@
+Go to Run Deck --> Search WUPOS --> Select WUPOS ROM --> Select HPOS --> select deploy_hpos_checker_static_contents  --> Paste the URL --> Run the job
+
+Validate in the log output of the specified path
+
+
+
+
+Updating '.':
+svn: E175002: Unable to connect to a repository at URL 'https://cvsreston.wuintranet.net/svn/repo/fast2/trunk/ansible'
+svn: E175002: OPTIONS of 'https://cvsreston.wuintranet.net/svn/repo/fast2/trunk/ansible': could not connect to server (https://cvsreston.wuintranet.net)
+PLAY [apache] ******************************************************************
+TASK [cleanup apache stage] ****************************************************
+changed: [10.45.0.70 -> localhost]
+TASK [Create staging directory] ************************************************
+changed: [10.45.0.70 -> localhost]
+TASK [download checker zip to staging folder] **********************************
+changed: [10.45.0.70 -> localhost]
+msg: OK (2464729 bytes)
+TASK [create checker folder if it doesn't exist] *******************************
+ok: [10.45.0.70]
+TASK [create backup directory] *************************************************
+changed: [10.45.0.70]
+TASK [backup the old checker content] ******************************************
+changed: [10.45.0.70]
+cmd: cp -r /apps/apache2/htdocs/romhpos/checker /apps/apache2/htdocs/romhpos/backup/backup_checker/checker_bkp_$(date +%Y-%m-%d-%T)
+start: 2024-06-18 11:55:44.037412
+end: 2024-06-18 11:55:44.302617
+delta: 0:00:00.265205
+TASK [deploy new checker content] **********************************************
+changed: [10.45.0.70]
+TASK [fix the static content permissions] **************************************
+changed: [10.45.0.70]
+cmd: chown -R webadm:webadm /apps/apache2/htdocs/romhpos; chmod -R 755 /apps/apache2/htdocs/romhpos/
+start: 2024-06-18 11:55:48.991950
+end: 2024-06-18 11:55:50.487689
+delta: 0:00:01.495739
+PLAY RECAP *********************************************************************
+10.45.0.70                 : ok=8    changed=7    unreachable=0    failed=0   

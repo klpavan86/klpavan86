@@ -1,0 +1,27 @@
+Hi Team,
+
+Please find the traffic status of the below Network changes.
+CHG0264069 - F5 ILAN LTM Upgrade in Reston from ios image BIG-IP 15.1.7-0.0.6 to BIG-IP 17.1.1.1-0.0.2 - Completed
+CHG0264075 - Edge Firewall ASA to FTD Conversion in Reston DC - Completed
+ 
+Traffic status:
+
+WUPOS - Balanced(initial) - Moved to Chicago - moved to balanced, sanity done by Sreenivasulu
+Agent portal - - Balanced(initial) - Moved to Chicago - moved to balanced, sanity done by Sasi
+Receipts - Balanced(initial) - Moved to Chicago, - moved to balanced, sanity done by Sreenivasulu 
+Taiopos - Balanced(initial) - Moved to Chicago - moved to balanced, sanity done by Venu
+DMS - Chicago(initial) - No action, sent mail to the DMS team to perform the sanity
+Tview - Reston(initial) - Moved to Chicago - moved to Reston, no app team available
+Stars - Reston(initial) - Moved to Chicago - moved to Reston, sanity done by Sharvani 
+TrackPayments - Reston(initial) - Moved to Chicago - moved to Reston, sanity done by WU-TSC
+TMS - Chicago(initial) - No traffic move needed 
+AgentEnroll - Reston(initial) - NA
+NGDRT(liferay) - No traffic movement required
+---------------------------------------------
+WUGateway - Balanced(Initial) - Moved to Chicago - moved to balanced, sanity done by Preetham 
+Digital Gateway - Balanced(Initial) - Moved to Chicago - moved to balanced, sanity done by Preetham
+soap.gateway.westernunion.com - Balanced(Initial) -  moved to Chicago - moved to balanced, sanity done by Nagamani
+soapgateway.wuintranet.net- Balanced(Initial) - Moved to Chicago - moved to balanced, sanity done by Nagamani
+-------------------------------------------
+WUPAY ( pool_wupay.wuintranet.net & wupay.prod.wudip.com )- Reston(Initial) - moved to Chicago - moved to Reston, sanity done by Anshuman
+pool_origin-wupay.api.westernunion.com_443 : A - Balanced(Initial) - moved to Chicago - moved to Balanced

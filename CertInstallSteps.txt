@@ -1,0 +1,22 @@
+
+HI @Md. Nazmul Haque
+
+Please use below commands
+
+Important Note 1: Take Backup of prod-trust2024.jks prior to executing any command 
+
+Important Note 2: Modify certificate.cer as per your naming convention of certificate which you had downloaded
+*******************************************************
+IMPORT THE CERTIFICATE INTO THE KEY STORE USING KEYTOOL
+*******************************************************
+keytool -importcert -file certificate.cer -keystore prod-trust2024.jks -alias "prodwu2024" 
+******************************************
+DELETE THE ROOT CERTIFICATE FROM KEY STORE
+******************************************
+keytool -delete -alias "root" -keystore prod-trust2024.jks
+Provide me the output again using below command to cross check
+**************************************
+LIST THE CERTIFICATES IN THE KEY STORE
+**************************************
+keytool -list -v -keystore prod-trust2024.jks
+

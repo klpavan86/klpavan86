@@ -1,0 +1,23 @@
+﻿AWS workspaces created for this list of users. 
+They can keep VDI until the end of April. When ready, please submit iPass requests to remove their VDI access. Below is connection details you can share with the users.
+ 
+AWS workspace created. Below is info on how to get connected:
+
+	• Request AWSWorkspace-MFA-Okta-Access group via iPass, so Okta Verify work with AWS for you.
+
+	• Download and install a WorkSpaces Client: https://clients.amazonworkspaces.com/
+
+	• Launch the client and enter the following registration code: wssin+5FW34X
+
+	• Login with your WU ID, password and Okta Verify code.
+
+	• Note: if Okta screen is not loading when opening Office/Outlook apps for the first time, please restart Windows inside your workspace (right click Start button, Power, Restart).
+
+Amazon WorkSpaces Client Download
+Amazon WorkSpaces makes it easy to access your Windows environment on any device. Download the client for Android, iOS, Fire, Mac, PC, Chromebook, or Linux devices here
+
+Hello Hazel,
+
+ 
+
+All workspaces have been created in Virginia region, please use the following registration code: SLiad+QLGEJ3

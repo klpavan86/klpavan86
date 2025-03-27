@@ -1,0 +1,111 @@
+
+******************************
+AGENT SERVICE DEPLOYMENT
+******************************
+
+The Request will be in the following manner
+Hi @ITIO-Run-MW-WebHosting,
+
+CTASK0468899
+Kindly deploy below artifacts to mentioned environment
+
+agent-service :
+Environment: Agent-service ROM
+Archiva - http://archiva.wuintranet.net/repository/wupos/com/annadaletech/productlink/Agent-Service/REL-AGTSV-APR-2024-R2-M3/Agent-Service-REL-AGTSV-APR-2024-R2-M3.war
+Archiva - http://archiva.wuintranet.net/repository/wupos/com/annadaletech/productlink/agent-service/AGTSV-APR-2024-R4-M2/agent-service-AGTSV-APR-2024-R4-M2.war
+
+
++++++++++++++++++++++++++++++++++++
+Identification from the archiva URL 
++++++++++++++++++++++++++++++++++++
+Check whether from the URL wupos, com
+
+Log in to RUN DECK
+Go to WUPOS ROM --> Select Agent Service --> Select Deploy --> Select Deploy Agent service.war --> Copy the archiva URL in the path provided --> Click Run Job Now
+
+Click on log output to view the logs.
+
+
+
+PLAY [127.0.0.1] ***************************************************************
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+TASK [Cleanup Stage Directory] *************************************************
+changed: [127.0.0.1 -> localhost]
+TASK [Create Stage Directory] **************************************************
+changed: [127.0.0.1 -> localhost]
+TASK [Download WAR File from Archiva to Staging Directory] *********************
+changed: [127.0.0.1 -> localhost]
+msg: OK (135830376 bytes)
+PLAY [agentscrsitcert] *********************************************************
+skipping: no hosts matched
+PLAY [agentscrsitnoncert] ******************************************************
+skipping: no hosts matched
+PLAY [agentscrqa1cert] *********************************************************
+skipping: no hosts matched
+PLAY [agentscrqa1noncert] ******************************************************
+skipping: no hosts matched
+PLAY [agentscrqa2cert] *********************************************************
+skipping: no hosts matched
+PLAY [agentscrqa2noncert] ******************************************************
+skipping: no hosts matched
+PLAY [agentscruatcert] *********************************************************
+skipping: no hosts matched
+PLAY [agentscruatnoncert] ******************************************************
+skipping: no hosts matched
+PLAY [clperfuat] ***************************************************************
+skipping: no hosts matched
+PLAY [agentscrrom] *************************************************************
+TASK [Gathering Facts] *********************************************************
+ok: [10.45.16.70]
+TASK [Check backup directory exists for agentscrrom cert instance] *************
+ok: [10.45.16.70]
+TASK [Remove six months old files from backup for agentscrrom cert instance] ***
+changed: [10.45.16.70]
+cmd: find /apps/wupos/agentsvc-rom/spring-boot-2.4.5/backup/ -name '*.war' -type f -mtime +180 -exec rm -rf {} \;
+start: 2024-04-10 06:59:25.792479
+end: 2024-04-10 06:59:25.801040
+delta: 0:00:00.008561
+TASK [Stop agentscrrom cert instance] ******************************************
+changed: [10.45.16.70]
+cmd: /apps/wupos/agentsvc-rom/spring-boot-2.4.5/bin/springboot.sh stop
+start: 2024-04-10 06:59:27.434066
+end: 2024-04-10 06:59:27.447431
+delta: 0:00:00.013365
+stdout: stopping SpringBoot
+TASK [Backup Agent Service WAR file for agentscrrom cert instance] *************
+changed: [10.45.16.70]
+cmd: cp -rp /apps/wupos/agentsvc-rom/spring-boot-2.4.5/webapps/agent-service.war /apps/wupos/agentsvc-rom/spring-boot-2.4.5/backup/agent-service.war_bkp_$(date +%Y-%m-%d-%T)
+start: 2024-04-10 06:59:29.103342
+end: 2024-04-10 06:59:29.315044
+delta: 0:00:00.211702
+TASK [Remove Agent Service WAR file for agentscrrom cert instance] *************
+changed: [10.45.16.70]
+cmd: rm /apps/wupos/agentsvc-rom/spring-boot-2.4.5/webapps/agent-service.war
+start: 2024-04-10 06:59:30.962171
+end: 2024-04-10 06:59:30.986077
+delta: 0:00:00.023906
+TASK [Deploy Agent Service WAR file for agentscrrom cert instance] *************
+changed: [10.45.16.70]
+TASK [Start agentscrrom cert instance] *****************************************
+changed: [10.45.16.70]
+cmd: nohup /apps/wupos/agentsvc-rom/spring-boot-2.4.5/bin/springboot.sh start
+start: 2024-04-10 06:59:39.952449
+end: 2024-04-10 06:59:41.055381
+delta: 0:00:01.102932
+stdout: Starting micro service
+stderr: OpenJDK 64-Bit Server VM warning: Ignoring option MaxPermSize; support was removed in 8.0
+TASK [Status agentscrrom cert instance] ****************************************
+changed: [10.45.16.70]
+cmd: nohup /apps/wupos/agentsvc-rom/spring-boot-2.4.5/bin/springboot.sh status
+start: 2024-04-10 06:59:42.703725
+end: 2024-04-10 06:59:42.718995
+delta: 0:00:00.015270
+stdout: Micro service module is running with pid:20453
+PLAY [agentscrpi] **************************************************************
+skipping: no hosts matched
+PLAY [agentscrnoncert] *********************************************************
+skipping: no hosts matched
+PLAY RECAP *********************************************************************
+10.45.16.70                : ok=9    changed=7    unreachable=0    failed=0   
+127.0.0.1                  : ok=4    changed=3    unreachable=0    failed=0   

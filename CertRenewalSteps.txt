@@ -1,0 +1,21 @@
+  Please follow steps below to renew the cert.
+
+1)      Create a key file.
+
+2)      Create a CSR.
+
+3)      Get access to COMODO portal: https://hard.cert-manager.com/customer/westernunion/ssl? (Cyber Fusion Center copied here can help).
+
+4)      Request for a new certificate on COMODO portal: https://hard.cert-manager.com/customer/westernunion/ssl?.
+
+5)      Partner will receive the new certificate from COMODO auto generated email, once Cyber Fusion Center approves the certificate request.
+
+6)      Partner need to install the certificate along with the key (created in step 1) at the same place where it is installed currently. Please remember to take necessary backup, which will help in roll back if required. The certificate should be installed in the key store.
+
+7)      The old certificate has to be removed.
+
+8)      Make sure COMODO root and intermediates are installed correctly in the trust store. COMODO root and intermediate can be provided by Cyber Fusion Center.
+
+9)      Restart the service connecting to DP gateway for the new certificate to come into play.
+
+10)     Capture network packets to confirm new certificate are being used for connectivity.

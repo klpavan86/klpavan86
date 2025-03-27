@@ -1,0 +1,13 @@
+Hey Surya,
+As discussed, please find below steps to start & stop mir services on Chicago. Let me know if you have any question.
+
+Steps to stop mir services:
+Go to /apps/mir2
+Execute command – “sh ./stop.sh”
+ 
+Steps to start mir services:
+Go to /apps/mir2
+Execute command – “sh ./start.sh”
+Execute command- curl 'http://10.47.17.14:9080/actuator/health' 
+expected result -> {"status":"UP"}
+Change IP to test the service health on 10.47.17.50

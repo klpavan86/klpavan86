@@ -1,0 +1,7 @@
+
+Hi Team , 
+
+Please use the below syntax format while placing the servers in maintenance mode. 
+
+alert_description IN [ "*WUWCC9ASGEN48*", "*WUWCC9ASGEN62*", "*WUWCC9ASGEN63*", "*WUWCC9ASGEN64*" ]
+alert_description IN [ "*WUWVC9ASGEN43*", "*WUWVC9ASGEN44*", "*WUWVC9ASGEN45*", "*WUWVC9ASGEN48*" ]

@@ -1,0 +1,9 @@
+
+-rwxr-xr-x 1 webadm webadm 24K Dec 27 06:51 hpos1.conf_backup_27-12-2023_CTASK0434605
+
+[webadm@WUWVC1WSPOS18 vhosts.d]$ hostname -i
+
+10.45.217.46
+
+
+sudo service httpd reload

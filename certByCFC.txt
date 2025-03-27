@@ -1,0 +1,33 @@
+
+Submit the CSR via the Sectigo portal at https://urldefense.com/v3/__https://hard.cert-manager.com/customer/westernunion/ssl?action=enroll__;!!J0Eel5oVi2rp!pobw9r638QWZNfgtzjY3FT5eo691ouVLmdy0_Yt2uc-jMuC5uecYIxdIy4rY7MoElmQbTgVHpLNXJkL98IYOC_EGTQ$
+Use your company's email for authentication - submissions using third-party emails (Gmail, Hotmail, etc.) will be rejected.
+Use the unique "Access Code" assigned to your team. If you don't have the "Access Code" handy, please reach out to us.
+Our Cyber Fusion team will review and either approve or deny the certificate based on the details of the request.
+Upon approval, an automatic email containing certificate download links will be sent to the email used during the CSR submission.
+Download the certificate and install it on your systems.
+
+ 
+
+Expected CSR values:
+
+ Expected CSR parameter values:
+
+Organization: Western Union Holdings Inc.
+
+Organization unit: WUP - RiteAid
+
+City: Englewood
+
+State/Province: Colorado
+
+Country: US
+
+ 
+
+You can refer to https://csrgenerator.com/
+
+ 
+
+MAKE SURE TO SAVE THE PRIVATE KEY WITH YOU WHEN YOU GENERATE A CSR. IT IS required while installing the cert and Sectigo does not store/provide the private key.
+
+ 

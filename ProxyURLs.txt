@@ -1,0 +1,48 @@
+Hello Yesunadam.  Going back looking through some emails, I found one from Suki which is attached.
+
+ 
+
+She indicated the proxies as listed below.
+
+ 
+
+RT Validation Proxy:
+
+Proxy URL – UAT:  https://coreyrevuatprxy.prod.wudip.com/dukeenergynew/png/v1/payments/lookup
+
+ 
+
+RT Posting Proxy
+
+Proxy URL – UAT: https://coreyrevuatprxy.prod.wudip.com/dukeenergynew/png/v1/payments/postpayment
+
+ 
+
+There is a slight difference in the proxy URLs shown below already in production, and the ones Suki has listed above.
+
+
+Hi Mary,
+
+The below given UAT proxy urls are correct. Please see the corresponding end point urls.
+
+End point url:- https://uat.apigee.duke-energy.app/png/v1/payments/lookup 
+End point url:- https://uat.apigee.duke-energy.app/png/v1/payments/postpayment
+
+RT Validation Proxy:
+Proxy URL – UAT:  https://coreyrevuatprxy.prod.wudip.com/dukeenergynew/png/v1/payments/lookup 
+
+RT Posting Proxy:-
+Proxy URL – UAT: https://coreyrevuatprxy.prod.wudip.com/dukeenergynew/png/v1/payments/postpayment
+
+Hi @Alejandra Carvajal Chacon,
+
+Configuration request was completed, as per request
+
+We did the basic test from our end, and notice the request, traversing through the logs, please check and confirm from your end
+
+Kindly find the Proxy and End-point URL's as below
+
+
+Endpoint: - https://www.phnserverdev.com/api/gateway 
+
+Proxy-URL:-  https://coreyrevuatprxy.prod.wudip.com/fidelqa/api/gateway

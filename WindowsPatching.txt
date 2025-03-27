@@ -1,0 +1,16 @@
+Windows patching update
+Agent portal - traffic moved to Reston from balanced
+Receipts- traffic moved to Reston from balanced
+Tview- no traffic movement as servers are already brought down for scream test
+TMS- no traffic movement confirmed by Suresh
+Stars- already in Reston
+
+
+Windows Patching Status - Completed
+
+Agent portal - Traffic moved to Reston from Balanced - Balanced
+Receipts - Traffic moved to Reston from Balanced - Balanced
+Arc Plus cert server - Stopped it as it was started along with server rebooted. Currently Reston is active.
+Tview - No traffic movement as servers are already brought down for scream test
+TMS - No traffic movement confirmed by Suresh
+Stars - Already in Reston

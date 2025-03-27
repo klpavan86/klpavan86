@@ -1,0 +1,30 @@
+********************************************
+TRAFFIC MOVEMNT STATUS BEFORE STORAGE CHANGE
+********************************************
+CHG0289415 - Dell/EMC PowerStore Upgrade - Chicago DC - 23/11/2024.
+WUPOS 			- Balanced(Initial) - Moved to Reston (Phanendra)
+AGENT PORTAL    - Balanced(Initial) - Moved to Reston (Suresh)
+RECEIPTS 		- Balanced(Initial) - Moved to Reston (Phanendra)
+TAIOPOS 		- Balanced(Initial) - Moved to Reston (Phanendra)
+DMS    		    - Chicago(Initial)  - Moved to Reston (Sridhar)
+TRACKPAYMENTS   - Reston(Initial) - No action
+NGDRT(LIFERAY)  - No traffic movement required
+STARS 			- Reston(Initial) - No action
+TMS 			- Chicago(Initial) - No action (Suresh)
+AGENTENROLL	 	- Reston(Initial) - No action
+---------------------------------------------
+Traffic move completed, draining in progress (approx. 8.30 AM IST)
+WUGateway 			- Balanced(Initial) - Moved to Reston (Phani)
+DIGITAL Gateway 	- Balanced(Initial) - Moved to Reston (Phani)
+SOAP Gateway		- Balanced(Initial) - Moved to Reston (Phani)
+MMT Gateway 	 	- Balanced(Initial) - Moved to Reston (Phani)
+-------------------------------------------
+WUPAY(pool_wupay.wuintranet.net & wupay.prod.wudip.com)   - Reston(Initial) - No action
+pool_origin-wupay.api.westernunion.com_443	 			  - Balanced(Initial) - Moved to Reston (Sahana)
+-------------------------------------------
+Core Proxy & AGENT TRAINING  		- Balanced(Initial) - Moved to Reston
+INBOUND PROXY:
+Ø corerrevprxy.westernunion.com 	- Balanced(Initial) - Moved to Reston
+Ø gisbgcheckresult.westernunion.com - Balanced(Initial) - Moved to Reston
+Ø notifsvc.westernunion.com 		- Reston(Initial) - No action
+ 

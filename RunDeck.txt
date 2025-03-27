@@ -1,0 +1,8 @@
+
+Hi @ITIO-Run-MW-WebHosting
+
+We could see jetty start and stop job are taking more time to get successful on WUPOs QA, WUPOS UAT and WUPOs PI. Could you please check on it.
+
+http://wuinfradeployment.wuintranet.net/project/wupos-qa/jobs/EOL/restart
+http://wuinfradeployment.wuintranet.net/project/Reston-WUPOS-UAT/jobs/EOL/restart
+http://wuinfradeployment.wuintranet.net/project/wupos-pi/jobs/Hpos_PI/restart

@@ -1,0 +1,41 @@
+Last login: Tue Apr  2 10:58:14 2024 from 10.46.6.21
+[s22655970pwd@wuwvc2asposr01 ~]$ cat .bashrc
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+ 
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+ 
+# User specific aliases and functions
+# Western Union Added history
+export HISTTIMEFORMAT='%F %T '
+export HISTSIZE='10000'
+# Western Union Added aliases
+alias sudo=dzdo
+export PATH=$PATH:/opt/redislabs/bin
+[s22655970pwd@wuwvc2asposr01 ~]$ cat .bash_profile
+# .bash_profile
+ 
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+ 
+# User specific environment and startup programs
+ 
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PATH=$PATH:/opt/redislabs/bin
+alias sudo=dzdo
+export PATH
+ 
+ 
+[s22655970pwd@wuwvc2asposr01 ~]$
+
+
+correct command is wuwvc2asposr01 ~]#dzdo  redis-cli -h 10.45.16.189 -p 10000
+10.45.16.189:10000> AUTH WUPOSUAT-RedisDB@987
+OK

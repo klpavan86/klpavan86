@@ -1,0 +1,19 @@
+Toyota uat:
+ 
+
+
+################## BEGIN_toyota ###########
+ 
+ProxyPass /notify https://api-test.autolendingapps.com ttl=30 disablereuse=On
+
+ProxyPassReverse /notify https://api-test.autolendingapps.com
+ 
+################## END_toyota ###########
+
+Toyota Prod:
+ 
+#CHG0148549 - RITM1392810 - new PROD proxy for toyota
+ 
+        ProxyPass /Autolend https://api.autolendingapps.com ttl=30 disablereuse=On
+
+        ProxyPassReverse /Autolend https://api.autolendingapps.com

@@ -1,0 +1,55 @@
+Trackpayments/Quickfind [Active-Passive application]
+
+Traffic Movement Steps:
+URLs:
+trackpayments.westernunion.com
+Initial state: Only in one DC (Reston) – Serves traffic primarily in Reston DC in the normal state
+Steps:
+1, Traffic movement for Trackpayments/Quickfind is done only in the GTM layer.
+2, LTM URLs are always balanced and not touched while diverting traffic at the F5 level.
+3, JBOSS application servers have to be restarted in the passive DC before failing over the traffic to either of the DCs at the GTM level.
+·       WUWVC9ASQFD01 10.45.18.3 Reston
+·       WUWVC9ASQFD02 10.45.18.4 Reston
+·       WUWCC9ASQFD01 10.47.18.3 Chicago
+·       WUWCC9ASQFD02 10.47.18.4 Chicago
+4, Based on the DC in which the activity is planned or issue is observed, traffic has to be moved to the alternate DC for the above URL in the GTM layer after application server restart.
+Link to the automated job in rundeck to divert the traffic for the application is given below,
+http://wuinfradeployment.wuintranet.net/project/Trackpayment/job/show/bc19d0cc-23b0-4f36-a47e-cdc675c68452
+5, Post completion of the activity, traffic has to be moved back to Reston by following the same set of steps (1 to 4) mentioned above.
+--------------------------
+QUICKFIND / TRACK PAYMENTS
+--------------------------
+For 10.45.18.3 & 10.45.18.4
+STOP: /apps/jboss7/jboss-eap-7.0/bin/jboss.sh stop
+START: After Reboot Services will be up & Running automatically.
+RESTON
+WUWVC9ASQFD01	10.45.18.3
+WUWVC9ASQFD02	10.45.18.4
+WUWVC9WSWAD01	10.45.1.111
+WUWVC9WSWAD02	10.45.1.112
+
+NEW BUILD SERVERS
+WUWVC9WSWAD03	10.45.1.113	QUICKFIND
+WUWVC9WSWAD04	10.45.1.114	QUICKFIND
+
+SANITY:
+https://trackpayments.westernunion.com/ or
+Reston sanity: https://66.218.160.50/
+RESTON COMPLETE SANITY URL 
+https://66.218.160.50/tally/SignIn.jsp
+chicago sanity: https://66.218.170.50/
+CHICAGO COMPLETE SANITY URL 
+https://66.218.170.50/tally/SignIn.jsp
+CHICAGO
+WUWCC9ASQFD01	10.47.18.3	QUICKFIND
+WUWCC9ASQFD02	10.47.18.4	QUICKFIND
+WUWCC9WSWAD01	10.47.1.111	QUICKFIND
+WUWCC9WSWAD02	10.47.1.112	QUICKFIND
+
+NEW BUILD SERVERS
+WUWCC9WSWAD03	10.47.1.113	QUICKFIND
+WUWCC9WSWAD04	10.47.1.114	QUICKFIND
+
+
+
+grep -i 'status_code="500"' trackpayments_access_log.2025-02-28

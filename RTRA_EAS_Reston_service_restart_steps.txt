@@ -1,0 +1,194 @@
+------------------------------------------------------------
+10.45.16.80-rtra,notif,addrsvc
+------------------------------------------------------------
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_rtra
+Step 4: select Reston Node1 and start/stop
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_notif
+Step 4: select Reston Node1 and start/stop
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_addsrvc
+Step 4: select Reston Node1 and start/stop
+
+
+------------------------------------------------------------
+10.45.16.81-rtra,notif,addrsvc
+------------------------------------------------------------
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_rtra
+Step 4: select Reston Node2 and start
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_notif
+Step 4: select Reston Node2 and start/stop
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_addsrvc
+Step 4: select Reston Node2 and start/stop
+
+
+
+------------------------------------------------------------
+10.45.16.82-rtra,entityclrtool,addrsvc
+-----------------------------------------------------------
+
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_rtra
+Step 4: select Reston Node3 and start/stop
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_addsrvc
+Step 4: select Reston Node3 and start/stop
+
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_entity_clearing_tool
+Step 4: select Reston Node3 and start/stop
+
+
+----------------------------------------------------------------
+10.45.16.86-rtra
+------------------------------------------------------------------
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_rtra
+Step 4: select Reston Node4 and start/stop
+
+
+
+
+
+----------------------------------------------------------------
+10.45.16.83-csmart,entityclrtool,addrsvc
+------------------------------------------------------------------
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade
+Step 3: restart_csmart
+Step 4: Select Reston and start
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_addsrvc
+Step 4: select Reston Node4 and start/stop
+
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_entity_clearing_tool
+Step 4: select Reston Node4 and start/stop
+
+
+----------------------------------------------------------------
+10.45.16.87-rtra
+------------------------------------------------------------------
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_rtra
+Step 4: select Reston Node5 and start/stop
+
+
+
+
+----------------------------------------------------------------
+10.45.16.120-rtra
+------------------------------------------------------------------
+
+Step 1: Login to Rundeck using below URL.  
+        http://wuinfradeployment.wuintranet.net/menu/home
+Step 2.    Select RTRA-StackUpgrade 
+Step 3: click on restart_rtra
+Step 4: select Reston Node6 and start/stop
+
+
+-----------------------------------
+10.45.16.121 -rtra
+-----------------------------------
+
+Step 1: Login to Rundeck using below URL.  
+    http://wuinfradeployment.wuintranet.net/menu/home
+Step 2:    Select RTRA-StackUpgrade
+Step 3: execute restart_agentscreening on Reston and start/stop
+    
+
+------------------------------------------------------------------------
+---------------------------
+EAS Reston Servers
+---------------------------
+New servers:
+
+Reston:- 
+WUWVC9ASEAS04 - 10.44.32.196
+WUWVC9ASEAS05 - 10.44.32.197
+WUWVC9ASEAS06 - 10.44.32.198
+
+New servers - Restart procedure:
+
+Path: /opt/ibm/ISII_V10/bin/
+
+
+EAS Server stop : login with easadmin and execute below command.
+
+pkill -u easadmin
+
+EAS Server start : login with easadmin and execute below command.
+
+cd /opt/ibm/ISII_V10/bin/
+
+./restartEASClearDB.sh >> restartEASClearDB.log
+
+
+
+Note: If the above command failes to bring up the Web-service then use the command below to bring up the Web service.
+
+./checkRestartWSPS.sh >> /opt/ibm/ISII_V10/bin/checkRestartWSPS.log 2>&1 &
+------------------------------------------------------------------------
+
+Old Servers:
+
+10.44.32.136   
+10.44.32.137   
+10.44.32.138  
+
+TO stop: 
+
+pkill  -u easadmin
+
+TO start:
+
+Login to EAS nodes as easadmin
+
+cd /opt/ibm/ISII/bin
+./restartEASClearDB.sh > restartEASClearDB.log &
+

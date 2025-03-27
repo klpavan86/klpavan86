@@ -1,0 +1,92 @@
+---------------------------------------------
+ 
+Disable Traffic in Chicago:
+
+Step:1 --> Disable Traffic in GTM
+•Run Deck Job for GTM : For below mentioned urls traffic will be in balanced state then, we have to disable the traffic in Chicago DC
+wupos 1 url : http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/d108aad3-b969-41b8-80e8-76120ffd047a
+Wupos 2 url : http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/72d29f46-c8e2-4de8-bffc-55d0e740cbba
+ 
+GTM Urls
+1.	wupos.westernunion.com
+2.	wupos.westernunion.net
+3.	orgin-wuposlb.westernunion.com
+4.	origin-wuposlb-tablet.westernunion.com
+5.	wupos2.westernunion.com
+6.	wupos2.westernunion.net
+7.	wupos-tablet.westernunion.com
+8.	wupos-tablet.westernunion.net
+9.	orgin-hposlb.westernunion.com
+10.	hpos.westernunion.com
+11.	hpos.westernunion.net
+12.	retailauth.westernunion.com
+13.	retailauth.westernunion.net
+
+Step 2:--> Disable Traffic in LTM
+•	Chicago LTM:
+Enable Reston Pool members(Remote pool members) and Disable Chicago pool members (Local pool members) for  below mentioned Urls
+LTM Urls
+1)	wupos.westernunion.com
+2)	wupos.westernunion.net
+3)	origin-wuposlb.westernunion.com
+4)	origin-wuposlb-tablet.westernunion.com
+5)	WUPOS_COMMON_PROD_WUPOSTABLET_ORIGIN
+6)	pool_hpos.westernunion.net
+7)	WUPOS_COMMON_PROD_WUPOS2_COM
+8)	WUPOS_COMMON_PROD_WUPOS2_NET
+9)	WUPOS_COMMON_PROD_WUPOSTABLET_COM
+10)	WPOS_COMMON_PROD_WUPOSTABLET_NET
+11)	wupos2.westernunion.com
+12)	wupos2.westernunion.net
+13)	wupos-tablet.westernunion.com_443
+14)	wupos-tablet.westernunion.net_443
+15) hpos.westernunion.com
+16) origin-hposlb.westernunion.com
+ 
+Step 3: Drain --> Drain Diable(After complete draining)
+•	Put all Chicago, SILO’s in “Drain” mode via Apache load balancer 
+ALB(Drain): http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/bb4fc1fa-a6f9-4000-92ec-87207c211ff7
+
+Step 4: --> Last Run on 20/10/2023
+•	Wait for count to come down ( Check DB Count under conf) through Rundeck
+DB Count: http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/90d8e453-cc59-4845-8e69-121b4b05c6ec
+
+Step 5: --> only for WUPOS1.0 traffic movement
+•	If sessions in DB less than 20 in all Jettys use the Rundeck job to set the MBean on the Jettys (Disable which will show maintanence page to users)
+MBean: http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/840b3fe6-5ac7-473d-9f69-02dec62c22d9
+
+Step 6: --> No Rundeck Job?
+•	After 3 min of MBean being set, the following steps need to be done on all the LTM urls 
+Reston LTM: put Chicago pool members(remote pool members) to “Force offline” mode from Disable mode for below mentioned urls
+Chicago LTM: put Chicago pool members(Local pool members) to “Force offline” mode from Disable mode for below mentioned urls
+
+LTM Urls
+1)	wupos.westernunion.com
+2)	wupos.westernunion.net
+3)	origin-wuposlb.westernunion.com
+4)	origin-wuposlb-tablet.westernunion.com
+5)	WUPOS_COMMON_PROD_WUPOSTABLET_ORIGIN
+6)	pool_hpos.westernunion.net
+7)	WUPOS_COMMON_PROD_WUPOS2_COM
+8)	WUPOS_COMMON_PROD_WUPOS2_NET
+9)	WUPOS_COMMON_PROD_WUPOSTABLET_COM
+10)	WPOS_COMMON_PROD_WUPOSTABLET_NET
+11)	wupos2.westernunion.com
+12)	wupos2.westernunion.net
+13)	wupos-tablet.westernunion.com_443
+14)	wupos-tablet.westernunion.net_443
+15) hpos.westernunion.com
+16) origin-hposlb.westernunion.com
+ 
+Step 7:
+•	Go to Apache Load Balancer & Put it in “Drain Disabled” Mode for all Chicago silos through rundeck
+ALB(Drain Disabled): http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/bb4fc1fa-a6f9-4000-92ec-87207c211ff7
+
+9) Once restart of Jetty's through Rundeck status of Apache Load balancer's will be Init Ok
+
+10) Etoc team performs Sanity
+ 
+----------------------------------------------------------------------------------------------------
+ 
+this steps will help to understand the traffic movement
+ 

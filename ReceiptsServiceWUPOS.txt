@@ -1,0 +1,7 @@
+***************
+RECEIPT SERVICE
+***************
+----------------------------------------------------------------
+To Start / Stop the services on APP Servers, Use the Rundeck job
+----------------------------------------------------------------
+Open Run Deck --> Search Rzeceipts --> Select Receipts PROD --> Collapse All --> Select Resctart --> Select JBoss7.3_Restart [This job is to Restart Prod JBoss Receipt Servers] --> Select the appropriate job either START / STOP in the Activity --> Click Run Again --> Select the appropriate Data Center --> Select appropriate action [START / STOP] --> Click on Run Job Now 

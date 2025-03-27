@@ -1,0 +1,24 @@
+******************
+CHICAGO LTM ACTIVE
+****************** 
+WUPOS 1.0:-
+----------
+1. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos.westernunion.com
+2. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos.westernunion.net
+3. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/origin-wuposlb.westernunion.com
+ 
+WUPOS 2.0:-
+-----------
+4.  https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos-tablet.westernunion.com_443
+5.  https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos-tablet.westernunion.net_443
+6.  https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/origin-wuposlb-tablet.westernunion.com
+7.  https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOS2_COM 
+8.  https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOS2_NET 
+9.  https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOSTABLET_COM
+10. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOSTABLET_NET
+11. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOSTABLET_ORIGIN
+12. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos2.westernunion.com
+13. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos2.westernunion.net
+14. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/pool_hpos.westernunion.net
+15. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/pool_hpos.westernunion.com
+16. https://10.46.193.137/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/pool_origin-hposlb.westernunion.com

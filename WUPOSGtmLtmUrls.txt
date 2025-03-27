@@ -1,0 +1,17 @@
+Instance 			GTM 								Instance 	LTM 
+WUPOS 1.0 	wupos.westernunion.com 						WUPOS 1.0 	wupos.westernunion.com 
+			wupos.westernunion.net 									wupos.westernunion.net 
+LBW - WP1 	origin-wuposlb.westernunion.com 			LBW - WP1 	origin-wuposlb.westernunion.com 
+LBW WP2		origin-wuposlb-tablet.westernunion.com		LBW WP2		origin-wuposlb-tablet.westernunion.com
+WP2			wupos2.westernunion.com									WUPOS_COMMON_PROD_WUPOSTABLET_ORIGIN
+			wupos2.westernunion.net						HPOS		pool_hpos.westernunion.net
+			wupos-tablet.westernunion.com							hpos.westernunion.com
+			wupos-tablet.westernunion.net							origin-hposlb.westernunion.com
+LBW HPOS	origin-hposlb.westernunion.com				WP2			WUPOS_COMMON_PROD_WUPOS2_COM
+HPOS		hpos.westernunion.com									WUPOS_COMMON_PROD_WUPOS2_NET
+			hpos.westernunion.net									WUPOS_COMMON_PROD_WUPOSTABLET_COM
+			retailauth.westernunion.com								WPOS_COMMON_PROD_WUPOSTABLET_NET
+			retailauth.westernunion.net								wupos2.westernunion.com
+																	wupos2.westernunion.net
+																	wupos-tablet.westernunion.com_443
+																	wupos-tablet.westernunion.net_443

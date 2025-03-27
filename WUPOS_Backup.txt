@@ -1,0 +1,76 @@
+Backup files location taken on 10.47.2.8 & 10.46.32.187  -CHG0261630
+ 
+Tablet
+/apps/backup/web-service.war_before_CHG0261630
+/apps/backup/conf_before_CHG0261630
+ 
+apache tablet
+/apps/backup/tablet_CHG026163/tablet-ui_before_CHG0261630
+/apps/backup/tablet_CHG026163/apps_before_CHG0261630
+/apps/backup/tablet_CHG026163/posapps_before_CHG0261630
+/apps/backup/tablet_CHG026163/assets_before_CHG0261630
+/apps/backup/tablet_CHG026163/PayAtWUImages_tablet_before_CHG0261630
+/apps/backup/tablet_CHG026163/receipts_tablet_before_CHG0261630
+ 
+hpos
+/apps/backup/web-service.war_before_CHG0261630
+/apps/backup/conf_hpos_before_CHG0261630
+ 
+apache hpos
+/apps/backup/tablet-ui_hpos_before_CHG0261630
+/apps/backup/apps__hpos_before_CHG0261630
+/apps/backup/posapps_hpos_before_CHG0261630
+/apps/backup/assets_hpos_before_CHG0261630
+/apps/backup/PayAtWUImages_hpos_before_CHG0261630
+/apps/backup/receipts_hpos_before_CHG0261630
+ 
+common url
+/apps/backup/login-service.war_before_CHG0261630
+/apps/backup/conf_commonurl_CHG0261630
+ 
+apache commonurl
+/apps/backup/commonurl_CHG026163/web-ui_commonurl__commonurlbefore_CHG0261630
+/apps/backup/commonurl_CHG026163/posapps_commonurl_before_CHG0261630
+/apps/backup/commonurl_CHG026163/assets_commonurl_before_CHG0261630
+ 
+Agent-service
+/apps/backup/agent-service.war_before_CHG0261630
+/apps/backup/conf_agentservice_before_CHG0261630
+
+
+CHG0261630 - WP2 May release Production deployment - DC2 - Reston--Backups
+###########################################################################
+10.45.2.8:-
+/apps/backup/CHG0261630_31May2024/tablet/tablet-ui
+/apps/backup/CHG0261630_31May2024/tablet/apps
+/apps/backup/CHG0261630_31May2024/tablet/posapps
+/apps/backup/CHG0261630_31May2024/tablet/assets
+/apps/backup/CHG0261630_31May2024/tablet/PayAtWUImages
+/apps/backup/CHG0261630_31May2024/tablet/receipts
+ 
+commonurl:-(/apps/apache2/htdocs/wuposcommonurl)
+/apps/backup/CHG0261630_31May2024/wuposcommonurl/web-ui
+/apps/backup/CHG0261630_31May2024/wuposcommonurl/posapps
+/apps/backup/CHG0261630_31May2024/wuposcommonurl/assets
+ 
+10.44.32.184
+Tablet:-
+/apps/backup/CHG0261630_31May2024/tablet/web-service.war
+/apps/backup/CHG0261630_31May2024/tablet/conf
+commonurl:-
+/apps/backup/CHG0261630_31May2024/wuposclprod/login-service.war
+/apps/backup/CHG0261630_31May2024/wuposclprod/conf
+Agentservice:-
+/apps/backup/CHG0261630_31May2024/agentsvc-prod/agent-service.war
+/apps/backup/CHG0261630_31May2024/agentsvc-prod/conf
+ 
+HPOS:-
+10.45.17.171
+/apps/backup/CHG0261630_31May2024/hpos_bkp/web-service.war
+/apps/backup/CHG0261630_31May2024/hpos_bkp/conf
+10.45.2.0:-
+/apps/backup/CHG0261630_31May2024/hpos_bkp/apps
+/apps/backup/CHG0261630_31May2024/hpos_bkp/posapps
+/apps/backup/CHG0261630_31May2024/hpos_bkp/assets
+/apps/backup/CHG0261630_31May2024/hpos_bkp/PayAtWUImages
+/apps/backup/CHG0261630_31May2024/hpos_bkp/receipts

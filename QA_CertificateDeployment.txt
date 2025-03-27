@@ -1,0 +1,19 @@
+Please place the attached file in /home/webadm/KafkaCert/QA_Certificate/ folder
+
+Run the following commands: one by one
+
+mqsistopmsgflow ACENDQA1 -e AISII_EG -k AIS_SEND_APP
+
+mqsilist ACENDQA1 -e AISII_EG
+
+mqsichangeproperties ACENDQA1 -e AISII_EG -o ComIbmJVMManager -n keystoreFile -v /home/webadm/KafkaCert/QA_Certificate/rcptqa.kafka.client.keystore.jks
+
+mqsichangeproperties ACENDQA1 -e AISII_EG -o ComIbmJVMManager -n keystorePass -v smvegkeystore::password
+
+mqsisetdbparms ACENDQA1 -n smvegkeystore::password -u ignore -p PgwPreReceipt@2024
+
+mqsireportproperties ACENDQA1 -e AISII_EG -o ComIbmJVMManager -r
+
+mqsistartmsgflow ACENDQA1 -e AISII_EG -k AIS_SEND_APP
+Attachments:
+rcptqa.kafka.client.keystore.jks

@@ -1,0 +1,23 @@
+Description:
+Implementation Steps :
+
+1. Take the backup of existing apache configuration file from both Yellow Zone and Red Zone
+2. Configure the Yellow Zone proxy to connect to Red Zone proxy for the given URL (biller)
+
+ProxyPass /contextroot https://redzoneproxy:port/contextroot
+ProxyPassReverse /contextroot https://redzoneproxy:port/contextroot
+
+3. Configure the Red Zone proxy to connect to the biller
+
+ProxyPass /contextroot https://endpointURLofbiller
+ProxyPassReverse /contextroot https://endpointURLofbiller
+
+4. Once configuration is done, check the Apache configuration using the command
+apachectl configtest
+
+5. Upon successful configtest, reload the apache using
+apachectl graceful
+
+6. Verify the process and logs
+ps -ef | grep httpd OR https
+tail apachelogs

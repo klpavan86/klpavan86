@@ -1,0 +1,651 @@
+sw0018871pwd@wuwvc9asmbw01:~ **** This is a PROD server Please be extra careful **** RESTON $ ssh 10.47.17.151
+The authenticity of host '10.47.17.151 (10.47.17.151)' can't be established.
+ECDSA key fingerprint is SHA256:KUwYdd5UnEv1HtJI/G1S0i+9dubYE+M92GQs4eGvC3A.
+ECDSA key fingerprint is MD5:41:ae:5b:30:9a:40:f7:3d:9d:2b:ff:db:68:23:e2:6d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.47.17.151' (ECDSA) to the list of known hosts.
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Password:
+Last login: Wed Apr 24 12:22:53 2024 from 10.44.6.21
+sw0018871pwd@WUWCC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ ^C
+sw0018871pwd@WUWCC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+Connection to 10.47.17.151 closed.
+sw0018871pwd@wuwvc9asmbw01:~ **** This is a PROD server Please be extra careful **** RESTON $ ssh 10.47.17.150
+The authenticity of host '10.47.17.150 (10.47.17.150)' can't be established.
+ECDSA key fingerprint is SHA256:Pni19I9Xh3QjUC+ATHvnbNvAUw2Ew2sumpXTl9qbHDQ.
+ECDSA key fingerprint is MD5:2a:87:e1:96:1d:67:d6:64:f1:19:e7:f9:c9:47:bd:67.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.47.17.150' (ECDSA) to the list of known hosts.
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Password:
+Last login: Thu May 16 07:37:22 2024 from 10.44.6.21
+sw0018871pwd@WUWCC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^\q
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+Connection to 10.47.17.150 closed.
+sw0018871pwd@wuwvc9asmbw01:~ **** This is a PROD server Please be extra careful **** RESTON $ ssh 10.47.17.149
+The authenticity of host '10.47.17.149 (10.47.17.149)' can't be established.
+ECDSA key fingerprint is SHA256:JdZFBqU+4tcNJhZBAXrjoGPaOXoxKOz63xo3qID+9tQ.
+ECDSA key fingerprint is MD5:2f:74:a3:6b:ca:b6:e0:5e:b7:31:dc:8a:41:c7:47:79.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.47.17.149' (ECDSA) to the list of known hosts.
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Password:
+Last login: Thu May 16 07:36:54 2024 from 10.44.6.21
+sw0018871pwd@WUWCC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+Connection to 10.47.17.149 closed.
+sw0018871pwd@wuwvc9asmbw01:~ **** This is a PROD server Please be extra careful **** RESTON $ ssh 10.47.17.148
+The authenticity of host '10.47.17.148 (10.47.17.148)' can't be established.
+ECDSA key fingerprint is SHA256:FBKhUXXF61OxgJXiASWxhSTa819cmSeeDttv2kAVgTs.
+ECDSA key fingerprint is MD5:2e:14:35:58:b7:7a:ef:6a:89:4f:6f:b4:20:dc:32:4a.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.47.17.148' (ECDSA) to the list of known hosts.
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Password:
+Last login: Mon May 20 12:06:55 2024 from 10.44.6.21
+sw0018871pwd@WUWCC9ASMBK01a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK01a:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK01a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWCC9ASMBK01a:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.151
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Last login: Wed Apr 24 12:19:18 2024 from 10.44.6.21
+sw0018871pwd@WUWVC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK04a:~ **** This is a PROD server Please be extra careful **** RESTON $ logout
+Connection to 10.45.17.151 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.150
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Last login: Wed Apr 24 12:18:53 2024 from 10.44.6.21
+sw0018871pwd@WUWVC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK03a:~ **** This is a PROD server Please be extra careful **** RESTON $ logout
+Connection to 10.45.17.150 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.149
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Last login: Wed Apr 24 12:17:47 2024 from 10.44.6.21
+sw0018871pwd@WUWVC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK02a:~ **** This is a PROD server Please be extra careful **** RESTON $ logout
+Connection to 10.45.17.149 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.148
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Last login: Wed Apr 24 12:09:48 2024 from 10.44.6.21
+sw0018871pwd@WUWVC9ASMBK01a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^\^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK01a:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK01a:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@WUWVC9ASMBK01a:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+
+
+
+
+---------------------------------------------------------------------------------------
+
+
+
+
+
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.47.17.166
+Last login: Wed Apr 24 12:40:37 2024 from wuwvc9msops01.prod.wudip.com
+sw0018871pwd@wuwcc9asmbk07:~ **** This is a PROD server Please be extra careful **** CHICAGO $ sudo su - webadm
+Last login: Thu May 16 15:22:07 EDT 2024 on pts/5
+
+MQSI 12.0.8.0
+/apps/Ace-12/ace-12.0.8.0/server
+
+webadm@wuwcc9asmbk07:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+webadm@wuwcc9asmbk07:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+webadm@wuwcc9asmbk07:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+webadm@wuwcc9asmbk07:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+webadm@wuwcc9asmbk07:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+sw0018871pwd@wuwcc9asmbk07:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+Connection to 10.47.17.166 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.47.17.165
+Last login: Wed Apr 24 12:40:00 2024 from wuwvc9msops01.prod.wudip.com
+sw0018871pwd@wuwcc9asmbk06:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbk06:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbk06:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbk06:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbk06:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+Connection to 10.47.17.165 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.47.17.164
+Last login: Wed Apr 24 12:39:08 2024 from wuwvc9msops01.prod.wudip.com
+sw0018871pwd@wuwcc9asmbk05:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbk05:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbk05:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbk05:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbk05:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+Connection to 10.47.17.164 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.47.17.163
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Last login: Wed Apr 24 12:32:28 2024 from 10.44.6.21
+sw0018871pwd@wuwcc9asmbw02:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbw02:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbw02:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbw02:~ **** This is a PROD server Please be extra careful **** CHICAGO $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbw02:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+Connection to 10.47.17.163 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.47.17.162
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Last login: Wed Apr 24 12:31:40 2024 from 10.44.6.21
+sw0018871pwd@wuwcc9asmbw01:~ **** This is a PROD server Please be extra careful **** CHICAGO $ ^C
+sw0018871pwd@wuwcc9asmbw01:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbw01:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbw01:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbw01:~ **** This is a PROD server Please be extra careful **** CHICAGO $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwcc9asmbw01:~ **** This is a PROD server Please be extra careful **** CHICAGO $ logout
+Connection to 10.47.17.162 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.166
+Last login: Wed Apr 24 12:37:57 2024 from wuwvc9msops01.prod.wudip.com
+sw0018871pwd@wuwvc9asmbk07:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk07:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk07:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk07:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk07:~ **** This is a PROD server Please be extra careful **** RESTON $ logout
+Connection to 10.45.17.166 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.165
+Last login: Wed Apr 24 12:37:17 2024 from wuwvc9msops01.prod.wudip.com
+sw0018871pwd@wuwvc9asmbk06:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk06:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk06:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk06:~ **** This is a PROD server Please be extra careful **** RESTON $ telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk06:~ **** This is a PROD server Please be extra careful **** RESTON $ logout
+Connection to 10.45.17.165 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.164
+Last login: Wed Apr 24 12:36:17 2024 from wuwvc9msops01.prod.wudip.com
+sw0018871pwd@wuwvc9asmbk05:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk05:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk05:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk05:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbk05:~ **** This is a PROD server Please be extra careful **** RESTON $ logout
+Connection to 10.45.17.164 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.163
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Last login: Wed Apr 24 12:28:32 2024 from 10.44.6.21
+sw0018871pwd@wuwvc9asmbw02:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbw02:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbw02:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbw02:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbw02:~ **** This is a PROD server Please be extra careful **** RESTON $ logout
+Connection to 10.45.17.163 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** Reston  $ ssh 10.45.17.162
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential information. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or its contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such monitoring and recording
+Last login: Wed Apr 24 12:29:26 2024 from 10.44.6.21
+sw0018871pwd@wuwvc9asmbw01:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9082
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbw01:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet 10.45.21.229 9083
+Trying 10.45.21.229...
+Connected to 10.45.21.229.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbw01:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet  10.47.21.1 9082
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.
+sw0018871pwd@wuwvc9asmbw01:~ **** This is a PROD server Please be extra careful **** RESTON $  telnet  10.47.21.1 9083
+Trying 10.47.21.1...
+Connected to 10.47.21.1.
+Escape character is '^]'.
+^]
+telnet> q
+Connection closed.

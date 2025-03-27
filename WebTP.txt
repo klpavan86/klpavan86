@@ -1,0 +1,36 @@
+------
+RESTON
+------
+WUWVC8ASWTP01 10.45.19.70 Web Tools Portal
+-------
+CHICAGO
+-------
+WUWCC8ASWTP01 10.47.19.70 Web Tools Portal
+
+*****************************
+Steps to bring down instance:
+*****************************
+1.Go to /apps/WEBTP location and run below command:
+    cat RUNNING_PID
+2. The result of the above command is the PROCESS ID.
+3. Now run the below command:
+    kill -9 PROCESS ID
+4. To verify that the process has stopped run the below command there should be no output if there is still output run again step 3 command.
+    lsof -i:9000
+	
+****************************
+Steps to bring UP Instances:
+****************************
+1. Go to /apps/WEBTP location and delete RUNNING_PID file.
+2. Rename nohup.out to nohup_backup21102021.out
+3. Now create a new file and save it as nohup.out leaving the entire file blank.
+4. Now go to location /apps/WEBTP and run the below command:
+    nohup sh bin/webtp & 
+***************************	
+Steps to Restart Instances:
+***************************
+1. Go to /apps/WEBTP location and delete RUNNING_PID.
+2. Now run the below command:
+    nohup sh bin/webtp &  
+	
+

@@ -1,0 +1,38 @@
+Agent Portal application uses IBM IHS & WAS with 4 web servers & 2 APP Servers
+
+Core Proxy Servers are Web Servers uses Apache with 4 servers
+
+Digital Gateway uses IBM Integration Bus with 3 servers
+
+DMS uses      and has 4 servers
+
+DodFrank application uses jboss with one server
+
+EAS application uses infosphere Identity Insight with 3 servers
+
+Gateway application uses apache with 1 web server
+
+GIS Inbound Proxy uses apache with 2 web servers
+
+IWATCGRA application uses jboss with 3 app servers
+
+OXO/TMP/TMS application uses apache with 2 web servers
+
+PROXY servers uses apache with 2 web servers
+
+RTRA application uses jboss app with 7 app servers
+
+WU Gateway application uses IBM MQ with 6 app servers
+
+WUPOS application uses apache for web servers and jetty, jboss data grid for app servers with 6 web servers, 4 jetty app servers and 2 jboss data grid.
+
+WUPOS common URL application uses jetty with 3 app servers
+
+WUPOS HPOS LBP application uses apache with 2 web servers
+
+WUPOS receipt Service application uses jboss with 2 app servers
+
+WUPOS REDIS application uses 3 REDIS enterprose with web servers
+
+
+

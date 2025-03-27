@@ -1,0 +1,46 @@
+PI - BROKER - RESTART with SOP Document
+
+Login into the server: ENV PI- 10.45.17.192
+
+Switch to webadm user : sudo su - webadm
+
+[webadm@WUWVC2ASMBK03 ~]$ hostname -i
+10.45.17.192
+
+[webadm@WUWVC2ASMBK03 ~]$ cd /apps/wubsg/config/pi/
+
+[webadm@WUWVC2ASMBK03 pi]$ ls -lrth
+total 0
+drwxrwx--x 2 webadm webadm  71 Aug 20  2019 mqsibackout
+drwxrwxr-x 3 webadm webadm  25 Sep 23  2019 CTASK0013325
+drwxr-xr-x 2 webadm webadm  26 Dec 12  2019 Config_file
+drwxrwxr-x 2 webadm webadm  49 Nov 16  2021 archive
+drwxrwxr-x 3 webadm webadm  92 Feb 22  2023 mqsioutput
+drwxrwxrwx 2 webadm webadm 120 Oct 26 09:13 mqsipolicy
+drwxrwx--x 3 webadm webadm  18 Dec 13 04:24 mqsitransitin
+drwxrwxrwx 3 webadm webadm 108 Dec 13 04:24 mqsiarchive
+
+[webadm@WUWVC2ASMBK03 pi]$ cd mqsipolicy
+[webadm@WUWVC2ASMBK03 mqsipolicy]$ ls -lrth
+total 20K
+-rwxrwxrwx 1 webadm webadm  784 Jul 27  2016 catalog.sh
+-rwxrwxrwx 1 webadm webadm  553 Aug  2  2016 restart.sh
+-rwxrwxrwx 1 webadm webadm  358 Aug 28  2016 policy_one_broker_ha.xml
+-rwxrwxr-x 1 webadm webadm  871 Jun 28 23:04 ACE-BrokerStop.sh
+-rwxrwxr-x 1 webadm webadm 1.9K Jun 28 23:05 ACE-BrokerStart.sh
+[webadm@WUWVC2ASMBK03 mqsipolicy]$
+
+---------> TO STOP------------> ./ACE-BrokerStop.sh
+
+---------> TO START ----------> ./ACE-BrokerStart.sh
+
+ONCE PERFORMED STOP/START NEED TO CHECK THE TIMESTAMP UPDATED IN path : /apps/wubsg/config/pi/mqsioutput/GlobalCache_Success.xml
+
+
+check the GlobalCache_Success.xml is updated with server time, once confirmed we need to execute the below scripts:
+
+This scripts will be available while starting logs in the ./ACE-BrokerStart.sh 
+
+## After confirming above run below command to start the flow
+mqsistartmsgflow ACENDPI0 -e BIS_EG -k BIS_Quotation_APP -m DASCloudOkta
+mqsistartmsgflow ACENDPI0 -e NRT_EG -k NRT_Notification_Service

@@ -1,0 +1,29 @@
+Traffic movement:
+ 
+1) Chicago 2.0 Disable disable at GTM 
+2) Chicago ltm --> Put chicago 2.0 pool members in disabled mode and reston members in enabled mode
+3) wait for 15 mins
+4) Force offline chicago pool members in chicago ltm and reston ltm . i.e chicago pool members should be in force offline in both Reston LTM & Chicago LTM
+ 
+5) Stunnel change on 10.46.32.193
+6) 2.0 deployment as part of normal change
+ 
+*******************************************************
+once all these 6 steps got completed
+ 
+1) enable 10.46.32.193 alone on both  wupos 2.0 clan & ilan aplb --> Initially all jvm's would be in enabled status , but we will disable the rest of jvm;s in all 6 2.0 aplb apart from 10.46.32.193
+2) Once above step got completed 10.46.32.193 is in INIT OK and other members would be in INIT DRN OK in all 6 2.0 aplb
+3) Enable chicago local pool members in chicago ltm for sanity
+4) ETOC to perform sanity for stunnel i.e sanity will be going through 10.46.32.193 at this time
+************************************************
+With this sanity for stunnel ecr completes
+5) Once sanity completed by ETOC enable all jvm's which we had disabled in 6 2.0 aplb
+ 
+6) Ask ETOC team to proceed with regular sanity in chicago 2.0
+7) Once sanity completed for 2.0 then enable cross dc pool members i.e at this time in chicago ltm --> chicago memebrs are in enabled state and reston mebers are in disabled status
+in Reston ltm --> Reston members are in enabled status & chicago mebers are in disabled status
+8) Enable live traffic at GTM for 2.0 on chicago DC
+ 
+*******************************************************
+ 
+With the above step both stunnel ecr & wupos normal chnage got completed in chicago

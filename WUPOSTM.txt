@@ -1,0 +1,177 @@
+--------------------------
+GTM LEVEL TRAFFIC MOVEMENT
+--------------------------
+Disable Reston datacenter in GTM for these URL’s
+WPOS1 :
+wupos.westernunion.com
+wupos.westernunion.net
+LBW-WPOS1:
+orgin-wuposlb.westernunion.com
+Run Deck Job
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/d108aad3-b969-41b8-80e8-76120ffd047a
+
+LBW-WPOS2:
+origin-wuposlb-tablet.westernunion.com
+LBW-HPOS:
+orgin-hposlb.westernunion.com
+WPOS2 :
+wupos2.westernunion.com
+wupos2.westernunion.net
+wupos-tablet.westernunion.com
+wupos-tablet.westernunion.net 
+HPOS :
+hpos.westernunion.com
+hpos.westernunion.net
+retailauth.westernunion.com
+retailauth.westernunion.net
+Run Deck Job
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/72d29f46-c8e2-4de8-bffc-55d0e740cbba
+
+--------------------------
+LTM LEVEL TRAFFIC MOVEMENT
+--------------------------
+Put RS-CH remote pool members in “Enable” Mode.
+In few minutes, put Reston local pool members in “Disabled” Mode. (This is to allow for faster draining in RESTON)
+In few minutes, put CH-RS remote Pool members in “Disable” Mode. (This should be the pre-deployment state).
+URLs to be suspended at LTM,
+
+WP1 :	
+wupos.westernunion.com
+wupos.westernunion.net	
+LBW - WP1: 
+origin-wuposlb.westernunion.com
+LBW WP2:
+origin-wuposlb-tablet.westernunion.com
+WUPOS_COMMON_PROD_WUPOSTABLET_ORIGIN	
+HPOS:
+pool_hpos.westernunion.net	
+hpos.westernunion.com
+orgin-hposlb.westernunion.com
+WP2:
+WUPOS_COMMON_PROD_WUPOS2_COM
+WUPOS_COMMON_PROD_WUPOS2_NET
+WUPOS_COMMON_PROD_WUPOSTABLET_COM
+WPOS_COMMON_PROD_WUPOSTABLET_NET
+wupos2.westernunion.com
+wupos2.westernunion.net
+wupos-tablet.westernunion.com_443
+wupos-tablet.westernunion.net_443
+Run Deck Job
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/70696e64-8c1a-42e1-b40c-38daced8c428
+
+Put all Reston SILO’s in draining mode via Apache load balancer.
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/bb4fc1fa-a6f9-4000-92ec-87207c211ff7
+
+Wait for 15-30 min
+1.Check sessions in Reston DC via dynaTrace
+2.If sessions in dynaTrace<600 use the Rundeck job to set the MBean on the Jettys.
+MBean = Disable --> To enable Maintainence page
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/840b3fe6-5ac7-473d-9f69-02dec62c22d9
+
+Verify Maintenance screen displays on all 12 WUPOS Jettys via Rundeck job.
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/execution/show/702827#output
+
+After 3 min of MBean being set, the following steps need to be done on all the LTM urls:
+    4.1 Put the CH->RS remote pool members in “Force offline” mode.
+      4.2Put Reston local pool members in “Force offline” Mode. (This is to prevent Agents with    hardcoded Ip’s to come into Reston)
+        4.3  RS->CH remote pool members and Chicago local members should be in Enable Mode.
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/6af06b91-6058-4696-8afc-06de4ea58864
+
+Put all Reston SILO’s in drain-disable mode via Apache load balancer.
+Silos Reston All
+WUPOS MBean Disable --> that places maintainence page for the hardcore customers using IP's
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/bb4fc1fa-a6f9-4000-92ec-87207c211ff7
+
+Make sure that traffic is draining on All Reston Jettys.
+
+---------------------------------------------
+Traffic enable steps post activity for sanity
+---------------------------------------------
+Remove M-Bean for all the jetty instances
+Silos Reston All
+WUPOS MBean Enable --> that removes maintainence page for the hardcore customers using IP's
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/840b3fe6-5ac7-473d-9f69-02dec62c22d9
+
+Enable Reston instances on Apache load Balancer level
+Action: Enable
+Data Center Reston
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/bb4fc1fa-a6f9-4000-92ec-87207c211ff7
+
+Enable local pool members in Reston LTM. Disable Remote pool members in Reston LTM, for all LTM URLs mentioned below.
+WP1 :	
+wupos.westernunion.com
+wupos.westernunion.net	
+LBW - WP1: 
+origin-wuposlb.westernunion.com
+LBW WP2:
+origin-wuposlb-tablet.westernunion.com
+WUPOS_COMMON_PROD_WUPOSTABLET_ORIGIN	
+HPOS:
+pool_hpos.westernunion.net 
+hpos.westernunion.com
+orgin-hposlb.westernunion.com
+WP2:
+WUPOS_COMMON_PROD_WUPOS2_COM
+WUPOS_COMMON_PROD_WUPOS2_NET
+WUPOS_COMMON_PROD_WUPOSTABLET_COM
+WPOS_COMMON_PROD_WUPOSTABLET_NET
+wupos2.westernunion.com
+wupos2.westernunion.net
+wupos-tablet.westernunion.com_443
+wupos-tablet.westernunion.net_443
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/74a66204-1c7a-4420-a190-cd264dc86faf
+
+Sanity for WP1,WP2 and HPOS( refer ETOC sanity doc) - ETOC Team
+
+Enable remote pool members from Chicago to Reston.
+Note – Ensure that the Local pool members in both DC's should be in "Enable" mode and Remote pool members should be in "Disable" mode.
+WP1 :	
+wupos.westernunion.com
+wupos.westernunion.net	
+LBW - WP1: 
+origin-wuposlb.westernunion.com
+LBW WP2:
+origin-wuposlb-tablet.westernunion.com
+WUPOS_COMMON_PROD_WUPOSTABLET_ORIGIN	
+HPOS:
+pool_hpos.westernunion.net	
+hpos.westernunion.com
+orgin-hposlb.westernunion.com
+WP2:
+WUPOS_COMMON_PROD_WUPOS2_COM
+WUPOS_COMMON_PROD_WUPOS2_NET
+WUPOS_COMMON_PROD_WUPOSTABLET_COM
+WPOS_COMMON_PROD_WUPOSTABLET_NET
+wupos2.westernunion.com
+wupos2.westernunion.net
+wupos-tablet.westernunion.com_443
+wupos-tablet.westernunion.net_443
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/ce314efd-5d76-4c52-9058-7cf6815c9785
+
+Enable Traffic in GTM to Reston Jetty instances for these URL’s.
+WP1 :
+wupos.westernunion.com
+wupos.westernunion.net
+LBW-WP1:
+orgin-wuposlb.westernunion.com
+LBW-WP2:
+origin-wuposlb-tablet.westernunion.com
+LBW-HPOS:
+orgin-hposlb.westernunion.com
+WP2 :
+wupos2.westernunion.com
+wupos2.westernunion.net
+wupos-tablet.westernunion.com
+wupos-tablet.westernunion.net 
+HPOS :
+hpos.westernunion.com
+hpos.westernunion.net
+retailauth.westernunion.com
+retailauth.westernunion.net
+WUPOS1
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/d108aad3-b969-41b8-80e8-76120ffd047a
+WUPOS2
+http://wuinfradeployment.wuintranet.net/project/WUPOS-PROD-NEWDC/job/show/72d29f46-c8e2-4de8-bffc-55d0e740cbba 
+ 
+
+

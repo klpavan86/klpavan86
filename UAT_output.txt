@@ -1,0 +1,121 @@
+[webadm@WUWVC2ASMBK01a ~]$ mqsilist
+BIP1284I: Integration node 'ACENDU0' with default queue manager 'ESBBKU0QMGR' and administration URI 'http://WUWVC2ASMBK01a.prod.wudip.com:4415' is running.
+BIP1284I: Integration node 'ACENDU2' with default queue manager 'ESBBKU2QMGR' and administration URI 'http://WUWVC2ASMBK01a.prod.wudip.com:4416' is running.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$
+[webadm@WUWVC2ASMBK01a ~]$
+[webadm@WUWVC2ASMBK01a ~]$ mqsilist ACENDU0
+-----------------------------------
+BIP1286I: Integration server 'AISII_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'AISI_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'BIS_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'CISII_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'CISI_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'LIS_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'MIS_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'NMT_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'RMO_EG' on integration node 'ACENDU0' is running.
+-----------------------------------
+BIP1286I: Integration server 'default_EG' on integration node 'ACENDU0' is running.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e AISII_EG
+BIP1275I: Application 'AIS_LOOKUP2_APP' on integration server 'AISII_EG' is running.
+BIP1275I: Application 'AIS_FEE_APP' on integration server 'AISII_EG' is running.
+BIP1275I: Application 'AIS_SEND_APP' on integration server 'AISII_EG' is running.
+BIP1275I: Application 'AIS_DGW_APP' on integration server 'AISII_EG' is running.
+BIP1275I: Application 'AIS_CSC_APP' on integration server 'AISII_EG' is running.
+BIP1275I: Application 'AIS_SIGNON_APP' on integration server 'AISII_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'AISII_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e AISI_EG
+BIP1275I: Application 'AIS_RECEIVE_APP' on integration server 'AISI_EG' is running.
+BIP1275I: Application 'AIS_FULFILL_APP' on integration server 'AISI_EG' is running.
+BIP1275I: Application 'AIS_BILLPAY_APP' on integration server 'AISI_EG' is running.
+BIP1275I: Application 'AIS_LOOKUP_APP' on integration server 'AISI_EG' is running.
+BIP1275I: Application 'AIS_STAGE_PAY_APP' on integration server 'AISI_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'AISI_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e BIS_EG
+BIP1275I: Application 'BIS_Quotation_APP' on integration server 'BIS_EG' is running.
+BIP1275I: Application 'BIS_Customer_API_APP' on integration server 'BIS_EG' is running.
+BIP1275I: Application 'BIS_ReceiveMoney_APP' on integration server 'BIS_EG' is running.
+BIP1275I: Application 'BIS_TransactionLookup_APP' on integration server 'BIS_EG' is running.
+BIP1275I: Application 'BIS_TransactionOperation_APP' on integration server 'BIS_EG' is running.
+BIP1275I: Application 'BIS_SendMoney_APP' on integration server 'BIS_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'BIS_EG'.
+BIP1273I: Shared library 'BISCommon_Subflow_SHLIB' is deployed to integration server 'BIS_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e CISII_EG
+BIP1275I: Application 'CIS_FeeInquiry_App' on integration server 'CISII_EG' is running.
+BIP1275I: Application 'CIS_DSS_App' on integration server 'CISII_EG' is running.
+BIP1275I: Application 'CIS_ReceiveMoney_App' on integration server 'CISII_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'CISII_EG'.
+BIP1273I: Shared library 'GetFlwTimeOutLIB' is deployed to integration server 'CISII_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e CISI_EG
+BIP1275I: Application 'CIS_SendMoney_App' on integration server 'CISI_EG' is running.
+BIP1275I: Application 'CIS_Notification_App' on integration server 'CISI_EG' is running.
+BIP1275I: Application 'CIS_ReceiveMoney_App' on integration server 'CISI_EG' is running.
+BIP1275I: Application 'CIS_PayoutControl_App' on integration server 'CISI_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'CISI_EG'.
+BIP1273I: Shared library 'GetFlwTimeOutLIB' is deployed to integration server 'CISI_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e LIS_EG
+BIP1275I: Application 'CustomerProfile_Lookup_APP' on integration server 'LIS_EG' is running.
+BIP1275I: Application 'CustomerProfile_APPL' on integration server 'LIS_EG' is running.
+BIP1275I: Application 'Customer_Cache_APPL' on integration server 'LIS_EG' is running.
+BIP1275I: Application 'MYWU_App' on integration server 'LIS_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'GW_SignOn_SHLIB' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'GW_ExceptionHandler_SHLIB' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'GW_BrokerUtil_JAVA_SHLIB' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'LISUtility_SHLIB' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'GW_Exception_Handler_SHLIB' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'UCD_TOKEN_SHLIB' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'GW_Masking_SHLIB' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'NSKMessageDFDLLib' is deployed to integration server 'LIS_EG'.
+BIP1273I: Shared library 'GW_NSK_SHLIB' is deployed to integration server 'LIS_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e MIS_EG
+BIP1275I: Application 'GW_MOP_Logger' on integration server 'MIS_EG' is running.
+BIP1275I: Application 'GW-MOP_Services' on integration server 'MIS_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'MIS_EG'.
+BIP1273I: Shared library 'Error_Handler_SHLIB' is deployed to integration server 'MIS_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e NMT_EG
+BIP1275I: Application 'NMT_GDPR_APP' on integration server 'NMT_EG' is running.
+BIP1275I: Application 'NMT_KYC_APP' on integration server 'NMT_EG' is running.
+BIP1275I: Application 'NMT_INQUIRY_APP' on integration server 'NMT_EG' is running.
+BIP1275I: Application 'NMT_DAS_APP' on integration server 'NMT_EG' is running.
+BIP1275I: Application 'NMT_FLA_APP' on integration server 'NMT_EG' is running.
+BIP1275I: Application 'NMT_DOC_APP' on integration server 'NMT_EG' is running.
+BIP1275I: Application 'NMT_CUSTOMER_APP' on integration server 'NMT_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'NMT_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e RMO_EG
+BIP1275I: Application 'GW_JSON_Adapter_APP' on integration server 'RMO_EG' is running.
+BIP1275I: Application 'AIS_RECEIVE_APP' on integration server 'RMO_EG' is running.
+BIP1275I: Application 'AIS_SEARCH_APP' on integration server 'RMO_EG' is running.
+BIP1275I: Application 'RMO_APP' on integration server 'RMO_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'RMO_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$  mqsilist ACENDU0 -e default_EG
+BIP1275I: Application 'GlobalCache_APP' on integration server 'default_EG' is running.
+BIP1275I: Application 'Exception_Logger' on integration server 'default_EG' is running.
+BIP1275I: Application 'GlobalCacheLookup_APP' on integration server 'default_EG' is running.
+BIP1275I: Application 'Transcation_Logger' on integration server 'default_EG' is running.
+BIP1390I: Policy project 'DefaultPolicies' is deployed to integration server 'default_EG'.
+BIP8071I: Successful command completion.
+[webadm@WUWVC2ASMBK01a ~]$ date
+Wed May 22 05:35:54 EDT 2024
+[webadm@WUWVC2ASMBK01a ~]$ hostname -i
+10.45.17.153
+S

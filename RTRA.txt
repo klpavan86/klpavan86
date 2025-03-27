@@ -1,0 +1,143 @@
+*******************************
+RTRA - REAL TIME RISK ASESSMENT
+*******************************
+------
+RESTON
+------
+Node1:	 	WUWVC9ASRTRA01	 	10.45.16.80
+Node2: 		WUWVC9ASRTRA02		10.45.16.81
+Node3: 		WUWVC9ASRTRA03		10.45.16.82
+Node4: 							10.45.16.86
+Node5: 							10.45.16.87
+Node6: 							10.45.16.120
+  
+WUWVC9ASRTRA01	10.45.16.80 
+WUWVC9ASRTRA02	10.45.16.81
+WUWVC9ASRTRA03	10.45.16.82
+WUWVC9ASRTRA04	10.45.16.83
+WUWVC9ASRTRA05	10.45.16.86
+WUWVC9ASRTRA06	10.45.16.87
+WUWVC9ASRTRA07	10.45.16.120
+WUWVC9ASRTRA08	10.45.16.121
+------------------------------------
+APPLICATIONS HOSTED ON ALL THE NODES
+------------------------------------
+WUWVC9ASRTRA01	10.45.16.80 - notif, rtra, addrsvc
+WUWVC9ASRTRA02	10.45.16.81 - notif, rtra, addrsvc
+WUWVC9ASRTRA03	10.45.16.82 - entityclrtool, rtra, addrsvc
+WUWVC9ASRTRA04	10.45.16.83 - entityclrtool, rtracsmart, addrsvc
+WUWVC9ASRTRA05	10.45.16.86 - rtra
+WUWVC9ASRTRA06	10.45.16.87 - rtra
+WUWVC9ASRTRA07	10.45.16.120 - rtra
+WUWVC9ASRTRA08	10.45.16.121 - rtra - agent screening
+----------------------------------------------------------
+APPLICATIONS IN RTRA & APPLICATIONS PATH HOSTED ON SERVERS
+----------------------------------------------------------
+/apps/addrsvc/jboss-eap-7.4/standalone/deployments    - address service  -	execute restart_addrsvc	 -	Node1,Node2,Node3,Node4 
+/apps/rtracsmart/jboss-eap-7.4/standalone/deployments - webui			 -	execute restart_csmart	 - 	10.47.16.165
+/apps/entityclrtool/jboss-eap-7.4/standalone/         - entityclrtool 	 -	execute restart_entity_clearing_tool  - Node 3 and Node 4
+/apps/notif/jboss-eap-7.4/standalone/deployments      - notif 			 - 	execute restart_notif 	 -  Node 1,Node 2
+/apps/rtra/jboss-eap-6.4/standalone/deployments       - RTRA 			 -  execute restart_rtra  	 -  Node 1,Node 2,Node 3,Node 4 ,Node 5,Node 6 and Node 7
+
+/datasource>
+<datasource jta="false" jndi-name="java:/REPDBDS" pool-name="db2_pool_rtrarep" enabled="true" use-java-context="true" use-ccm="true">
+<connection-url>jdbc:db2://10.45.24.135:50000/REPDBC</connection-url>
+
+ </datasource>
+                <datasource jta="false" jndi-name="java:/EASDS" pool-name="db2_pool_easds" enabled="true" use-java-context="true" use-ccm="true">
+                    <connection-url>jdbc:db2://10.44.40.80:50000/EASDBC</connection-url>
+                    <driver-class>com.ibm.db2.jcc.DB2Driver</driver-class>
+                    <driver>db2</driver
+					
+<datasource jta="false" jndi-name="java:/RTRACVBRDS" pool-name="db2_pool_rtra_cvbr" enabled="true" use-java-context="true" use-ccm="true">
+                    <connection-url>jdbc:proxy:jdbc:db2://10.45.24.133:50000/AMLDBC</connection-url>
+                    <connection-property name="currentSchema">RTRA_CVBR</connection-property>
+                    <connection-property name="ccpConnProperties">https://cyberark-ccp.wuintranet.net/AIMWebService/api/accounts,App_RTRA,AS_RTRA,Root,AMLDBC_amlinst</connection-property>
+
+config_rtra_jboss7 --> will update standalone.conf, configuration.properties, standalone.xml
+/apps/rtra/jboss-eap-7.4/standalone/configuration = standalone.xml
+/apps/rtra/jboss-eap-7.4/standalone = configuration.properties
+/apps/rtra/jboss-eap-7.4/bin = standalone.conf
+-------
+CHICAGO
+-------
+WUWCC9ASRTRA01	10.47.16.162 
+WUWCC9ASRTRA02	10.47.16.163 
+WUWCC9ASRTRA03	10.47.16.164 
+WUWCC9ASRTRA04	10.47.16.165 
+WUWCC9ASRTRA05	10.47.16.81	
+WUWCC9ASRTRA06	10.47.16.82	
+WUWCC9ASRTRA07	10.47.16.83	
+WUWCC9ASRTRA08	10.47.16.84	
+------------------------------------
+APPLICATIONS HOSTED ON ALL THE NODES
+------------------------------------
+-- Chicago Node1: 10.47.16.162 - notif, rtra, addrsvc
+-- Chicago Node2: 10.47.16.163 - notif, rtra, addrsvc
+-- Chicago Node3: 10.47.16.164 - entityclrtool, rtra, addrsvc
+-- Chicago Node4: 10.47.16.165 - entityclrtool, rtra, addrsvc, rtracsmart
+-- Chicago Node5: 10.47.16.81  - rtra
+-- Chicago Node6: 10.47.16.82  - rtra
+-- Chicago Node7: 10.47.16.83  - rtra
+-- Chicago Node8: 10.47.16.84  - rtra
+-----------------------------------------------------------
+APPLICATIONS IN RTRA WITH THEIR PATHS HOSTED ON THE SERVERS 
+-----------------------------------------------------------
+/apps/addrsvc/jboss-eap-7.4/standalone/deployments    - address service  -	execute restart_addrsvc	 			  -	Node1,Node2,Node3,Node4 --> 10.47.16.162, 10.47.16.163, 10.47.16.164, 10.47.16.165. 
+/apps/rtracsmart/jboss-eap-7.4/standalone/deployments - webui			 -	execute restart_csmart	 			  - Node4 --> 10.47.16.165
+/apps/entityclrtool/jboss-eap-7.4/standalone/         - entityclrtool 	 -	execute restart_entity_clearing_tool  - Node3,Node4 --> 10.47.16.164, 10.47.16.165.
+/apps/notif/jboss-eap-7.4/standalone/deployments      - notif 			 - 	execute restart_notif 	 			  - Node1,Node2 --> 10.47.16.162, 10.47.16.163.
+/apps/rtra/jboss-eap-6.4/standalone/deployments       - RTRA 			 -  execute restart_rtra  	              - Node1,Node2,Node3,Node4,Node5,Node6,Node7 --> 10.47.16.162, 10.47.16.163, 10.47.16.164, 10.47.16.165, 10.47.16.81, 10.47.16.82, 10.47.16.83.
+
+****************
+RTRA UAT SERVERS
+****************
+New UAT server IP details:  
+1. 10.45.16.94
+2. 10.45.16.95
+
+********
+RTRA EAS 
+********
+RESTON:-
+WUWVC9ASEAS04 - 10.44.32.196
+WUWVC9ASEAS05 - 10.44.32.197
+WUWVC9ASEAS06 - 10.44.32.198
+
+CHICAGO:-
+WUWCC9ASEAS04 - 10.46.32.196
+WUWCC9ASEAS05 - 10.46.32.197
+WUWCC9ASEAS06 - 10.46.32.198
+
+*********************************************
+VALIDATION STEPS FOR EAS AFTER LINUX PATCHING
+*********************************************
+Command to check the WebServices  
+ps -ef | grep 13510  
+Sample O/P :  
+[easadmin@WUWCC9ASGEN60 bin]$ ps -ef|grep 13510 |wc -l 
+2 
+Note : If the count is 1, that means the service is down. 
+ 
+Command to check the Pipes Count 
+ps -ef | grep pipe | wc –l 
+Sample O/P :  
+[easadmin@WUWCC9ASGEN60 bin]$ ps -ef|grep pipe|wc -l 
+102  
+----------------------------------------------------------------
+COMMAND TO START RTRA EAS IF wEBSERVERS ARE NOT STARTED PROPERLY
+----------------------------------------------------------------
+./checkRestartWSPS.sh >> /opt/ibm/ISII_V10/bin/checkRestartWSPS.log 2>&1 &
+
+
+************
+NON PROD EAS
+************
+wuwvc2asgen40-new 10.44.32.205  /apps/ibm/ISII_V10/  UAT
+wuwvc3aseas02 	  10.45.232.145 /apps/ibm/ISII_V10/ QA/SIT/DEV
+wuwvc1asrtr07     10.45.235.140 /apps/ibm/ISII_V10/ QA/SIT/DEV
+
+----------------------------------------------
+RUN DECK JOB FOR RTRA & IWRA NEW BUILD SERVERS 
+----------------------------------------------
+http://wuinfradeployment.wuintranet.net/project/RTRA-IWRA-Prod/jobs

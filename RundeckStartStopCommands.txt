@@ -1,0 +1,7 @@
+/apps/archiva/bin/archiva stop
+/apps/archiva/bin/archiva start
+ 
+/apps/rundeck/rundeckd stop
+/apps/rundeck/rundeckd start
+ 
+10.46.6.64 ANSIBLE SERVER

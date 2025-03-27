@@ -1,0 +1,23 @@
+
+
+*******
+CHICAGO
+*******
+WUWCC8ASOXO01	10.46.32.111	OXXO/TMP/TMS	--> Both httpd & tms process running
+WUWCC8ASOXO02	10.46.32.112	OXXO/TMP/TMS	--> only httpd process no tms process
+WUWCC8ASOXO04	10.46.32.118	OXXO/TMP/TMS	--> java process with root
+WUWCC8ASOXO03	10.46.32.119	OXXO/TMP/TMS	--> java process with root
+
+sw0011992pwd@WUWCC8ASOXO01:~ **** This is a PROD server Please be extra careful **** CHICAGO $ ps -ef|grep tms
+root     30132 29922  0 01:44 pts/4    00:00:00 /usr/share/centrifydc/libexec/dzdo su -
+tmsdlsadmin
+root     30133 30132  0 01:44 pts/4    00:00:00 su - tmsdlsadmin
+3009     35745     1  6 01:55 pts/4    00:00:02 java -classpath /apps/tms/DLS/sqljdbc42.jar:/apps/tms/DLS tms.TMSServer
+12901049 35960 35916  0 01:56 pts/0    00:00:00 grep tms
+/apps/tms/DLS/
+Log into the servers --> Switch to tmsdlsadmin --> Goto the path /apps/tms/DLS/ --> Run the Script tms.sh
+To check the process
+ps -ef | grep tms
+ps -ef | grep httpd
+Both httpd services & app services are running on the above listed servers
+restart the TMS Download process using tms script file: /apps/tms/DLS/tms.sh

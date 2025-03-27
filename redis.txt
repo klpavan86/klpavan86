@@ -1,0 +1,25 @@
+jgvXS1P(M9F4rq%T
+
+
+
+[9:36 PM] Hazel Daniels
+https://wu.zoom.us/j/91744875563?pwd=UTJJa2ZKMGRVVmxiMU5ZUTZWQjQrdz09
+Join our Cloud HD Video Meeting
+Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zo...
+
+TO FLUSH ALL THE KEYS
+https://redis.io/commands/flushall/
+
+
+del is used to delete the key
+TTL command is used display the key
+GET is used to display details of the key
+
+ttl key name
+
+sudo rladmin status
+sudo rladmin node2 maintainence mode_on
+give for linux patching
+after patching
+sudo rladmin node2 maintainence mode_off
+rlutil is used to change the slave node to master node

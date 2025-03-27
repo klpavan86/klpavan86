@@ -1,0 +1,40 @@
+WU GATEWAY:
+~~~~~~~~~~~
+1. Move the GW traffic from CHICAGO/Reston to RESTON/Chiaco (Both GTM & LTM).
+2. Please wait for the traffic drains slowly.
+3. Disable the CHICAGO/Reston IPs from the ILAN and CLAN DP (two IPs at a time) from the below LBG's.
+   -- BIS_IIB10LBG
+   -- LIS_IIB10LBG
+   -- MB8MessageBrokerLBG
+4. Please wait to get the traffic drained comletely.
+5. Please run the ./ACE-BrokerStop.sh command in mqsipolicy
+6. Perform the activity one IP at a time.
+7. Start the broker using ./ACE-BrokerStart.sh command in mqsipolicy and reload the cache.
+8. Post the Cache gets reloaded,Bring up the DASCloudOkta flow.
+Command:
+mqsistartmsgflow <Broker_name> -e BIS_EG -k BIS_Quotation_APP -m DASCloudOkta
+09. Restart the NRT_EG [ when performing activity on Chicago DC ].
+10. Enable the nodes on the DP ILAN and CLAN.
+11. Monitor the traffic.
+12. Balance the traffic post successful monitoring.
+
+
+
+Note: When ever we restart the Brokers or Servers then we need to check if any cache errors are observed (E0001) it is required to reload the cache again or restart the broker.
+
+
+Environment     Broker Servers
+                Host Name    IP
+
+Chicago-1    WUWCC9ASMBK01a    10.47.17.148
+Chicago-2    WUWCC9ASMBK02a    10.47.17.149
+Chicago-3    WUWCC9ASMBK03a    10.47.17.150
+Chicago-4    WUWCC9ASMBK04a    10.47.17.151
+
+
+Reston-1    WUWVC9ASMBK01a    10.45.17.148
+Reston-2    WUWVC9ASMBK02a    10.45.17.149
+Reston-3    WUWVC9ASMBK03a    10.45.17.150
+Reston-4    WUWVC9ASMBK04a    10.45.17.151
+
+

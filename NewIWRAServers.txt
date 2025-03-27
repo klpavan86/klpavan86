@@ -1,0 +1,79 @@
+Hi All,
+
+We have productionized new servers for IWRA, the new servers are live from 28th Jan and all batches are running on it without any issue.
+
+As part of this new setup following batches are verified.
+
+ 
+
+Idea batch
+Nigeria batch
+StarsFeedBatch
+STARS_LOAD_FEED_SEND_EMAIL_run
+ObjReportBatch
+Agentfeed batch
+pharos_agents_files_sftp
+PharosFailedAttemptsProcessor
+PharosFailedRulesHitProcessor
+Tibcofeed
+ 
+
+Challenges-
+
+There was no migration step available especially for batches movement. We had to learn and setup, required multiple team coordination, like ACM, Pharos, Network, …
+Team had to run all the batches gradually with Production data, we raised multiple CR’s and involved AMS as well.
+Some of the scripts directly configured on Prod by AMS over time, even current team no idea about some of them- this made debugging issues difficult.
+ 
+
+Going forward all deployments will be done on new servers only.
+
+ 
+
+Next steps:
+
+We will be planning Csmart config change on next week release for connecting to new IWRA systems to pull latest drl's.
+Working on finding source server from where Operator feed comes to IWRA system.
+ 
+
+@RAJ KUMAR DUBEY
+
+Please raise request to @ITIO-Run-MW-WebHosting team to handover new Prod servers to them for supporting prod deployments.
+
+ 
+
+Thank you @Virbhadra Anantrao Kaulwar for dev and verification support.
+
+Thank you @Sirisha Somana @Simhadri Yugandhar @ArjunYadav Bandi @Karmega Moorthi Team for the support.
+
+ 
+
+List of new servers: 
+
+------
+RESTON
+------
+Existing server Existing IP New Hostname New IP Address
+WUWVC9ASGEN46 10.45.16.96 	WUWVC9ASGEN66 10.45.16.100 
+WUWVC9ASGEN59 10.45.16.97 	WUWVC9ASGEN69 10.45.16.101
+WUWVC9ASGEN60 10.45.16.98 	WUWVC9ASGEN80 10.45.16.102
+
+-------
+CHICAGO
+-------
+Existing server Existing IP New Hostname New IP Address
+WUWCC9ASIWA01 10.47.16.166 	WUWCC9ASIWA05 10.47.16.175
+WUWCC9ASIWA02 10.47.16.167 	WUWCC9ASIWA06 10.47.16.176
+WUWCC9ASIWA03 10.47.16.168 	WUWCC9ASIWA07 10.47.16.177
+WUWCC9ASIWA04 10.47.16.169 	WUWCC9ASIWA08 10.47.16.178
+
+ 
+
+Thank you
+
+Thanks,
+
+Rajender Reddy
+
+Mobile: 9168046067
+
+Rajender.Reddy@westernunion.com

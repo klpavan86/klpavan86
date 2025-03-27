@@ -1,0 +1,32 @@
+CORE-PROXY IS ACTIVE-ACTIVE APPLICATION
+
+
+Core-proxy RESTON(yellow-zone) servers:-
+
+10.45.17.202
+10.45.17.203
+
+Core-proxy RESTON(Red-zone) servers:-
+10.45.0.213
+10.45.0.214
+
+
+
+CORE-PROXY URL'S:
+
+Ø corefwprxy.prod.wudip.com
+Ø corefwprxy.wuintranet.net
+Ø coreyrevprxy.prod.wudip.com
+Ø corerrevprxy.wuintranet.net
+Ø corerrevprxy.westernunion.com
+
+
+Webhosting to suspend above URL's traffic @GTM-level, on RESTON-Dc
+webhosting&linux team to perform actions one node at a time
+webhosting to stop RESTON-services and hand-over to linux-team
+linux-team to complete activity, check all server health and hand-over server back to webhosting
+webhosting team to bring up RESTON-services&perform basic sanity of apache-server
+webhosting team to enable GTM traffic, post completion of activity on all-servers
+RESTON-DC to be monitored for 24-hours
+post successful implementation, exercise to be repeated on CHICAGO-DC with a new change-record
+

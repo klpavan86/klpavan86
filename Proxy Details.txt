@@ -1,0 +1,33 @@
+ProxyPass /apac https://coreyrevuatprxy.prod.wudip.com/wuchatcare/apac
+ProxyPassReverse /apac https://coreyrevuatprxy.prod.wudip.com/wuchatcare/apac
+
+ProxyPass /ec https://coreyrevuatprxy.prod.wudip.com/wuchatcare/ec
+ProxyPassReverse /ec https://coreyrevuatprxy.prod.wudip.com/wuchatcare/ec
+
+ProxyPass /italy https://coreyrevuatprxy.prod.wudip.com/wuchatcare/italy
+ProxyPassReverse /italy https://coreyrevuatprxy.prod.wudip.com/wuchatcare/italy
+
+ProxyPass /laca https://coreyrevuatprxy.prod.wudip.com/wuchatcare/laca
+ProxyPassReverse /laca https://coreyrevuatprxy.prod.wudip.com/wuchatcare/laca
+
+ProxyPass /middleeast  https://coreyrevuatprxy.prod.wudip.com/wuchatcare/middleeast
+ProxyPassReverse /middleeast https://coreyrevuatprxy.prod.wudip.com/wuchatcare/middleeast
+
+ProxyPass /nam  https://coreyrevuatprxy.prod.wudip.com/wuchatcare/nam
+ProxyPassReverse /nam https://coreyrevuatprxy.prod.wudip.com/wuchatcare/nam
+
+ProxyPass /ovv https://coreyrevuatprxy.prod.wudip.com/wuchatcare/ovv
+ProxyPassReverse /ovv https://coreyrevuatprxy.prod.wudip.com/wuchatcare/ovv
+
+ProxyPass /usest  https://coreyrevuatprxy.prod.wudip.com/wuchatcare/usest
+ProxyPassReverse /usest https://coreyrevuatprxy.prod.wudip.com/wuchatcare/usest
+
+ProxyPass /uscst https://coreyrevuatprxy.prod.wudip.com/wuchatcare/uscst
+ProxyPassReverse /uscst https://coreyrevuatprxy.prod.wudip.com/wuchatcare/uscst
+
+ProxyPass /uspst https://coreyrevuatprxy.prod.wudip.com/wuchatcare/uspst
+ProxyPassReverse /uspst https://coreyrevuatprxy.prod.wudip.com/wuchatcare/uspst
+
+
+ProxyPass /us  https://coreyrevuatprxy.prod.wudip.com/wuchatcare/us
+ProxyPassReverse /us https://coreyrevuatprxy.prod.wudip.com/wuchatcare/us

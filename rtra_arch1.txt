@@ -1,0 +1,32 @@
+webadm@WUWVC9ASRTRA01:/apps/scripts **** This is a PROD server Please be extra careful **** RESTON $ cat rtra_arch1.sh
+#This shell script archives logs of multiple instances of JBoss and also purges old archived logs
+# in case if we run out of space in /apps
+# Author : Alex Varakin
+# This variable contains a list of instances which require cleanup
+SRC="/apps/rtra/jboss-eap-6.4/standalone/ /apps/addrsvc/jboss-eap-6.4/standalone/ /apps/notif/jboss-eap-6.4/standalone/ /apps/jboss-eap-5.1/jboss-as/server/rtra3/ /apps/rtracsmart/jboss-eap-6.4/standalone/ /apps/rtra/jboss-eap-7.4/standalone /apps/addrsvc/jboss-eap-7.4/standalone /apps/notif/jboss-eap-7.4/standalone"
+#find out is we run out of space and need to remove archived files:
+USED=`df | grep /apps | awk '{print $4}' | grep % | sed 's/%//'`
+
+if [ "$USED" -gt "60" ]
+then
+        find  $SRC  | xargs stat -c"%Y %n" | grep "/log.old/"  | sort -n | sed 's/.* //' | head -60 | xargs rm
+else
+        echo Still have some space - "$USED"% in /apps
+fi
+
+
+#archive the files in JBOSS directories
+for DLIST in $SRC
+do
+    DEST=$DLIST/log.old
+    mkdir -p $DEST
+    echo Archiving $DLIST
+    for DFILE in `find $DLIST/log/ -name '*.log.*' -mmin +180 |egrep -v *.gz`
+        do
+            echo Zippping $DFILE
+            gzip $DFILE
+            mv $DFILE.gz $DEST
+        done
+gzip $DLIST/log/CVBR*.log
+mv $DLIST/log/CVBR*.log.gz $DEST
+done

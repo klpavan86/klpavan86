@@ -1,0 +1,18 @@
+URL
+
+https://payment-hope-dev.unitst.org
+
+PUBLIC IP FOR ABOVE URL 
+51.124.59.92 
+
+DP GATEWAY PI CONSOLE URL
+
+https://10.44.5.150:9090/dp/login.xml
+
+http://172.31.101.18:8080/wugateway/outbound/notification/services/NisNotification
+[6:29 PM] Pushkar Mahamuni
+		<Entry key=
+		"datapowerurl">
+		http://10.45.1.192:8180/wugateway/outbound/notification/services/NisNotification
+		
+		10.45.1.192/22

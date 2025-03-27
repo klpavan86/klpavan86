@@ -1,0 +1,100 @@
+we have total 24 servers for WUPOS2.0 which includes Reston and Chicago DCs
+for wupos1.0 12 servers including Reston and Chicago DCs
+******
+RESTON
+******
+-----------
+WEB SERBERS
+-----------
+WUWVC9WSPOS29	10.45.2.8	TABLET & CMNURL
+WUWVC9WSPOS30	10.45.2.9	TABLET & CMNURL
+WUWVC9WSPOS31	10.45.2.10	TABLET & CMNURL
+WUWVC9WSPOS32	10.45.2.11	TABLET & CMNURL
+WUWVC9WSPOS33	10.45.2.16	TABLET & CMNURL
+WUWVC9WSPOS34	10.45.2.17	TABLET & CMNURL
+	
+WUWVC9WSPOS35	10.45.2.0	HPOS
+WUWVC9WSPOS36	10.45.2.1	HPOS
+
+------------------------------------
+APP SERVERS - WUPOS 1.0, HPOS & WUTA
+------------------------------------
+WUPOS JETTY (SILO 311)	WUWVC9ASPOS21	10.45.17.171	Reston	PROD	/apps/wupos/01/jetty-9.3.23/
+WUPOS JETTY (SILO 321)	WUWVC9ASPOS22	10.45.17.172	Reston	PROD	/apps/wupos/01/jetty-9.3.23/
+WUPOS JETTY (SILO 331)	WUWVC9ASPOS23	10.45.17.173	Reston	PROD	/apps/wupos/01/jetty-9.3.23/
+WUPOS JETTY (SILO 341)	WUWVC9ASPOS24	10.45.17.174	Reston	PROD	/apps/wupos/01/jetty-9.3.23/
+
+HPOS & WUTA
+WUWVC9ASPOS21	10.45.17.171
+WUWVC9ASPOS22	10.45.17.172
+WUWVC9ASPOS23	10.45.17.173
+WUWVC9ASPOS24	10.45.17.174
+
+-----------------------------------------
+APP SERVERS - WUPOS 2.0 - TABLET & CMNURL
+-----------------------------------------
+WUWVC9ASGEN43	10.44.32.184
+WUWVC9ASGEN44	10.44.32.185
+WUWVC9ASGEN45	10.44.32.186
+WUWVC9ASGEN48	10.44.32.187
+
+*******
+CHICAGO
+*******
+-----------
+WEB SERBERS
+-----------
+TABLET	
+WUWCC9WSPOS29   10.47.2.8	/apps/apache2/htdocs/tablet/drivers	/apps/apache2/htdocs/tablet
+WUWCC9WSPOS30	10.47.2.9	/apps/apache2/htdocs/tablet/drivers	/apps/apache2/htdocs/tablet
+WUWCC9WSPOS31	10.47.2.10	/apps/apache2/htdocs/tablet/drivers	/apps/apache2/htdocs/tablet
+WUWCC9WSPOS32	10.47.2.11	/apps/apache2/htdocs/tablet/drivers	/apps/apache2/htdocs/tablet
+WUWCC9WSPOS33	10.47.2.16	/apps/apache2/htdocs/tablet/drivers	/apps/apache2/htdocs/tablet
+WUWCC9WSPOS34	10.47.2.17	/apps/apache2/htdocs/tablet/drivers	/apps/apache2/htdocs/tablet
+CMNURL	
+WUWCC9WSPOS29	10.47.2.8	/apps/apache2/htdocs/wuposcommonurl/drivers	/apps/apache2/htdocs/wuposcommonurl
+WUWCC9WSPOS30	10.47.2.9	/apps/apache2/htdocs/wuposcommonurl/drivers	/apps/apache2/htdocs/wuposcommonurl
+WUWCC9WSPOS31	10.47.2.10	/apps/apache2/htdocs/wuposcommonurl/drivers	/apps/apache2/htdocs/wuposcommonurl
+WUWCC9WSPOS32	10.47.2.11	/apps/apache2/htdocs/wuposcommonurl/drivers	/apps/apache2/htdocs/wuposcommonurl
+WUWCC9WSPOS33	10.47.2.16	/apps/apache2/htdocs/wuposcommonurl/drivers	/apps/apache2/htdocs/wuposcommonurl
+WUWCC9WSPOS34	10.47.2.17	/apps/apache2/htdocs/wuposcommonurl/drivers	/apps/apache2/htdocs/wuposcommonurl
+HPOS	
+WUWCC9WSPOS35	10.47.2.0	/apps/apache2/htdocs/hpos/drivers	/apps/apache2/htdocs/hpos
+WUWCC9WSPOS36	10.47.2.1	/apps/apache2/htdocs/hpos/drivers	/apps/apache2/htdocs/hpos
+
+
+
+
+WUPOS1.0 | 
+WUPOS JETTY (SILO 411)	WUWCC9ASPOS21	10.47.17.171	Chicago	PROD	/apps/wupos/01/jetty-9.3.23/
+WUPOS JETTY (SILO 421)	WUWCC9ASPOS22	10.47.17.172	Chicago	PROD	/apps/wupos/01/jetty-9.3.23/
+WUPOS JETTY (SILO 431)	WUWCC9ASPOS23	10.47.17.173	Chicago	PROD	/apps/wupos/01/jetty-9.3.23/
+WUPOS JETTY (SILO 441)	WUWCC9ASPOS24	10.47.17.174	Chicago	PROD	/apps/wupos/01/jetty-9.3.23/
+
+For all COM URLs
+WUWCC9ASPOS21	10.47.17.171	HPOS
+WUWCC9ASPOS22	10.47.17.172	HPOS
+WUWCC9ASPOS23	10.47.17.173	HPOS
+WUWCC9ASPOS24	10.47.17.174	HPOS
+WUWCC9ASPOS27	10.47.17.177	WUPOS no service running
+WUWCC9ASPOS28	10.47.17.178	WUPOS no service running
+
+
+WUWCC9WSPOS29	10.47.2.8		WUPOS
+WUWCC9WSPOS30	10.47.2.9		WUPOS
+WUWCC9WSPOS31	10.47.2.10		WUPOS
+WUWCC9WSPOS32	10.47.2.11		WUPOS
+For all NET URLs
+WUWCC9WSPOS33	10.47.2.16		WUPOS
+WUWCC9WSPOS34	10.47.2.17		WUPOS
+WUWCC9ASHVR01	10.47.26.86		WUPOS HVR
+
+WUPOS2.0 TABLET COMMON URL AGENT-SERVICE | 
+WUWCC9ASGEN48	10.46.32.187	WUPOS Common URL
+WUWCC9ASGEN62	10.46.32.193	WUPOS Common URL
+WUWCC9ASGEN63	10.46.32.194	WUPOS Common URL
+WUWCC9ASGEN64	10.46.32.195	WUPOS Common URL
+ 
+HPOS | 
+WUWCC9WSPOS35	10.47.2.0	WUPOS HPOS LBP
+WUWCC9WSPOS36	10.47.2.1	WUPOS HPOS LBP

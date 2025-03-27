@@ -1,0 +1,45 @@
+Testbed thread dump plan:
+
+Server IP:
+10.45.16.125
+
+Login as webadm user
+
+cd /apps/scripts/
+
+1. uncomment bleow jboss6 path on threaddump.sh file
+
+#jbosspid=`cat /apps/idearefresh/jboss-eap-6.4/jboss.pid`
+#/usr/bin/jstack  $jbosspid >>  /apps/idearefresh/jboss-eap-6.4/standalone/log/threaddump.`date +%F_%H`
+
+2. uncomment below jboss6 path on arch_tdump.sh file
+#find  /apps/idearefresh/jboss-eap-6.4/standalone/log/ -name 'threaddump.*' -mmin +600 | xargs rm
+
+server IP:
+10.45.16.124
+
+Login as webadm user
+
+cd /apps/scripts/
+
+1. uncomment bleow jboss6 path on threaddump.sh file
+
+#jbosspid=`cat /apps/iwrarefresh1/jboss-eap-6.4/jboss.pid`
+#/usr/bin/jstack  $jbosspid >>  /apps/iwrarefresh1/jboss-eap-6.4/standalone/log/threaddump.`date +%F_%H`
+
+#jbosspid=`cat /apps/iwrarefresh2/jboss-eap-6.4/jboss.pid`
+#/usr/bin/jstack  $jbosspid >>  /apps/iwrarefresh2/jboss-eap-6.4/standalone/log/threaddump.`date +%F_%H`
+
+#jbosspid=`cat /apps/iwrarefresh3/jboss-eap-6.4/jboss.pid`
+#/usr/bin/jstack  $jbosspid >>  /apps/iwrarefresh3/jboss-eap-6.4/standalone/log/threaddump.`date +%F_%H`
+
+#jbosspid=`cat /apps/iwrarefresh4/jboss-eap-6.4/jboss.pid`
+#/usr/bin/jstack  $jbosspid >>  /apps/iwrarefresh4/jboss-eap-6.4/standalone/log/threaddump.`date +%F_%H`
+
+2. uncomment below jboss6 path on arch_tdump.sh file
+#find  /apps/iwrarefresh1/jboss-eap-6.4/standalone/log/ -name 'threaddump.*' -mmin +600 | xargs rm
+#find  /apps/iwrarefresh2/jboss-eap-6.4/standalone/log/ -name 'threaddump.*' -mmin +600 | xargs rm
+#find  /apps/iwrarefresh3/jboss-eap-6.4/standalone/log/ -name 'threaddump.*' -mmin +600 | xargs rm
+#find  /apps/iwrarefresh4/jboss-eap-6.4/standalone/log/ -name 'threaddump.*' -mmin +600 | xargs rm
+
+

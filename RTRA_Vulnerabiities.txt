@@ -1,0 +1,43 @@
+10.47.16.84
+
+/apps/agentscreen/batch/ftcAgentScreening/lib/log4j-1.2.15.jar
+ /apps/agentscreen/batch/ftcAgentScreening/lib/log4j-1.2.16.jar
+ /apps/agentscreen/batch/ftcAgentScreening/lib/log4j-1.2.17.jar
+ 
+ /apps/agentscreen/batch/ftcAgentScreening/lib
+ 
+ /apps/agentscreen/batch/lib/log4j-1.2.15.jar
+ /apps/agentscreen/batch/lib/log4j-1.2.16.jar
+ /apps/agentscreen/batch/lib/log4j-1.2.17.jar
+ 
+ /apps/agentscreen/batch/lib
+ 
+ /apps/rtra/batch/lib/log4j-1.2.15.jar
+ /apps/rtra/batch/lib/log4j-1.2.16.jar
+ /apps/rtra/batch/lib/log4j-1.2.17.jar
+
+/apps/rtra/batch/lib
+
+10.45.16.84
+
+/apps/rtra/batch/lib/log4j-1.2.17.jar
+
+ /apps/rtracsmart/jboss-eap-6.4/modulesbkp/system/layers/base/com/wu/rtra/mainbackup/log4j-1.2.15.jar PATH NOT FOUND
+ 
+ /apps/rtratestbed/batch/lib/log4j-1.2.15.jar
+ /apps/rtratestbed/batch/lib/log4j-1.2.16.jar
+ /apps/rtratestbed/batch/lib/log4j-1.2.17.jar
+ 
+ /apps/rtratestbed/jmeter/apache-jmeter/bin/TestNG/bin/lib/log4j-1.2.15.jar
+ 
+ /apps/rtratestbed/jmeter/apache-jmeter-2.11/bin/TestNG/bin/lib/log4j-1.2.15.jar
+ 
+ /apps/rtrauat/batch/CAPRTRA_AS/lib/log4j-1.2.16.jar
+ 
+ /apps/rtrauat/batch/UPUBatchDataLoad/lib/log4j-1.2.16.jar
+ 
+ /apps/rtrauat/flume-1.7/lib/log4j-1.2.17.jar
+ 
+ /apps/testbedcsmart/jboss-eap-6.4/modulesbkp/system/layers/base/com/wu/rtra/mainbackup/log4j-1.2.15.jar
+
+ /home/308604/apache-jmeter-2.13/lib/ext/log4j-1.2.15.jar

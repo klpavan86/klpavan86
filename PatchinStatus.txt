@@ -1,0 +1,29 @@
+patching status:
+ 
+CHG0248860-Windows Servers Monthly Patching  –Reston DC- March - 2024 -- Completed
+-------------------------------------------------------------------------------
+AgentPortal-Initial(Balanced)--Moved to Chicago -- Balanced(Sasi)
+Receipt Service--Initial(Balanced)--Moved to chicago -- Balanced(yash)
+T-view--Initial(Reston)--Moved to chicago -- moved to reston(Suraj)
+Stars--Initial(Reston)---Moved to Chicago --  moved to reston(Yashwanth)
+Webtmon-- is decommissioned and so no traffic failover is needed(Santhosh)
+Agent enroll -- sanity completed(Arjun)
+ 
+ 
+CHG0248968 -- Linux Monthly Production Patching  - Reston DC -- Completed
+-------------------------------------------------------------------------
+WUPOS ---Initial(Balanced)---Moved to Chicago-- Balanced(yash)
+WU Gateway & Digital Gateway ---Initial(Balanced)--Moved to Chicago-- Balanced(vaishnavi)
+AgentPortal-Initial(Balanced)--Moved to Chicago -- Balanced(Sasi)
+Receipt Service--Initial(Balanced)--Moved to chicago -- Balanced(yash)
+TMS - Traffic move is not needed - sanity completed(Venu)
+DMS -- patching & sanity competed
+IWATCHRA , RTRA -- patching & sanity competed
+Dodfrank -- started instance post patching(dropped mail for sanity)
+ 
+Proxy 
+Core Proxy & AGENT TRAINING  - Balanced(Initial) - Moved to Chicago -- Balanced
+INBOUND PROXY:
+Ø corerrevprxy.westernunion.com - Balanced(Initial) -Moved to Chicago-- Balanced
+Ø gisbgcheckresult.westernunion.com -Balanced(Initial)-Moved to Chicago-- Balanced
+Ø notifsvc.westernunion.com - Reston(initial)-Moved to Chicago -- moved to reston

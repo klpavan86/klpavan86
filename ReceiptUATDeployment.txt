@@ -1,0 +1,10 @@
+RECEPT SERVICE DEPLOYMENT FOR EAR 
+
+Open the link
+http://10.45.17.143:9990
+admin 
+jb@ss73d$V@dmin
+
+Go to Deployments --> Select Server Groups --> Select Receipt UAT --> Select / click on the latest EAR file in view button select Disbale
+Go to Content Repository --> Select / click the latest EAR file in view button click on undeploy
+Go to add content on top --> new window opens --> Place the latest EAR file --> click on Deploy --> check the Server groups for latest EAR file in Enable & Active state.

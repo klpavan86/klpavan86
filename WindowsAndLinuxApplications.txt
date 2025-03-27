@@ -1,0 +1,16 @@
+CHG0258522 -Linux Infrastructure Server - Chicago - Day2
+WUPOS - Balanced(initial) - Moved to Reston
+Receipt Service -Balanced(initial) - Moved to Reston
+DMS - Chicago(Initial) - NO traffic move required.
+Agent Portal - Balanced(initial) - Moved to Reston  
+Core Proxy servers/Agent Training Proxy servers/Inbound Proxy servers/GIS - Pending
+Digital Gateway - Balanced(initial)- Traffic move will start at 10 PM EST
+WU Gateway - Balanced(initial) - Traffic move will start at 10 PM EST
+NMT Gateway - Balanced(initial) - Traffic move will start at 10 PM EST
+-------------
+CHG0259074 -windows Patch Management - Chicago 
+AgentPortal - Balanced(initial) - Moved to Reston
+Receipts - Balanced(initial) - Moved to Reston
+Tview - Reston(Initial)
+Stars - Reston(Initial
+WebTmon - Decommisioned - NO traffic move required.

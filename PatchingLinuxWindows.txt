@@ -1,0 +1,64 @@
+*************************
+DAY 1 - WINDOWS PATCHING:
+*************************
+AGENT PORTAL --> Initial Balanced --> Moved to Reston
+RECEIPTS --> Initial Balanced --> Moved to Reston
+TMS --> Initial Chicago--> No TM required confirmed by Suresh
+
+*******************************************************
+CHICAGO - DAY 1 - LINUX PATCHING - DIGITAL APPLICATIONS
+*******************************************************
+WUPOS --> Initial Balanced --> Moved to Reston
+
+TAIOPOS --> Initial Balanced --> Moved to Reston
+
+WUPAY
+wupay.wuintranet.net --> Initial Reston -->No Action
+wupay.prod.wudip.com --> Initial Reston -->No Action
+orgin-wupay.api.westernunion.com --> Initial Balanced-->Moved to Reston
+
+SOAP GATEWAY URL's 
+soapgateway.wuintranet.net --> Initial Balanced-->Moved to Reston
+soap.gateway.westernunion.com --> Initial Balanced-->Moved to Reston
+
+******************************************************
+CHICAGO - DAY 2 - LINUX PATCHING - RETAIL APPLICATIONS
+******************************************************
+AGENT PORTAL --> Initial Balanced --> Moved to Reston
+RECEIPTS --> Initial Balanced --> Moved to Reston
+TMS --> Initial Chicago--> No TM required confirmed by Suresh
+WUPOS --> Initial Balanced --> Moved to Reston
+
+******************************************************
+RESTON - DAY 1 - LINUX PATCHING - DIGITAL APPLICATIONS
+******************************************************
+WUPOS - Balanced - Moved to Chicago (Naga)
+SOAP GW - Not yet started
+WUPAY - ALready in Chicago(Sahana)
+orgin-wupay.api.westernunion.com - Balanced - Moved to Chicago (Sahana)
+NGDRT - No traffic move in on-prem
+Quickfind - Not yet started
+POSFilter - Balanced - Moved to Chicago (Naga)
+WebTP - No traffic move
+
+SOAP GATEWAY URL's 
+soapgateway.wuintranet.net --> Initial Balanced-->Moved to Reston
+soap.gateway.westernunion.com --> Initial Balanced-->Moved to Reston
+
+
+******************************************************
+RESTON - DAY 1 - LINUX PATCHING - DIGITAL APPLICATIONS
+******************************************************
+Windows Servers Monthly Patching Maintenance Notification –November 2024 (CHG0287919/ CHG0287920/ CHG0287921)
+AgentPortal - balanced (Initial) - moved to Chicago (Suresh)
+Receipt service - balanced (Initial) - moved to Chicago (Naga)
+Stars - Reston (Initial) - moved to Chicago (Santosh)
+ 
+CHG0288505-IOC-Linux Monthly Production Patching - Reston DC || November 2024
+WUPOS - balanced (Initial) - moved to Chicago (Naga)
+TMS - Not needed -confirmed by Suresh
+DMS - Already in Chicago
+ 
+Pending apps:
+Gateway - After 10PM EST (Hema Phani)
+Core proxy, Inbound proxy and Agent training - before the patching starts

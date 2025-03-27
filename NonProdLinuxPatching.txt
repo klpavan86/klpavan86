@@ -1,0 +1,97 @@
+
+WUWVC2WSGEN18	10.45.0.200	UAT	Day 1	WUPOS
+---------------------
+WUPOS RECEIPT SERVICE
+---------------------
+WUWVC2ASPOS19	10.45.17.143	UAT			Day 1	WUPOS Receipt Service
+WUWVC1ASPOS16	10.45.235.172	E2E (CSL)	Day 1	WUPOS Receipt Service
+
+
+-------
+LIFERAY
+-------
+WUWCC5ASGRD07	10.47.16.207	STAGE	Day 1	Liferay	
+WUWCC5ASGRD15	10.47.16.215	STAGE	Day 1	Liferay	
+WUWVC5ASGRD07	10.45.16.207	STAGE	Day 1	Liferay
+WUWVC5ASGRD15	10.45.16.215	STAGE	Day 1	Liferay
+WUWVC1ASDRT07	10.45.232.141	Day 2	QA	Reston mir2
+WUWVC1ASDRT08	10.45.232.142	Day 2	QA	Reston - No Services were Running
+WUWVC2ASLIF01	10.45.19.222	Day 2	UAT	Reston - No Services were Running
+WUWVC2ASLIF02	10.45.19.223	Day 2	UAT	Reston - No Services were Running
+WUWCC2ASLIF01	10.47.19.222	Day 2	UAT	Chicago - No Services were Running
+WUWCC2ASLIF02	10.47.19.223	Day 2	UAT	Chicago - No Services were Running
+
+------------
+AGENT PORTAL
+------------
+WUWVC2ASGEN11	10.44.33.70	UAT	Day 1	Agent Portal - Decomissioned
+WUWVC2ASGEN12	10.44.33.71	UAT	Day 1	Agent Portal - Decomissioned
+WUWVC2ASGEN19	10.44.33.68	UAT	Day 1	Agent Portal
+WUWVC2ASGEN20	10.44.33.69	UAT	Day 1	Agent Portal
+WUWVC2WSGEN01	10.44.16.70	UAT	Day 1	Agent Portal
+WUWVC2WSGEN03	10.44.16.72	UAT	Day 1	Agent Portal
+WUWVC2WSGEN04	10.44.16.73	UAT	Day 1	Agent Portal
+WUWVC2WSGEN06	10.44.16.81	UAT	Day 1	Agent Portal
+WUWVC2WSGEN07	10.44.16.89	UAT	Day 1	Agent Portal
+WUWVC2WSGEN02	10.44.16.71	UAT	Day 1	Agent Portal
+-----
+WUPAY
+-----
+WUWVC2ASWUP01 	10.45.19.82	UAT	Day 1	WUPAY
+WUWVC2ASWUP02	10.45.19.83	UAT	Day 1	WUPAY
+WUWVC0ASR3W97	10.45.234.209	DEV	WUPAY No Services were Running
+WUWVC1ASR3W73	10.45.235.85	QA	WUPAY /home/webadm/jboss7 - scripts location
+WUWVC1ASR3W74	10.45.235.86	QA	WUPAY No Services were Running
+
+---------------------------
+TRACK PAYMENTS / QUICK FIND
+---------------------------
+WUWVC2WSWAD01	10.45.1.75		UAT	Day 1	Trackpayments/QuickFind
+WUWVC2ASQFD01	10.45.16.177	UAT	Day 1	Quickfind 
+/apps/jboss7/jboss-eap-7.0/bin/jboss.sh stop
+/apps/jboss7dc/jboss-eap-7.0/bin/jboss.sh stop
+/apps/jboss7dc/jboss-eap-7.0/bin/jboss.sh start
+/apps/jboss7/jboss-eap-7.0/bin/jboss.sh start
+
+------------------------------------------
+NON PROD PROXY SERVERS PATCHING BATCH WISE
+------------------------------------------
+1ST BATCH
+WUWVC2ASPRXA03	10.45.17.210 webadm  /apps/apache2/bin/apachectl stop  /apps/apache2/bin/apachectl start
+WUWVC2WSPRXA02	10.45.0.221  webadm  /apps/apache2/bin/apachectl stop  /apps/apache2/bin/apachectl start
+WUWVC2WSPRXA03	10.45.0.47   root    sudo service httpd stop   sudo service httpd start
+
+2ND BATCH
+WUWVC2ASPRXB03	10.45.17.211 webadm /apps/apache2/bin/apachectl stop /apps/apache2/bin/apachectl start
+WUWVC2WSPRXB02	10.45.0.222  webadm /apps/apache2/bin/apachectl stop /apps/apache2/bin/apachectl start
+WUWVC2WSPRXB03	10.45.0.48   root    sudo service httpd stop   sudo service httpd start
+
+
+
+LIFERAY
+WUWCC5ASGRD07	10.47.16.207	Day 2	STAGE	Chicago mir2 & Portal
+WUWCC5ASGRD15	10.47.16.215	Day 2	STAGE	Chicago mir2 & Portal
+WUWVC5ASGRD07	10.45.16.207	Day 2	STAGE	Reston only mir2
+WUWVC5ASGRD15	10.45.16.215	Day 2	STAGE	Reston only mir2
+WUWVC1ASDRT07	10.45.232.141	Day 2	QA	Reston mir2
+WUWVC1ASDRT08	10.45.232.142	Day 2	QA	Reston - No Services were Running
+wuwvc2aslif01	10.45.19.222	Day 2	UAT	Reston - No Services were Running
+wuwvc2aslif02	10.45.19.223	Day 2	UAT	Reston - No Services were Running
+wuwcc2aslif01	10.47.19.222	Day 2	UAT	Chicago - No Services were Running
+wuwcc2aslif02	10.47.19.223	Day 2	UAT	Chicago - No Services were Running
+
+AGENT PORTAL
+WUWVC2WSGEN06	10.44.16.81		Day 2	UAT	Reston - webadm - /apps/IBM/IHS9/bin/apachectl start/stop
+WUWVC2WSGEN07	10.44.16.89		Day 2	UAT	Reston - webadm - /apps/IBM/IHS9/bin/apachectl start/stop
+WUWVC2WSGEN02	10.44.16.71		Day 2	UAT	Reston - webadm - /apps/IBM/IHS9/bin/apachectl start/stop
+WUWVC0WSAGP01N	10.45.217.77	Day 2	QA	Reston - webadm - /apps/IBM/IHS9/bin/apachectl start/stop 
+WUWVC1WSAGP02	10.45.217.15	Day 2	QA	Reston - root - /apps/IBM/IHS9/bin/apachectl start/stop 
+WUWVC0ASAGP01N	10.45.233.249	Day 2	Dev	Reston - Dmgr, Nodeagent, JVM
+WUWVC2ASGEN19	10.44.33.68		Day 2	UAT	Reston - Dmgr, Nodeagent, JVM
+WUWVC2ASGEN20	10.44.33.69		Day 2	UAT	Reston - Nodeagent, JVM
+WUWVC1ASAGP05	10.45.235.229	Day 2	QA	Reston - Nodeagent, JVM
+
+
+
+com.ibm.SOAP.loginUserid=admin
+com.ibm.SOAP.loginPassword=adm!nw@s90

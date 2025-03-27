@@ -1,0 +1,90 @@
+Core Proxy & Tablet Agent Training Proxy [Active-Active application]
+
+Core Proxy Servers are Web Servers uses Apache with 4 servers
+PROXY servers uses apache with 2 web servers
+GIS Inbound Proxy uses apache with 2 web servers
+
+Traffic Movement Steps:
+
+URLs:
+Core Proxy:
+corefwprxy.prod.wudip.com
+corefwprxy.wuintranet.net
+coreyrevprxy.prod.wudip.com
+corerrevprxy.wuintranet.net
+
+Agent Training Proxy:
+agenttrainingprxy.prod.wudip.com
+agenttrainingprxy.wuintranet.net
+
+Inbound Proxy:
+corerrevprxy.westernunion.com (main Proxy URL)
+gisbgcheckresult.westernunion.com (shares same apache as proxy – to be moved only if the server is rebooted)
+notifsvc.westernunion.com (shares same apache as proxy - to be moved only if the server is rebooted)
+Initial state: Balanced – Serves traffic in both Reston & Chicago DCs in the normal state
+notifsvc.westernunion.com – Traffic is always pointed to Reston for this URL alone.
+
+Steps:
+1, Traffic movement for all the proxy URLs is done only in the GTM layer.
+2, LTM URLs are always balanced and not touched while diverting traffic
+3, Based on the DC in which the activity is planned or issue is observed, traffic has to be moved to the alternate DC for the above 9 URLs in the GTM layer.
+Link to the automated job in rundeck to divert the traffic for the application is given below,
+http://wuinfradeployment.wuintranet.net/project/Proxy/job/show/69a57ce1-45c0-42a6-888c-5a6ce40325a3
+4, Post completion of the activity, traffic can be enabled back using the same job mentioned in Step 3. The “notif” URL should be always pointed to Reston post completion of any activity.
+
+
+ 
+1. Once configuration is done, check the Apache configuration using the command
+apachectl configtest
+ 
+2. Upon successful configtest, reload the apache using 
+apachectl graceful
+ 
+3. Verify the process and logs
+ps -ef | grep httpd OR https
+tail apachelogs
+------------------------------
+CORE-PROXY(YELLOW-ZONE)SERVERS
+------------------------------
+WUWVC9ASPRXA05 10.45.17.202
+WUWVC9ASPRXB05 10.45.17.203
+
+WUWCC9ASPRXA05 10.47.17.202
+WUWCC9ASPRXB05 10.47.17.203
+---------------------------
+CORE-PROXY(RED-ZONE)SERVERS
+---------------------------
+WUWVC9WSPRXA04 10.45.0.213
+WUWVC9WSPRXB04 10.45.0.214
+
+WUWCC9WSPRXA04 10.47.0.213
+WUWCC9WSPRXB04 10.47.0.214
+--------------
+LINUX PATCHING
+--------------
+We have to give the servers for patching in batch wise as below ON RESTON DC
+
+1ST BATCH 
+WUWVC9ASPRXA05	10.45.17.202	Core Proxy Servers
+WUWVC9WSPRXA04	10.45.0.213		Core Proxy Servers
+WUWVC9WSPRXA02	10.45.0.211		PROXY Servers
+WUWVC9WSPRXA03	10.45.0.37		PROXY Servers
+
+2ND BATCH
+WUWVC9ASPRXB05	10.45.17.203	Core Proxy Servers
+WUWVC9WSPRXB04	10.45.0.214		Core Proxy Servers
+WUWVC9ASPRXA03	10.45.17.200	PROXY Servers
+WUWVC9WSPRXB03	10.45.0.38		GIS BG
+
+CHICAGO
+
+WUWCC9WSPRXB03	10.47.0.38	    - GIS	GIS / Inbound Proxy - root
+WUWCC9WSPRXA03	10.47.0.37	    - PROXY Servers	GIS / Inbound Proxy - root
+ 
+WUWCC9WSPRXA04	10.47.0.213	    - Core Proxy Servers	Core Proxy Servers - root
+WUWCC9WSPRXB04	10.47.0.214	    - Core Proxy Servers	Core Proxy Servers - root
+WUWCC9ASPRXA05	10.47.17.202	- Core Proxy Servers	Core Proxy Servers - root
+WUWCC9ASPRXB05	10.47.17.203	- Core Proxy Servers	Core Proxy Servers - root
+ 
+WUWCC9WSPRXA02	10.47.0.211	    - PROXY Servers	Agent Training PROXY Servers - webadm
+WUWCC9ASPRXA03	10.47.17.200	- PROXY Servers	Agent Training PROXY Servers - webadm

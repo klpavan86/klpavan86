@@ -1,0 +1,143 @@
+WUPAY [ACTIVE-PASSIVE APPLICATION]	  --> WUPAY URLS
+WUPAY DBS [ACTIVE-ACTIVE APPLICATION] --> ORIGIN URL 
+
+*****
+WUPAY
+*****
+WUWCC9ASWUD09 10.47.17.104 CHICAGO
+WUWCC9ASWUD10 10.47.17.105 CHICAGO
+
+WUWVC9ASWUD09 10.45.17.104 RESTON 
+WUWVC9ASWUD10 10.45.17.105 RESTON
+
+Follow standard traffic movement and restart steps. Move origin URL
+
+*********
+WUPAY-DBS
+*********
+WUWCC9WSDBS01 10.47.0.206 CHICAGO
+WUWCC9WSDBS02 10.47.0.207 CHICAGO
+
+WUWVC9WSDBS01 10.45.0.206 RESTON
+WUWVC9WSDBS02 10.45.0.207 RESTON
+
+WUWVC9ASWUD17 10.45.17.110 New Build
+WUWVC9ASWUD18 10.45.17.111 New Build
+
+*********
+WUPAY UAT --> LIVE 
+********* 
+WUWVC2ASWUP01 - 10.45.19.82  New Build
+WUWVC2ASWUP02 - 10.45.19.83  New Build
+
+BACKUP PATHS
+ps -ef | grep java | grep webadm >> /tmp/CHG0273456_webadm.txt
+ps -ef | grep httpd >> /tmp/CHG0273456_httpd.txt
+
+Follow standard traffic movement and restart steps. . Move origin URL
+An Example is shown below
+*************************************************************************************
+WUPAY TRAFFIC MOVEMENT TO ENABLE TRAFFIC AT RESTON AFTER PATCHING COMPLETED IN RESTON
+*************************************************************************************
+After Successful Patching on Reston, Please execute the below steps in sequence as mentioned.
+Enabled Reston --> Disabled Chiacgo --> Disabled batches on Chicago --> Restarted Chicago instances --> enabled traffic in Chiacgo --> Disabled traffic in Reston --> Restarted instances on Reston --> Validate any batches are running or not if not running in Chicago & running in Reston --> enable traffic in Reston --> Disable traffic in Chicago
+After Successful traffic movement, Ask Application team to perform Sanity [Application team --> Arushi, Suganya].
+
+Traffic Movement Steps:
+WUPAY URLs:
+wupay.wuintranet.net
+wupay.prod.wudip.com
+
+Initial state: Only in one DC (Reston or Chicago) – Serves traffic in either Reston or Chicago in the normal state
+
+WUPAY DBS URL:
+orgin-wupay.api.westernunion.com (DBS RestAPI integration URL)
+ 
+This url has to be moved only during network or infra activities that involve complete datacenter suspension and not along with regular WUPAY application traffic movement)
+Initial state: Balanced – Serves traffic in both Reston & Chicago DCs in the normal state
+
+Steps:
+Traffic movement for WUPAY involves a series of steps performed at the server & F5 level. The detailed failover document to move the entire DC’s traffic is present in our team’s share point location (link below).
+
+https://westernunion-my.sharepoint.com/personal/hazel_daniels_wu_com/_layouts/15/onedrive.aspx?id=%2Fsites%2FIOCInfraOps%2FShared%20Documents%2FITIO%2DRUN%2DMW%2DWebHosting%2FTraffic%5FFailover%5FDocs%5FWUPAY%5Fand%5FDMS&listurl=https%3A%2F%2Fwesternunion%2Esharepoint%2Ecom%2Fsites%2FIOCInfraOps%2FShared%20Documents&viewid=915efd32%2D11eb%2D48bd%2Db0ee%2Dc40399e82add&view=0
+
+WUPAY:
+1, Traffic movement for WUPAY is done only in the GTM layer at the F5 level.
+2, LTM URLs are always balanced and not touched while diverting traffic at the F5 level.
+3, Based on the DC in which the activity is planned or issue is observed, traffic has to be moved to the alternate DC by following the steps mentioned in the failover document in its sequence.
+
+Link to the automated jobs in rundeck to divert the traffic for the application is given below,
+
+GTM layer:
+http://wuinfradeployment.wuintranet.net/project/WUPay/job/show/e42217ce-d4c0-40d6-bc53-3da0df4adcb8
+
+Job to the move Batches & Cronjobs and restart the application servers:
+http://wuinfradeployment.wuintranet.net/project/WUPay/jobs
+
+4, Post completion of the activity, traffic can be again moved to the ‘DC’ requested by the application team by following the same set of steps mentioned above.
+
+WUPAY DBS:
+
+Steps:
+1, Traffic movement for WUPAY DBS is done only in the GTM layer.
+2, LTM URLs are always balanced and not touched while diverting traffic at the F5 level.
+3, Based on the DC in which the activity is planned or issue is observed, traffic has to be moved to the alternate DC for the above URL in the GTM layer.
+Link to the automated job in rundeck to divert the traffic for the application is given below,
+http://wuinfradeployment.wuintranet.net/project/WUPay/job/show/cf8ab2fa-f955-4740-b577-b20f37871cdd
+4, Post completion of the activity, traffic can be enabled back using the same job mentioned in Step 3.
+
+
+-----------------
+CHICAGO TO RESTON
+-----------------
+Disable Batches in Chicago DC using Run deck under chicago prod batches & cronjobs --> Stop the wupay_batch in Chicago --> Restart servers in Reston DC --> Validate the URL on Reston output must be successful --> Enable traffic in Reston & Disable traffic in Chicago --> Start the wupay batch on Reston DC --> Restart the servers in Chicago DC
+
+
+Validation: Disable Batches in Chicago using Run deck --> Initally all the crontabs will be uncommented & after running the job all the crontabs will be are commented and all the crontabs in reston will be in uncommented.
+**********************************************
+To check logs during of start of JVM processes
+**********************************************
+/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/log/
+/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/log/
+/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/log/
+
+*******************************************************
+VALIDATION OF THE BATCHES THAT ARE RUNNING IN ACTIVE DC
+*******************************************************
+CASE I - TRAFFUC IS IN CHICAGO DC & BATCHES ARE RUNNING IN THE CHICAGO DC
+------------------------------------------------------------------------- 
+Log in to CHICAGO DC Node 1 server --> switch to webadm by sudo su - webadm --> Run the command crontab -l --> all the cronjobs must be in enabled.
+Log in to RESTON DC Node 1 server --> switch to webadm by sudo su - webadm --> Run the command crontab -l --> all the cronjobs must be in disabled.
+
+Log in to CHICAGO DC Node 1 server --> switch to webadm by sudo su - webadm -->Go to /apps/modasolutions/conf --> Open systeminitial.properties file --> batches_host_name = DO_NOT_RUN is enabled mode or uncommented.
+
+Run the command ps -ef | grep wupay_batch --> Process is up and running.
+
+------------------------
+RABO CERTIFICATE RENEWAL
+------------------------
+cd /apps/modasolutions/conf/
+ls -rlt backup/Pre_CHG0280553_wugateway.jks_bkp18092024
+/apps/java/jdk1.8.0_351/bin/keytool -list -v -keystore wugateway.jks -storepass changeit
+/apps/java/jdk1.8.0_351/bin/keytool -list -v -keystore wugateway.jks -storepass changeit |grep wupaygateway
+ls -rlt /tmp/cheere/Rabocert/www_wupaygateway_com_COMODO_RSA_Organization_Validation_Secure_Server_CA.pem
+/apps/java/jdk1.8.0_351/bin/keytool -import -alias www_wupaygateway_com_09-SEPT-2024_10-SEPT-2025 -file /tmp/cheere/Rabocert/www_wupaygateway_com_COMODO_RSA_Organization_Validation_Secure_Server_CA.pem -keystore /apps/modasolutions/conf/wugateway.jks
+/apps/java/jdk1.8.0_351/bin/keytool -list -v -keystore wugateway.jks -storepass changeit
+
+
+104:- Node 1
+
+grep -i WFLYSRV0025 /apps/jboss7dc/jboss-eap-7.4/domain/log/host-controller.log
+grep -i WFLYSRV0025 /apps/jboss7/jboss-eap-7.4/domain/servers/wup2/log/server.log
+grep -i WFLYSRV0025 /apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/log/server.log
+grep -i WFLYSRV0025 /apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/log/server.log
+ 
+105:- Node 2
+grep -i WFLYSRV0025 /apps/jboss7/jboss-eap-7.4/domain/servers/wup2/log/server.log
+grep -i WFLYSRV0025 /apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/log/server.log
+grep -i WFLYSRV0025 /apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/log/server.log
+ 
+https://wupayci1.prod.wudip.com/checkout/admin?cmd=commandPing
+https://wupayci2.prod.wudip.com/checkout/admin?cmd=commandPing
+https://wupayci1.prod.wudip.com/axis2/services/listServices
+https://wupayci2.prod.wudip.com/axis2/services/listServices 

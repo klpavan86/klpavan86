@@ -1,0 +1,24 @@
+1, Agent Portal [Active-Active application]
+2, DMS [Active-Passive application]
+3, Core Proxy & Tablet Agent Training Proxy [Active-Active application]
+4, Receipt Service [Active-Active application]
+5, Stars [Active-Passive application]
+6, Taiopos/POSFilter [Active-Active application]
+7, Trackpayments/Quickfind [Active-Passive application]
+8, Tview [Active-Passive application]
+9, WUPAY [Active-Passive application]
+9a, WUPAY DBS [Active-Active application]
+10, WUPOS – 1.0, 2.0 [Active-Active application]
+11, WUGateway [Active-Active application]
+12, Digital Gateway [Active-Active application]
+13, WEBTMON [Active-Passive application]
+14, Applications without a DR or without an actively used DR
+
+These applications are not in the transactional flow and work primarily from one DC and do not have a traffic failover procedure. Communication is sent to change owners for these applications before the start of a planned activity or during major incidents.
+§  Agent Enroll - Works out of Reston. No active DR
+§  CSS – Works out of Reston. Has a DR environment but not in use
+§  BRM (Nextgenloyalty) – Works out of Reston. No active DR
+§  WEBTP - Works out of Reston. Has a DR environment but not in use
+§  Tranview – Works out of Reston. No active DR
+§  Doddfrank – Works out of Reston. No active DR
+§  TMS - Works out of Chicago. Has a DR environment but not in use

@@ -1,0 +1,279 @@
+
+
+/apps/rtra-prd/inv
+sw0018871pwd@WUWCC7ASANS01:/apps/rtra-prd/inv **** This is a PROD server Please be extra careful **** CHICAGO $ cat rtra-prod-reston
+[jboss]
+#10.45.16.80
+#10.45.16.80 ansible_server_ip=10.45.16.80
+#10.45.16.81 ansible_server_ip=10.45.16.81
+#10.45.16.82 ansible_server_ip=10.45.16.82
+#10.45.16.83 ansible_server_ip=10.45.16.83
+
+[node1]
+10.45.16.80 ansible_server_ip=10.45.16.80
+[node2]
+10.45.16.81 ansible_server_ip=10.45.16.81
+[node3]
+10.45.16.82 ansible_server_ip=10.45.16.82
+[node4]
+10.45.16.86 ansible_server_ip=10.45.16.86
+[node5]
+10.45.16.87 ansible_server_ip=10.45.16.87
+[node6]
+10.45.16.120 ansible_server_ip=10.45.16.120
+#[node7]
+#10.45.16.121 ansible_server_ip=10.45.16.121
+
+
+[jboss:children]
+node1
+node2
+node3
+node4
+node5
+node6
+#node7
+
+
+
+[node1:vars]
+PRIMARY_CONNECTIONS_EAS=10.44.32.136:16001-16050
+FAILOVER_CONNECTIONS_EAS=10.44.32.136:16051-16100
+#EAS_PRIMARY_URL=http://10.44.32.136:13510/easws/services/SRDWebService-handlerCount=100
+#EAS_FAILOVER_URL=http://10.44.32.137:13510/easws/services/SRDWebService-handlerCount=20,http://10.44.32.138:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.190:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.191:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.192:13510/easws/services/SRDWebService-handlerCount=20
+#EAS_END_POINT=http://10.44.32.136:13510/easws/services/SRDWebService
+EAS_PRIMARY_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=100
+EAS_FAILOVER_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=50,http://10.47.23.7:443/easws/services/SRDWebService-handlerCount=20
+EAS_END_POINT=http://10.45.23.7:443/easws/services/SRDWebService
+DYNATRACE=-agentpath:/apps/dynatrace/agent/lib64/libdtagent.so=name=RTRA_vc_prod_AppServer_01,server=10.44.7.13:9993
+RTRA_WS_END_POINT_ADDRESS=http://10.45.16.80:8080/AML_Service/RiskAssesmentService
+
+
+
+
+
+
+#GC_Settings=-XX:NewRatio=3 -XX:+UseConcMarkSweepGC -XX:+DisableExplicitGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing
+GC_Settings=-XX:+UseG1GC -XX:MaxGCPauseMillis=600 -XX:InitiatingHeapOccupancyPercent=50 -XX:ParallelGCThreads=12 -XX:ConcGCThreads=6 -XX:+UseAdaptiveSizePolicy -XX:+UseStringDeduplication
+NAE_Username=F498AC33AB744BA58E5423260FC20986AF3B39FC977A53C7556AE4AAF8FF8026
+NAE_Password=EBCBB2BFA7D1FC2B2F7EEB58A8D2C243
+Client_Cert_Passphrase=1696962E39C92BE079C6FEAB535193E0
+Key_Store_Location=/apps/rtra/client_keystore_WUWVC9ASRTRA01.prod.wudip.com_PApp-RTRAPROD-10-45-16-80-PROD.jks
+Key_Store_Password=1696962E39C92BE079C6FEAB535193E0
+jboss_version=jboss-eap-7.4
+
+[node2:vars]
+PRIMARY_CONNECTIONS_EAS=10.44.32.137:16001-16050
+FAILOVER_CONNECTIONS_EAS=10.44.32.137:16051-16100
+#EAS_PRIMARY_URL=http://10.44.32.137:13510/easws/services/SRDWebService-handlerCount=100
+#EAS_FAILOVER_URL=http://10.44.32.138:13510/easws/services/SRDWebService-handlerCount=20,http://10.44.32.136:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.191:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.192:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.190:13510/easws/services/SRDWebService-handlerCount=20
+#EAS_END_POINT=http://10.44.32.137:13510/easws/services/SRDWebService
+EAS_PRIMARY_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=100
+EAS_FAILOVER_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=50,http://10.47.23.7:443/easws/services/SRDWebService-handlerCount=20
+EAS_END_POINT=http://10.45.23.7:443/easws/services/SRDWebService
+DYNATRACE=
+RTRA_WS_END_POINT_ADDRESS=http://10.45.16.81:8080/AML_Service/RiskAssesmentService
+#GC_Settings=-XX:NewRatio=3 -XX:+UseConcMarkSweepGC -XX:+DisableExplicitGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing
+GC_Settings=-XX:+UseG1GC -XX:MaxGCPauseMillis=600 -XX:InitiatingHeapOccupancyPercent=50 -XX:ParallelGCThreads=12 -XX:ConcGCThreads=6 -XX:+UseAdaptiveSizePolicy -XX:+UseStringDeduplication
+NAE_Username=F498AC33AB744BA58E5423260FC20986EED5A8F624E22B80122AC1EA6B3F38EC
+NAE_Password=64FA1129E4E01F1D0821B14E91E92FBA
+Client_Cert_Passphrase=35557C47B8FBF1A9E9A167BEF74A12D0
+Key_Store_Location=/apps/rtra/client_keystore_wuwvc9asrtra02.prod.wudip.com_PApp-RTRAPROD-10-45-16-81-PROD.jks
+Key_Store_Password=35557C47B8FBF1A9E9A167BEF74A12D0
+jboss_version=jboss-eap-7.4
+
+[node3:vars]
+PRIMARY_CONNECTIONS_EAS=10.44.32.138:16001-16050
+FAILOVER_CONNECTIONS_EAS=10.44.32.138:16051-16100
+#EAS_PRIMARY_URL=http://10.44.32.138:13510/easws/services/SRDWebService-handlerCount=100
+#EAS_FAILOVER_URL=http://10.44.32.136:13510/easws/services/SRDWebService-handlerCount=20,http://10.44.32.137:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.192:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.190:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.191:13510/easws/services/SRDWebService-handlerCount=20
+#EAS_END_POINT=http://10.44.32.138:13510/easws/services/SRDWebService
+EAS_PRIMARY_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=100
+EAS_FAILOVER_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=50,http://10.47.23.7:443/easws/services/SRDWebService-handlerCount=20
+EAS_END_POINT=http://10.45.23.7:443/easws/services/SRDWebService
+DYNATRACE=
+RTRA_WS_END_POINT_ADDRESS=http://10.45.16.82:8080/AML_Service/RiskAssesmentService
+#GC_Settings=-XX:NewRatio=3 -XX:+UseConcMarkSweepGC -XX:+DisableExplicitGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing
+GC_Settings=-XX:+UseG1GC -XX:MaxGCPauseMillis=600 -XX:InitiatingHeapOccupancyPercent=50 -XX:ParallelGCThreads=12 -XX:ConcGCThreads=6 -XX:+UseAdaptiveSizePolicy -XX:+UseStringDeduplication
+NAE_Username=F498AC33AB744BA58E5423260FC20986BD47BC82CD3C4F5D49C98B009E434311
+NAE_Password=6A5707636C3F9D516A354D012823CDF8
+Client_Cert_Passphrase=49E1BB40640F7D4E2F157AA745D3A9FE
+Key_Store_Location=/apps/rtra/client_keystore_WUWVC9ASRTRA03.prod.wudip.com_PApp-RTRAPROD-10-45-16-82-PROD.jks
+Key_Store_Password=49E1BB40640F7D4E2F157AA745D3A9FE
+jboss_version=jboss-eap-7.4
+
+[node4:vars]
+PRIMARY_CONNECTIONS_EAS=10.44.32.136:16001-16050
+FAILOVER_CONNECTIONS_EAS=10.44.32.136:16051-16100
+#EAS_PRIMARY_URL=http://10.44.32.136:13510/easws/services/SRDWebService-handlerCount=100
+#EAS_FAILOVER_URL=http://10.44.32.137:13510/easws/services/SRDWebService-handlerCount=20,http://10.44.32.138:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.191:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.190:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.192:13510/easws/services/SRDWebService-handlerCount=20
+#EAS_END_POINT=http://10.44.32.136:13510/easws/services/SRDWebService
+EAS_PRIMARY_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=100
+EAS_FAILOVER_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=50,http://10.47.23.7:443/easws/services/SRDWebService-handlerCount=20
+EAS_END_POINT=http://10.45.23.7:443/easws/services/SRDWebService
+DYNATRACE=
+RTRA_WS_END_POINT_ADDRESS=http://10.45.16.86:8080/AML_Service/RiskAssesmentService
+#GC_Settings=-XX:NewRatio=3 -XX:+UseConcMarkSweepGC -XX:+DisableExplicitGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing
+GC_Settings=-XX:+UseG1GC -XX:MaxGCPauseMillis=600 -XX:InitiatingHeapOccupancyPercent=50 -XX:ParallelGCThreads=12 -XX:ConcGCThreads=6 -XX:+UseAdaptiveSizePolicy -XX:+UseStringDeduplication
+NAE_Username=F498AC33AB744BA58E5423260FC209864E1656C6CE2A11A2B6E9B85B57B5BCC3
+NAE_Password=8BDE4235C00423B9B86AB3AF718CA437
+Client_Cert_Passphrase=2F4B14FDF39F77CE9566D82C6F4168EF
+Key_Store_Location=/apps/rtra/client_keystore_WUWVC9ASRTRA05.prod.wudip.com_PApp-RTRAPROD-10-45-16-86-PROD.jks
+Key_Store_Password=2F4B14FDF39F77CE9566D82C6F4168EF
+jboss_version=jboss-eap-7.4
+
+[node5:vars]
+PRIMARY_CONNECTIONS_EAS=10.44.32.136:16001-16050
+FAILOVER_CONNECTIONS_EAS=10.44.32.136:16051-16100
+#EAS_PRIMARY_URL=http://10.44.32.136:13510/easws/services/SRDWebService-handlerCount=100
+#EAS_FAILOVER_URL=http://10.44.32.137:13510/easws/services/SRDWebService-handlerCount=20,http://10.44.32.138:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.190:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.191:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.192:13510/easws/services/SRDWebService-handlerCount=20
+#EAS_END_POINT=http://10.44.32.136:13510/easws/services/SRDWebService
+EAS_PRIMARY_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=100
+EAS_FAILOVER_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=50,http://10.47.23.7:443/easws/services/SRDWebService-handlerCount=20
+EAS_END_POINT=http://10.45.23.7:443/easws/services/SRDWebService
+DYNATRACE=
+RTRA_WS_END_POINT_ADDRESS=http://10.45.16.87:8080/AML_Service/RiskAssesmentService
+#GC_Settings=-XX:NewRatio=3 -XX:+UseConcMarkSweepGC -XX:+DisableExplicitGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing
+GC_Settings=-XX:+UseG1GC -XX:MaxGCPauseMillis=600 -XX:InitiatingHeapOccupancyPercent=50 -XX:ParallelGCThreads=12 -XX:ConcGCThreads=6 -XX:+UseAdaptiveSizePolicy -XX:+UseStringDeduplication
+NAE_Username=F498AC33AB744BA58E5423260FC2098693DD028A8357714965441E11B55CB09A
+NAE_Password=289480632257FA1F6CE6B70D267DC502
+Client_Cert_Passphrase=1FE9F3B3081AE1EEEA033232A84DB7C6
+Key_Store_Location=/apps/rtra/client_keystore_WUWVC9ASRTRA06.prod.wudip.com_PApp-RTRAPROD-10-45-16-87-PROD.jks
+Key_Store_Password=1FE9F3B3081AE1EEEA033232A84DB7C6
+jboss_version=jboss-eap-7.4
+
+[node6:vars]
+PRIMARY_CONNECTIONS_EAS=10.44.32.137:16001-16050
+FAILOVER_CONNECTIONS_EAS=10.44.32.137:16051-16100
+#EAS_PRIMARY_URL=http://10.44.32.137:13510/easws/services/SRDWebService-handlerCount=100
+#EAS_FAILOVER_URL=http://10.44.32.138:13510/easws/services/SRDWebService-handlerCount=20,http://10.44.32.136:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.191:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.192:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.190:13510/easws/services/SRDWebService-handlerCount=20
+#EAS_END_POINT=http://10.44.32.137:13510/easws/services/SRDWebService
+EAS_PRIMARY_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=100
+EAS_FAILOVER_URL=http://10.45.23.7:443/easws/services/SRDWebService-handlerCount=50,http://10.47.23.7:443/easws/services/SRDWebService-handlerCount=20
+EAS_END_POINT=http://10.45.23.7:443/easws/services/SRDWebService
+DYNATRACE=
+RTRA_WS_END_POINT_ADDRESS=http://10.45.16.120:8080/AML_Service/RiskAssesmentService
+#GC_Settings=-XX:NewRatio=3 -XX:+UseConcMarkSweepGC -XX:+DisableExplicitGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing
+GC_Settings=-XX:+UseG1GC -XX:MaxGCPauseMillis=600 -XX:InitiatingHeapOccupancyPercent=50 -XX:ParallelGCThreads=12 -XX:ConcGCThreads=6 -XX:+UseAdaptiveSizePolicy -XX:+UseStringDeduplication
+NAE_Username=F498AC33AB744BA58E5423260FC20986C92E93F3DC390718D821E2B6831C9ACA
+NAE_Password=004039F2813EBE009708DCC7C2D5B231
+Client_Cert_Passphrase=466173037C6C9F524B7FCA9B4FBA9B57
+Key_Store_Location=/apps/rtra/client_keystore_WUWVC9ASRTRA07.prod.wudip.com_PApp-RTRAPROD-10-45-16-120-PROD.jks
+Key_Store_Password=466173037C6C9F524B7FCA9B4FBA9B57
+jboss_version=jboss-eap-7.4
+
+#[node7:vars]
+#PRIMARY_CONNECTIONS_EAS=10.44.32.138:16001-16050
+#FAILOVER_CONNECTIONS_EAS=10.44.32.138:16051-16100
+#EAS_PRIMARY_URL=http://10.44.32.138:13510/easws/services/SRDWebService-handlerCount=100
+#EAS_FAILOVER_URL=http://10.44.32.136:13510/easws/services/SRDWebService-handlerCount=20,http://10.44.32.137:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.192:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.190:13510/easws/services/SRDWebService-handlerCount=20,http://10.46.32.191:13510/easws/services/SRDWebService-handlerCount=20
+#EAS_END_POINT=http://10.44.32.138:13510/easws/services/SRDWebService
+#DYNATRACE=
+#RTRA_WS_END_POINT_ADDRESS=http://10.45.16.121:8080/AML_Service/RiskAssesmentService
+
+
+
+
+
+
+
+
+[jboss:vars]
+java_home=/usr
+instance=rtra
+install_base=/apps/{{instance}}
+#jboss_version=jboss-eap-6.4
+rtra_conf_dir={{install_base}}/{{jboss_version}}/standalone
+TESTNG_DIR=/apps
+TESTNG_BIN={{TESTNG_DIR}}/TestNG/bin
+ENV=PROD
+TESTNG_HOME=/apps/TestNG
+
+template_path=.
+cnname=rtraws.westernunion.net
+env_site=reston
+stage_location=/apps/stage/rtraprod
+#ARTIFACTS_FOLDER=RTRA_MASTER_RELEASE
+#archiva_repo_url=http://wurepo.wuintranet.net/archiva/repository/rtra
+archiva_repo_url=http://10.46.6.64/repository/rtra
+url_username=webadm
+url_password=webadm@0116
+
+#archiva_repo_url=http://10.46.6.64/repository/rtra
+#url_username=admin
+#url_password=CDE32wsx
+
+#Tibco EMS Cloud Migration Change
+RTRACRTCASE_CLOUD=W8PbK6AJjbUIK
+#TIBCO_SERVER_URL=tcp://emscore.tibco.useast1.enterprisebusprod.awswuintranet.net:7000,tcp://emscore.tibco.useast2.enterprisebusprod.awswuintranet.net:7000
+TIBCO_SERVER_URL=ssl://emscore.tibco.useast1.enterprisebusprod.awswuintranet.net:7043,ssl://emscore.tibco.useast2.enterprisebusprod.awswuintranet.net:7043
+
+#password.properties
+DATABASE=VcVXr3/Di9q9Wh7IdjgjEA==
+EAS=cJaR6woZCNyek65T9/+YsQ==
+TANDEM_DB_PASSWORD=yPdJsjFKhUn/iEpVBoFJsw==
+EAS_DB_PASSWORD=aSqGA6KZvH5udXAhSV6YtQ==
+
+#standalone.xml
+RTRA_DB=10.45.24.133:50000/AMLDBC
+RTRA_USER=amlinst
+DB_SCHEMA=amlinst
+
+#PAM Integration
+RTRA_CCP_CONN_PROP=https://cyberark-ccp.wuintranet.net/AIMWebService/api/accounts,App_RTRA,AS_RTRA,Root,AMLDBC_amlinst
+
+REP_DB=10.45.24.135:50000/REPDBC
+
+EAS_DB=10.44.40.80:50000/EASDBC
+EAS_USER=easadmin
+EAS_PASSWORD=39557f076d1688ffdf8592078de921bc
+EAS_SCHEMA=EATUAT
+EAS_TIMEOUT=25000
+RTRA_CVBR_SCHEMA=RTRA_CVBR
+RTRA_SITE_INDICATOR_FOR_UNISYS_FEED=C
+OVERLOAD_RANGE_MIN=0
+OVERLOAD_RANGE_MAX=1999999999999999999
+HTTP_PORT_OFFSET=0
+TIBCO_JMS_PROVIDER_URL_IPS=ssl://emscore.tibco.useast1.enterprisebusprod.awswuintranet.net:7043,ssl://emscore.tibco.useast2.enterprisebusprod.awswuintranet.net:7043
+TIBCO_USER=RTRACUSTCOMPL
+TIBCO_PASSWORD=b3B6nZS9f4
+INSTANCE_NAME=rtra-prod-reston
+DATA_CONTAINER_JNDI=java:global/RTRA/DataContainer/DataContainerEJB!com.wu.ejb.interfaces.DataContainerEJBLocal
+
+##Australia DVS changes
+TIBCO_ID_VERIFICATION_POINT_ADDRESS=https://kycsvcrs.prod.wudip.com/CustomerIDVerification
+NMSERVICE_CLOUD_ADDDRESS=rtranmservice.wuintranet.net
+
+#standalone.conf
+JBOSS_BIND_ADDDRESS={{ansible_server_ip}}
+JAVA_HOME={{java_home}}
+QAS_PRIMARY_URL=https://addserv.wuintranet.net/international/QASAddressRequest-handlerCount=100
+QAS_FAILOVER_URL=https://addserv.wuintranet.net/international/QASAddressRequest-handlerCount=100
+QAS_END_POINT=https://addserv.wuintranet.net/international/QASAddressRequest
+LD_LIBRARY_PATH={{rtra_conf_dir}}
+JVM_HEAP_MIN=48g
+JVM_HEAP_MAX=48g
+NMSERVICE_ADDDRESS={{ansible_server_ip}}
+NMSERVICE_PORT=8180
+
+#Payment Verification Data in RME
+PROPERTY_BLAZECONSUMER_QUEUE=WU.PROD.KYC.BLAZE.IWATCH.FRAUDCNTL.QUEUE
+PROPERTY_BLAZECONSUMER_URL=ssl://emscore.tibco.useast1.enterprisebusprod.awswuintranet.net:7043,ssl://emscore.tibco.useast2.enterprisebusprod.awswuintranet.net:7043
+PROPERTY_BLAZECONSUMER_PRINCIPAL=RTRACRTCASE
+PROPERTY_BLAZECONSUMER_CREDENTIAL=W8PbK6AJjbUIK
+
+PROPERTY_AUICONSUMER_QUEUE=WU.PROD.IWATCH.RTRA.AUICOMPLIANCE.QUEUE
+PROPERTY_AUICONSUMER_URL=ssl://emscore.tibco.useast1.enterprisebusprod.awswuintranet.net:7043,ssl://emscore.tibco.useast2.enterprisebusprod.awswuintranet.net:7043
+PROPERTY_AUICONSUMER_PRINCIPAL=IWATCHPUBL
+PROPERTY_AUICONSUMER_CREDENTIAL=iwatchpubl
+
+##Entity lookup maximum entities approval issue
+HTTP_PARAMETERS_MAX_COUNT=5000
+
+#ATLAS F5 Changes
+atlas_f5_url=https://atlasrtra-res.prod.wudip.com/prod/atlasService/handleRequest
+atlas_f5_service_header={&quot;lbhost&quot;:&quot;om8tl4x4g0.execute-api.us-east-1.amazonaws.com|lqne55hz99.execute-api.us-east-2.amazonaws.com&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;,&quot;lbkey&quot;:&quot;bRgxyqowwH4SlS80iMF517hQvlXNA5bK6SDbfNGb|CYxcPEiUpZ2gGn91aQZ5A6Qszm0qZDC4ENx1ZgRc&quot;}
+
+#Key secure cipher trust
+NAE_IP1=PRDRESTuvCipherTrust1.wuintranet.net:PRDRESTuvCipherTrust2.wuintranet.net
+NAE_IP2=PRDCHIuvCipherTrust1.wuintranet.net:PRDCHIuvCipherTrust2.wuintranet.net

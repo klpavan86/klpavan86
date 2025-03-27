@@ -1,0 +1,20 @@
+****************************
+STEPS FOR QA2 BROKER RESTART
+****************************
+Go to the Location 
+  /apps/wubsg/config/qa2/mqsipolicy
+Execute the scripts as given below
+  ./ACE-BrokerStop.sh
+  ./ACE-BrokerStart.sh
+  mqsistartmsgflow ACENDQA2 -e BIS_EG -k BIS_Quotation_APP -m DASCloudOkta
+  mqsistartmsgflow ACENDQA2 -e NRT_EG -k NRT_Notification_Service
+  
+Go to the Location 
+  /apps/wubsg/config/qa2/mqsioutput
+  tail GlobalCache_Success.xml
+  mqsilist
+  mqsilist ACENDQA2
+  mqsistartmsgflow ACENDQA2 -e default_EG -k Auth_Token_APP -m AuthToken_APP_MF
+  mqsicacheadmin ACENDQA2 -c showMapSizes|grep -E 'ES.EventToken|MOP.EventToken'
+  cd /apps/wubsg/transactionlog/qa
+  

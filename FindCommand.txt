@@ -1,0 +1,7 @@
+find /apps/wubsg/transactionlog/pi/*/*xml* -mtime +20 -exec rm {} \;
+
+find /apps/wubsg/exception/pi/*/*xml* -mtime +20 -exec rm {} \;
+
+find /apps/wubsg/transactionlog/pi/*/*xml -mtime +10 -exec gzip {} \;
+
+find /apps/wubsg/exception/pi/*/*xml -mtime +10 -exec gzip {} \;

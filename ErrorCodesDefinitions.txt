@@ -1,0 +1,22 @@
+sw0018871pwd@WUWVC9ASPRXA05:/etc/httpd/conf **** This is a PROD server Please be extra careful **** RESTON $ cat local.conf
+
+ErrorDocument 400  "<html><h1>Bad Request</h1><br>Your browser sent a request that this server could not understand</html>"
+ErrorDocument 401  "<html><h1>Authorization Required</h1><br> This server could not verify that you are authorized to access the document requested. Either you supplied the wrong credentials (e.g., bad password), or your browser doesn't understand how to supply the credentials required.</html>"
+ErrorDocument 403  "<html><h1>Forbidden</h1><br> You don't have permission to access on this server</html>"
+ErrorDocument 404  "<html><h1>Not Found</h1><br> The requested URL was not found on this server</html>"
+ErrorDocument 405  "<html><h1>Method Not Allowed</h1><br> The requested method GET is not allowed for the URL</html>"
+ErrorDocument 408  "<html><h1>Request Timeout </h1><br>Server timeout waiting for the HTTP request from the client</html>"
+ErrorDocument 410  "<html><h1>Gone</h1><br> The requested resource is no longer available on this server and there is no forwarding address. Please remove all references to this resource</html>"
+ErrorDocument 411  "<html><h1>Length Required </h1><br>A request of the requested method GET requires a valid Contentlength</html>"
+ErrorDocument 412  "<html><h1>Precondition Failed </h1><br>The precondition on the request for the URL evaluated to false</html>"
+ErrorDocument 413  "<html><h1>Request Entity Too Large</h1><br> The requested resource does not allow request data with GET requests, or the amount of data provided in the request exceeds the capacity limit</html>"
+ErrorDocument 414  "<html><h1>RequestURI Too Large </h1><br>The requested URL's length exceeds the capacity limit for this server</html>"
+ErrorDocument 415  "<html><h1>Unsupported Media Type</h1><br> The supplied request data is not in a format acceptable for processing by this resource.</html>"
+ErrorDocument 500  "<html><h1>Internal Server Error</h1><br> The server encountered an internal error or misconfiguration and was unable to complete your request</html>"
+ErrorDocument 501  "<html><h1>Method Not Implemented </h1><br>GET to URL not supported</html>"
+ErrorDocument 502  "<html><h1>Bad Gateway </h1><br>The proxy server received an invalid response from an upstream server</html>"
+ErrorDocument 503  "<html><h1>Service Temporarily Unavailable </h1><br>The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.</html>"
+ErrorDocument 506  "<html><h1>Variant Also Negotiates A variant for the requested resource URL is itself a negotiable resource. This indicates a configuration error.</html>"
+
+
+

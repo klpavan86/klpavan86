@@ -1,0 +1,68 @@
+=============================================
+​MIR CHICAGO UAT SERVERS DEPLOYMENTS, SERVICES
+=============================================
+Chicago Server: 
+WUWCC5ASGRD07 
+WUWCC5ASGRD15
+
+
+Hi Team,
+
+FYI.
+
+In UAT env for MIR application , the WebSphere services are running only Reston DC ( WUWVC5ASGRD07 & WUWVC5ASGRD15).
+On Chicago Servers we have brought down WebSphere services and set up a new standalone java process.  Don't bring up WebSphere services on Chicago Servers. During patching/reboot we need to bring up only standalone process.
+
+We are support the stop & start services and  we are supporting deployments for these standalone processes on both Chicago Nodes.
+Please find the information below and let me know if you have any questions.
+
+
+
+---------
+
+start /stop scripts: (For both Nodes)
+
+[sw0011992pwd@WUWCC5ASGRD07 mir2]$ pwd
+/apps/mir2
+
+-rwxr-xr-x 1 webadm webadm   64 Jan  3 16:41 stop.sh
+-rwxr-xr-x 1 webadm webadm  749 Jan  3 16:58 start.sh
+drwxrwxr-x 2 webadm webadm 4096 Feb 29 06:10 backups
+drwxr-xr-x 3 webadm webadm 4096 Feb 29 06:17 services
+
+for Stop :  
+cd /apps/mir2
+./stop.sh
+
+for start:
+cd /apps/mir2
+./start.sh
+---------------
+Deployment:
+
+For Deployment we just need to copy given ( mir-services-R24-01.4.0.war / application.properties) files to " /apps/mir2/services" after taking up of existing files. Post that we need to restart the service.
+
+-----------------
+Logs: Sometimes after starting the process, it will come up and goes down automatically due to issues in connecting downstream or not a proper build these information/errors can be found in nohup.out log , we will inform the same to app team. MIR application logs can be found in "/apps/mir2/services/log".
+
+[sw0011992pwd@WUWCC5ASGRD07 services]$ pwd
+/apps/mir2/services
+
+-rwxr-xr-x 1 webadm webadm 129145357 Feb 29 05:23 mir-services-R24-01.4.0.war
+-rwxr-xr-x 1 webadm webadm              2764 Feb 29 06:13 application.properties
+drwxrwxr-x 2 webadm webadm      4096 Mar  1 00:00 log
+-rwxrwxr-x 1 webadm webadm    330330 Mar  1 02:00 nohup.out
+
+
+[sw0011992pwd@WUWCC5ASGRD07 log]$ pwd
+/apps/mir2/services/log
+-rw-rw-r-- 1 webadm webadm 273627 Feb 29 23:00 mir-2024-02-29-1.log
+-rw-rw-r-- 1 webadm webadm  49851 Mar  1 02:00 mir.log
+
+-----------------
+Java process info:
+
+[sw0011992pwd@WUWCC5ASGRD07 services]$ ps -ef|grep webadm
+
+webadm    7978     1  0 Feb29 ?        00:03:55 java -D[Server:mir2] -Djava.io.tmpdir=/apps/IBM/tmp -Xms16384m -Xmx16384m -Djava.awt.headless=true -Djvm.name=wuapp-stgci11.westernunion.net_01 -Djava.net.preferIPv4Stack=true -Dsun.reflect.inflationThreshold=0 -agentpath:/apps/dynatrace/agent/lib64/libdtagent.so=name=MRT_cc_uat_LifeRay_01,server=10.46.7.16:9992 -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2 -jar mir-services-R24-01.4.0.war
+[sw0011992pwd@WUWCC5ASGRD07 services]$

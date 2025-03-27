@@ -1,0 +1,8 @@
+IP: 10.45.16.99
+It is a IWATCHRA RESTON UAT server
+Only Idearefresh process runs on the server
+
+Path: /apps/idearefresh/jboss-eap-6.4/standalone
+
+To restart the Idea refresh
+Go to /apps/idearefresh/jboss-eap-6.4/standalone/bin --> Run ./jboss.sh stop --> Run ./jboss.sh start

@@ -1,0 +1,28 @@
+Reference config :
+--------------
+<server-group name="wup2-02-server-group" profile="full-ha">
+            <jvm name="default">
+                <heap size="8g" max-size="8g"/>
+                <permgen size="512m" max-size="1024m"/>
+                <jvm-options>
+                    <option value="-verbose:gc -Xloggc:/apps/jboss7dc/jboss-eap-7.4/domain/log/Gc-logs/Server1GC.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true -XX:+DisableExplicitGC -XX:+PrintCommandLineFlags -XX:HeapDumpPath=/apps/jboss7dc/jboss-eap-7.4/domain/log/heap_dump"/>
+                </jvm-options>
+                <environment-variables>
+                    <variable name="EBILLME_PASSPHRASE" value="7ysinaskereson5o"/>
+                </environment-variables>
+            </jvm>
+            <socket-binding-group ref="full-ha-sockets"/>
+            <deployments>
+</server-group>
+
+************************************************************************
+COMMANDS FOR MANUAL GENERATION OF HEAP DUMP IN JBOSS APPLICATION SERVERS
+************************************************************************
+- If the heap dump does not generate automatically, you can capture as explained in https://access.redhat.com/solutions/21109#jmapjavaprocess during the time of the issue.
+~~~
+    jmap -dump:format=b,file=heap.hprof JAVA_PID
+~~~
+
+Note this command must be run as the same user running the JBoss process for proper permissions.  If the JVM is not responding to that as well in the issue time, please attempt it with the -F flag added:
+~~~
+    jmap -F -dump:format=b,file=heap.hprof JAVA_PID

@@ -1,0 +1,27 @@
+PROXY
+Active-Active Application
+This Proxy comes into picture only if the External partner wants to connect to WU or WU wants to connect External party or vendor
+All will run in apache web servers and no application servers
+For 1 way SSL, we won't maintain any partner certificates at our end.
+For 2 way SSL, certificate of the partner is kept in our apache servers
+It has 3 sets 
+core proxy = 
+agent training proxy = wupos 
+Inbound Proxy = TIBCO servers 
+It has 2 servers in each DC
+YEllow Zone servers are connected to Red Zone servers. 
+No deployments will be there.
+We will keep endpoint URL in the servers
+We perform only GTM level traffic
+Login into 10.44.193.39 Network Device 
+Go to DNS - GSLB - pools - poolslist
+INTRANET LTM means CLAN LTM
+GTM - LTM - Backend apache web servers
+
+STARS 
+Active - Passive Application
+No app servers and only IIS webservers are involved.
+Requires SQL team for doing DB failover before traffic movement
+We support only traffic movement only on GTM and LTM not required
+GTM - LTM - PUBLIC LTM 10.45.20.4 - IIS web servers 10.44.24.52 & 53 IIS webservers one web server only 
+

@@ -1,0 +1,16 @@
+Enabling/Disabling Wupos Traffic at GTM (Chicago DC)
+Steps for Enabling/Disabling Wupos Chicago Traffic at GTM for below urls,
+Wupos.westernunion.com
+Wupos.westernunion.net
+Wuposlb.westernunion.com
+ 
+Steps:
+Step -1: Login to the GTM, https://10.44.193.38/xui/
+Step -2: Navigate to DNS >> GSLB >> Pools >> Pool List and search for wupos.westernunion.com
+Wupos is an Active-Active site. So, you’ll see both the data centers enabled (Will be green circle)
+Select the Chicago DC and then click on the "disable" button. After disabling, the disabled DC would become a black circle (refer screen shot below),
+Step -3: Navigate to DNS >> GSLB >> Pools >> Pool List and search for wupos.westernunion.net
+Select the Chicago DC and then click on the "disable" button. After disabling, the disabled DC would become a black circle (refer screen shot below),
+Step -4: Navigate to DNS >> GSLB >> Pools >> Pool List and search for wuposlb.westernunion.com
+Select the Chicago DC and then click on the "disable" button. After disabling, the disabled DC would become a black circle (refer screen shot below),
+Step -5: For enabling the traffic back, follow the same steps as mentioned above and then select Chicago DC and click on the “enable” button for each URL. The enabled DC would become a green circle as per screen shot below,

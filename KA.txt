@@ -1,0 +1,203 @@
+*****
+WUPOS
+*****
+Number						Description
+KB0029303	Steps for Enabling/Disabling Wupos Tablet Traffic at  Reston GTM
+KB0029304	Steps for Enabling/Disabling Wupos tablet Traffic at  Chicago GTM
+KB0029300	Enabling/Disabling Wupos Traffic at GTM (Reston DC)
+KB0029302	Enabling/Disabling Wupos Traffic at GTM (Chicago DC)
+KB0029314	WUPOS Traffic - Enable/Disable Cross-pool members in Reston LTM (.com, .net, lb)
+KB0029315	WUPOS Traffic - Enable/Disable Cross-pool members in Chicago LTM (.com, .net, lb)
+KB0029333	WUPOS Forceout Silos at Apache LB level - Reston
+KB0031000	To solve Wupos traffic imbalance
+KB0029337	WUPOS Draining Silos at Apache LB level - Chicago
+KB0029335	WUPOS Draining Silos at Apache LB level - Reston
+KB0028482	Steps to drain and restart an affected Silo in Wupos:
+KB0029298	To check the WUPOS cache count in Reston/Chicago
+KB0030923	Manual Mbean Setup for WUPOS SILOs
+KB0029540	WUPOS Mbean - Enable/Disable in Chicago
+KB0029307	WUPOS Mbean - Enable/Disable in Reston
+KB0030645	Start/Stop – Stunnel Services in WUPOS
+KB0029458	WUPOS - Steps to restart Wuta Instance in Chicago
+KB0029456	WUPOS - Steps to restart Wuta Instance in Reston
+KB0027157	Steps to take individual Wupos Silos out of spray and restart them
+KB0027615	Steps to clear logs in WUPOS Servers
+KB0029296	To check the WUPOS DB count in Reston/Chicago:
+KB0027852	WUPOS restart
+KB0029578	Wupos - Restart of Webservers in Reston
+KB0029615	Wupos - Restart of Webservers in Chicago
+
+*****
+WUPAY
+*****
+Number				Description
+KB0029169	Wupay Batches movement to Reston DC
+KB0029170	Wupay Batches movement to Chicago DC
+KB0029213	Enabling the traffic in Reston For Wupay.
+KB0029215	Enabling the traffic in Chicago For Wupay.
+KB0029216	Disabling the traffic in Reston for Wupay.
+KB0029217	Disabling the traffic in Chicago for Wupay.
+KB0029453	WUPAY - Steps to Restart  Reston JVMs from Rundeck
+KB0029454	WUPAY - Steps to Restart Chicago JVMs from Rundeck
+KB0030859	WUPAY traffic movement Via Rundeck
+
+*****
+TVIEW
+*****
+Number				Description
+KB0029163	Tview traffic movement for Chicago DC
+KB0029164	Tview traffic movement for Reston DC
+
+***
+TMS
+***
+Number				Description
+KB0025976	How to Restart the TMS DLS Application
+KB0028748	Restart TMSDownload process
+KB0029203	Enable traffic for TMS application in Reston
+KB0029204	Enable traffic for TMS application in Chicago
+KB0029205	Disable traffic for TMS application in Chicago
+KB0029206	Disable traffic for TMS application in Reston
+KB0036312	Restart TMSDownload process
+
+**************
+TRACK PAYMENTS
+**************
+Number					Description
+KB0029884	Webserver restart of Trackpayments in Reston
+KB0029200	How to disable Quickfind/Trackpayments/WADs traffic on reston
+KB0029885	Webserver restart of Trackpayments in Chicago
+KB0030565	Application Server restart of QuickFind / Trackpayments Instance
+KB0029201	How to enable Quickfind/Trackpayments/WADs traffic on Reston
+
+*******************
+TAIPOS | POS FILTER
+*******************
+Number					Description
+KB0029220	Enable traffic for Taiopos/Translink application in Reston
+KB0029221	Disable traffic for Taiopos/Translink application in Reston
+
+***************
+STARS & WEBTMON
+***************
+Number						Description
+KB0029254	Enabling / Disabling traffic for STARS application in Reston.
+KB0029256	Enabling / Disabling traffic for STARS application in Chicago.
+KB0029396	Enable / Disable of traffic for STARS application.
+KB0029188	Traffic movement for Webtmon application to Chicago
+KB0029189	Traffic movement for Webtmon application to Reston.
+
+***************
+RTRA & IWATCHRA
+***************
+Number						Description
+KB0025395	To carry out RTRA deployment through Rundeck
+KB0027612	Steps to clear logs in IWATCHRA Application Servers
+KB0027614	Steps to clear logs in RTRA application
+KB0028815	Re-start/bring up entityclrtool instance in RTRA
+KB0030469	Run batch job in RTRA
+KB0030633	Steps to execute Flumes batch job in RTRA
+KB0030780	Steps to trigger a RTRA batch manually
+KB0030809	Webserver restart of IWATCHRA in Chicago
+KB0031072	Major, iWatchRA - Port 81 availablity on wuwvc9asgen46 (10.45.16.96)
+KB0030883	Steps to restart webservers of IWatchRA
+KB0026564	EAS WS Verification and restart steps
+KB0026674	Delete error files and restart EAS steps
+KB0031248	Running List Processing Batch Manually
+
+**************
+RECEIPT SERVER
+**************
+Number						Description
+KB0026915	WUPOS Receipt Service PROD deploy using Rundeck
+KB0029242	Enabling and disabling Traffic for Receipt Service - Reston
+KB0029265	Enabling and disabling Traffic for Receipt Service - Chicago
+KB0029365	Steps to share Receipts files from Receipts servers
+KB0029497	Steps to restart Receipts JVMs
+KB0031167	Fetch Property Files from Receipt Servers - All Env
+
+*******
+PCTOMUX
+*******
+Number						Description
+KB0027917	To restart PCTOMUX application instances
+KB0029394	To restart PCTOMUX webservers
+KB0029700	Webserver restart of Pctomux in Reston:
+KB0029701	Webserver restart of Pctomux in Chicago:
+
+*******
+LIFERAY
+*******
+Number						Description
+KB0027626	NGDRT CPU and Memory Issues
+KB0029184	Enabling traffic for NGDRT  in Reston
+KB0029185	Disabling Traffic in Reston for NGDRT
+KB0029187	Disabling Traffic in Chicago for NGDRT
+KB0029460	Restart Reston JVMs for NGDRT Application in WAS
+KB0029461	Restart Chicago JVMs for NGDRT application in WAS
+KB0030628	NGDRT Traffic Movement through Run Deck - Ansible Script
+KB0055945	MIR/Liferay -- scheduler job start/stop steps
+
+*******
+GATEWAY
+*******
+Number						Description
+KB0029319	Gateway Traffic - Enable/Disable in Reston GTM
+KB0029320	Gateway Traffic - Enable/Disable in Chicago GTM
+KB0029321	Gateway Internal - Enable/Disable traffic in Reston
+KB0029322	Gateway Internal - Enable/Disable traffic in Chicago
+KB0026901	Steps to reclaim space in gateway application servers
+KB0027102	Gateway Application traffic movement
+KB0026929	How to Refresh/Reload the Cache for WUGateway BIS and NIS EGs
+KB0028583	Gateway Server health check commands
+KB0013862	WU Gateway Client Certificate Renewal - Installation Procedure
+KB0030271	TLS upgrade in Datapower for Gateway URLs
+KB0026688	Gateway prod deployment implementation procedure
+KB0030627	Gateway Broker MQ Queue Threshold Alert
+KB0030640	Restart Queue Manager in MQ
+KB0030639	Restart IIB Broker and Execution group
+
+***
+DMS
+***
+Number						Description
+KB0029470	DMS - Steps to Restart  Chicago JVM
+KB0027642	DMS Application Traffic Movement
+KB0027161	How to Re-start DMS Servers
+KB0029347	DMS Application Traffic Movement
+KB0029469	DMS - Steps to Restart  Reston JVM
+
+********
+ARC PLUS
+********
+Number						Description
+KB0027122	Start and Stop - Jetty instance in ARC plus certificate server (Prod)
+
+************
+AGENT PORTAL
+************
+Number						Description
+KB0027122	Start and Stop - Jetty instance in ARC plus certificate server (Prod)
+KB0029177	AgentPortal Application Traffic Movement to Chicago
+KB0029484	Agentportal - Steps to Restart  Reston JVM
+KB0029486	Agentportal - Steps to Restart  Chicago JVM
+KB0030850	AGENTPORTAL APPLICATION TRAFFIC MOVEMENT - RUNDECK
+KB0030851	AGENTPORTAL APPLICATION RESTART - RUNDECK
+
+*******
+GENERAL
+*******
+Number						Description
+KB0030733	Steps to restart Archiva and Rundeck instance
+KB0031210	Archiva Instance Restart Procedure
+KB0031182	ARC + Self Signed certificate expired
+KB0031132	BRM - Steps to restart BRM instance
+KB0029455	Steps to restart Nextgen Loyalty - BRM in Reston
+KB0032308	No KA Available
+KB0031209	Run Deck Instance Restart Procedure
+KB0028587	Steps to free up space in Linux servers
+KB0031211	Steps to follow when requested to share a file/log or a set of files/logs from a server
+KB0029080	How to restart jboss application server in Domain mode & Standalone mode
+KB0028588	CPU and Memory Issues
+KB0030212	How to Restart Application Instances using Run Deck
+

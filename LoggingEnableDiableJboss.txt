@@ -1,0 +1,28 @@
+
+​
+
+
+How to enable or disable the STDOUT and/or STDERR messages in JBoss EAP 4.x logs
+ SOLUTION VERIFIED - Updated February 28 2014 at 8:17 AM - English 
+Environment
+JBoss Enterprise Application Platform (EAP) 4.2
+JBoss Enterprise Application Platform (EAP) 4.3
+Application, service, or component deployed to EAP server which prints output to STDOUT or STDERR (System.out.println(), System.err.println())
+Issue
+How can we suppress the STDOUT messages in our log file?
+How can I get ride of this error message:
+Raw
+...
+ERROR [STDERR] yyyy-MM-dd HH:mm:ss [145239107 main] [TIBCO EMS]: [J] QueueConnection Create QueueSession conn=386292 sess=989709 transacted=false ackmode=1
+ERROR [STDERR] yyyy-MM-dd HH:mm:ss [145239107 main] [TIBCO EMS]: [J] QueueSession Create Queue conn=386292 sess=989709 dest=$sys.lookup
+ERROR [STDERR] yyyy-MM-dd HH:mm:ss [145239107 main] [TIBCO EMS]: [J] QueueSession Create QueueSender conn=386292 sess=989709 prod=310507 dest=Queue[$sys.lookup] type=Queue
+...
+We are receiving error messages for each message logged to the server even when the message does not indicate an error
+How can I prevent messages that my application writes to STDOUT or STDERR from showing up in the server log file or on the console?
+Resolution
+Edit $JBOSS_HOME/server/$JBOSSCONF/conf/jboss-service.xml file and locate the org.jboss.logging.Log4jService MBean definition
+Add the following attributes to enable or disable STDOUT and STDERR logging (default is true):
+<attribute name="CatchSystemOut">false</attribute>
+<attribute name="CatchSystemErr">false</attribute>
+
+NOTE: By setting the CatchSystemOut and CatchSystemErr attributes to false, all INFO or ERROR level output from an application or component that normally writes output to the console via a System.out.pintln() or System.err.println() statement will be suppressed.

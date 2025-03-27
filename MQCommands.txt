@@ -1,0 +1,144 @@
+===========
+MQ COMMANDS
+===========
+
+**********
+MQ VERSION
+**********
+
+1. MQ  9.2.0.5
+2. Ace 12.0.8
+3. Data power  IDG 10.5.0.6
+
+
+**********************************************************
+To claer any farword slashes --> Run the following command
+**********************************************************
+mqsichangeproperties ACENDPI0 -e RMO_EG -o ComIbmJSONParserFactory -n escapeMode -v preserveForwardSlashes
+*************************************************************************************
+To list all broker/ INtegration Nodes running in the server --> Run the below command
+*************************************************************************************
+mqsilist
+********************************************
+To list all the QUEUE MANAGERS in the SERVER
+********************************************
+dspmq
+*******************************************
+To show Map Sizes --> Run the below command
+*******************************************
+mqsicacheadmin ACENDPI0 -c showMapSizes
+******************
+CREATE A NEW QUEUE
+******************
+Open Queue manager console --> select the Queue manager --> Queue --> Right click  --> New --> Local / Alias Queue  --> In the Pop box provide Queue name --> Finish
+***************************
+COMMAND TO DEPLOY BAR FILES
+***************************
+mqsideploy ACENDQA1 -e CISI_EG -a /tmp/CIS_SendMoney_App.bar
+***************************************************
+CHANGE PROPERTIES FOR THE EG TO CHANGE THE KEYSTORE
+***************************************************
+mqsichangeproperties ACENDPI0 -e NRT_DR -o ComIbmJVMManager -n keystoreFile -v /home/webadm/NRT_Keystore/gateway.uatohkafka.keystore.jks
+mqsichangeproperties ACENDPI0 -e NRT_DR -o ComIbmJVMManager -n keystorePass -v nrtohkeystore::password
+mqsisetdbparms ACENDPI0 -n nrtohkeystore::password -u ignore -p gateway#123
+****************************
+REPORT PROPERTIES FOR THE EG
+****************************
+mqsireportproperties ACENDPI0 -e NRT_EG -o ComIbmJVMManager -r
+***********************************************************
+PATH OF THE BAR FILES DEPLOED USING IBM ACE TOOLKIT (PUTTY)
+***********************************************************
+QA 
+Location of the BAR files inside the QA Message Broker Server
+/var/mqsi/components/ACENDQA1/servers/
+For Eg:
+[webadm@WUWVC1ASMBK01 mqsi]$ cd /var/mqsi/components/ACENDQA1/servers/
+[webadm@WUWVC1ASMBK01 servers]$ ls -lrth
+total 4.0K
+drwxrws--- 5 webadm mqbrkrs  117 May 27 11:02 BIS_EG
+drwxrws--- 5 webadm mqbrkrs  117 May 27 11:02 CISII_EG
+drwxrws--- 5 webadm mqbrkrs  117 May 27 11:02 CISI_EG
+drwxrws--- 5 webadm mqbrkrs  117 May 27 11:02 LIS_EG
+drwxrws--- 5 webadm mqbrkrs  117 May 27 11:02 MIS_EG
+drwxrws--- 5 webadm mqbrkrs 4.0K May 27 11:02 NRT_EG
+drwxrws--- 5 webadm mqbrkrs  117 May 27 11:02 default_EG
+drwxrws--- 5 webadm mqbrkrs  117 May 29 09:59 AISI_EG
+drwxrws--- 5 webadm mqbrkrs  117 May 29 10:01 AISII_EG
+drwxrws--- 5 webadm mqbrkrs  117 May 29 10:02 NMT_EG
+
+************************
+RESTART OF QUEUE MANAGER
+************************
+To display all the Queue managers running in the server --> Run the command dspmq
+-------------------------
+TO STOP THE QUEUE MANAGER
+-------------------------
+Run the command endmqm ESBBKU2QMGR
+---------------------------------------
+To Know the Status of the Queue Manager
+--------------------------------------- 
+Run the command dspmq
+When the Queue Manager is completely stopped, it displays the status as below
+
+[webadm@WUWVC2ASMBK01a ~]$ dspmq
+QMNAME(ESBBKU0QMGR)                                       STATUS(Running)
+QMNAME(ESBBKU2QMGR)                                       STATUS(Ended normally)
+--------------------------
+To Start the Queue Manager
+--------------------------
+Run the command strmqm ESBBKU2QMGR
+
+It Displays the output as below
+
+[webadm@WUWVC2ASMBK01a ~]$ strmqm ESBBKU2QMGR
+IBM MQ queue manager 'ESBBKU2QMGR' starting.
+The queue manager is associated with installation 'Installation5'.
+5 log records accessed on queue manager 'ESBBKU2QMGR' during the log replay phase.
+Log replay for queue manager 'ESBBKU2QMGR' complete.
+Transaction manager state recovered for queue manager 'ESBBKU2QMGR'.
+IBM MQ queue manager 'ESBBKU2QMGR' started using V9.2.0.5.
+
+[webadm@WUWVC2ASMBK01a ~]$ dspmq
+QMNAME(ESBBKU0QMGR)                                       STATUS(Running)
+QMNAME(ESBBKU2QMGR)                                       STATUS(Running)
+==================================================================================================
+ 
+ 
+ PI
+ 9920  2024-12-13 21:41:43 mqsilist
+ 9921  2024-12-13 21:41:51 mqsilist ACENDPI0
+ 9922  2024-12-13 21:42:01 ps -ef| grep -i mqm
+ 9923  2024-12-13 21:42:05 ps -ef| grep -i bip
+ 9924  2024-12-13 21:42:16 cd /apps/wubsg/config/
+ 9925  2024-12-13 21:42:18 ls -rlth
+ 9926  2024-12-13 21:42:20 cd pi/
+ 9927  2024-12-13 21:42:21 ls -rlth
+ 9928  2024-12-13 21:42:23 cd mqsipolicy/
+ 9929  2024-12-13 21:42:25 ls -rlth
+ 9930  2024-12-13 21:42:29 ./ACE-BrokerStop.sh
+ 9931  2024-12-13 21:44:10 mqsilist
+ 9932  2024-12-13 21:44:16 dspmq
+ 9933  2024-12-13 21:44:26 endmqm ESBBKPI0QMGR
+ 9934  2024-12-13 21:44:30 dspmq
+ 9935  2024-12-13 21:44:34 mqsilist
+ 9936  2024-12-13 21:44:40 ps -ef \grep -i bip
+ 9937  2024-12-13 21:44:47 ps -ef | grep -i bip
+ 9938  2024-12-13 21:44:50 ps -ef | grep -i mqm
+ 9939  2024-12-13 21:45:00 ip r
+ 9940  2024-12-13 21:45:01 date
+ 9941  2024-12-13 21:45:03 uptime
+ 9942  2024-12-14 01:46:17 mqsilist
+ 9943  2024-12-14 01:46:21 dspmq
+ 9944  2024-12-14 01:46:26 strmqm ESBBKPI0QMGR
+ 9945  2024-12-14 01:46:32 dspmq
+ 9946  2024-12-14 01:46:41 cd /apps/wubsg/config/
+ 9947  2024-12-14 01:46:42 ls -lrth
+ 9948  2024-12-14 01:46:44 cd pi/
+ 9949  2024-12-14 01:46:46 ls -lrth
+ 9950  2024-12-14 01:46:48 cd mqsipolicy/
+ 9951  2024-12-14 01:46:49 ls -lrth
+ 9952  2024-12-14 01:46:57 ./ACE-BrokerStart.sh
+ 9968  2024-12-14 01:57:58 mqsistartmsgflow ACENDPI0 -e BIS_EG -k BIS_Quotation_APP -m DASCloudOkta
+ 9969  2024-12-14 01:58:53 mqsistartmsgflow ACENDPI0 -e NRT_EG -k NRT_Notification_Service
+ 9970  2024-12-14 01:59:02 mqsistartmsgflow ACENDPI0 -e NRT_DR -k NRT_Notification_Service
+ 9971  2024-12-14 01:59:51 mqsistartmsgflow ACENDPI0 -e default_EG -k Auth_Token_APP -m AuthToken_APP_MF

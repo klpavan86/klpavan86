@@ -1,0 +1,19 @@
+*****************************************
+COMMANDS TO VIEW SWAP USAGE ON THE SERVER
+*****************************************
+---------------
+cat /proc/swaps
+---------------
+Filename                                Type            Size    Used    Priority
+/dev/dm-5                               partition       8388604 6569144 -1
+--------------------------
+grep '^Swap' /proc/meminfo
+--------------------------
+SwapCached:      1487932 kB
+SwapTotal:       8388604 kB
+SwapFree:        1819460 kB
+---------
+swapon -s
+---------
+Filename                                Type            Size    Used    Priority
+/dev/dm-5                               partition       8388604 6569144 -1

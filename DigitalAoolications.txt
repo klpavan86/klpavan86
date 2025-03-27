@@ -1,0 +1,6 @@
+
+APN --> Active, Passive
+MMT-->Active, Active
+Simpe Router -->Active, Active
+WUFC -->Active, Active
+Smart Router -->Active, Active

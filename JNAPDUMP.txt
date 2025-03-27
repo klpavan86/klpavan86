@@ -1,0 +1,140 @@
+Hi Team,
+
+ 
+
+Please find the update from Redhat team and let us know if anything required.
+
+ 
+
+Update:
+
+Sonawane, Nayan
+
+Sat, May 11, 2024, 07:36:28 AM GMT+5:30
+
+Hi Team,
+
+ 
+
+Thank you for waiting
+
+ 
+
+In the WUWCC9ASWUD10_server.log, I see you are receiving 'java.lang.OutOfMemoryError: GC overhead limit exceeded' errors which indicates your heap's old gen is exhausted and causing the JVM to spend 98% of its time in GC while only freeing <2% of heap. 
+
+ 
+
+This could just be a need for a larger heap or a legitimate memory leak or high temporary problem consumers.  In this OOME condition, the JVM will throw constant garbage collection, producing high CPU and virtually constant long pause times, yielding any applications the JVM is running unresponsive.
+
+ 
+
+You may consider increasing max heap as memory allows for improvement if this is a simple need for more heap.  Otherwise, we would need the following with your server log to further review for any leaks or high heap consumers contributing to this issue:
+
+ 
+
+[1] https://access.redhat.com/solutions/27225
+
+ 
+
+-Garbage collection logging, which you can enable as explained in https://access.redhat.com/solutions/18656
+
+ 
+
+-A heap dump, which you can capture as explained in https://access.redhat.com/solutions/21109.  The best method would be to use the -XX:+HeapDumpOnOutOfMemoryError flag to create the heap dump automatically when the OOME occurs.  Please compress the file and include the case number in the file name.  But the JVM may not respond to this OOME with an automatic dump.  In that case, you can capture it manually with your JDK's jmap command per https://access.redhat.com/solutions/21109#jmapjavaprocess:
+
+ 
+
+    jmap -dump:format=b,file=heap.hprof JAVA_PID
+
+ 
+
+ 
+
+Note this command must be run as the same user running the JBoss process for proper permissions.  If the JVM is not responding to that as well in the issue time, please attempt it with the -F flag added:
+
+ 
+
+    jmap -F -dump:format=b,file=heap.hprof JAVA_PID
+
+ 
+
+ 
+
+NOTE:- All this information should be collected from the issue time, Otherwise we will be analyzing the healthy dumps and logs.
+
+ 
+
+Also, please answer this questions
+
+ 
+
+- is this a newly deployed application, or has it been in production for some time and only recently this issue has appeared? 
+
+- Have any changes been rolled out recently? 
+
+- Are there any particular circumstances surrounding when the OutOfMemoryError happens?  For example, does it happen when specific functionality is executed (e.g. a file upload, a batch job, etc.), after a certain amount of time, under high load, etc?
+
+ 
+
+* Sample occurrences in WUWCC9ASWUD10_server.log:
+
+ 
+
+2024-05-10 14:51:28,398 ERROR [stderr] (Thread-350) Exception in thread "Thread-350" java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+2024-05-10 14:50:03,135 ERROR [org.jgroups.protocols.UDP] (ucast-receiver-3,ejb,WUWCC9ASWUD10:wup2_adminportal) JGRP000030: WUWCC9ASWUD10:wup2_adminportal: failed handling incoming message: java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+2024-05-10 14:52:34,942 ERROR [stderr] (Thread-48379 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@7911912a)) Exception in thread "Thread-48379 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$6@7911912a)" java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+...
+
+2024-05-10 15:24:02,860 ERROR [org.jboss.jca.core.connectionmanager.listener.TxConnectionListener] (default task-5863) IJ000312: Error while closing connection handle: java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+2024-05-10 15:12:13,498 ERROR [org.jgroups.protocols.UDP] (thread-3352,ejb,WUWCC9ASWUD10:wup2_adminportal) JGRP000027: failed passing message up: java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+2024-05-10 15:12:31,344 ERROR [stderr] (Timer-2) Exception in thread "Timer-2" java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+
+ 
+
+ 
+
+Regards,
+
+Nayan
+
+Reply
+
+https://access.redhat.com/support/cases/#/case/03815988/discussion?commentId=a0a6R00000WSYpCQAX
+
+
+ 
+
+Red Hat associate comment Sonawane, Nayan
+
+Sat, May 11, 2024, 07:21:30 AM GMT+5:30
+
+Hi Team,
+
+ 
+
+Thank you for contacting Red Hat Support My name is Nayan and i have taken ownership of this case.
+
+ 
+
+please allow me some time to check your shared files i will update you shortly.
+
+ 
+
+ 
+
+Regards,
+
+Nayan

@@ -1,0 +1,6 @@
+INC2905336 - Lower impact -P1- Gateway dip in send graph
+Issue: Saudi Digital Payments Company (SAAP0) in Saudi Arabia were not able to send transaction confirmation batch files to Western Union from 6:44 a.m. to 7:23 a.m. (Eastern) on May 29 for 39 minutes. 
+Impact: No production impact. The lack of transaction confirmation data resulted in transaction drop in the monitoring graphs, leading to a major incident response.
+Incident Cause: The incident was caused by transaction inquiry call being stuck on partner's end. 
+Corrective Actions: The service was restored by partner's database team releasing the stuck confirmation batch.
+Pending Actions: The root cause and corrective actions are being analyzed by Technology teams and will be submitted for IT Problem Management validation.

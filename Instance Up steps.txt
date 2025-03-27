@@ -1,0 +1,6 @@
+Steps:
+1. Go to /apps/WEBTP location and delete RUNNING_PID file.
+2. Rename nohup.out to nohup_backup21102021.out
+3. Now create a new file and save it as nohup.out leaving the entire file blank.
+4. Now go to location /apps/WEBTP and run the below command:
+    nohup sh bin/webtp & 

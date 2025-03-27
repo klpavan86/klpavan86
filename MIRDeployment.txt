@@ -1,0 +1,16 @@
+Take the backup of the MIR.war file from the location
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/wsadmin-deploy
+
+Copy the backup file to the location
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/backup
+
+Download the MIR.war file to this location 
+/tmp/pavan/ 
+copy the MIR.War file given from development team or the file present in above location to the location
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/deploy
+
+It will automatically move the MIR.war file from above location to the below location and Download the MIR.war file from the below location
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/wsadmin-deploy
+
+Go to Internet Explorer & log in to WAS console https://10.45.16.207:9043/ibm/console
+Deploy the MIR.war by clicking on update & browse the downloaded MIR.war file from the above location 

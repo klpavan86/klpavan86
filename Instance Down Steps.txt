@@ -1,0 +1,8 @@
+Steps to bring down instance:
+1.Go to /apps/WEBTP location and run below command:
+    cat RUNNING_PID
+2. The result of the above command is the PROCESS ID.
+3. Now run the below command:
+    kill -9 PROCESS ID
+4. To verify that the process has stopped run the below command there should be no output if there is still output run again step 3 command.
+    lsof -i:9000

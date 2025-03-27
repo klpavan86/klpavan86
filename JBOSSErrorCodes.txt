@@ -1,0 +1,83 @@
+*****************
+JBOSS ERROR CODES
+*****************
+
+In the attached log file i don't see any TRACE level log:
+
+$ grep -c " TRACE " Trace_Logs/server-warn.log
+-------------------------------------------------------
+-------------------------------------------------------
+In the server log i see multiple WARN log for IJ030042:
+
+2024/03/24_16:30.36.948 2595818 WARN  [org.jboss.jca.adapters.jdbc.WrappedConnection] [ServerService Thread Pool -- 92] WrappedStatement.java:1572  - IJ030042: Closing a result set you left open, please do your own housekeeping for: com.ibm.db2.jcc.t4.j@3b49e318: java.lang.Throwable: STACKTRACE
+    at org.jboss.jca.adapters.jdbc.WrappedStatement.registerResultSet(WrappedStatement.java:1528)
+    at org.jboss.jca.adapters.jdbc.WrappedPreparedStatement.executeQuery(WrappedPreparedStatement.java:505)
+    at com.wu.util.PEPHashMapInitializer.<init>(PEPHashMapInitializer.java:49) [classes:]
+    at com.wu.util.PEPHashMapInitializer.getPEPHashMapInitializer(PEPHashMapInitializer.java:28) [classes:]
+    at com.wu.util.Router.<init>(Router.java:77) [classes:]
+    at com.wu.servlet.Phase1RouterServlet.process(Phase1RouterServlet.java:643) [classes:]
+    at com.wu.servlet.Phase1RouterServlet.init(Phase1RouterServlet.java:217) [classes:]
+    at javax.servlet.GenericServlet.init(GenericServlet.java:180) [jboss-servlet-api_4.0_spec-2.0.0.Final-redhat-00001.jar:2.0.0.Final-redhat-00001]
+    at io.undertow.servlet.core.LifecyleInterceptorInvocation.proceed(LifecyleInterceptorInvocation.java:117) [undertow-servlet-2.2.5.Final-redhat-00001.jar:2.2.5.Final-redhat-00001]
+    at org.wildfly.extension.undertow.security.RunAsLifecycleInterceptor.init(RunAsLifecycleInterceptor.java:78)
+...
+The above mentioned WARN log is showing because you are not closing the connection which you open in application code(PEPHashMapInitializer.java and Phase1RouterServlet.java).
+
+Please check with the application developer and close the connection after it's usage using try-catch-finally block in your application. Follow this link for more info: https://access.redhat.com/solutions/40841
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+I observe many java.net.SocketTimeoutException: Read timed out in the log:
+
+2024/03/24_16:31.24.830 2643700 ERROR [com.wu.engine.DataNormalization] [default task-66] DataNormalization.java:1454  - ERROR :  Exception while getting Matched entites from NameMatchService : : javax.xml.ws.WebServiceException: Could not receive Message.
+    at org.apache.cxf.jaxws.JaxWsClientProxy.mapException(JaxWsClientProxy.java:183)
+    at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:145)
+    at com.sun.proxy.$Proxy221.inquiry(Unknown Source)
+    at com.wu.listProcessing.NameMatchWebServiceClient.getMatchedEntities(NameMatchWebServiceClient.java:253) [classes:]
+    at com.wu.engine.DataNormalization.isNameMatchServiceAlive(DataNormalization.java:1444) [classes:]
+    at com.wu.engine.DataNormalization.process(DataNormalization.java:223) [classes:]
+    at com.wu.util.Router.process(Router.java:172) [classes:]
+    at com.wu.servlet.Phase1RouterServlet.process(Phase1RouterServlet.java:644) [classes:]
+    at com.wu.servlet.Phase1RouterServlet.doPost(Phase1RouterServlet.java:374) [classes:]
+
+    at java.lang.Thread.run(Thread.java:750) [rt.jar:1.8.0_402]
+Caused by: java.net.SocketTimeoutException: SocketTimeoutException invoking https://rtraqa1nmservice.qawesternunion.com/NameMatchService/nameMatchService: Read timed out
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [rt.jar:1.8.0_402]
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) [rt.jar:1.8.0_402]
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [rt.jar:1.8.0_402]
+    at java.lang.reflect.Constructor.newInstance(Constructor.java:423) [rt.jar:1.8.0_402]
+    at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1400)
+
+    ... 58 more
+Caused by: java.net.SocketTimeoutException: Read timed out
+    at java.net.SocketInputStream.socketRead0(Native Method) [rt.jar:1.8.0_402]
+    at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) [rt.jar:1.8.0_402]
+    at java.net.SocketInputStream.read(SocketInputStream.java:171) [rt.jar:1.8.0_402]
+    at java.net.SocketInputStream.read(SocketInputStream.java:141) [rt.jar:1.8.0_402]
+    at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:464) [jsse.jar:1.8.0_402]
+    at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:68) [jsse.jar:1.8.0_402]
+    at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1350) [jsse.jar:1.8.0_402]
+    at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:73) [jsse.jar:1.8.0_402]
+...
+Generally, this issue(java.net.SocketTimeoutException: Read timed out) happens when the data which users receive or send through web service exceed default read timeout.
+
+The default ReceiveTimeout of cxf http client is 60 sec and ConnectionTimeout is 30 sec. As per: https://cxf.apache.org/docs/client-http-transport-including-ssl-support.html#:~:text=ConnectionTimeout,will%20wait%20indefinitely.
+
+You need to set the an appropriate timeout values for the JAX-WS client. You can follow this knowledge base link for more info about How to set the client timeout for a JAX-WS client in JBoss EAP: https://access.redhat.com/solutions/341683
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Additionally i see some NullPointerException in the log coming from your application:
+
+    2024/03/24_16:33.40.803 2779673 ERROR [com.wu.transaction.core.TransactionPersistenceHelper] [default task-16] TransactionPersistenceHelper.java:379  - Exception while INSERT/UPDATE in the Pass Two: : java.lang.NullPointerException
+    at com.wu.transaction.dao.TransactionPersistenceDB.insertUpdateMasterAttachTable(TransactionPersistenceDB.java:655) [classes:]
+    at com.wu.transaction.core.TransactionPersistenceHelper.insertUpdateMasterAttachTable(TransactionPersistenceHelper.java:530) [classes:]
+    at com.wu.transaction.core.TransactionPersistenceHelper.execute(TransactionPersistenceHelper.java:420) [classes:]
+    at com.wu.transaction.core.TransactionPersistenceHelper.executePassTwo(TransactionPersistenceHelper.java:300) [classes:]
+    at com.wu.util.Router.process(Router.java:648) [classes:]
+    at com.wu.servlet.Phase1RouterServlet.process(Phase1RouterServlet.java:644) [classes:]
+    at com.wu.servlet.Phase1RouterServlet.doPost(Phase1RouterServlet.java:374) [classes:]
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:523) [jboss-servlet-api_4.0_spec-2.0.0.Final-redhat-00001.jar:2.0.0.Final-redhat-00001]
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:590) [jboss-servlet-api_4.0_spec-2.0.0.Final-redhat-00001.jar:2.0.0.Final-redhat-00001]
+    at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) [undertow-servlet-2.2.5.Final-redhat-00001.jar:2.2.5.Final-redhat-00001]
+...
+Please check with you application developer to fix these java.lang.NullPointerException.
+

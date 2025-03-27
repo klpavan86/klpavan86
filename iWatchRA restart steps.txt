@@ -1,0 +1,90 @@
+Server Details:
+
+1.Idea:[1 Nodes, 1 instance]
+	Chicago DC: 10.47.16.175
+	Reston DC:10.45.16.100
+
+2.Idea Batch: [1 Nodes, 1 instance]
+	Chicago DC: 10.47.16.175
+	Reston DC:10.45.16.100
+
+3.IWRA:
+	Chicago:[3 Nodes, 4 instance each]
+		10.47.16.176 - IWRA1
+		10.47.16.176 - IWRA2
+		10.47.16.176 - IWRA3
+		10.47.16.176 - IWRA4
+		10.47.16.177 - IWRA1
+		10.47.16.177 - IWRA2
+		10.47.16.177 - IWRA3
+		10.47.16.177 - IWRA4
+		10.47.16.178 - IWRA1
+		10.47.16.178 - IWRA2
+		10.47.16.178 - IWRA3
+		10.47.16.178 - IWRA4
+	Reston: [Node 1 - 4 instance, Node 2 - 4 instance, Node 3 - 2 instance]
+		10.45.16.100 - IWRA1
+		10.45.16.100 - IWRA2
+		10.45.16.101 - IWRA1
+		10.45.16.101 - IWRA2
+		10.45.16.101 - IWRA3
+		10.45.16.101 - IWRA4
+		10.45.16.102 - IWRA1
+		10.45.16.102 - IWRA2
+		10.45.16.102 - IWRA3
+		10.45.16.102 - IWRA4
+		
+4.IWRA Batches:
+	Chicago: [3 Nodes, 4 instance each]
+		10.47.16.176 - IWRA1
+		10.47.16.176 - IWRA2
+		10.47.16.176 - IWRA3
+		10.47.16.176 - IWRA4
+		10.47.16.177 - IWRA1
+		10.47.16.177 - IWRA2
+		10.47.16.177 - IWRA3
+		10.47.16.177 - IWRA4
+		10.47.16.178 - IWRA1
+		10.47.16.178 - IWRA2
+		10.47.16.178 - IWRA3
+		10.47.16.178 - IWRA4
+	Reston: [Node 1 - 4 instance, Node 2 - 4 instance, Node 3 - 2 instance]
+		10.45.16.100 - IWRA1
+		10.45.16.100 - IWRA2
+		10.45.16.101 - IWRA1
+		10.45.16.101 - IWRA2
+		10.45.16.101 - IWRA3
+		10.45.16.101 - IWRA4
+		10.45.16.102 - IWRA1
+		10.45.16.102 - IWRA2
+		10.45.16.102 - IWRA3
+		10.45.16.102 - IWRA4
+
+5.IWRAConsumer: [1 Nodes, 1 instance] 
+		Chicago DC: 10.47.16.175
+		Reston DC:10.45.16.100
+		
+==========================================================================
+Restart Steps:
+
+Restart Idea:
+	restart_idea [STOP & START]
+Restart IWRA:
+	restart_iwra [STOP & START]
+Restart Iwra Consumer: 
+	restart_iwraconsumer [STOP & START]
+===========================================================================
+Manual Restart Step:
+
+Reston:
+--if it is not restarted from Rundeck, please restart Manually (nohup ./standalone.sh &)
+--10.45.16.100,10.45.16.101,10.45.16.102
+--Login as webadm user
+-- Restart respective instance {if required}
+
+Chicago:
+--if it is not restarted from Rundeck, please restart Manually   (nohup ./standalone.sh &)
+--10.47.16.176,10.47.16.177,10.47.16.178
+--Login as webadm user
+-- Restart respective instance [if required]
+================================================================================

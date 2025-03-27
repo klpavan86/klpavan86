@@ -1,0 +1,25 @@
+KB0030791
+
+Short description Verify and Start IWRA instances
+Article body
+How to  verify and Start IWRA instances for the below site scope alerts
+ 
+iWatchRA - Port 8580 availability on wuwcc9asiwa02 : unable to connect to server (10.47.16.167)
+ 
+Login to the server
+switch as webadm
+Check if the port in the alert is listening by executing the below command
+netstat -anlp | grep
+If it is not listening, start the instance. IWRA1 is running on 8580 and IWRA2 is running on 8680.
+To know the port assigned to the instance, go to /apps/iwra2/jboss-eap-6.4/standalone/configuration/standalone.xml and check the off set value. Addition of offset value with the default 8080 will the port number.
+To start the instance
+Go to Rundeck job : RTRA-StackUpgrade > Restart > Restart_iwra > (Select the respective server, instance and Datacenter) > Run the job
+Check if the port in the alert is listening by executing the below command
+netstat -anlp | grep
+ 
+ 
+Server IPs
+ 
+IWRA1 WUWCC9ASIWA02 10.47.16.167
+IWRA2 WUWCC9ASIWA03 10.47.16.168
+IWRA1 WUWCC9ASIWA04 10.47.16.169

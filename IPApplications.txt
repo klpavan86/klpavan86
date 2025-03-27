@@ -1,0 +1,51 @@
+
+10.44.193.38 - F5 Load Balancer
+==================================================================
+WUPOS COMMON URL
+wuwvc9asgen44 10.44.32.185 - WUPOS COMMON URL 
+wuwvc9asgen45 10.44.32.186 - WUPOS COMMON URL
+
+****tablet*****
+/apps/tablet/01/jetty-9.4.13/webapps/web-service.war
+/apps/tablet/02/jetty-9.4.13/webapps/web-service.war
+/apps/tablet/03/jetty-9.4.13/webapps/web-service.war
+
+****wuposclprod******
+/apps/wuposclprod/01/jetty-9.4.13/webapps/login-service.war
+
+****agentsvc-prod*****
+/apps/agentsvc-prod/01/spring-boot-2.4.5/webapps/agent-service.war
+
+==================================================================
+
+==============================================================
+WUPOS AGENT SERVICE AGENTSVC PROD
+WUWCC9ASGEN48 10.44.32.187 - WUPOS AGENT SERVICE AGENTSVC PROD
+==============================================================
+wuwcc9asgen62 
+
+=============================================
+WUPOS JETTY SILO
+wuwcc9aspos21 10.45.17.171 - WUPOS JETTY SILO
+wuwcc9aspos22
+wuwcc9aspos23
+wuwcc9aspos24 
+=============================================
+
+===========================
+IWRA
+wuwcc9asiwa01 10.47.16.166 
+wuwcc9asiwa02
+wuwcc9asiwa03
+===========================
+
+==============================
+Gateway - Walmart
+wuwcc9asmbw02 10.47.17.163
+==============================
+
+==============================
+Digital - Walmart
+wuwvc9asmbk05 10.45.17.164
+==============================
+wuwcc9aspos34 

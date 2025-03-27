@@ -1,0 +1,17 @@
+
+
+*******
+CHICAGO
+*******
+WUWCC9ASGRD14	10.47.17.14	Liferay
+WUWCC9ASGRD30	10.47.17.30	Liferay
+
+ps -ef | grep java | grep webadm >> /tmp/CHG0258522_webadm.txt
+
+ps -ef | grep httpd >> /tmp/CHG0258522_httpd.txt
+***************************
+CONSOLE USERNAME & PASSWORD
+***************************
+https://10.47.17.14:9043/ibm/console/
+was8admin
+adm!nw@s80

@@ -1,0 +1,28 @@
+
+
+RESTON DAY 2 PATCHING
+wuwvc9asdms05	10.45.16.69	DMS - DMGR
+wuwvc9asdms06	10.45.16.93	DMS
+WUWVC9ASGEN06	10.45.16.48	DMS - DMGR
+WUWVC9ASGEN08	10.45.16.73	DMS
+
+FOR PATCHING WE HAVE TO GIVE NODE BY NODE
+1ST BATCH
+wuwvc9asdms05	10.45.16.69	DMS - DMGR
+WUWVC9ASGEN06	10.45.16.48	DMS - DMGR
+2ND BATCH
+wuwvc9asdms06	10.45.16.93	DMS
+WUWVC9ASGEN08	10.45.16.73	DMS
+------------
+SPOC FOR DMS
+------------
+ Rinika K Veetil 
+ Lekhana Madivada 
+ Lalitha Dommetti
+ 
+COMMANDS to start process 9091 and 9092  (10.45.16.69,10.45.16.93 - Reston)
+cd /apps/Websphere9/IBM/WebSphere/AppServer/java/8.0/jre/bin
+Upload -
+nohup ./java -Xms512m -Xmx2048m -jar -Dspring.config.location=/apps/iwatchxUpload/properties/application.properties,/apps/iwatchxUpload/properties/application-prod.properties /apps/iwatchxUpload/upload-api-2.0.4.jar --server.port=9092 >>/apps/customlogs/iWATCHX/IWATCHX-upload-api.log 2>&1 &
+Retrieval
+nohup ./java -Xms512m -Xmx4096m -jar -Dspring.config.location=/apps/iwatchxRetrieval/properties/application.properties,/apps/iwatchxRetrieval/properties/application-prod.properties /apps/iwatchxRetrieval/retrieval-api-2.0.6.jar --server.port=9091 >>/apps/customlogs/iWATCHX/IWATCHX-retrieval-api.log 2>&1 &

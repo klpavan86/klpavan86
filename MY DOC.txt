@@ -1,0 +1,32 @@
+.corporate users
+wu pool mw active directory
+
+
+WAR ROOM ZOOM LINK
+https://wu.zoom.us/j/93558711523?pwd=VDRyTmxLTk9TUFhLaHp3L0crVzUwQT09#success
+
+DYNA TRACE URL
+https://sso.dynatrace.com/action/signin?goto=https%3A%2F%2Fsso.dynatrace.com%3A443%2Foauth2%2Fauthorize%2Fredirect%3FoAuth2CtxUuid%3D0c8f24fc-1651-4e49-8a86-d167fe7d85b1&oAuth2RedirectUri=https%3A%2F%2Fphz84157.live.dynatrace.com
+EMAIL
+VKVLPavanKumar.Konjeti@westernunion.com
+
+Windows Jump server - 10.44.6.17
+Non prod:10.46.5.144 - Non - PROD- IBM-MQ-Explorer
+
+Linux Jump Server - 10.44.6.21
+Username: sw0018871pwd
+Password: CyberArk
+
+USER NAME FOR JUMP SERVER
+WUDIPRD\sw0018871pwd
+S%tPeM*d6tXz$DNF
+
+USER NAME FOR NON PROD SERVER
+WUWCC8MSWGW01\mb80
+%07gJhE9zkHZkd?Z
+
+MON WED FRI PRE CAB CALL
+https://wu.zoom.us/j/92440784210?pwd=dDhUaDNNdDRGdEJMMW1EY2YrV3p6UT09&from=addon
+
+TUE & THU PRE CAB CALL
+https://wu.zoom.us/j/94761819524?pwd=bVM2ZTc2ZnBpL1NqTDZYaVNUK0tFUT09&from=addon

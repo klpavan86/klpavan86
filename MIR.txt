@@ -1,0 +1,34 @@
+MIR - [ ACTIVE-ACTIVE APPLICATION]
+No Traffic moement Required
+RESTON is working with IBM WebSphere for application MIR.war
+CHICAGO is working with springboot service for application mir2.war
+ 
+*******
+CHICAGO
+*******
+WUWCC9ASGRD14	10.47.17.14	
+WUWCC9ASGRD30	10.47.17.30	
+-------------------------------------------
+DEPLOYMENT ON CHICAGO DC FOR BOTH THE NODES
+-------------------------------------------
+No Traffic moement Required
+No need to stop scheduler job on node 1 during deployment
+Log in to the server --> Go to /apps/mir2/services --> Take backup of exidting war file & application.properties file into /apps/mir2/backup location --> go to /apps/mir2 --> Run ./stop.sh - to syop the mir2 instance --> Copy the new war file to /apps/mir2/services directory --> copy application.properties to the same location if required --> remove the old war file from the same location if not removed --> ,Go to /apps/mir2 --> Run ./start.sh to start the mir2 services
+
+******
+RESTON
+******
+WUWVC9ASGRD14	10.45.17.14	
+WUWVC9ASGRD30	10.45.17.30	
+
+cd /apps/IBM/WebSphere/AppServer/profiles/LifeRay01/bin/
+ 
+./serverStatus.sh -all -username was8admin -password 'adm!nw@s80'
+username was8admin 
+password adm!nw@s80
+
+------
+BACKUP
+------
+ps -ef | grep java | grep webadm >> /tmp/CHG0278156_webadm.txt
+ps -ef | grep httpd >> /tmp/CHG0278156_httpd.txt

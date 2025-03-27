@@ -1,0 +1,57 @@
+DMS [ACTIVE-PASSIVE APPLICATION]
+
+Traffic Movement Steps:
+
+URLs:
+kyc.wuintranet.net
+kyc-ws.prod.wudip.com
+dmsiwatch.prod.wudip.com
+kyc-cpe.prod.wudip.com
+kya-ws.prod.wudip.com
+dmsdocretrieval-prd.wuintranet.net
+dmsdocupload-prd.wuintranet.net
+dmsmodelbretrieval.prod.wudip.com - It is a newly added URL updated in MyBookmarks
+
+5 URLS FOR DMS
+
+kyc-ws.prod.wudip.com (wupos)------------------------>CHICAGO-DC
+dmsmodelbretrieval.prod.wudip.com(wupos)------------->CHICAGO-DC
+dmsiwatch.prod.wudip.com(iwatch)--------------------->CHICAGO-DC
+dmsdocupload-prd.wuintranet.net (pharos upload)------>CHICAGO-DC
+dmsdocretrieval-prd.wuintranet.net(pharos retrieval-->CHICAGO-DC
+
+Initial state: Only in one DC (Reston or Chicago) – Serves traffic in either Reston or Chicago in the normal state
+Traffic movement for DMS involves a series of steps performed at the server & F5 level. It also involves steps to be executed by different teams. The detailed failover document to move the entire DC’s traffic is present in our team’s share point location (link below).
+https://westernunion-my.sharepoint.com/personal/hazel_daniels_wu_com/_layouts/15/onedrive.aspx?id=%2Fsites%2FIOCInfraOps%2FShared%20Documents%2FITIO%2DRUN%2DMW%2DWebHosting%2FTraffic%5FFailover%5FDocs%5FWUPAY%5Fand%5FDMS&listurl=https%3A%2F%2Fwesternunion%2Esharepoint%2Ecom%2Fsites%2FIOCInfraOps%2FShared%20Documents&viewid=915efd32%2D11eb%2D48bd%2Db0ee%2Dc40399e82add&view=0
+
+Steps:
+1, Traffic movement for DMS is done only in the GTM layer at the F5 level.
+2, LTM URLs are always balanced and not touched while diverting traffic at the F5 level.
+3, Some of the JVMs in the passive DC will be kept in stopped state. So, the respective pools will be marked down in LTM but still enabled.
+4, Based on the DC in which the activity is planned or issue is observed, traffic has to be moved to the alternate DC by following the steps mentioned in the failover document in its sequence.
+5, Post completion of the activity, traffic can be again moved to the ‘DC’ requested by the application team by following the same set of steps mentioned above.
+Link to the automated jobs in rundeck to divert the traffic for the application is given below,
+
+Config changes:
+http://wuinfradeployment.wuintranet.net/project/DMS/jobs - New_Config_Changes_Websphere9.5
+
+GTM layer:
+http://wuinfradeployment.wuintranet.net/project/DMS/job/show/b34b2abc-6ca5-4f9c-9f6b-404073882eaa
+
+
+*********************
+DMS DYNAMIC MESSAGING
+*********************
+WUWVC9ASGEN06 10.45.16.48 RESTON
+WUWVC9ASGEN08 10.45.16.73 RESTON
+WUWVC9ASDMS05 10.45.16.69 RESTON
+WUWVC9ASDMS06 10.45.16.93 RESTON
+
+WUWCC9ASGEN67 10.47.16.48 CHICAGO
+WUWCC9ASGEN68 10.47.16.73 CHICAGO
+WUWCC9ASDMS05 10.47.16.69 CHICAGO
+WUWCC9ASDMS06 10.47.16.93 CHICAGO
+
+Login to https://10.47.16.48:9043/ibm/console/login.do?action=secure
+
+

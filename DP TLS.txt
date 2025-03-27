@@ -1,0 +1,11 @@
+To disable TLS V1.0/V1.1 below are the steps confirmed by Vendor.,
+
+1) Search for Web Management Service in DataPower WebGUI
+
+2) Click on the Advanced Tab
+
+3) You will see Custom TLS Server Profile , click on the add symbol against it which is used to create a new SSL Server Profile
+
+4) There you will see Protocol list, untick the checkbox to disable the protocols as you wish to do so.
+
+5) Then click on Apply button remediation ,

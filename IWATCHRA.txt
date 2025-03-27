@@ -1,0 +1,108 @@
+********
+IWATCHRA
+********
+No Traffic movement involved
+Dependent on Batch jobs in RESTON & CHICAGO
+IWATCHRA is an offline application.
+---------
+IWRA_PROD
+---------
+DATABASE CHANGES BY SQL DB2 --> IDEA CHANGES [config_idea --> deploy_idea --> restart_idea --> deploy_idea_batch --> config_idea_batch] --> Jboss Changes [Node1, IWRA1, Reston / Chicago [deploy_iwra --> restart_iwra(if server not started) --> deploy_iwra_batches]] --> DATABASE CHANGES BY SQL DB2 --> restart_iwra [Node1, IWRA1, Reston / Chicago] --> Jboss Changes [Remaining Nodes Reston / Chicago [deploy_iwra --> restart_iwra(if server not started) --> deploy_iwra_batches]]
+
+-----------------------RESTON----------------------------------
+IDEA SIDE Jboss Changes - RESTON (10.45.16.96) = Node3
+Jboss Changes - Reston (10.45.16.96, 10.45.16.97 & 10.45.16.98)
+-----------------------CHICAGO----------------------------------
+IDEA SIDE Jboss Changes - CHICAGO (10.47.16.166)
+Jboss Changes - Chicago (10.47.16.167, 10.47.16.168 and 10.47.16.169)
+------
+RESTON
+------
+In Reston we have 3 IWRA Nodes/Boxes. 
+Node1 having 3 IWRA instances [IWRA1, IWRA2, IWRA3]
+Node2 having 4 IWRA instances [IWRA1, IWRA2, IWRA3, IWRA4] 
+Node3 having 2 IWRA instances [IWRA1, IWRA2]
+============================================================================
+WUWVC9ASGEN59	10.45.16.97 --> Node 1 --> IWRA1, IWRA2, IWRA3
+WUWVC9ASGEN60	10.45.16.98 --> Node 2 --> IWRA1, IWRA2, IWRA3, IWRA4
+WUWVC9ASGEN46	10.45.16.96 --> Node 3 --> IDEA, IWRACONSUMER, IWRA1, IWRA2
+
+Exist server  Existing IP   New Hostname    New IP 
+WUWVC9ASGEN59 10.45.16.97 	WUWVC9ASGEN69 10.45.16.101 --> Node 1 --> IWRA1, IWRA2, IWRA3
+WUWVC9ASGEN60 10.45.16.98 	WUWVC9ASGEN80 10.45.16.102 --> Node 2 --> IWRA1, IWRA2, IWRA3, IWRA4
+WUWVC9ASGEN46 10.45.16.96 	WUWVC9ASGEN66 10.45.16.100 --> Node 3 --> IDEA, IWRACONSUMER, IWRA1, IWRA2
+============================================================================
+-- Node1, IWRA1, Reston 10.45.16.97 WUWVC9ASGEN59
+-- Node1, IWRA2, Reston 10.45.16.97 WUWVC9ASGEN59
+-- Node1, IWRA3, Reston 10.45.16.97 WUWVC9ASGEN59
+-- Node2, IWRA1, Reston 10.45.16.98 WUWVC9ASGEN60
+-- Node2, IWRA2, Reston 10.45.16.98 WUWVC9ASGEN60
+-- Node2, IWRA3, Reston 10.45.16.98 WUWVC9ASGEN60
+-- Node2, IWRA4, Reston 10.45.16.98 WUWVC9ASGEN60
+-- Node3, IWRA1, Reston 10.45.16.96 WUWVC9ASGEN46
+-- Node3, IWRA2, Reston 10.45.16.96 WUWVC9ASGEN46
+IDEA SIDE Jboss Changes - RESTON (10.45.16.96)= Node3
+Jboss Changes - Reston (10.45.16.96, 10.45.16.97 & 10.45.16.98)
+
+-------
+CHICAGO
+-------
+In Chicago we have 3 IWRA Nodes/Boxes
+Node1 having 4 IWRA instances [IWRA1, IWRA2, IWRA3, IWRA4]
+Node2 having 4 IWRA instances [IWRA1, IWRA2, IWRA3, IWRA4]
+Node3 having 4 IWRA instances [IWRA1, IWRA2, IWRA3, IWRA4]
+=====================================================================
+WUWCC9ASIWA01	10.47.16.166 --> Node4 --> IDEA, IWARACONSUMER
+WUWCC9ASIWA02	10.47.16.167 --> Node1 --> IWRA1, IWRA2, IWRA3, IWRA4	
+WUWCC9ASIWA03	10.47.16.168 --> Node2 --> IWRA1, IWRA2, IWRA3, IWRA4
+WUWCC9ASIWA04	10.47.16.169 --> Node3 --> IWRA1, IWRA2, IWRA3, IWRA4
+
+Exist server  Existing IP   New Hostname    New IP 
+WUWCC9ASIWA01 10.47.16.166 	WUWCC9ASIWA05 10.47.16.175 --> Node4 --> IDEA, IWARACONSUMER
+WUWCC9ASIWA02 10.47.16.167 	WUWCC9ASIWA06 10.47.16.176 --> Node1 --> IWRA1, IWRA2, IWRA3, IWRA4
+WUWCC9ASIWA03 10.47.16.168 	WUWCC9ASIWA07 10.47.16.177 --> Node2 --> IWRA1, IWRA2, IWRA3, IWRA4
+WUWCC9ASIWA04 10.47.16.169 	WUWCC9ASIWA08 10.47.16.178 --> Node3 --> IWRA1, IWRA2, IWRA3, IWRA4
+=====================================================================
+-- Node1, IWRA1, Chicago 10.47.16.167	WUWCC9ASIWA02
+-- Node1, IWRA2, Chicago 10.47.16.167	WUWCC9ASIWA02
+-- Node1, IWRA3, Chicago 10.47.16.167	WUWCC9ASIWA02
+-- Node1, IWRA4, Chicago 10.47.16.167	WUWCC9ASIWA02
+-- Node2, IWRA1, Chicago 10.47.16.168	WUWCC9ASIWA03
+-- Node2, IWRA2, Chicago 10.47.16.168	WUWCC9ASIWA03
+-- Node2, IWRA3, Chicago 10.47.16.168	WUWCC9ASIWA03
+-- Node2, IWRA4, Chicago 10.47.16.168	WUWCC9ASIWA03
+-- Node3, IWRA1, Chicago 10.47.16.169	WUWCC9ASIWA04
+-- Node3, IWRA2, Chicago 10.47.16.169	WUWCC9ASIWA04
+-- Node3, IWRA3, Chicago 10.47.16.169	WUWCC9ASIWA04
+-- Node3, IWRA4, Chicago 10.47.16.169	WUWCC9ASIWA04
+IDEA SIDE Jboss Changes - CHICAGO (10.47.16.166)
+Jboss Changes - Chicago (10.47.16.167, 10.47.16.168 & 10.47.16.169)
+
+Hi Team, FYI To start Airflow on 10.45.16.100 follow the below steps 
+Login as "webadm" user
+       cd /apps/airflow/
+       nohup airflow scheduler &
+      nohup airflow webserver -p 8086 & 
+
+WUWCC9ASIWA01	10.47.16.166	--> idea batches --> iwraconsumer - /apps/iwraconsumer/jboss-eap-6.4/bin/, idea - /apps/idea/jboss-eap-6.4/bin/
+WUWCC9ASIWA02	10.47.16.167	--> iwra1 - /apps/iwra1/jboss-eap-6.4/bin/, iwra2 - /apps/iwra2/jboss-eap-6.4/bin/, iwra3 - /apps/iwra3/jboss-eap-6.4/bin/, iwra4 - /apps/iwra4/jboss-eap-6.4/bin/
+WUWCC9ASIWA03	10.47.16.168	
+WUWCC9ASIWA04	10.47.16.169
+
+10.47.16.167	WUWCC9ASIWA02
+10.47.16.168	WUWCC9ASIWA03
+10.47.16.169	WUWCC9ASIWA04
+
+*************
+IWRA NON PROD
+*************
+wuwvc2asgen49 - 10.45.16.99 - UAT
+------------------------------------------------------------------
+MANUAL STEPS TO PERFORM START / STOP OF JBOSS ON NEW IWARA SERVERS
+------------------------------------------------------------------
+10.45.16.100
+10.45.16.101
+10.45.16.102
+cd /apps/iwra1/jboss-eap-6.4/bin/
+nohup ./jboss.sh stop
+nohup ./jboss.sh start 

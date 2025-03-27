@@ -1,0 +1,38 @@
+Download the MIR.war file provided by the application team.
+
+Go to the location
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/installedApps/WUWVC5ASGRD07Cell01
+
+Take the back up of MIR.war file from the above location & move to the below location
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/backup
+
+copy the downloaded MIR.war given by the application team to the below location
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/deploy
+
+Wait for 5 to 8 mins
+The MIR.war file in the above location will be moved to the below location
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/wsadmin-deploy
+
+In the below location the deploy folder must be empty that indicates the MIR.war file was moved completely from deploy to wsadmin-deploy folder.
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/deploy
+
+Check the below location whether MIR.war file got updated with latest date & time
+/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/wsadmin-deploy
+
+Log into the websphere console in jump server only in internet explorer
+https://10.45.16.207:9043/ibm/console
+
+Username: was8admin	
+Password: adm!nw@s80
+
+Go to Applications -->select MIR --> Update --> Remote file system --> Browse --> navigate to wsadmin-deploy path (/apps/IBM/WebSphere/AppServer/profiles/LifeRay01/liferay-uat11/wsadmin-deploy) --> ok --> select detailed path --> click next every where --> Finish --> synchronize & save the changes.
+
+Wait for few mins MIR application will come up & running
+
+Restart the jvms
+servers --> Application servers --> select 07 jvms & stop --> start them
+
+After that in the same manner stop & start node 15 jvms.
+
+
+

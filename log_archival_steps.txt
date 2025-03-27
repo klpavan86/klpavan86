@@ -1,0 +1,27 @@
+
+Note:please follow as per functional change, DC wise implementation.
+
+Reston
+10.45.17.148
+10.45.17.149
+10.45.17.150
+10.45.17.151
+ 
+Chicago
+10.47.17.148
+10.47.17.149
+10.47.17.150
+10.47.17.151
+ 
+Implementation plan:
+ 
+-> goto the path /home/webadm and take back up of autopurge.sh
+-> open the script autopurge.sh and update as below
+from 
+for DFILE in `ls -altr -S /var/mqsi/components/E*/*/std* | tail -2 |awk '{print $9}'` ; do
+to
+for DFILE in `ls -altr -S /var/mqsi/components/A*/*/std* | tail -2 |awk '{print $9}'` ; do
+ 
+Rollback plan:
+ 
+-> Replace the backup which was taken before the change.

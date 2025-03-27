@@ -1,0 +1,24 @@
+**************
+JETTY CREATION
+**************
+netstat -ltpn | grep 8780 to check whether the port is used by any other process
+Copy the existing wuta folder in /apps to wata1 in the same /apps directory.
+Go to the location /apps/wuta1/01/jetty-9.3.23/webapps/bin
+Delete the jetty.pid file
+----------------------------------------------------------------------------------------
+vi the jetty.sh file and update wuta as wuta1 wherever necassary
+export JETTY_HOME=/apps/wuta1/01/jetty-9.3.23
+export CONFIG_DIR_PATH=/apps/wuta1/01/conf
+export JAVA_OPTIONS="$JAVA_OPTIONS -DWUTA_CONFIG_DIR=/apps/wuta1/01/conf/"
+export JAVA_OPTIONS="$JAVA_OPTIONS -Dlog4j2.configurationFile=file:/apps/wuta1/01/conf/log4j2.xml"
+----------------------------------------------------------------------------------------
+Go to the location /apps/wuta1/01/conf
+vi the file log4j2.xml file change wuta to wuta1 wherever necassary.
+    <RollingFile name="ERRORFILE" fileName="/apps/wuta1/01/jetty-9.3.23/logs/wuta-error.log"
+                     filePattern="/apps/wuta1/01/jetty-9.3.23/logs/wuta-error.log.%d{yyyy-MM-dd}" >
+        <RollingFile name="FILE" fileName="/apps/wuta1/01/jetty-9.3.23/logs/wuta.log"
+                    filePattern="/apps/wuta1/01/jetty-9.3.23/logs/wuta.log.%d{yyyy-MM-dd-HH}">
+-------------------------------------------------------------------------------------
+Go to the location /apps/wuta1/01/jetty-9.3.23/bin
+Start the jetty instance by executing jetty.sh script
+

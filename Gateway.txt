@@ -1,0 +1,74 @@
+GTM--> Datapower --> Message Broker --> MQ 
+
+WU Gateway
+Reston Data Power url’s 
+https://10.44.5.161:9090/dp/login.xml   (ILAN)LIS
+https://10.44.5.162:9090/dp/login.xml   (ILAN)LIS
+https://10.44.5.163:9090/dp/login.xml   (CLAN) lIS, BIS, Mb8
+https://10.44.5.164:9090/dp/login.xml   (CLAN)
+ 
+ 
+Chicago Data Power url’s
+https://10.46.5.161:9090/dp/login.xml   (ILAN)
+https://10.46.5.162:9090/dp/login.xml   (ILAN)
+https://10.46.5.163:9090/dp/login.xml   (CLAN)
+https://10.46.5.164:9090/dp/login.xml   (CLAN)
+ 
+Environment 	Broker Servers
+	               Host Name	IP
+CHICAGO-1	WUWCC9ASMBK01a	10.47.17.148
+CHICAGO-2	WUWCC9ASMBK02a	10.47.17.149
+CHICAGO-3	WUWCC9ASMBK03a	10.47.17.150
+CHICAGO-4	WUWCC9ASMBK04a	10.47.17.151
+CHICAGO-5	WUWCC9ASMBW01	10.47.17.162 - Walmart
+CHICAGO-6	WUWCC9ASMBW02	10.47.17.163 - Walmart
+ 
+Environment 	Broker Servers
+	            Host Name	IP
+RESTON-1	WUWVC9ASMBK01a	10.45.17.148
+RESTON-2	WUWVC9ASMBK02a	10.45.17.149
+RESTON-3	WUWVC9ASMBK03a	10.45.17.150
+RESTON-4	WUWVC9ASMBK04a	10.45.17.151
+RESTON-5	WUWVC9ASMBW01	10.45.17.162 - Walmart
+RESTON-6	WUWVC9ASMBW02	10.45.17.163 - Walmart
+ 
+ 
+Digital Gateway 
+Reston Data power url:-  
+https://10.44.5.166:9090 
+https://10.44.5.167:9090
+Chicago Data power url: - 
+https://10.46.5.166:9090 
+https://10.46.5.167:9090 
+admin / dpadmin@wure
+Reston brokers -  10.45.17.164,  10.45.17.165,  10.45.17.166
+Chicago brokers - 10.47.17.164, 10.47.17.165, 10.47.17.166
+
+MB8MessageBrokerLBG 
+•	LIS_IIB10LBG
+•	BIS_IIB10LBG (For BIS - Disable nodes only in CLAN, no need to touch wugateway servers of ILAN)
+
+Broker-
+----------------------
+mqsilist
+mqsistart brokername (ESB)
+mqsistop brokername (ESB)
+--------------------------------------------------
+mqsistop<Broker-Name>-> Stop the Message Broker
+➢mqsistart<Broker-Name>-> Start the Message Broker
+➢mqsilist-> List all Brokers and their status (running/stopped)
+➢mqsilist<Broker-Name>-> List all Execution Groups and their status (running/stopped)
+➢mqsilist <Broker-Name> -e <Executiongroup-Name>-> List all message flows status (running/stopped) & also lists the bar files deployed for particular execution group
+➢mqsistopmsgflow<Broker-Name> -e <Executiongroup-Name> -m <MsgFlow-Name>-> Stops only the messageflow on the specified broker & specified Executiongroup-Name
+➢mqsistartmsgflow <Broker-Name> -e <Executiongroup-Name> -m <MsgFlow-Name>-> Starts only the messageflowon the specified broker & specified Executiongroup-Name
+
+cert update in IIB tool kit
+ 
+1. mqsistopmsgflow ESBBKPI0 -e NRT_EG -k NRT_Notification_Service
+2. mqsilist ESBBKPI0 -e NRT_EG      :- (Output should show Notification Service is in stopped state)
+3. mqsichangeproperties ESBBKPI0 -e NRT_EG -o ComIbmJVMManager -n keystoreFile -v /home/webadm/NewNRTKafka/wugwnrtpikeystore19april.jks
+4. mqsichangeproperties ESBBKPI0 -e NRT_EG -o ComIbmJVMManager -n keystoreType -v JKS
+5. mqsichangeproperties ESBBKPI0 -e NRT_EG -o ComIbmJVMManager -n keystorePass -v nrtegkeystore::password
+6. mqsisetdbparms ESBBKPI0 -n nrtegkeystore::password -u ignore -p gateway#123
+7. mqsistartmsgflow ESBBKPI0 -e NRT_EG -k NRT_Notification_Service
+8. mqsilist ESBBKPI0 -e NRT_EG      :- (Output should show Notification Service is in start state)

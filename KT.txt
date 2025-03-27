@@ -1,0 +1,27 @@
+file sharing
+port numbers applications
+PI env servers
+
+request comes to GTM & then to LTM & to the respecctive application webserver to app server to DB
+gate way
+GTM to LTM to DP to LB groups to app server IPS
+WUPOS
+GTM LTM APACHE lB APP SERVER INSTANCES
+
+
+
+AGENT PORTAL GTM LEVEL TRAFFIC MOVEMENT
+
+
+GREEN CIRCLE ENABLE
+BLACK CIRCLE DISABLED
+Black diamond force offlinw flush ot all the active connections & dont accept new connections
+red circle not seen till date
+red diamond  service is down where backend services are down EG: jvm services are down
+
+red diamond to black diamond to black circle to green circle
+
+
+[webadm@WUWVC1WSPOS18 vhosts.d]$ hostname -i
+10.45.217.46
+sudo service httpd reload

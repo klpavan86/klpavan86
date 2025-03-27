@@ -1,0 +1,353 @@
+=======================================================================================================================
+DAY 1 - CHICAGO & RESTON DIGITAL WEBHOSTING APPLICATIONS - CSS | WUPAY | NGDRT | QUICKFIND | POSFILTER / TAIPOS | WEBTP 
+=======================================================================================================================
+---
+CSS - APPLICATION IS DECOMISSIONED
+---
+RESTON
+WUWVC9ASCSS01 10.45.18.188  CSS 
+WUWVC9WSCSS01 10.45.3.188 	CSS 
+CHICAGO
+WUWCC9WSCSS01 10.47.3.188 	CSS 
+WUWCC9ASCSS01 10.47.18.188 	CSS 
+-----
+WEBTP
+-----
+STOP: kill -9 PROCESS ID
+START: Please follow Webtp document
+RESTON
+WUWVC8ASWTP01 10.45.19.70 Web Tools Portal
+CHICAGO
+WUWCC8ASWTP01 10.47.19.70 Web Tools Portal
+
+------------------
+POSFILTER / TAIPOS
+------------------
+STOP: kill -9 PROCESS ID
+START: After Reboot Services will be up & Running automatically.
+RESTON
+WUWVC9ASPOF03	10.45.19.98
+WUWVC9ASPOF04	10.45.19.99
+WUWVC9WSPOF01	10.45.1.246
+WUWVC9WSPOF02	10.45.1.247
+
+CHICAGO
+WUWCC9WSPOF01	10.47.1.246	POSFILTER
+WUWCC9WSPOF02	10.47.1.247	POSFILTER
+WUWCC9ASPOF03	10.47.19.98	POSFILTER
+WUWCC9ASPOF04	10.47.19.99	POSFILTER
+
+-----
+WUPAY
+-----
+RESTON
+WUWVC9ASWUD09	10.45.17.104
+WUWVC9ASWUD10	10.45.17.105
+WUWVC9WSDBS01	10.45.0.206
+WUWVC9WSDBS02	10.45.0.207
+
+NEW BUILD SERVERS
+WUWVC9ASWUD17	10.45.17.110
+WUWVC9ASWUD18	10.45.17.111
+
+CHICAGO
+WUWCC9ASWUD09 	10.47.17.104	WUPAY
+WUWCC9ASWUD10	10.47.17.105	WUPAY
+WUWCC9WSDBS01	10.47.0.206		WUPAY
+WUWCC9WSDBS02	10.47.0.207		WUPAY
+
+NEW BUILD SERVERS
+WUWCC9ASWUD13	10.47.17.92	
+WUWCC9ASWUD14	10.47.17.93	
+
+-------
+LIFERAY
+-------
+RESTON
+WUWVC9ASGRD14	10.45.17.14 Liferay
+WUWVC9ASGRD30	10.45.17.30 Liferay
+
+CHICAGO
+WUWCC9ASGRD14	10.47.17.14	Liferay
+WUWCC9ASGRD30	10.47.17.30	Liferay
+--------------------------
+QUICKFIND / TRACK PAYMENTS
+--------------------------
+For 10.45.18.3 & 10.45.18.4
+STOP: /apps/jboss7/jboss-eap-7.0/bin/jboss.sh stop
+START: After Reboot Services will be up & Running automatically.
+RESTON
+WUWVC9ASQFD01	10.45.18.3
+WUWVC9ASQFD02	10.45.18.4
+WUWVC9WSWAD01	10.45.1.111
+WUWVC9WSWAD02	10.45.1.112
+
+NEW BUILD SERVERS
+WUWVC9WSWAD03	10.45.1.113	QUICKFIND
+WUWVC9WSWAD04	10.45.1.114	QUICKFIND
+
+CHICAGO
+WUWCC9ASQFD01	10.47.18.3	QUICKFIND
+WUWCC9ASQFD02	10.47.18.4	QUICKFIND
+WUWCC9WSWAD01	10.47.1.111	QUICKFIND
+WUWCC9WSWAD02	10.47.1.112	QUICKFIND
+
+NEW BUILD SERVERS
+WUWCC9WSWAD03	10.47.1.113	QUICKFIND
+WUWCC9WSWAD04	10.47.1.114	QUICKFIND
+
+***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+DAY 2 - CHICAGO RETAIL WEBHOSTING APPLICATIONS - ANSIBLE & ARCHIVA | WUPOS1.0 | WUPOS2.0 TABLET COMMON URL AGENT-SERVICE | RECEIPT SERVICE | HPOS | WUPOS REDIS | DMS | AGENT PORTAL | IWATCHRA | RTRA | RTRA EAS | CORE PROXY | AGENT TRAINING PROXY SERVERS & INBOUND PROXY SERVERS / GIS | DIGITAL GATEWAY | WU GATEWAY | WALMART GATEWAY | OXXO/TMP/TMS 
+***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+
+ANSIBLE & ARCHIVA | 
+WUWCC7ASANS01	10.46.6.64	Ansible, Archiva
+
+WUPOS1.0 | 
+For all COM URLs
+WUWCC9ASPOS21	10.47.17.171	WUPOS
+WUWCC9ASPOS22	10.47.17.172	WUPOS
+WUWCC9ASPOS23	10.47.17.173	WUPOS
+WUWCC9ASPOS24	10.47.17.174	WUPOS
+WUWCC9ASPOS27	10.47.17.177	WUPOS no service running
+WUWCC9ASPOS28	10.47.17.178	WUPOS no service running
+WUWCC9WSPOS29	10.47.2.8		WUPOS
+WUWCC9WSPOS30	10.47.2.9		WUPOS
+WUWCC9WSPOS31	10.47.2.10		WUPOS
+WUWCC9WSPOS32	10.47.2.11		WUPOS
+For all NET URLs
+WUWCC9WSPOS33	10.47.2.16		WUPOS
+WUWCC9WSPOS34	10.47.2.17		WUPOS
+WUWCC9ASHVR01	10.47.26.86		WUPOS HVR
+
+WUPOS2.0 TABLET COMMON URL AGENT-SERVICE | 
+WUWCC9ASGEN48	10.46.32.187	WUPOS Common URL
+WUWCC9ASGEN62	10.46.32.193	WUPOS Common URL
+WUWCC9ASGEN63	10.46.32.194	WUPOS Common URL
+WUWCC9ASGEN64	10.46.32.195	WUPOS Common URL
+ 
+RECEIPT SERVICE | 
+WUWCC9ASPOS33	10.47.17.94	WUPOS Receipt Service
+WUWCC9ASPOS34	10.47.17.95	WUPOS Receipt Service
+
+HPOS | 
+WUWCC9WSPOS35	10.47.2.0	WUPOS HPOS LBP
+WUWCC9WSPOS36	10.47.2.1	WUPOS HPOS LBP
+
+WUPOS REDIS | 
+WUWCC9ASPOSR05	10.47.18.177	WUPOS redis
+WUWCC9ASPOSR06	10.47.18.178	WUPOS redis
+WUWCC9ASPOSR07	10.47.18.179	WUPOS redis
+
+LIFERAY |
+WUWCC9ASGRD14	10.47.17.14	Liferay
+WUWCC9ASGRD30	10.47.17.30	Liferay
+
+DMS | 
+WUWCC9WSDYM01	10.47.1.130	CMS Teamsite/Dynamic Messaging System
+WUWCC9WSDYM02	10.47.1.131	CMS Teamsite/Dynamic Messaging System
+
+WUWCC9ASDMS05	10.47.16.69	DMS
+WUWCC9ASDMS06	10.47.16.93	DMS
+WUWCC9ASGEN67	10.47.16.48	DMS
+WUWCC9ASGEN68	10.47.16.73	DMS
+
+AGENT PORTAL | 
+WUWCC9ASAGP01	10.46.33.171	Agent Portal
+WUWCC9ASAGP02	10.46.33.172	Agent Portal
+
+WUWCC9WSAGP01	10.46.17.171	Agent Portal
+WUWCC9WSAGP02	10.46.17.172	Agent Portal
+WUWCC9WSAGP03	10.46.17.173	Agent Portal
+WUWCC9WSAGP04	10.46.17.174	Agent Portal
+
+WUWCC9ASAGP10	10.46.17.179	Agent Portal NEW BUILD
+WUWCC9ASAGP09	10.46.17.180	Agent Portal NEW BUILD
+WUWCC9ASAGP08	10.46.17.181	Agent Portal NEW BUILD
+WUWCC9ASAGP07	10.46.17.182	Agent Portal NEW BUILD
+WUWCC9ASAGP06	10.46.33.164	Agent Portal NEW BUILD
+WUWCC9ASAGP05	10.46.33.170	Agent Portal NEW BUILD
+
+ARC PLUS
+WUWCC9ASWUD13	10.47.17.92	ARC Plus
+WUWCC9ASWUD14	10.47.17.93	ARC Plus
+
+IWATCHRA | 
+WUWCC9ASIWA01	10.47.16.166	IWATCHRA
+WUWCC9ASIWA02	10.47.16.167	IWATCHRA
+WUWCC9ASIWA03	10.47.16.168	IWATCHRA
+WUWCC9ASIWA04	10.47.16.169	IWATCHRA
+WUWCC9ASIWA05	10.47.16.175	IWATCHRA NEW BUILD
+WUWCC9ASIWA06	10.47.16.176	iWATCHRA NEW BUILD
+WUWCC9ASIWA07	10.47.16.177	iWATCHRA NEW BUILD
+WUWCC9ASIWA08	10.47.16.178	iWATCHRA NEW BUILD
+
+RTRA | 
+WUWCC9ASRTRA01	10.47.16.162	RTRA
+WUWCC9ASRTRA02	10.47.16.163	RTRA
+WUWCC9ASRTRA03	10.47.16.164	RTRA
+WUWCC9ASRTRA04	10.47.16.165	RTRA
+WUWCC9ASRTRA05	10.47.16.81		RTRA
+WUWCC9ASRTRA06	10.47.16.82		RTRA
+WUWCC9ASRTRA07	10.47.16.83		RTRA
+WUWCC9ASRTRA08	10.47.16.84		RTRA	
+
+RTRA EAS | 
+WUWCC9ASEAS04	10.46.32.196	EAS
+WUWCC9ASEAS05	10.46.32.197	EAS
+WUWCC9ASEAS06	10.46.32.198	EAS
+
+CORE PROXY | 
+WUWCC9ASPRXA05	10.47.17.202	Core Proxy Servers
+WUWCC9ASPRXB05	10.47.17.203	Core Proxy Servers
+WUWCC9WSPRXA04	10.47.0.213		Core Proxy Servers
+WUWCC9WSPRXB04	10.47.0.214		Core Proxy Servers
+
+AGENT TRAINING PROXY SERVERS & INBOUND PROXY SERVERS / GIS | 
+WUWCC9WSPRXB03	10.47.0.38	GIS
+WUWCC9WSPRXA03	10.47.0.37	PROXY Servers
+
+WUWCC9WSPRXA02	10.47.0.211	PROXY Servers	Agent Training PROXY Servers
+WUWCC9ASPRXA03	10.47.17.200	PROXY Servers	Agent Training PROXY Servers
+
+DIGITAL GATEWAY | 
+WUWCC9ASMBK05	10.47.17.164	Digital Gateway
+WUWCC9ASMBK06	10.47.17.165	Digital Gateway
+WUWCC9ASMBK07	10.47.17.166	Digital Gateway
+
+WU GATEWAY | 
+WUWCC9ASMBK01A	10.47.17.148	WU Gateway
+WUWCC9ASMBK02A	10.47.17.149	WU Gateway
+WUWCC9ASMBK03A	10.47.17.150	WU Gateway
+WUWCC9ASMBK04A	10.47.17.151	WU Gateway
+
+WALMART GATEWAY | 
+WUWCC9ASMBW01	10.47.17.162	WALMART Gateway
+WUWCC9ASMBW02	10.47.17.163	WALMART Gateway
+
+OXXO/TMP/TMS 
+WUWCC8ASOXO01	10.46.32.111	OXXO/TMP/TMS
+WUWCC8ASOXO02	10.46.32.112	OXXO/TMP/TMS
+
+we are good with sanity for the applications (APN, MMT, Simple Router, WUFC)
+APN --> Active, Passive
+MMT-->Active, Active
+Simpe Router -->Active, Active
+WUFC -->Started the B.W jobs in Chicago since we stopped morning for patching .
+Smart Router -->Active, Active
+
+=======================================================================================================================
+DAY 1 - CHICAGO & RESTON DIGITAL WEBHOSTING APPLICATIONS - CSS | WUPAY | NGDRT | QUICKFIND | POSFILTER / TAIPOS | WEBTP 
+=======================================================================================================================
+WUWVC9ASWUD09	10.45.17.104	WUPAY
+WUWVC9ASWUD10	10.45.17.105	WUPAY
+WUWVC9ASWUD17	10.45.17.110	WUPAY(new server)
+WUWVC9ASWUD18	10.45.17.111	WUPAY(new server)
+WUWVC9WSDBS01	10.45.0.206		WUPAY
+WUWVC9WSDBS02	10.45.0.207		WUPAY
+
+ 
+WUWVC8ASWTP01	10.45.19.70		Web Tools Portal	
+WUWVC9ASPOF03	10.45.19.98		POSFilter	
+WUWVC9ASPOF04	10.45.19.99		POSFilter	
+WUWVC9WSPOF01	10.45.1.246		POSFilter	
+WUWVC9WSPOF02	10.45.1.247		POSFilter	
+ 
+WUWVC9WSCSS01	10.45.3.188		CSS 
+WUWVC9ASCSS01	10.45.18.188	CSS 
+WUWVC9ASQFD01	10.45.18.3		Quickfind
+WUWVC9ASQFD02	10.45.18.4		Quickfind
+WUWVC9WSWAD01	10.45.1.111		Quickfind
+WUWVC9WSWAD02	10.45.1.112		Quickfind
+wuwvc9wswad03	10.45.1.113		Quickfind
+wuwvc9wswad04	10.45.1.114		Quickfind
+
+***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+DAY 2 - RESTON RETAIL WEBHOSTING APPLICATIONS - ANSIBLE & ARCHIVA | WUPOS1.0 | WUPOS2.0 TABLET COMMON URL AGENT-SERVICE | RECEIPT SERVICE | HPOS | WUPOS REDIS | DMS | AGENT PORTAL | IWATCHRA | RTRA | RTRA EAS | CORE PROXY | AGENT TRAINING PROXY SERVERS & INBOUND PROXY SERVERS / GIS | DIGITAL GATEWAY | WU GATEWAY | WALMART GATEWAY | OXXO/TMP/TMS 
+***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+WUWVC9ASAGP01	10.44.33.171
+WUWVC9ASAGP02	10.44.33.172
+WUWVC9ASAGP05	10.44.33.170
+WUWVC9ASAGP06	10.44.33.164
+WUWVC9ASAGP07	10.44.17.182
+WUWVC9ASAGP08	10.44.17.181
+WUWVC9ASAGP09	10.44.17.180
+WUWVC9ASAGP10	10.44.17.179
+WUWVC9WSAGP01	10.44.17.171
+WUWVC9WSAGP02	10.44.17.172
+WUWVC9WSAGP03	10.44.17.173
+WUWVC9WSAGP04	10.44.17.174
+
+WUWVC9ASDFR02 10.45.18.77 DodFrank
+
+WUWVC8ASOXO01 10.44.32.111 OXXO/TMP/TMS
+WUWVC8ASOXO02 10.44.32.112 OXXO/TMP/TMS
+
+Pease proceed to patch this new build servers as well
+ 
+WUWVC8ASOXO04	10.44.32.118	OXXO/TMP/TMS
+WUWVC8ASOXO03	10.44.32.119	OXXO/TMP/TMS
+
+We have to give the servers for patching in batch wise as below ON RESTON DC
+Core Proxy & AGENT TRAINING  - Balanced(Initial) -  moved to Chicago
+INBOUND PROXY:
+Ø corerrevprxy.westernunion.com - Balanced(Initial) - moved to Chicago
+Ø gisbgcheckresult.westernunion.com -Balanced(Initial)-  moved to Chicago
+Ø notifsvc.westernunion.com - Reston(initial)- moved to chicago
+1ST BATCH 
+WUWVC9ASPRXA05	10.45.17.202	Core Proxy Servers
+WUWVC9WSPRXA04	10.45.0.213		Core Proxy Servers
+WUWVC9WSPRXA02	10.45.0.211		PROXY Servers - AGENT TRAINING
+WUWVC9WSPRXA03	10.45.0.37		PROXY Servers
+
+2ND BATCH
+WUWVC9ASPRXB05	10.45.17.203	Core Proxy Servers
+WUWVC9WSPRXB04	10.45.0.214		Core Proxy Servers
+WUWVC9ASPRXA03	10.45.17.200	PROXY Servers
+WUWVC9WSPRXB03	10.45.0.38		GIS BG
+
+
+
+Core Proxy & AGENT TRAINING  - Balanced(Initial) -  moved to Chicago  -- Balanced
+INBOUND PROXY:
+Ø corerrevprxy.westernunion.com - Balanced(Initial) - moved to Chicago -- Balanced
+Ø gisbgcheckresult.westernunion.com -Balanced(Initial)-  moved to Chicago -- Balanced
+Ø notifsvc.westernunion.com - Reston(initial)- moved to chicago -- moved to reston
+
+
+
+---------------------------
+PROXY PATCHING ON 24/1/2025
+---------------------------
+Core Proxy & AGENT TRAINING  - Balanced(Initial) -     Moved to Chicago
+INBOUND PROXY:
+Ø corerrevprxy.westernunion.com - Balanced(Initial) -    Moved to Chicago
+Ø gisbgcheckresult.westernunion.com - Balanced(Initial) --Moved to Chicago
+Ø notifsvc.westernunion.com - Reston(initial)-   -----Moved to Chicago
+
+
+1ST BATCH
+Suriya Ravi.. pls proceed to patch and reboot below servers.
+ 
+WUWVC9ASPRXA05	10.45.17.202	Core Proxy Servers
+WUWVC9WSPRXA04	10.45.0.213		Core Proxy Servers
+
+2ND BATCH
+Linux team, pls proceed to patch below servers.
+ 
+WUWVC9ASPRXB05	10.45.17.203	Core Proxy Servers
+WUWVC9WSPRXB04	10.45.0.214		Core Proxy Servers
+ 
+3RD BATCH
+Linux team, pls proceed to patch below servers.
+ 
+WUWVC9ASPRXA03	10.45.17.200	PROXY Servers
+WUWVC9WSPRXA03	10.45.0.37		PROXY Servers
+
+4TH BATCH
+pls proceed to patch below
+WUWVC9WSPRXB03	10.45.0.38	GIS BG
+WUWVC9WSPRXA02	10.45.0.211	PROXY Servers
+ 
+
+ 

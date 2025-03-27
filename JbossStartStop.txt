@@ -1,0 +1,181 @@
+================================
+RESTART OF THE JBOSS APP SERVERS
+================================
+
+10.45.16.213
+Log into the server 10.45.16.213
+Switch the user to webadm by using command sudo su - webadm
+For Eg:
+[sw0018871pwd@WUWVC5ASGRD14 ~]$ sudo su - webadm
+Go to the path /home/webadm/bin/jboss7/
+List the files in the above path using ls -lrth
+We can see the list of 4 scripts because it is a domain server like dmgr in websphere
+Eg:
+[webadm@WUWVC5ASGRD13 bin]$cd /home/webadm/bin/jboss7/
+[webadm@WUWVC5ASGRD13 jboss7]$ls -lrth
+total 16K
+-rwx------ 1 webadm webadm 104 Mar 22  2023 stopWUPAY-JVM-jboss7.sh
+-rwx------ 1 webadm webadm 105 Mar 22  2023 stopWUPAY-DC-jboss7.sh
+-rwx------ 1 webadm webadm 165 Mar 23  2023 startWUPAY-DC-jboss7.sh
+-rwx------ 1 webadm webadm 144 Mar 23  2023 startWUPAY-HC-jboss7.sh
+
+Find the process that are running on the server by using the command ps -ef | grep wup2
+It will list the process that are running in the mentioned server.
+
+For eg:
+[webadm@WUWVC5ASGRD13 jboss7]$ps -ef | grep wup2
+webadm   31474 31031  2 Jan09 ?        03:42:03 /apps/java/jdk1.8.0_351/bin/java -D[Server:wup2] -D[pcid:1450249608] -Xms4096m -Xmx4096m -verbose:gc -Xloggc:/apps/jboss7/jboss-eap-7.4/domain/log/Gc-logs/Server1GC.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true -XX:+DisableExplicitGC -XX:+PrintCommandLineFlags -XX:HeapDumpPath=/apps/jboss7/jboss-eap-7.4/domain/log/heap_dump -Dcom.arjuna.ats.arjuna.allowMultipleLastResources=true -Dhost-config=host-slave.xml -Dhp.profiles.active=uat -Dhttps.proxyHost=forwardproxyhostUAT -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.keyStore=/apps/modasolutions/conf/wugateway.jks -Djavax.net.ssl.keyStorePassword=changeit -Djboss.bind.address=10.45.16.213 -Djboss.bind.address.management=127.0.0.1 -Djboss.default.multicast.address=230.0.0.7 -Djboss.domain.default.config=domain.xml -Djboss.domain.master.address=10.45.16.213 -Djboss.home.dir=/apps/jboss7/jboss-eap-7.4 -Djboss.host.default.config=host-slave.xml -Djboss.messaging.cluster.password=wupay01 -Djboss.messaging.group.address=230.0.0.7 -Djboss.modules.system.pkgs=org.jboss.byteman -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -Dorg.apache.jasper.compiler.Parser.STRICT_WHITESPACE=false -Dorg.apache.tomcat.util.http.Parameters.MAX_COUNT=5000 -Djboss.server.log.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/log -Djboss.server.temp.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/tmp -Djboss.server.data.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/data -Dlogging.configuration=file:/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/data/logging.properties -jar /apps/jboss7/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7/jboss-eap-7.4/modules org.jboss.as.server
+
+webadm   31753 31031  2 Jan09 ?        03:30:47 /apps/java/jdk1.8.0_351/bin/java -D[Server:wup2_adminportal] -D[pcid:639541428] -Xms4096m -Xmx4096m -verbose:gc -Xloggc:/apps/jboss7/jboss-eap-7.4/domain/log/Gc-logs/Server1GC.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true -XX:+DisableExplicitGC -XX:+PrintCommandLineFlags -XX:HeapDumpPath=/apps/jboss7/jboss-eap-7.4/domain/log/heap_dump -Dcom.arjuna.ats.arjuna.allowMultipleLastResources=true -Dhost-config=host-slave.xml -Dhp.profiles.active=uat -Dhttps.proxyHost=forwardproxyhostUAT -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.keyStore=/apps/modasolutions/conf/wugateway.jks -Djavax.net.ssl.keyStorePassword=changeit -Djboss.bind.address=10.45.16.213 -Djboss.bind.address.management=127.0.0.1 -Djboss.default.multicast.address=230.0.0.7 -Djboss.domain.default.config=domain.xml -Djboss.domain.master.address=10.45.16.213 -Djboss.home.dir=/apps/jboss7/jboss-eap-7.4 -Djboss.host.default.config=host-slave.xml -Djboss.messaging.cluster.password=wupay01 -Djboss.messaging.group.address=230.0.0.7 -Djboss.modules.system.pkgs=org.jboss.byteman -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -Dorg.apache.jasper.compiler.Parser.STRICT_WHITESPACE=false -Dorg.apache.tomcat.util.http.Parameters.MAX_COUNT=5000 -Djboss.server.log.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/log -Djboss.server.temp.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/tmp -Djboss.server.data.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/data -Dlogging.configuration=file:/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/data/logging.properties -jar /apps/jboss7/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7/jboss-eap-7.4/modules org.jboss.as.server
+
+webadm   32372 31031  8 Jan09 ?        14:00:54 /apps/java/jdk1.8.0_351/bin/java -D[Server:wup2_batches] -D[pcid:680652312] -Xms4096m -Xmx4096m -verbose:gc -Xloggc:/apps/jboss7/jboss-eap-7.4/domain/log/Gc-logs/Server1GC.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true -XX:+DisableExplicitGC -XX:+PrintCommandLineFlags -XX:HeapDumpPath=/apps/jboss7/jboss-eap-7.4/domain/log/heap_dump -Dcom.arjuna.ats.arjuna.allowMultipleLastResources=true -Dhost-config=host-slave.xml -Dhp.profiles.active=uat -Dhttps.proxyHost=forwardproxyhostUAT -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.keyStore=/apps/modasolutions/conf/wugateway.jks -Djavax.net.ssl.keyStorePassword=changeit -Djboss.bind.address=10.45.16.213 -Djboss.bind.address.management=127.0.0.1 -Djboss.default.multicast.address=230.0.0.7 -Djboss.domain.default.config=domain.xml -Djboss.domain.master.address=10.45.16.213 -Djboss.home.dir=/apps/jboss7/jboss-eap-7.4 -Djboss.host.default.config=host-slave.xml -Djboss.messaging.cluster.password=wupay01 -Djboss.messaging.group.address=230.0.0.7 -Djboss.modules.system.pkgs=org.jboss.byteman -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -Dorg.apache.jasper.compiler.Parser.STRICT_WHITESPACE=false -Dorg.apache.tomcat.util.http.Parameters.MAX_COUNT=5000 -Djboss.server.log.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/log -Djboss.server.temp.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/tmp -Djboss.server.data.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/data -Dlogging.configuration=file:/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/data/logging.properties -jar /apps/jboss7/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7/jboss-eap-7.4/modules org.jboss.as.server
+
+webadm   40592 24714  0 09:53 pts/4    00:00:00 grep wup2
+
+Go to the path /home/webadm/bin/jboss7/
+List the files in the above path using ls -lrth
+We can see the list of 4 scripts because it is a domain server like dmgr in websphere
+Eg:
+[webadm@WUWVC5ASGRD13 jboss7]$ls -lrth
+total 16K
+-rwx------ 1 webadm webadm 104 Mar 22  2023 stopWUPAY-JVM-jboss7.sh
+-rwx------ 1 webadm webadm 105 Mar 22  2023 stopWUPAY-DC-jboss7.sh
+-rwx------ 1 webadm webadm 165 Mar 23  2023 startWUPAY-DC-jboss7.sh
+-rwx------ 1 webadm webadm 144 Mar 23  2023 startWUPAY-HC-jboss7.sh
+Run the Script /stopWUPAY-JVM-jboss7.sh
+It will stop all the jboss jvms
+[webadm@WUWVC5ASGRD13 jboss7]$./stopWUPAY-JVM-jboss7.sh
+[webadm@WUWVC5ASGRD13 jboss7]$ps -ef | grep wup2
+webadm    1398 24714  0 09:54 pts/4    00:00:00 grep wup2
+Run the script stopWUPAY-DC-jboss7.sh
+It will stop the Domain controller
+[webadm@WUWVC5ASGRD13 jboss7]$./stopWUPAY-DC-jboss7.sh
+Run the script startWUPAY-DC-jboss7.sh
+It will start the Domain Controller as shown below
+[webadm@WUWVC5ASGRD13 jboss7]$./startWUPAY-DC-jboss7.sh
+[webadm@WUWVC5ASGRD13 jboss7]$=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /apps/jboss7dc/jboss-eap-7.4
+
+  JAVA: /apps/java/jdk1.8.0_351/bin/java
+
+  JAVA_OPTS: -server -Xms64m -Xmx512m -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.domain.default.config=domain.xml -Djboss.host.default.config=host-master.xml -Djboss.bind.address.management=10.45.16.213 -Djboss.bind.address=10.45.16.213 -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer
+
+=========================================================================
+
+09:55:38,812 INFO  [org.jboss.modules] (main) JBoss Modules version 1.11.0.Final-redhat-00001
+09:55:39,343 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final-redhat-00001
+09:55:39,369 INFO  [org.jboss.as.process.Host Controller.status] (main) WFLYPC0018: Starting process 'Host Controller'
+[Host Controller] 09:55:40,792 INFO  [org.jboss.modules] (main) JBoss Modules version 1.11.0.Final-redhat-00001
+[Host Controller] 09:55:41,367 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.12.Final-redhat-00001
+[Host Controller] 09:55:41,388 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final-redhat-00001
+[Host Controller] 09:55:41,500 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: JBoss EAP 7.4.0.GA (WildFly Core 15.0.2.Final-redhat-00001) starting
+[Host Controller] 09:55:42,408 INFO  [org.wildfly.security] (Host Controller Service Threads - 4) ELY00001: WildFly Elytron version 1.15.3.Final-redhat-00001
+[Host Controller] 09:55:43,028 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/host=master/core-service=management/management-interface=native-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:43,030 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/host=master/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:43,148 INFO  [org.jboss.as.host.controller] (Controller Boot Thread) WFLYHC0003: Creating http management service using network interface (management) port (9990) securePort (-1)
+[Host Controller] 09:55:43,169 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.8.4.Final-redhat-00001
+[Host Controller] 09:55:43,185 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+[Host Controller] 09:55:43,340 INFO  [org.jboss.remoting] (MSC service thread 1-7) JBoss Remoting version 5.0.20.SP1-redhat-00001
+[Host Controller] 09:55:43,362 INFO  [org.jboss.as.patching] (MSC service thread 1-6) WFLYPAT0050: JBoss EAP cumulative patch ID is: base, one-off patches include: none
+[Host Controller] 09:55:43,419 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-5) WFLYDM0111: Keystore /apps/jboss7dc/jboss-eap-7.4/domain/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+[Host Controller] 09:55:43,594 INFO  [org.jboss.as.remoting] (MSC service thread 1-5) WFLYRMT0001: Listening on 10.45.16.213:9999
+[Host Controller] 09:55:44,824 INFO  [org.jboss.as.controller.management-deprecated] (Host Controller Service Threads - 8) WFLYCTL0033: Extension 'security' is deprecated and may not be supported in future versions
+[Host Controller] 09:55:45,629 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/profile=default/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:45,663 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/profile=ha/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:45,687 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/profile=full/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:45,716 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/profile=full-ha/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:45,734 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'permgen-size' in the resource at address '/server-group=wup2-01-server-group/jvm=default' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:45,735 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'max-permgen-size' in the resource at address '/server-group=wup2-01-server-group/jvm=default' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:45,741 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'permgen-size' in the resource at address '/server-group=wup2-02-server-group/jvm=default' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:45,741 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'max-permgen-size' in the resource at address '/server-group=wup2-02-server-group/jvm=default' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+[Host Controller] 09:55:46,174 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0062: Http management interface listening on http://10.45.16.213:9990/management and https://10.45.16.213:-1/management
+[Host Controller] 09:55:46,175 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0053: Admin console listening on http://10.45.16.213:9990 and https://10.45.16.213:-1
+[Host Controller] 09:55:46,212 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: JBoss EAP 7.4.0.GA (WildFly Core 15.0.2.Final-redhat-00001) (Host Controller) started in 6126ms - Started 81 of 82 services (22 services are lazy, passive or on-demand)
+[Host Controller] 09:56:00,867 INFO  [org.jboss.as.domain.controller] (Host Controller Service Threads - 32) WFLYHC0019: Registered remote slave host "WUWVC5ASGRD14.prod.wudip.com", JBoss JBoss EAP 7.4.0.GA (WildFly 15.0.2.Final-redhat-00001)
+[Host Controller] 09:59:47,783 INFO  [org.jboss.as.domain.controller] (Host Controller Service Threads - 32) WFLYHC0019: Registered remote slave host "wuwvc5asgrd13.prod.wudip.com", JBoss JBoss EAP 7.4.0.GA (WildFly 15.0.2.Final-redhat-00001)
+
+
+
+Check whether the services are up & running by running the command ps -ef | grep wup2
+Eg:
+
+[webadm@WUWVC5ASGRD13 jboss7]$ps -ef | grep wup2
+webadm    7741  7394 99 09:59 pts/3    00:01:38 /apps/java/jdk1.8.0_351/bin/java -D[Server:wup2] -D[pcid:1941550263] -Xms4096m -Xmx4096m -verbose:gc -Xloggc:/apps/jboss7/jboss-eap-7.4/domain/log/Gc-logs/Server1GC.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true -XX:+DisableExplicitGC -XX:+PrintCommandLineFlags -XX:HeapDumpPath=/apps/jboss7/jboss-eap-7.4/domain/log/heap_dump -Dcom.arjuna.ats.arjuna.allowMultipleLastResources=true -Dhost-config=host-slave.xml -Dhp.profiles.active=uat -Dhttps.proxyHost=forwardproxyhostUAT -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.keyStore=/apps/modasolutions/conf/wugateway.jks -Djavax.net.ssl.keyStorePassword=changeit -Djboss.bind.address=10.45.16.213 -Djboss.bind.address.management=127.0.0.1 -Djboss.default.multicast.address=230.0.0.7 -Djboss.domain.default.config=domain.xml -Djboss.domain.master.address=10.45.16.213 -Djboss.home.dir=/apps/jboss7/jboss-eap-7.4 -Djboss.host.default.config=host-slave.xml -Djboss.messaging.cluster.password=wupay01 -Djboss.messaging.group.address=230.0.0.7 -Djboss.modules.system.pkgs=org.jboss.byteman -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -Dorg.apache.jasper.compiler.Parser.STRICT_WHITESPACE=false -Dorg.apache.tomcat.util.http.Parameters.MAX_COUNT=5000 -Djboss.server.log.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/log -Djboss.server.temp.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/tmp -Djboss.server.data.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/data -Dlogging.configuration=file:/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/data/logging.properties -jar /apps/jboss7/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7/jboss-eap-7.4/modules org.jboss.as.server
+webadm    7901  7394 99 09:59 pts/3    00:00:50 
+
+webadm    7741  7394 99 09:59 pts/3    00:01:38 /apps/java/jdk1.8.0_351/bin/java -D[Server:wup2] -D[pcid:1941550263] -Xms4096m -Xmx4096m -verbose:gc -Xloggc:/apps/jboss7/jboss-eap-7.4/domain/log/Gc-logs/Server1GC.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true -XX:+DisableExplicitGC -XX:+PrintCommandLineFlags -XX:HeapDumpPath=/apps/jboss7/jboss-eap-7.4/domain/log/heap_dump -Dcom.arjuna.ats.arjuna.allowMultipleLastResources=true -Dhost-config=host-slave.xml -Dhp.profiles.active=uat -Dhttps.proxyHost=forwardproxyhostUAT -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.keyStore=/apps/modasolutions/conf/wugateway.jks -Djavax.net.ssl.keyStorePassword=changeit -Djboss.bind.address=10.45.16.213 -Djboss.bind.address.management=127.0.0.1 -Djboss.default.multicast.address=230.0.0.7 -Djboss.domain.default.config=domain.xml -Djboss.domain.master.address=10.45.16.213 -Djboss.home.dir=/apps/jboss7/jboss-eap-7.4 -Djboss.host.default.config=host-slave.xml -Djboss.messaging.cluster.password=wupay01 -Djboss.messaging.group.address=230.0.0.7 -Djboss.modules.system.pkgs=org.jboss.byteman -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -Dorg.apache.jasper.compiler.Parser.STRICT_WHITESPACE=false -Dorg.apache.tomcat.util.http.Parameters.MAX_COUNT=5000 -Djboss.server.log.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/log -Djboss.server.temp.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/tmp -Djboss.server.data.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/data -Dlogging.configuration=file:/apps/jboss7/jboss-eap-7.4/domain/servers/wup2/data/logging.properties -jar /apps/jboss7/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7/jboss-eap-7.4/modules org.jboss.as.server
+
+webadm    7901  7394 99 09:59 pts/3    00:00:50 /apps/java/jdk1.8.0_351/bin/java -D[Server:wup2_adminportal] -D[pcid:173443223] -Xms4096m -Xmx4096m -verbose:gc -Xloggc:/apps/jboss7/jboss-eap-7.4/domain/log/Gc-logs/Server1GC.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true -XX:+DisableExplicitGC -XX:+PrintCommandLineFlags -XX:HeapDumpPath=/apps/jboss7/jboss-eap-7.4/domain/log/heap_dump -Dcom.arjuna.ats.arjuna.allowMultipleLastResources=true -Dhost-config=host-slave.xml -Dhp.profiles.active=uat -Dhttps.proxyHost=forwardproxyhostUAT -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.keyStore=/apps/modasolutions/conf/wugateway.jks -Djavax.net.ssl.keyStorePassword=changeit -Djboss.bind.address=10.45.16.213 -Djboss.bind.address.management=127.0.0.1 -Djboss.default.multicast.address=230.0.0.7 -Djboss.domain.default.config=domain.xml -Djboss.domain.master.address=10.45.16.213 -Djboss.home.dir=/apps/jboss7/jboss-eap-7.4 -Djboss.host.default.config=host-slave.xml -Djboss.messaging.cluster.password=wupay01 -Djboss.messaging.group.address=230.0.0.7 -Djboss.modules.system.pkgs=org.jboss.byteman -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -Dorg.apache.jasper.compiler.Parser.STRICT_WHITESPACE=false -Dorg.apache.tomcat.util.http.Parameters.MAX_COUNT=5000 -Djboss.server.log.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/log -Djboss.server.temp.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/tmp -Djboss.server.data.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/data -Dlogging.configuration=file:/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_adminportal/data/logging.properties -jar /apps/jboss7/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7/jboss-eap-7.4/modules org.jboss.as.server
+
+webadm    8366  7394 99 09:59 pts/3    00:00:11 /apps/java/jdk1.8.0_351/bin/java -D[Server:wup2_batches] -D[pcid:2138524595] -Xms4096m -Xmx4096m -verbose:gc -Xloggc:/apps/jboss7/jboss-eap-7.4/domain/log/Gc-logs/Server1GC.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCApplicationStoppedTime -XX:+HeapDumpOnOutOfMemoryError -Dorg.jboss.resolver.warning=true -XX:+DisableExplicitGC -XX:+PrintCommandLineFlags -XX:HeapDumpPath=/apps/jboss7/jboss-eap-7.4/domain/log/heap_dump -Dcom.arjuna.ats.arjuna.allowMultipleLastResources=true -Dhost-config=host-slave.xml -Dhp.profiles.active=uat -Dhttps.proxyHost=forwardproxyhostUAT -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.keyStore=/apps/modasolutions/conf/wugateway.jks -Djavax.net.ssl.keyStorePassword=changeit -Djboss.bind.address=10.45.16.213 -Djboss.bind.address.management=127.0.0.1 -Djboss.default.multicast.address=230.0.0.7 -Djboss.domain.default.config=domain.xml -Djboss.domain.master.address=10.45.16.213 -Djboss.home.dir=/apps/jboss7/jboss-eap-7.4 -Djboss.host.default.config=host-slave.xml -Djboss.messaging.cluster.password=wupay01 -Djboss.messaging.group.address=230.0.0.7 -Djboss.modules.system.pkgs=org.jboss.byteman -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -Dorg.apache.jasper.compiler.Parser.STRICT_WHITESPACE=false -Dorg.apache.tomcat.util.http.Parameters.MAX_COUNT=5000 -Djboss.server.log.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/log -Djboss.server.temp.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/tmp -Djboss.server.data.dir=/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/data -Dlogging.configuration=file:/apps/jboss7/jboss-eap-7.4/domain/servers/wup2_batches/data/logging.properties -jar /apps/jboss7/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7/jboss-eap-7.4/modules org.jboss.as.server
+webadm    8617 24714  0 09:59 pts/4    00:00:00 grep wup2
+[webadm@WUWVC5ASGRD13 jboss7]$date
+Tue Jan 16 10:00:08 EST 2024
+
+[webadm@WUWVC5ASGRD13 ~]$ps -ef | grep jboss7
+webadm    2484     1  0 09:55 pts/4    00:00:00 /bin/sh /apps/jboss7dc/jboss-eap-7.4/bin/domain.sh -P file:///apps/jboss7dc/jboss-eap-7.4/domain/configuration/domain.properties
+
+webadm    2718  2484  3 09:55 pts/4    00:00:06 /apps/java/jdk1.8.0_351/bin/java -D[Process Controller] -server -Xms64m -Xmx512m -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.domain.default.config=domain.xml -Djboss.host.default.config=host-master.xml -Djboss.bind.address.management=10.45.16.213 -Djboss.bind.address=10.45.16.213 -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -Dorg.jboss.boot.log.file=/apps/jboss7dc/jboss-eap-7.4/domain/log/process-controller.log -Dlogging.configuration=file:/apps/jboss7dc/jboss-eap-7.4/domain/configuration/logging.properties -jar /apps/jboss7dc/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7dc/jboss-eap-7.4/modules org.jboss.as.process-controller -jboss-home /apps/jboss7dc/jboss-eap-7.4 -jvm /apps/java/jdk1.8.0_351/bin/java -mp /apps/jboss7dc/jboss-eap-7.4/modules -- -Dorg.jboss.boot.log.file=/apps/jboss7dc/jboss-eap-7.4/domain/log/host-controller.log -Dlogging.configuration=file:/apps/jboss7dc/jboss-eap-7.4/domain/configuration/logging.properties -server -Xms64m -Xmx512m -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.domain.default.config=domain.xml -Djboss.host.default.config=host-master.xml -Djboss.bind.address.management=10.45.16.213 -Djboss.bind.address=10.45.16.213 -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -- -default-jvm /apps/java/jdk1.8.0_351/bin/java -P file:///apps/jboss7dc/jboss-eap-7.4/domain/configuration/domain.properties
+
+webadm    2823  2718 29 09:55 pts/4    00:00:56 /apps/java/jdk1.8.0_351/bin/java -D[Host Controller] -Dorg.jboss.boot.log.file=/apps/jboss7dc/jboss-eap-7.4/domain/log/host-controller.log -Dlogging.configuration=file:/apps/jboss7dc/jboss-eap-7.4/domain/configuration/logging.properties -server -Xms64m -Xmx512m -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.domain.default.config=domain.xml -Djboss.host.default.config=host-master.xml -Djboss.bind.address.management=10.45.16.213 -Djboss.bind.address=10.45.16.213 -Dorg.apache.coyote.http11.Http11Protocol.SERVER=WUSecureServer -jar /apps/jboss7dc/jboss-eap-7.4/jboss-modules.jar -mp /apps/jboss7dc/jboss-eap-7.4/modules org.jboss.as.host-controller -mp /apps/jboss7dc/jboss-eap-7.4/modules --pc-address 127.0.0.1 --pc-port 32873 -default-jvm /apps/java/jdk1.8.0_351/bin/java -P file:///apps/jboss7dc/jboss-eap-7.4/domain/configuration/domain.properties -Djboss.home.dir=/apps/jboss7dc/jboss-eap-7.4
+webadm    6362  5149  0 09:58 pts/3    00:00:00 grep jboss7
+[webadm@WUWVC5ASGRD13 ~]$cd /home/webadm/bin/jboss7/
+[webadm@WUWVC5ASGRD13 jboss7]$ls -lrth
+total 16K
+-rwx------ 1 webadm webadm 104 Mar 22  2023 stopWUPAY-JVM-jboss7.sh
+-rwx------ 1 webadm webadm 105 Mar 22  2023 stopWUPAY-DC-jboss7.sh
+-rwx------ 1 webadm webadm 165 Mar 23  2023 startWUPAY-DC-jboss7.sh
+-rwx------ 1 webadm webadm 144 Mar 23  2023 startWUPAY-HC-jboss7.sh
+
+Rn the Script startWUPAY-HC-jboss7.sh to start Host Controller as below
+[webadm@WUWVC5ASGRD13 jboss7]$./startWUPAY-HC-jboss7.sh
+
+
+******************************************************************************************************
+
+
+
+
+*******************
+10.45.16.214
+*******************
+Log into the server 10.45.16.214
+Switch the user to webadm by using command sudo su - webadm
+For Eg:
+[sw0018871pwd@WUWVC5ASGRD14 ~]$ sudo su - webadm
+Go to the Location /home/webadm/bin/jboss7/
+List the scripts in the locatio
+We can see 2 scripts in the location since it is a host controller server like a node in websphere
+./stopWUPAY-JVM-jboss7.sh
+./startWUPAY-HC-jboss7.sh
+For Eg:
+[webadm@WUWVC5ASGRD14 ~]$ cd /home/webadm/bin/jboss7/
+[webadm@WUWVC5ASGRD14 jboss7]$ ls -lrth
+total 8.0K
+-rwx------ 1 webadm webadm 104 Mar 23  2023 stopWUPAY-JVM-jboss7.sh
+-rwx------ 1 webadm webadm 144 Mar 23  2023 startWUPAY-HC-jboss7.sh
+Run the script ./stopWUPAY-JVM-jboss7.sh to stop Host controller
+For Eg:
+[webadm@WUWVC5ASGRD14 jboss7]$ ./stopWUPAY-JVM-jboss7.sh
+[webadm@WUWVC5ASGRD14 jboss7]$ ps -ef | grep wup2
+webadm   40806 40427  0 10:02 pts/3    00:00:00 grep wup2
+Run the script to start Host controller  ./startWUPAY-HC-jboss7.sh
+For Eg:
+[webadm@WUWVC5ASGRD14 jboss7]$ ./startWUPAY-HC-jboss7.sh
+List all the process by using the command ps -ef | grep wup2
+
+
+
+9997  2024-01-16 10:02:18 cd /home/webadm/bin/jboss7/
+ 9998  2024-01-16 10:02:21 ls -lrth
+ 9999  2024-01-16 10:02:38 ./stopWUPAY-JVM-jboss7.sh
+10000  2024-01-16 10:02:47 ps -ef | grep wup2
+10001  2024-01-16 10:02:53 ./startWUPAY-HC-jboss7.sh
+2024-01-16 10:05:18 ps -ef | grep wup2
+    3  2024-01-16 10:06:46 date
+
+
+

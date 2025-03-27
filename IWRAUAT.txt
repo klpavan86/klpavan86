@@ -1,0 +1,27 @@
+IWRA UAT - Issue in Objective Report Batch Run
+
+could you please execute the below steps in IWRA UAT server.
+
+ 
+
+Ticket: CTASK0461491
+
+ 
+
+IDEA UAT JBOSS Steps
+
+------------------------------
+
+ 
+
+SERVER_IP = 10.45.16.125
+
+INSTANCE_NAME:  idearefresh
+
+ 
+
+Step 1: Go to Path /apps/idearefresh/batch
+
+Step 2: Take a Backup Of ObjReportiWatch.cert  and objReport.jks and then delete these files
+
+Step 3: execute   ./obj_report_import_cert.sh in mentioned location in point 1

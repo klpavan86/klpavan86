@@ -1,0 +1,25 @@
+Hi Team , 
+
+Please find attached the updated Linux patching sheet with columns (D ,E & F ) added. 
+Kindly refer to them during the activity. 
+
+
+Day1 Chicago : ( Webhosting applications -- WUPAY , NGDRT , Quickfind , POSFilter , WebTP )
+
+Complete WUPOS traffic must be moved as part of Tibco app patching and should be balanced only after completion of sanity for all the Core Tibco & EMS apps . 
+TIBCO EMS servers are involved for patching . From Webhosting end, WUPAY and NGDRT applications are dependent apps.               
+WUPAY - Traffic must be moved and JVMs restart post EMS reboot ( Webhosting steps have been attached to CR )
+WUPAY-DBS traffic to be balanced post activity(orgin-wupay.api.westernunion.com)
+DRT - On-Prem traffic not needed . Cloud level traffic movement will be performed by the Network team . Only JVMs must be restarted post Tibco EMS reboot .
+Old Tibco EMS servers ( 10.47.17.10/12/26/28 )  are moved to New Tibco EMS servers. ( 10.47.17.48/64/16/32 ) . Restart WUPAY and NGDRT post EMS servers patching. 
+Please note that 10.47.18.120 , 10.47.18.121 , 10.47.18.122 & 10.47.18.123 got decommissioned & now KYC traffic is served by the 4 new servers ( 10.47.19.42, 10.47.19.43, 10.47.19.44, 10.47.19.45) along with 10.47.18.10 & 10.47.18.11. 
+
+Day2 Chicago : ( Webhosting applications -- Ansible & Archiva , WUPOS1.0 , WUPOS2.0 Tablet , Common URL , Agent-Service , Receipt Service , HPOS , WUPOS Redis, DMS , Agent Portal , IWATCHRA , RTRA , RTRA EAS , Core Proxy servers , Agent Training Proxy servers & Inbound Proxy servers / GIS , Digital Gateway , WU Gateway , Walmart Gateway , OXXO/TMP/TMS) 
+
+Complete WUPOS traffic along with Receipt Service traffic must be moved. Post WUPOS RAC DB up , we need to bring app & web instances.
+Standard traffic movement steps for GIS/Inbound proxy servers to be followed . 
+Restart steps for iWatchRA , RTRA & RTRA EAS are attached to change ticket.
+Refer SOP document for Gateway traffic & restart procedure..
+A new RTRA EAS instance needs to be brought up. Don't bring up old RTRA EAS
+Splunk Cloud servers are managed by Infosec.
+Need to move mobile.westernunion.com & mobile.westernunion.net GTM URL alone along with gateway traffic movement..

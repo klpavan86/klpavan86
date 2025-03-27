@@ -1,0 +1,40 @@
+
+***************
+DIGITAL GATEWAY
+***************
+Digital Gateway Traffic taking URLs.
+
+Digital GW URL:
+•	wugatewaydigital2.wuintranet.net
+•	wugatewaydigital1.wuintranet.net
+
+Digital Gateway Server Details
+
+Reston DC:
+
+Environment 	Broker Servers
+			  Host Name			IP
+RESTON-1	WUWVC9ASMBK05 	10.45.17.164
+RESTON-2	WUWVC9ASMBK06	10.45.17.165
+RESTON-3	WUWVC9ASMBK07	10.45.17.166
+
+DP IP’s:
+Host Name		 IP
+WUWVC9APDPC01 10.44.5.166
+WUWVC9APDPC02 10.44.5.167
+
+                           
+Chicago DC:
+
+Environment 	Broker Servers
+	    	  Host Name	         IP
+CHICAGO-1	WUWCC9ASMBK05	10.47.17.164
+CHICAGO-2	WUWCC9ASMBK06	10.47.17.165
+CHICAGO-3	WUWCC9ASMBK07	10.47.17.166
+
+DP IP’s:
+ Host Name 	      IP
+WUWCC9APDPC01 10.46.5.166
+WUWCC9APDPC02 10.46.5.167
+	
+

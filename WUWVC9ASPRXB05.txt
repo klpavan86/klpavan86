@@ -1,0 +1,376 @@
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** RESTON $ ssh wuwvc9asprxb05
+The authenticity of host 'wuwvc9asprxb05 (10.45.17.203)' can't be established.
+ED25519 key fingerprint is SHA256:Mzhig2rQfjOFSiC9RPYZauq/yzIe+nAhPSVE22e0EtM.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:100: 10.45.0.70
+    ~/.ssh/known_hosts:107: 10.45.18.186
+    ~/.ssh/known_hosts:121: 10.45.19.70
+    ~/.ssh/known_hosts:122: 10.45.19.98
+    ~/.ssh/known_hosts:123: 10.45.19.99
+    ~/.ssh/known_hosts:124: 10.45.1.246
+    ~/.ssh/known_hosts:125: 10.45.1.247
+    ~/.ssh/known_hosts:150: wuwvc2wspos02
+    (8 additional names omitted)
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'wuwvc9asprxb05' (ED25519) to the list of known hosts.
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential i nformation. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or it s contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such  monitoring and recording
+(sw0018871pwd@wuwvc9asprxb05) Password:
+Created home directory
+sw0018871pwd@WUWVC9ASPRXB05:~ **** This is a PROD server Please be extra careful **** RESTON $ df -h /apps
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/data01-apps  108G   81G   21G  80% /apps
+sw0018871pwd@WUWVC9ASPRXB05:~ **** This is a PROD server Please be extra careful **** RESTON $ cd /apps
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $ du -sch * | grep G
+81G     apache2
+du: cannot read directory ‘lost+found’: Permission denied
+81G     total
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $ cd apache2/
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ du -sch * | grep G
+81G     logs
+81G     total
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ cd logs
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ ls -lrth
+total 81G
+-rwxr-xr-x 1 root root 263K Oct 20 23:59 proxy-ssl_error_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 220K Oct 20 23:59 proxy_error_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 216K Oct 20 23:59 proxy_access_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 163M Oct 20 23:59 proxy-ssl_access_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 120K Oct 21 23:59 proxy_error_log.2024-10-21.gz
+-rwxr-xr-x 1 root root  99K Oct 21 23:59 proxy_access_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 417K Oct 21 23:59 proxy-ssl_error_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 427M Oct 21 23:59 proxy-ssl_access_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 857K Oct 22 23:59 proxy-ssl_error_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 137K Oct 22 23:59 proxy_error_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 112K Oct 22 23:59 proxy_access_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 370M Oct 22 23:59 proxy-ssl_access_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 136K Oct 23 23:59 proxy_error_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 104K Oct 23 23:59 proxy_access_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 569K Oct 23 23:59 proxy-ssl_error_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 392M Oct 23 23:59 proxy-ssl_access_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 135K Oct 24 23:59 proxy_error_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 101K Oct 24 23:59 proxy_access_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 561K Oct 24 23:59 proxy-ssl_error_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 4.5G Oct 24 23:59 proxy-ssl_access_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 1.4K Oct 25 03:58 error_log
+-rwxr-xr-x 1 root root 126K Oct 25 23:59 proxy_error_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 106K Oct 25 23:59 proxy_access_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 396K Oct 25 23:59 proxy-ssl_error_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 6.3G Oct 25 23:59 proxy-ssl_access_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 113K Oct 26 23:59 proxy_error_log.2024-10-26.gz
+-rwxr-xr-x 1 root root  92K Oct 26 23:59 proxy_access_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 344K Oct 26 23:59 proxy-ssl_error_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 3.2G Oct 26 23:59 proxy-ssl_access_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 171K Oct 27 23:58 proxy-ssl_error_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 120K Oct 27 23:59 proxy_error_log.2024-10-27.gz
+-rwxr-xr-x 1 root root  86K Oct 27 23:59 proxy_access_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 1.9G Oct 27 23:59 proxy-ssl_access_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 267K Oct 28 23:59 proxy-ssl_error_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 119K Oct 28 23:59 proxy_error_log.2024-10-28.gz
+-rwxr-xr-x 1 root root  90K Oct 28 23:59 proxy_access_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 6.3G Oct 28 23:59 proxy-ssl_access_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 248K Oct 29 23:59 proxy-ssl_error_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 122K Oct 29 23:59 proxy_error_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 100K Oct 29 23:59 proxy_access_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 5.2G Oct 29 23:59 proxy-ssl_access_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 233K Oct 30 23:59 proxy-ssl_error_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 121K Oct 30 23:59 proxy_error_log.2024-10-30.gz
+-rwxr-xr-x 1 root root  96K Oct 30 23:59 proxy_access_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 2.8G Oct 30 23:59 proxy-ssl_access_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 236K Oct 31 23:59 proxy-ssl_error_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 120K Oct 31 23:59 proxy_error_log.2024-10-31.gz
+-rwxr-xr-x 1 root root  97K Oct 31 23:59 proxy_access_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 3.5G Oct 31 23:59 proxy-ssl_access_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 124K Nov  1 23:59 proxy_error_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 136K Nov  1 23:59 proxy_access_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 189K Nov  1 23:59 proxy-ssl_error_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 2.0G Nov  1 23:59 proxy-ssl_access_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 196K Nov  2 23:59 proxy-ssl_error_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 120K Nov  2 23:59 proxy_error_log.2024-11-02.gz
+-rwxr-xr-x 1 root root  87K Nov  2 23:59 proxy_access_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 2.2G Nov  2 23:59 proxy-ssl_access_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 3.5M Nov  3 23:59 proxy-ssl_error_log.2024-11-03
+-rwxr-xr-x 1 root root 2.7M Nov  3 23:59 proxy_error_log.2024-11-03
+-rwxr-xr-x 1 root root 3.9M Nov  3 23:59 proxy_access_log.2024-11-03
+-rwxr-xr-x 1 root root 8.8G Nov  3 23:59 proxy-ssl_access_log.2024-11-03
+-rwxr-xr-x 1 root root 3.3M Nov  4 23:59 proxy-ssl_error_log.2024-11-04
+-rwxr-xr-x 1 root root 1.1M Nov  4 23:59 proxy_error_log.2024-11-04
+-rwxr-xr-x 1 root root 2.0M Nov  4 23:59 proxy_access_log.2024-11-04
+-rwxr-xr-x 1 root root  27G Nov  4 23:59 proxy-ssl_access_log.2024-11-04
+-rwxr-xr-x 1 root root 405K Nov  5 07:18 proxy_error_log.2024-11-05
+-rwxr-xr-x 1 root root 439K Nov  5 07:18 proxy_access_log.2024-11-05
+-rwxr-xr-x 1 root root 708K Nov  5 07:18 proxy-ssl_error_log.2024-11-05
+-rwxr-xr-x 1 root root 7.4G Nov  5 07:18 proxy-ssl_access_log.2024-11-05
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ ls -lrth *2024-11-{03..04}*
+-rwxr-xr-x 1 root root 3.5M Nov  3 23:59 proxy-ssl_error_log.2024-11-03
+-rwxr-xr-x 1 root root 2.7M Nov  3 23:59 proxy_error_log.2024-11-03
+-rwxr-xr-x 1 root root 3.9M Nov  3 23:59 proxy_access_log.2024-11-03
+-rwxr-xr-x 1 root root 8.8G Nov  3 23:59 proxy-ssl_access_log.2024-11-03
+-rwxr-xr-x 1 root root 3.3M Nov  4 23:59 proxy-ssl_error_log.2024-11-04
+-rwxr-xr-x 1 root root 1.1M Nov  4 23:59 proxy_error_log.2024-11-04
+-rwxr-xr-x 1 root root 2.0M Nov  4 23:59 proxy_access_log.2024-11-04
+-rwxr-xr-x 1 root root  27G Nov  4 23:59 proxy-ssl_access_log.2024-11-04
+
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ pwd
+/apps/apache2/logs
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ ls -lrth /apps/apache2/logs/*2024-11- {03..04}*
+-rwxr-xr-x 1 root root 3.5M Nov  3 23:59 /apps/apache2/logs/proxy-ssl_error_log.2024-11-03
+-rwxr-xr-x 1 root root 2.7M Nov  3 23:59 /apps/apache2/logs/proxy_error_log.2024-11-03
+-rwxr-xr-x 1 root root 3.9M Nov  3 23:59 /apps/apache2/logs/proxy_access_log.2024-11-03
+-rwxr-xr-x 1 root root 8.8G Nov  3 23:59 /apps/apache2/logs/proxy-ssl_access_log.2024-11-03
+-rwxr-xr-x 1 root root 3.3M Nov  4 23:59 /apps/apache2/logs/proxy-ssl_error_log.2024-11-04
+-rwxr-xr-x 1 root root 1.1M Nov  4 23:59 /apps/apache2/logs/proxy_error_log.2024-11-04
+-rwxr-xr-x 1 root root 2.0M Nov  4 23:59 /apps/apache2/logs/proxy_access_log.2024-11-04
+-rwxr-xr-x 1 root root  27G Nov  4 23:59 /apps/apache2/logs/proxy-ssl_access_log.2024-11-04
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ sudo gzip /apps/apache2/logs/*2024-11 -{03..04}*
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ df -h /apps
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/data01-apps  108G   83G   20G  81% /apps
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ ls -lrth
+total 57G
+-rwxr-xr-x 1 root root 263K Oct 20 23:59 proxy-ssl_error_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 220K Oct 20 23:59 proxy_error_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 216K Oct 20 23:59 proxy_access_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 163M Oct 20 23:59 proxy-ssl_access_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 120K Oct 21 23:59 proxy_error_log.2024-10-21.gz
+-rwxr-xr-x 1 root root  99K Oct 21 23:59 proxy_access_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 417K Oct 21 23:59 proxy-ssl_error_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 427M Oct 21 23:59 proxy-ssl_access_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 857K Oct 22 23:59 proxy-ssl_error_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 137K Oct 22 23:59 proxy_error_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 112K Oct 22 23:59 proxy_access_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 370M Oct 22 23:59 proxy-ssl_access_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 136K Oct 23 23:59 proxy_error_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 104K Oct 23 23:59 proxy_access_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 569K Oct 23 23:59 proxy-ssl_error_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 392M Oct 23 23:59 proxy-ssl_access_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 135K Oct 24 23:59 proxy_error_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 101K Oct 24 23:59 proxy_access_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 561K Oct 24 23:59 proxy-ssl_error_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 4.5G Oct 24 23:59 proxy-ssl_access_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 1.4K Oct 25 03:58 error_log
+-rwxr-xr-x 1 root root 126K Oct 25 23:59 proxy_error_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 106K Oct 25 23:59 proxy_access_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 396K Oct 25 23:59 proxy-ssl_error_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 6.3G Oct 25 23:59 proxy-ssl_access_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 113K Oct 26 23:59 proxy_error_log.2024-10-26.gz
+-rwxr-xr-x 1 root root  92K Oct 26 23:59 proxy_access_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 344K Oct 26 23:59 proxy-ssl_error_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 3.2G Oct 26 23:59 proxy-ssl_access_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 171K Oct 27 23:58 proxy-ssl_error_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 120K Oct 27 23:59 proxy_error_log.2024-10-27.gz
+-rwxr-xr-x 1 root root  86K Oct 27 23:59 proxy_access_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 1.9G Oct 27 23:59 proxy-ssl_access_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 267K Oct 28 23:59 proxy-ssl_error_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 119K Oct 28 23:59 proxy_error_log.2024-10-28.gz
+-rwxr-xr-x 1 root root  90K Oct 28 23:59 proxy_access_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 6.3G Oct 28 23:59 proxy-ssl_access_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 248K Oct 29 23:59 proxy-ssl_error_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 122K Oct 29 23:59 proxy_error_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 100K Oct 29 23:59 proxy_access_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 5.2G Oct 29 23:59 proxy-ssl_access_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 233K Oct 30 23:59 proxy-ssl_error_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 121K Oct 30 23:59 proxy_error_log.2024-10-30.gz
+-rwxr-xr-x 1 root root  96K Oct 30 23:59 proxy_access_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 2.8G Oct 30 23:59 proxy-ssl_access_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 236K Oct 31 23:59 proxy-ssl_error_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 120K Oct 31 23:59 proxy_error_log.2024-10-31.gz
+-rwxr-xr-x 1 root root  97K Oct 31 23:59 proxy_access_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 3.5G Oct 31 23:59 proxy-ssl_access_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 124K Nov  1 23:59 proxy_error_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 136K Nov  1 23:59 proxy_access_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 189K Nov  1 23:59 proxy-ssl_error_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 2.0G Nov  1 23:59 proxy-ssl_access_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 196K Nov  2 23:59 proxy-ssl_error_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 120K Nov  2 23:59 proxy_error_log.2024-11-02.gz
+-rwxr-xr-x 1 root root  87K Nov  2 23:59 proxy_access_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 2.2G Nov  2 23:59 proxy-ssl_access_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 272K Nov  3 23:59 proxy-ssl_error_log.2024-11-03.gz
+-rwxr-xr-x 1 root root 200K Nov  3 23:59 proxy_error_log.2024-11-03.gz
+-rwxr-xr-x 1 root root 211K Nov  3 23:59 proxy_access_log.2024-11-03.gz
+-rwxr-xr-x 1 root root 2.3G Nov  3 23:59 proxy-ssl_access_log.2024-11-03.gz
+-rwxr-xr-x 1 root root 315K Nov  4 23:59 proxy-ssl_error_log.2024-11-04.gz
+-rwxr-xr-x 1 root root 114K Nov  4 23:59 proxy_error_log.2024-11-04.gz
+-rwxr-xr-x 1 root root 104K Nov  4 23:59 proxy_access_log.2024-11-04.gz
+-rwxr-xr-x 1 root root 7.4G Nov  4 23:59 proxy-ssl_access_log.2024-11-04.gz
+-rwxr-xr-x 1 root root 424K Nov  5 07:38 proxy_error_log.2024-11-05
+-rwxr-xr-x 1 root root 460K Nov  5 07:38 proxy_access_log.2024-11-05
+-rwxr-xr-x 1 root root 749K Nov  5 07:38 proxy-ssl_error_log.2024-11-05
+-rwxr-xr-x 1 root root 7.8G Nov  5 07:39 proxy-ssl_access_log.2024-11-05
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ df -h /apps
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/data01-apps  108G   83G   20G  81% /apps
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ df -h
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 3.9G     0  3.9G   0% /dev
+tmpfs                    3.9G     0  3.9G   0% /dev/shm
+tmpfs                    3.9G  332M  3.5G   9% /run
+tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda2                9.8G  1.8G  7.5G  20% /
+/dev/mapper/sys-usr      9.8G  2.1G  7.2G  23% /usr
+/dev/sda1                488M  151M  302M  34% /boot
+/dev/mapper/data01-apps  108G   83G   20G  81% /apps
+/dev/mapper/sys-tmp      4.8G   21M  4.6G   1% /tmp
+/dev/mapper/sys-home     3.9G   75M  3.6G   3% /home
+/dev/mapper/sys-var      9.8G  3.1G  6.2G  34% /var
+/dev/mapper/data-opt     9.8G  5.5G  3.8G  60% /opt
+tmpfs                    782M     0  782M   0% /run/user/0
+tmpfs                    782M     0  782M   0% /run/user/12584086
+tmpfs                    782M     0  782M   0% /run/user/12905815
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ cd ..
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ du -sch * | grep G
+57G     logs
+57G     total
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ df -h
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 3.9G     0  3.9G   0% /dev
+tmpfs                    3.9G     0  3.9G   0% /dev/shm
+tmpfs                    3.9G  332M  3.5G   9% /run
+tmpfs                    3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda2                9.8G  1.8G  7.5G  20% /
+/dev/mapper/sys-usr      9.8G  2.1G  7.2G  23% /usr
+/dev/sda1                488M  151M  302M  34% /boot
+/dev/mapper/data01-apps  108G   83G   20G  81% /apps
+/dev/mapper/sys-tmp      4.8G   21M  4.6G   1% /tmp
+/dev/mapper/sys-home     3.9G   75M  3.6G   3% /home
+/dev/mapper/sys-var      9.8G  3.1G  6.2G  34% /var
+/dev/mapper/data-opt     9.8G  5.5G  3.8G  60% /opt
+tmpfs                    782M     0  782M   0% /run/user/0
+tmpfs                    782M     0  782M   0% /run/user/12584086
+tmpfs                    782M     0  782M   0% /run/user/12905815
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ cd /apps/
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $ du -sch * | grep G
+57G     apache2
+du: cannot read directory ‘lost+found’: Permission denied
+57G     total
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $ logout
+Connection to wuwvc9asprxb05 closed.
+sw0018871pwd@WUWVC9MSOPS01:~ **** This is a PROD server Please be extra careful **** RESTON $ ssh wuwvc9asprxb05
+WARNING! AUTHORIZED USE ONLY! This computer and its contents are property of the Western Union Company and may contain proprietary and confidential i nformation. Authorization for access is granted by a system administrator per corporate policy. Any unauthorized access or use of this computer or it s contents is strictly prohibited. Use of company resource should be for business purposse only and are subject to the code of Conduct
+company policies and procedures and applicable law.Where permissible
+your activities during use of any Western Union computer or network may be monitored and/or recorded and use of this computer implies,consent to such  monitoring and recording
+Last login: Tue Nov  5 07:18:17 2024 from 10.44.6.21
+sw0018871pwd@WUWVC9ASPRXB05:~ **** This is a PROD server Please be extra careful **** RESTON $ df -h /apps
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/data01-apps  108G   83G   20G  81% /apps
+sw0018871pwd@WUWVC9ASPRXB05:~ **** This is a PROD server Please be extra careful **** RESTON $ cd /apps/
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $ du -sch *
+57G     apache2
+du: cannot read directory ‘lost+found’: Permission denied
+16K     lost+found
+8.0K    scripts
+4.0K    sw
+57G     total
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $ hostname -i
+10.45.17.203
+sw0018871pwd@WUWVC9ASPRXB05:/apps **** This is a PROD server Please be extra careful **** RESTON $ cd /apps/apache2/logs
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ ls -lrth
+total 57G
+-rwxr-xr-x 1 root root 263K Oct 20 23:59 proxy-ssl_error_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 220K Oct 20 23:59 proxy_error_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 216K Oct 20 23:59 proxy_access_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 163M Oct 20 23:59 proxy-ssl_access_log.2024-10-20.gz
+-rwxr-xr-x 1 root root 120K Oct 21 23:59 proxy_error_log.2024-10-21.gz
+-rwxr-xr-x 1 root root  99K Oct 21 23:59 proxy_access_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 417K Oct 21 23:59 proxy-ssl_error_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 427M Oct 21 23:59 proxy-ssl_access_log.2024-10-21.gz
+-rwxr-xr-x 1 root root 857K Oct 22 23:59 proxy-ssl_error_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 137K Oct 22 23:59 proxy_error_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 112K Oct 22 23:59 proxy_access_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 370M Oct 22 23:59 proxy-ssl_access_log.2024-10-22.gz
+-rwxr-xr-x 1 root root 136K Oct 23 23:59 proxy_error_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 104K Oct 23 23:59 proxy_access_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 569K Oct 23 23:59 proxy-ssl_error_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 392M Oct 23 23:59 proxy-ssl_access_log.2024-10-23.gz
+-rwxr-xr-x 1 root root 135K Oct 24 23:59 proxy_error_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 101K Oct 24 23:59 proxy_access_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 561K Oct 24 23:59 proxy-ssl_error_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 4.5G Oct 24 23:59 proxy-ssl_access_log.2024-10-24.gz
+-rwxr-xr-x 1 root root 1.4K Oct 25 03:58 error_log
+-rwxr-xr-x 1 root root 126K Oct 25 23:59 proxy_error_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 106K Oct 25 23:59 proxy_access_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 396K Oct 25 23:59 proxy-ssl_error_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 6.3G Oct 25 23:59 proxy-ssl_access_log.2024-10-25.gz
+-rwxr-xr-x 1 root root 113K Oct 26 23:59 proxy_error_log.2024-10-26.gz
+-rwxr-xr-x 1 root root  92K Oct 26 23:59 proxy_access_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 344K Oct 26 23:59 proxy-ssl_error_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 3.2G Oct 26 23:59 proxy-ssl_access_log.2024-10-26.gz
+-rwxr-xr-x 1 root root 171K Oct 27 23:58 proxy-ssl_error_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 120K Oct 27 23:59 proxy_error_log.2024-10-27.gz
+-rwxr-xr-x 1 root root  86K Oct 27 23:59 proxy_access_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 1.9G Oct 27 23:59 proxy-ssl_access_log.2024-10-27.gz
+-rwxr-xr-x 1 root root 267K Oct 28 23:59 proxy-ssl_error_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 119K Oct 28 23:59 proxy_error_log.2024-10-28.gz
+-rwxr-xr-x 1 root root  90K Oct 28 23:59 proxy_access_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 6.3G Oct 28 23:59 proxy-ssl_access_log.2024-10-28.gz
+-rwxr-xr-x 1 root root 248K Oct 29 23:59 proxy-ssl_error_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 122K Oct 29 23:59 proxy_error_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 100K Oct 29 23:59 proxy_access_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 5.2G Oct 29 23:59 proxy-ssl_access_log.2024-10-29.gz
+-rwxr-xr-x 1 root root 233K Oct 30 23:59 proxy-ssl_error_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 121K Oct 30 23:59 proxy_error_log.2024-10-30.gz
+-rwxr-xr-x 1 root root  96K Oct 30 23:59 proxy_access_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 2.8G Oct 30 23:59 proxy-ssl_access_log.2024-10-30.gz
+-rwxr-xr-x 1 root root 236K Oct 31 23:59 proxy-ssl_error_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 120K Oct 31 23:59 proxy_error_log.2024-10-31.gz
+-rwxr-xr-x 1 root root  97K Oct 31 23:59 proxy_access_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 3.5G Oct 31 23:59 proxy-ssl_access_log.2024-10-31.gz
+-rwxr-xr-x 1 root root 124K Nov  1 23:59 proxy_error_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 136K Nov  1 23:59 proxy_access_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 189K Nov  1 23:59 proxy-ssl_error_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 2.0G Nov  1 23:59 proxy-ssl_access_log.2024-11-01.gz
+-rwxr-xr-x 1 root root 196K Nov  2 23:59 proxy-ssl_error_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 120K Nov  2 23:59 proxy_error_log.2024-11-02.gz
+-rwxr-xr-x 1 root root  87K Nov  2 23:59 proxy_access_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 2.2G Nov  2 23:59 proxy-ssl_access_log.2024-11-02.gz
+-rwxr-xr-x 1 root root 272K Nov  3 23:59 proxy-ssl_error_log.2024-11-03.gz
+-rwxr-xr-x 1 root root 200K Nov  3 23:59 proxy_error_log.2024-11-03.gz
+-rwxr-xr-x 1 root root 211K Nov  3 23:59 proxy_access_log.2024-11-03.gz
+-rwxr-xr-x 1 root root 2.3G Nov  3 23:59 proxy-ssl_access_log.2024-11-03.gz
+-rwxr-xr-x 1 root root 315K Nov  4 23:59 proxy-ssl_error_log.2024-11-04.gz
+-rwxr-xr-x 1 root root 114K Nov  4 23:59 proxy_error_log.2024-11-04.gz
+-rwxr-xr-x 1 root root 104K Nov  4 23:59 proxy_access_log.2024-11-04.gz
+-rwxr-xr-x 1 root root 7.4G Nov  4 23:59 proxy-ssl_access_log.2024-11-04.gz
+-rwxr-xr-x 1 root root 813K Nov  5 08:05 proxy-ssl_error_log.2024-11-05
+-rwxr-xr-x 1 root root 448K Nov  5 08:05 proxy_error_log.2024-11-05
+-rwxr-xr-x 1 root root 487K Nov  5 08:05 proxy_access_log.2024-11-05
+-rwxr-xr-x 1 root root 8.4G Nov  5 08:05 proxy-ssl_access_log.2024-11-05
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ ^C
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2/logs **** This is a PROD server Please be extra careful **** RESTON $ cd ..
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ du -sch * | grep G
+57G     logs
+57G     total
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ ps -ef | grep -i /apps
+root      8755  8383  0 Oct25 ?        00:00:03 /usr/sbin/rotatelogs -l /apps/apache2/logs/proxy_error_log.%Y-%m-%d 86400
+root      8756  8383  0 Oct25 ?        00:00:06 /usr/sbin/rotatelogs -l /apps/apache2/logs/proxy-ssl_error_log.%Y-%m-%d 86400
+root      8757  8383  0 Oct25 ?        00:00:04 /usr/sbin/rotatelogs -l /apps/apache2/logs/proxy_access_log.%Y-%m-%d 86400
+root      8759  8383  0 Oct25 ?        01:18:52 /usr/sbin/rotatelogs -l /apps/apache2/logs/proxy-ssl_access_log.%Y-%m-%d 86400
+sw00188+ 53096 25121  0 08:18 pts/2    00:00:00 grep --color=auto -i /apps
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ lsof | grep -i deleted
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ sudo lsof | grep -i deleted
+Sorry, user sw0018871pwd is not allowed to execute '/usr/sbin/lsof' as root on WUWVC9ASPRXB05.prod.wudip.com.
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ sudo su - webadm
+Last login: Tue Nov  5 08:11:11 EST 2024 on pts/3
+webadm@WUWVC9ASPRXB05:~ **** This is a PROD server Please be extra careful **** RESTON $ crontab -l
+no crontab for webadm
+webadm@WUWVC9ASPRXB05:~ **** This is a PROD server Please be extra careful **** RESTON $ logout
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $ df -h /apps
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/data01-apps  108G   84G   19G  82% /apps
+sw0018871pwd@WUWVC9ASPRXB05:/apps/apache2 **** This is a PROD server Please be extra careful **** RESTON $

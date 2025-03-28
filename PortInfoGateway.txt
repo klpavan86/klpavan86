@@ -1,0 +1,92 @@
+***
+UAT
+***
+[webadm@WUWVC2ASMBK01a overrides]$ cat node.conf.yaml
+---
+brokerDefaultCCSID: '1208'
+brokerUUID: 'cad4d826-1f9d-11ee-9211-0a2d11990000'
+defaultQueueManager: 'ESBBKU0QMGR'
+BrokerRegistry:
+  brokerKeystoreFile: '/var/mqm/wugateway-client.jks'
+  httpConnectorPortRange: '51480-51490'
+Events:
+  BusinessEvents:
+    MQTT:
+      enabled: false
+NodeHttpListener:
+  HTTPConnector:
+    ListenerPort: 51480
+    ServerName: 'WesternUnionServer'
+RestAdminListener:
+  authorizationMode: 'mq'
+  port: 4415
+  webUserPasswordHashAlgorithm: 'SHA-1'
+[webadm@WUWVC2ASMBK01a overrides]$ pwd
+/var/mqsi/components/ACENDU0/overrides
+[webadm@WUWVC2ASMBK01a overrides]$ hostname -i
+10.45.17.153
+
+*******
+UAT LAB
+*******
+-rw-rw---- 1 webadm mqbrkrs 512 Jul 11  2023 node.conf.yaml
+[webadm@WUWVC2ASMBK01a overrides]$ cat node.conf.yaml
+---
+brokerDefaultCCSID: '1208'
+brokerUUID: '74487dee-1fa4-11ee-9165-0a2d11990000'
+defaultQueueManager: 'ESBBKU2QMGR'
+BrokerRegistry:
+  brokerKeystoreFile: '/var/mqm/wugateway-client.jks'
+  httpConnectorPortRange: '51380-51390'
+Events:
+  BusinessEvents:
+    MQTT:
+      enabled: false
+MQTTServer:
+  port: 11884
+NodeHttpListener:
+  HTTPConnector:
+    ListenerPort: 51380
+    ServerName: 'WesternUnionServer'
+RestAdminListener:
+  authorizationMode: 'mq'
+  port: 4416
+  webUserPasswordHashAlgorithm: 'SHA-1'
+[webadm@WUWVC2ASMBK01a overrides]$ pwd
+/var/mqsi/components/ACENDU2/overrides
+[webadm@WUWVC2ASMBK01a overrides]$ hostname -i
+10.45.17.153
+
+
+**
+PI
+**
+[webadm@WUWVC2ASMBK03 overrides]$ cat node.conf.yaml
+---
+brokerDefaultCCSID: '1208'
+brokerUUID: 'b6d4bab6-1634-11ee-8abe-0a2d11c00000'
+defaultQueueManager: 'ESBBKPI0QMGR'
+BrokerRegistry:
+  brokerKeystoreFile: '/var/mqm/wugateway-client.jks'
+  httpConnectorPortRange: '51380-51390'
+Events:
+  BusinessEvents:
+    MQTT:
+      enabled: false
+NodeHttpListener:
+  HTTPConnector:
+    ListenerPort: 51380
+    ServerName: 'WesternUnionServer'
+RestAdminListener:
+  port: 4415
+  webUserPasswordHashAlgorithm: 'SHA-1'
+Security:
+  Node:
+    Permissions:
+      webadm: 'read+:write+:execute+'
+[webadm@WUWVC2ASMBK03 overrides]$ pwd
+/var/mqsi/components/ACENDPI0/overrides
+[webadm@WUWVC2ASMBK03 overrides]$ date
+Thu Dec 12 22:52:31 EST 2024
+[webadm@WUWVC2ASMBK03 overrides]$ hostname -i
+10.45.17.192

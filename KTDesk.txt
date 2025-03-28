@@ -1,0 +1,25 @@
+file sharing
+port numbers applications
+PI env servers
+
+request comes to GTM & then to LTM & to the respecctive application webserver to app server to DB
+gate way
+GTM to LTM to DP to LB groups to app server IPS
+WUPOS
+GTM LTM APACHE LB APP SERVER INSTANCES
+
+IN order to find the traffic pointing IP's for a datapower IP 
+Login to DP console --> Profile in default --> In search bar type ethernet --> Search eth0, eth1, eth2 links for traffic pointing IP.
+
+AGENT PORTAL GTM LEVEL TRAFFIC MOVEMENT
+
+
+GREEN CIRCLE ENABLE
+BLACK CIRCLE DISABLED
+Black diamond force offline flush all the active connections & dont accept new connections
+red circle not seen till date
+red diamond  service is down where backend services are down EG: jvm services are down
+Traffic enabling flow
+red diamond to black diamond to black circle to green circle = RD --> BD --> BC --> GC
+
+

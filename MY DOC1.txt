@@ -1,0 +1,636 @@
+﻿Hi Team, No updates from my end Signing off for the day
+
+ADMIN25JC-2 - new JIRA cloud code for company holidays.
+Monitoring the applications, working on Incidents, implementation of CTASKS, Fulfilling the Requested RITM's
+
+RESTON - NV
+CHICAGO - OHIO
+
+********************
+DYNATRACE MONITORING 
+********************
+WUPOS DT ALERTS
+Hi WUPOS Team, 
+Please check mentioned DT alerts below
+
+GATEWAY DT ALERTS
+Hi Gateway Team, 
+Please check mentioned DT alerts below
+ 
+RTRA DT ALERTS
+Hi RTRA Team, 
+Please check mentioned DT alerts below
+
+DMS DT ALERTS
+Hi DMS Team, 
+Please check mentioned DT alerts below
+
+********************
+JIRA TIME SHEET 2025
+********************
+Here is the 2025 Jira features / ids for our team . Start using them today for accurate 2025 time reporting . 2024 Features will be disabled on Jan 15th .
+Please let your team members know as well .
+---------------------------------- 
+Jira  Feature / Issue  Description
+----------------------------------
+Jira Feature 							Issue ID
+Admin Other 							ADMIN25JC-1
+Admin PTO 								ADMIN25JC-2
+Business Management 					ADMIN25JC-7
+Ideation & Discovery 					ADMIN25JC-8
+Infra - Break/Fix - 2025 				CIONDJC-36
+Infra - Compliance & Regulatory - 2025 	CIONDJC-37
+Infra - Operate and Maintain - 2025 	CIONDJC-34
+Infra - Security - 2025 				CIONDJC-35
+ 
+*******************************************************
+SYNTAX FOR BIG PANDA MAINTAINENCE FOR WUPOS 2.0 SERVERS
+*******************************************************
+alert_description IN [ "*WUWCC9ASGEN62*", "*WUWCC9ASGEN63*", "*WUWCC9ASGEN64*", "*WUWCC9ASGEN48*" ] OR bp_host IN [ "*WUWCC9ASGEN62*", "*WUWCC9ASGEN63*", "*WUWCC9ASGEN64*", "*WUWCC9ASGEN48*" ] OR problem_details IN [  "*WUWCC9ASGEN62*", "*WUWCC9ASGEN63*", "*WUWCC9ASGEN64*", "*WUWCC9ASGEN48*" ]
+ 
+alert_description IN [ "*WUWVC9ASGEN43*", "*WUWVC9ASGEN44*", "*WUWVC9ASGEN45*", "*WUWVC9ASGEN48*" ] OR bp_host IN [ "*WUWVC9ASGEN43*", "*WUWVC9ASGEN44*", "*WUWVC9ASGEN45*", "*WUWVC9ASGEN48*" ] OR problem_details IN [  "*WUWVC9ASGEN43*", "*WUWVC9ASGEN44*", "*WUWVC9ASGEN45*", "*WUWVC9ASGEN48*" ]
+
+
+DELTA CHANGE SHEET
+Hi Team
+Please find the updated Sheet from Web Hosting end.
+
+REPLY MAIL
+The Requested CTASK0572607 has been completed successfully.
+
+Please validate & Confirm
+
+=========================================================================
+Hi Hazel Please find  the list of changes & shift resources for tomorrow
+MS Yesunadam, Venkata, Manohar, Ibrahim
+GS Sarath
+NS Yesunadam, Roshini.
+AS Siddarth, Bharath
+Please provide the Reviewers names for tomorrow's Changes
+========================================================================
+Hi Hazel Please find  the list of changes & shift resources for Weekend
+MS Venkata, Ganesh.
+AS Roshini, Sarath
+NS Siddarth, Bharath
+Please provide the Reviewers names for Weekend Changes
+========================================================================
+*******************************************
+Webhosting Change Forecast - 19th July 2024
+Hi Team,
+
+Please find the list of Changes, Thanks.
+*******************************************
+.corporate users
+wu pool mw active directory
+
+Command to list logs in a date range
+ls -lrth *2024-02-{15..25}*
+
+----------------------------------------------------
+.corporate users
+wu pool mw active directory
+************
+JUMP SERVERS
+************
+----------------------- 
+GATEWAY WINDOWS SERVERS
+-----------------------
+Non Production - 10.46.5.144
+Production 	   - 10.44.5.144
+------------------
+LINUX JUMP SERVERS
+------------------
+WUWVC9MSOPS01 - 10.44.6.21
+WUWVC9MSOPS02 - 10.44.6.22
+WUWCC9MSOPS02 - 10.46.6.21
+WUWCC9MSOPS01 - 10.46.6.22
+*******************
+ARCHIVA CREDENTIALS
+*******************
+Username - admin
+Password - CDE32wsx
+==================================================================================
+----------------------------------------------
+COMMAND TO KNOW THE RHEL VERSION ON THE SERVER
+----------------------------------------------
+Shaik Ali and Webhosting team - Inplace upgrade of  server 10.45.0.200/ WUWVC2WSGEN18 is completed
+[root@WUWVC2WSGEN18 ~]# uname -a
+Linux WUWVC2WSGEN18.prod.wudip.com 4.18.0-553.37.1.el8_10.x86_64 #1 SMP Fri Jan 17 08:51:54 EST 2025 x86_64 x86_64 x86_64 GNU/Linux
+[root@WUWVC2WSGEN18 ~]# cat /etc/redhat-release
+Red Hat Enterprise Linux release 8.10 (Ootpa)
+---------------------------
+COMMAND TO KNOW INODE SPACE
+---------------------------
+root@WUWVC1ASPOS06 ~]# df -Thi /apps
+Filesystem            Type Inodes IUsed IFree IUse% Mounted on
+/dev/mapper/data-apps ext4   3.7M  391K  3.4M   11% /apps
+-----------------------------------------------------------
+COMMAND TO DELETE DIRECTORIES OLDER THAN 30 DAYS USING FIND
+-----------------------------------------------------------
+COMMAND TO LIST
+find /path to the directories/ -type d -mtime +30
+COMMAND TO DELETE
+find /path -type d -mtime +30 -exec rm -rf {} \;
+======================================================================================
+*************************************************************************************
+WUPAY TRAFFIC MOVEMENT TO ENABLE TRAFFIC AT RESTON AFTER PATCHING COMPLETED IN RESTON
+*************************************************************************************
+After Successful Patching on Reston, Please execute the below steps in sequence as mentioned.
+Enabled Reston --> Disabled Chiacgo --> Disabled batches on Chicago --> Restarted Chicago instances --> enabled traffic in Chiacgo --> Disabled traffic in Reston --> Restarted instances on Reston --> Validate any batches are running or not if not running in Chicago & running in Reston --> enable traffic in Reston --> Disable traffic in Chicago
+After Successful traffic movement, Ask Application team to perform Sanity [Application team --> Arushi, Suganya].
+==========================================================================================================================================================================================================================================================================================================================================================
+*******************
+F5 NOTATIONS & FLOW
+*******************
+GREEN CIRCLE = ENABLED
+BLACK CIRCLE = DISABLED
+BLACK DIAMOND = FORCE OFFLINE --> Flush all the Active Connections & do not Accept New Connections
+RED CIRCLE = NA --> Not Seen Till Date.
+RED DIAMOND = Service is down where backend services are down EG: jvm services are down
+
+TRAFFIC FLOW ON F5
+RED DIAMOND --> BLACK DIAMOND --> BLACK CIRCLE --> GREEN CIRCLE = RD --> BD --> BC --> GC
+=============================================================================
+*******************************************************
+RUN DECK JOBS FOR TRAFFIC MOVEMENT / RETSRAT OF SERVERS
+*******************************************************
+-----------------
+SOAP GATEWAY URLs
+-----------------
+http://wuinfradeployment.wuintranet.net/project/WU_Gateway_PROD/execution/show/702734#output
+----------------------
+IWRA NEW BUILD SERVERS 
+----------------------
+http://wuinfradeployment.wuintranet.net/project/RTRA-IWRA-Prod/jobs
+
+**************
+SPLUNK QUERIES
+**************
+index="apache_l2_test" host="wuwvc9asprxa05.prod.wudip.com" | stats count by 200
+index="apache_l2_test" | stats count by status_code
+index="apache_l2_test" host="WUWVC9WSWAD01" | stats count by 50*
+
+******************************
+LINUX PATCHING BACKUP COMMANDS
+******************************
+ps -ef | grep java | grep webadm >> /tmp/CHG0283336_webadm.txt
+ps -ef | grep httpd >> /tmp/CHG0283336_httpd.txt
+**********************************************
+JBOSS CONSOLE CREDENTIALS FOR RESTON & CHICAGO
+**********************************************
+RESTON
+http://10.45.17.94:9990/
+CHICAGO
+http://10.45.17.94:9990/
+admin
+jb@ss73d$V@dmin 
+**************************************
+WUPOS APACHE LOAD BALANCER CREDENTIALS
+**************************************
+apache
+@p@che 
+****************************************
+AGENT PORTAL UAT WAS CONSOLE CREDENTIALS
+****************************************
+com.ibm.SOAP.loginUserid=was85admin
+com.ibm.SOAP.loginPassword=adm!nw@s85
+********************************
+TAIPOS JBOSS CONSOLE CREDENTIALS
+********************************
+USERNAME = admin
+PASSWORD = jb@ss7d$V@dmin
+It is used to deploy Tally.war file
+************
+AGENT ENROLL
+************
+Agent Enroll - Works out of Reston. No active DR
+It is related to Windows Patching
+It is running with WebSphere on Windows Environment
+After Windows Patching is completed, Dmgr & Nodeagent will be automatically up.
+We need to login into WAS Console and start the 2 jvms that are hosted on it.
+
+Application URL: http://aew.wuintranet.net/WUWSLocMgmt/ServiceClientPage.jsp 
+
+SERVER DETAILS: Servers were windows Serves Wh team can't access.
+10.44.16.33
+10.44.16.34  
+10.44.34.248  - Dmgr
+WAS Console URL: https://10.44.34.248:9043/ibm/console/logon.jsp
+ 
+=============================================================================
+*****************
+COVERT PEM TO PFX
+*****************
+openssl pkcs12 -export -out your_certificate.pfx -inkey your_private_key.pem -in your_certificate.pem -certfile your_intermediate_cert.pem
+***************
+APACHE COMMANDS
+***************
+*********************
+APACHE RELOAD COMMAND
+*********************
+sudo service httpd reload
+*********************
+APACHE CONFIG COMMAND
+*********************
+sudo service httpd configtest
+**********************
+APACHE RESTART COMMAND
+**********************
+sudo service httpd restart
+**********************
+APACHE START COMMAND
+**********************
+sudo service httpd start
+/apps/apache2/bin/apachectl start
+**********************
+APACHE STOP COMMAND
+**********************
+sudo service httpd stop
+/apps/apache2/bin/apachectl stop
+
+pkill -9 -1
+cd /apps/iwrarefresh1/jboss-eap-7.4/bin/
+nohup ./standalone.sh &
+-----------------------------------
+WUPAY DEV JBOSS CONSOLE CREDENTIALS
+-----------------------------------
+Console URL : http://10.45.234.209:9990/console
+Username: admin7
+Password: jb@ss7d$V@dmin
+-----------------------------------
+admin7
+jb@ss7d$V@dmin
+Username: admin7
+Password: jb@ss7U$T@dmin
+------------------------------------
+Receipt QA JBOSS CONSOLE CREDENTIALS
+------------------------------------
+http://10.45.235.170:9990/console
+admin
+jb@ss73d$V@dmin
+------------------------------------
+jboss 6.4
+-----------
+admin
+jb@ss6d$V@dmin
+jboss 7
+-----------
+admin
+jb@ss7d$V@dmin
+jboss 7(ACR+ QA)
+-----------
+admin
+jb@ss73d$V@dmin
+-------------------
+ARC+ UAT DEPLOYMENT
+-------------------
+/apps/jboss7/jboss-eap-7.0/modules/system/layers/base/com/microsoft/properties/main/ARCProperties/
+--------
+was8admin 
+adm!nw@s80
+-------------------------------
+MIR UAT WAS CONSOLE CREDENTIALS
+-------------------------------
+https://10.45.16.207:9043/ibm/console
+was8admin 
+adm!nw@s80
+------------------------------
+MIR QA WAS CONSOLE CREDENTIALS
+------------------------------
+https://10.45.232.141:9043/ibm/console
+was8admin 
+was8admin
+-------------------------------
+was8admin / adm!nw@s80 liferay1
+-------------------------------
+-----------------------------------
+DMS CPE UAT WAS CONSOLE CREDENTIALS
+-----------------------------------
+https://10.45.236.16:9043/ibm/console/logonError.jsp
+username : admin
+password : adm!nw@s90
+-------------------------------
+DMS UAT WAS CONSOLE CREDENTIALS
+-------------------------------
+https://10.45.16.77:9043/ibm/console/logon.jsp
+wasuatadm 
+w@sadm#123
+----------------------------------
+DMS CPE QA WAS CONSOLE CREDENTIALS
+----------------------------------
+https://10.45.236.18:9043/ibm/console/login.do?action=secure
+wasqaadmin
+wasqaadmin
+=================================================================
+Local account for Reston BSG node 10.45.18.129.
+Password - Hello#01
+was8.5
+------
+was85admin
+adm!nw@s85
+was9
+----
+wasadmin
+adm!nw@s90
+DMS 
+--------
+admin
+adm!nw@s85
+DMGR PROD
+username: admin
+password: adm!nw@s85
+NEW SERVERS
+username admin 
+password adm!nw@s85
+-----------------------
+IBM SUPPORT CREDENTIALS
+-----------------------
+https://www.ibm.com/mysupport/
+IBM Support
+username is : ITIO-run@westernunion.com
+WU_Chennai#123
+------ 
+REDHAT
+------
+https://rhn.redhat.com
+User name : jbosswesternunion  
+Password: Wujboss123
+ 
+https://access.redhat.com/support/cases/
+User : wudeploy
+Password : B0mpl#07
+===============================================================================
+----------------------------------
+TO FIND CURRENT MEMORY UTILIZATION
+----------------------------------
+free -t | awk 'NR == 2 {printf("Current Memory Utilization is : %.2f%"), $3/$2*100}'
+----------------------------------------
+TO COPY FILES FROM ONE TO ANOTHER SERVER
+----------------------------------------
+scp -pr sw0018871pwd@10.47.16.207:/tmp/pavan/* .
+===============================================================================
+**********
+DATA POWER
+**********
+In order to find the traffic pointing IP's for a datapower
+Login to DP console --> Profile in default --> In search bar type ethernet --> Search eth0, eth1, eth2 links for traffic pointing IP.
+
+In order to Change the IP's for an applications in datapower
+Login to DP console --> Profile in default --> In search bar type host alias --> Search for the particular application & change the respective IP address.
+
+In order to Renew the certificate for an applications in datapower
+Login to DP console --> Profile in DigitalGW PRD --> In search bar key --> Place the new key file [.key] SAN file mostly.--> Save it
+
+In order to Renew the certificate for an applications in datapower
+Login to DP console --> Profile in DigitalGW PRD --> In search bar Certificate --> Place the new cert file [.cer]--> Save it
+
+After the certificate renewal, Apply & Save the changes & Restart the domain
+===============================================================================
+**************************
+CHICAGO LINUX JUMP SERVERS
+************************** 
+WUWCC9MSOPS01	10.46.6.21
+WUWCC9MSOPS02	10.46.6.22 
+===============================================================================
+****************************
+TRACK PAYMENTS TO CONNECT S3
+****************************
+sftp -i rsakey-TRPNPDOWNLDWADS.privatekey TRPQADOWNLDWADS@sftp-qa.common.entbus.us.cloud.wuintranet.net:/canv-1np-1-bpy-s3-001/WADS/out/burxmia/20230913/Z256004J  /tmp
+sftp -i rsakey-TRPNPDOWNLDWADS.privatekey TRPQADOWNLDWADS@sftp-qa.common.entbus.us.cloud.wuintranet.net:22/out/burxmia/20230913/Z256002P /tmp
+========================================================================================================================================================================
+***********************
+HANDOVER CALL ZOOM LINK
+***********************
+4918207109 
+******************
+WAR ROOM ZOOM LINK
+******************
+https://wu.zoom.us/j/93558711523?pwd=VDRyTmxLTk9TUFhLaHp3L0crVzUwQT09#success
+**********************
+WAR ROOM ZOOM LINK NEW
+**********************
+https://wu.zoom.us/j/93107333679?pwd=IxpSfFqa4Nx0NbzP73PuUws9XnxJhs.1
+Username: 93107333679
+Code: 370843
+**************
+DYNA TRACE URL
+**************
+https://sso.dynatrace.com/action/signin?goto=https%3A%2F%2Fsso.dynatrace.com%3A443%2Foauth2%2Fauthorize%2Fredirect%3FoAuth2CtxUuid%3D0c8f24fc-1651-4e49-8a86-d167fe7d85b1&oAuth2RedirectUri=https%3A%2F%2Fphz84157.live.dynatrace.com
+EMAIL
+VKVLPavanKumar.Konjeti@westernunion.com
+
+Windows Jump server - 10.44.6.17
+Non prod:10.46.5.144 - Non - PROD- IBM-MQ-Explorer
+
+Linux Jump Server - 10.44.6.21
+Username: sw0018871pwd
+Password: CyberArk
+
+USER NAME FOR JUMP SERVER
+WUDIPRD\sw0018871pwd
+
+USER NAME FOR NON PROD SERVER
+10.46.5.144 - Non - PROD- IBM-MQ-Explorer
+WUWCC8MSWGW01\mb80
+==================================================================================
+                          PRE CAB & COLLISON CALL LINKS
+==================================================================================
+*****************
+WED COLLISON CALL
+*****************
+https://wu.zoom.us/j/98610377345?pwd=ZUVTV3Q0WlVLT3ZQZ3VCMkR4ZkdxQT09&from=addon
+Meeting ID is: 986 1037 7345
+Password: 994683
+************************
+MON WED FRI PRE CAB CALL
+************************
+https://wu.zoom.us/j/92440784210?pwd=dDhUaDNNdDRGdEJMMW1EY2YrV3p6UT09&from=addon
+**********************
+TUE & THU PRE CAB CALL
+**********************
+https://wu.zoom.us/j/94761819524?pwd=bVM2ZTc2ZnBpL1NqTDZYaVNUK0tFUT09&from=addon
+
+DYNA TRACE URL
+https://sso.dynatrace.com/action/signin?goto=https%3A%2F%2Fsso.dynatrace.com%3A443%2Foauth2%2Fauthorize%2Fredirect%3FoAuth2CtxUuid%3D0c8f24fc-1651-4e49-8a86-d167fe7d85b1&oAuth2RedirectUri=https%3A%2F%2Fphz84157.live.dynatrace.com
+EMAIL
+VKVLPavanKumar.Konjeti@westernunion.com
+Linux Jump Server - 10.44.6.21 login as: sw0018871pwd Password: CyberArk
+Windows Jump server - 10.44.6.17
+Non prod:10.46.5.144 - Non - PROD- IBM-MQ-Explorer & IBM enterprose toolkit
+
+USER NAME FOR JUMP SERVER
+WUDIPRD\sw0018871pwd
+S%tPeM*d6tXz$DNF
+
+USER NAME FOR NON PROD SERVER
+WUWCC8MSWGW01\mb80
+%07gJhE9zkHZkd?Z
+
+Gateway cache refresh using commands below in PI Environment
+mqsicacheadmin ACENDPI0 -c clearGrid -m CJW800105
+mqsicacheadmin ACENDPI0 -c clearGrid -m CJT060628
+mqsicacheadmin ACENDPI0 -c clearGrid -m AMN136881
+mqsicacheadmin ACENDPI0 -c clearGrid -m ABA070024
+
+ESBBKU0-10.45.17.153:4415-UAT--Broker,
+ESBBKU2-10.45.17.153:4416-UAT-LAB-Broker
+
+====================================================
+FOR AN INC TO CONVERT IT TO MAJOR INC AND CREATE ECR
+====================================================
+Mail the Details to major.incident@westernunion.com
+
+=================================
+PATCHING SERVICES BACKUP COMMANDS
+=================================
+ps -ef | grep java | grep webadm >> /tmp/CHG0248965_webadm.txt
+ps -ef | grep httpd >> /tmp/CHG0248965_httpd.txt
+
+==================================================================
+********************
+INFRASTRUCTURE TEAMS
+********************
+LINUX
+VMWARE
+SQL
+DB2
+ORACLE
+NETWORK
+WEBHOSTNG
+TIBCO
+CQ5
+==================================================================
+******************
+KNOWLEDGE ARTICLES
+******************
+For Restart - KB0017744
+For space utilization - KB0028587
+KB0030609 - Not Requried
+KB0051306 - Not Available
+Trackpayments - KB0027858 - Traffic move and restart
+WUPOS - KB0027615 - Space
+        KB0017744 - QA Jetty restart
+        KB0030923 - Manual MBean setup
+ARC+ - KB0030854 - JVM restart
+DMS - KB0029469 - Reston JVM restart
+      KB0029470 - Chicago JVM restart
+      KB0029347 - Traffic movement
+BRM - KB0029455 - Restart
+RTRA - KB0030469 - Run Batch job
+       KB0027614 - Space
+       KB0031090 - NMService Restart
+       KB0028815 - entityclrtool Restart
+       KB0030860 - Idea restart
+       KB0031050 - httpd restart
+TMS - KB0028748 - Restart
+UCD - KB0029974 - Heap dump
+      KB0028812 - Traffic movement
+      KB0029080 - Server restart
+IWRA - KB0027612 - Space
+       KB0030791 - iwra instance restart
+Agent Portal - KB0029484 - Reston JVM restart
+               KB0029486 - Chicago JVM restart
+               KB0026590 - To check the user count
+Receipt - KB0029365 - Fetch property files
+Liferay - KB0029461 - Chicago JVM restart
+          KB0029460 - Reston JVM restart
+WuPay - KB0029217 - Disable in Chicago
+        KB0029213 - Enable in Reston
+Prepaid - KB0029694 - Chicago restart
+          KB0029693 - Reston restart
+          KB0028816 - Traffic movement
+WUDBView - KB0029464 - Reston restart
+           KB0029466 - Chicago restart
+Gateway - KB0027638 - Queue clearing
+          KB0029970 - Bar deploy
+          KB0030072 - Domain backup
+          KB0027102 - Traffic movement
+=============================================================
+*********************
+F5 LINK FOR LOWER ENV
+*********************
+LTM for Lower Environments:
+https://10.44.193.79/xui/
+
+Daily ITIO-RUN Pre-CAB & Collision Review (TUESDAY, THURSDAY Series)
+
+Tue 3/26/2024 4:30 PM - 5:30 PM
+
+https://wu.zoom.us/j/94761819524?pwd=bVM2ZTc2ZnBpL1NqTDZYaVNUK0tFUT09&from=addon
+
+*********
+RTRA IWRA
+*********
+Chicago -->node1- iwra1,iwra2,iwra3,iwra4
+     node2- iwra1,iwra2,iwra3,iwra4
+    node3- iwra1,iwra2,iwra3,iwra4
+ 
+Reston -->  node1- iwra1,iwra2,iwra3
+node2- iwra1,iwra2,iwra3,iwra4
+node3- iwra1,iwra2
+
+**********************
+MAIL ID's OF THE TEAMS
+**********************
+DMS APPLICATION TEAM --> "DMSOffshoreAMS" <DMSOffshoreAMS@westernunion.com>;
+DMS APPLICATION TEAM --> "DMS offshore team" <DMSoffshoreteam@westernunion.com>; 
+DMS APPLICATION TEAM --> "Compliance DMS" <ComplianceDMS@westernunion.com>; 
+MONITORING TEAM --> "WU-Enterprise-Monitoring-Solutions" <wu-ems@westernunion.com>
+RTRA AMS --> "Compliance RTRA AMS" <ComplianceRTRAAMS@westernunion.com>;"iWatchRA" <iwatchra@westernunion.com>;
+IGNIO TEAM --> <WU-IGNIO@westernunion.com>; <shreyasanil.kalwaghe@wu.com>;
+WUPOS --> "WUPOS_AMS" <WUPOS_AMS@westernunion.com>
+AGENT PORTAL -->"AgentPortal Support" <AgentPortalSupport@westernunion.com>
+WUPAY -->"Digital-L2-WUPay" <digitall2wupay@westernunion.com>;"WU Technology SDM" <WUTechnologySDM@westernunion.com>
+OXXO/TMP/TMS --> "TMS DEV" <TMS_DEV@westernunion.com>;"TMS DLS Users" <TMS_DLS_Users@westernunion.com>
+LIFERAY -->"Digital-L2-Portal" <Digital-L2-Portal@westernunion.com>
+TEST ENVIRONMENT SUPPORT --> <TestEnvironmentsupport@westernunion.com>
+AGENT PORTAL --> <ALSupportTeam@westernunion.com>
+CYBER ARK --> <pam.admins@wu.com>
+GLOBALMONITORING TEAM --> <GlobalMonitoring@westernunion.com>
+----------------------------
+WUPOS LATEST CHICAGO LTM URL
+----------------------------
+https://10.46.193.137/tmui/login.jsp
+
+https://10.46.193.134/tmui/login.jsp
+
+ 
+4.      https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos-tablet.westernunion.com_443
+ 
+5.      https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos-tablet.westernunion.net_443
+ 
+6.      https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/origin-wuposlb-tablet.westernunion.com
+ 
+7.      https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOS2_COM
+ 
+8.      https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOS2_NET
+ 
+9.      https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOSTABLET_COM
+ 
+10.   https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOSTABLET_NET
+ 
+11.   https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/WUPOS_COMMON_PROD_WUPOSTABLET_ORIGIN
+ 
+12.   https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos2.westernunion.com
+ 
+13.   https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/wupos2.westernunion.net
+ 
+14.   https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/pool_hpos.westernunion.net
+ 
+15.   https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/pool_hpos.westernunion.com
+ 
+16.   https://10.46.193.134/tmui/Control/jspmap/tmui/locallb/pool/resources.jsp?name=/Common/pool_origin-hposlb.westernunion.com
+
+*********
+ACCRONYMS
+*********
+WUPOS 	- Western Union Point of Sale
+WUPAY	- Western Union Payment
+NRT 	- Near Real Time
+APN 	- Account Payment Network
+DMS 	- Document Management System
+RTRA 	- Real Time Risk Asessment
+CSS 	- Customer Search Solution
+WEBTP	- Web Tools Portal
+DAM 	- Dynamic Agent Messaging
+UCD     - Unified Customer Database

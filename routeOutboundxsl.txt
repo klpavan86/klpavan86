@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:regexp="http://exslt.org/regular-expressions"
+xmlns:dp="http://www.datapower.com/extensions"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+xmlns:json="http://www.ibm.com/xmlns/prod/2009/jsonx"
+xmlns="http://schemas.xmlsoap.org/wsdl/"
+extension-element-prefixes="dp"
+exclude-result-prefixes="dp">
+
+<xsl:include href="store:///dp/msgcat/xslt.xml.xsl"/>
+<xsl:template match="/">
+
+
+<xsl:variable name="soapAction" select="dp:request-header('SOAPAction')" />
+<xsl:variable name="endPoint" select="dp:request-header('EndPoint')" />
+
+
+
+<xsl:if test="$soapAction != 'NotifAction'">
+<dp:set-variable name="'endPoint'" value="//EndPoint[1]"/>
+</xsl:if>
+
+
+<xsl:choose>
+<xsl:when test="$endPoint = 'https://10.4.64.108:7072/acxsys/service/NisNotificationService'">
+<dp:set-variable name="'var://service/routing-url-sslprofile'" value="'OutboundProxyProfileTLS10'"/>
+</xsl:when>
+</xsl:choose>
+
+<dp:set-variable name="'var://service/routing-url'" value="$endPoint"/>
+<xsl:message dp:priority="error">The routing-url: <xsl:value-of select="dp:variable('var://service/routing-url')"/></xsl:message>
+
+<!-- Set Auth Header if applicable to my EndPoint -->
+<xsl:choose>
+<xsl:when test="$endPoint = 'https://172.22.48.78:443/WesternUnion/WU/ProxyServices/ReceivePaidNotification'">
+<xsl:variable name="authValuetemp" select="dp:encode('wuUser:WES+48union','base-64')"/>
+<xsl:variable name="authValue" select="concat('Basic ',$authValuetemp)" />
+<dp:set-http-request-header name="'Authorization'" value="$authValue" />
+</xsl:when>
+<xsl:when test="$endPoint = 'http://172.31.19.122:8080/RSI2/XRSI'">
+<xsl:variable name="authValuetemp" select="dp:encode('user:pass','base-64')"/>
+<xsl:variable name="authValue" select="concat('Basic ',$authValuetemp)" />
+<dp:set-http-request-header name="'Authorization'" value="$authValue" />
+<xsl:message dp:priority="error">Auth Header: <xsl:value-of select="$authValue"/></xsl:message>
+</xsl:when>
+<xsl:when test="$endPoint = 'http://10.4.64.9:6001/WUService/ProxyServices/Notifications/NisNotificationServicePS'">
+<xsl:variable name="authValuetemp" select="dp:encode('jwsuser:jwsuser123','base-64')"/>
+<xsl:variable name="authValue" select="concat('Basic ',$authValuetemp)" />
+<dp:set-http-request-header name="'Authorization'" value="$authValue" />
+<xsl:message dp:priority="error">Auth Header: <xsl:value-of select="$authValue"/></xsl:message>
+</xsl:when>
+<xsl:when test="$endPoint = 'https://payment-hope-stg.unitst.org/api/wu/nis_complete/'">
+<xsl:variable name="authValuetemp" select="dp:encode('western_union:jijqQ6QXzgWdfY0YB1v3','base-64')"/>
+<xsl:variable name="authValue" select="concat('Basic ',$authValuetemp)" />
+<dp:set-http-request-header name="'Authorization'" value="$authValue" />
+<dp:set-http-request-header name="'Content-Type'" value="'application/xml'" />
+<xsl:message dp:priority="error">Auth Header: <xsl:value-of select="$authValue"/></xsl:message>
+</xsl:when>
+</xsl:choose>
+<dp:remove-http-request-header name="EndPoint"/>
+<dp:remove-http-request-header name="nrt_retry_count"/>
+<dp:remove-http-request-header name="JSONpartner"/>
+<xsl:copy-of select="."/>
+
+</xsl:template>
+</xsl:stylesheet>
